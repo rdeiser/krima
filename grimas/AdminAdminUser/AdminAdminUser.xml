@@ -1,0 +1,24 @@
+<GrimaForm>
+	<Title>Grima: Upgrade user to Admin</Title>
+	<Field
+		name="username"
+		label="Username:"
+		autocomplete="on"
+		required="yes"
+		placeholder="username of user to upgrade..."
+	/>
+	<Field
+		name="institution"
+		label="Institution:"
+		autocomplete="on"
+		required="no"
+		placeholder="Their Grima Institution..."
+		persistent="yes"
+	/>
+	<Field
+		name="redirect_url"
+		type="hidden"
+		required="no"
+		persistent="yes"
+	/>
+</GrimaForm>
