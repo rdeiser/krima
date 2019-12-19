@@ -1,0 +1,18 @@
+<GrimaForm>
+    <Title>Unboxing Workflow</Title>
+    <Field
+        name="date"
+        label="Today's Date"
+        shortname="n"
+        autocomplete="on"
+        required="yes"
+        persistent="yes"
+        placeholder="MM/DD/YYYY"
+    />
+     <Field
+        label="Barcode of phsyical item"
+        name="barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+</GrimaForm>

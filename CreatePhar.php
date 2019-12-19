@@ -19,14 +19,14 @@ try {
         } else {
             $cmd = PHP_BINARY . " -S 127.0.0.1:$pharPort " . escapeshellarg($argv[0]);
             print("Run $cmd instead\n");
-            system("open http://127.0.0.1:$pharPort/index.html;exec $cmd");
+            system("open http://127.0.0.1:$pharPort/README-site.md;exec $cmd");
         }
     } else {
         Phar::mapPhar($pharFile);
         $script = "phar://$pharFile{$_SERVER["SCRIPT_NAME"]}";
         error_log($script);
         if( $_SERVER["SCRIPT_NAME"] == "/" ) {
-            $script = "{$script}index.html";
+            $script = "{$script}README-site.md";
         }
         if( file_exists($script) ) {
             $pathinfo = pathinfo($script);
