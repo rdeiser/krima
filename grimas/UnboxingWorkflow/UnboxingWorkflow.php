@@ -1,6 +1,6 @@
 <?php
 
-require_one("../grima-lib.php");
+require_once("../grima-lib.php");
 
 class UnboxingWorkflow extends GrimaTask {
 
