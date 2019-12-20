@@ -6,6 +6,16 @@ using APIs. Check out the [documentation](docs/) to learn how to
 [set up grima](docs/SETUP.md) or try some of the
 grimas below:
 
+### Admin Options
+* [AdminAddinstitution](grimas/AdminAddInstitution)--Add Institution
+* [AdminRenameUser](AdminRenameUser)--Rename User
+* [AdminListUsers](grimas/AdminListUsers)--List Users
+* [AdminDemoteUser](grimas/AdminDemoteUser)--Demote User
+* [AdminResetPassword](grimas/AdminResetPassword)--Rest Password
+* [AdminDeleteUser](grimas/AdminDeleteUser)--Delete User
+* [Login](grimas/Login)--Login
+* [Logout](grimas/Logout)--Logout
+
 ### Hale Refill Workflows
 * [UnboxingWorkflow](grimas/UnboxingWorkflow/UnboxingWorkflow.php) -- adds Date in Internal Note 3 and displays Item Information
 * [UnboxingWorkflowAlt](grimas/UnboxingWorkflowAlt/UnboxingWorkflowAlt.php) -- trys to add Date in Inventory Date Field and displays Item Information
