@@ -2,7 +2,7 @@
 
 require_once("../grima-lib.php");
 
-class UnboxingWorkflow extends GrimaTask {
+class UnboxingWorkflowAlt extends GrimaTask {
 
 	function do_task() {
 		$item = new Item();
