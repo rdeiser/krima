@@ -1,3 +1,4 @@
+<?= $t('body', array('item' => $item)) ?>
 <div class='card mt-2 bib'>
   <div class='card-header'>
     <h1 class='card-title'>Barcode #<?=$e($item['barcode'])?>
