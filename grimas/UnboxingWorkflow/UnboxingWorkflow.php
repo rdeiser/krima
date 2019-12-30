@@ -9,7 +9,7 @@ class UnboxingWorkflow extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['barcode']);
 		$item['internal_note_3'] = date("m/d/Y");
 		$item->updateAlma();
-		$this->splatVars['item'] = $this->item;
+		$this->splatVars['item'] = $this->barcode;
 }
 }
 
