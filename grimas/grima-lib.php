@@ -1186,7 +1186,7 @@ abstract class GrimaTask implements ArrayAccess {
 	}
 
 	function offsetGet($offset) {
-		return $this->args[$offset];
+		/*return*/ $this->args[$offset];
 	}
 
 	function offsetSet($offset,$value) {
