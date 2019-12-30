@@ -2447,6 +2447,7 @@ class Item extends AlmaObject {
 		'library' => '//location/@desc',
 		'library_code' => '//location',
 		'policy' => '//policy',
+		'inventory_number' => '//inventory_number',
 		'inventory_date' => '//inventory_date',
 		'item_policy' => '//policy',
 		'provenance' => '//provenance',
