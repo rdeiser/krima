@@ -11,6 +11,9 @@ class UnboxingWorkflow extends GrimaTask {
 		$item->updateAlma();
 		$this->splatVars['item'] = $this->barcode;
 }
+	function print_success(){
+			GrimaTask::call('DisplayItem', array('barcode' => $this['barcode']));
+	}
 }
 
 UnboxingWorkflow::RunIt();
