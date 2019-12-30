@@ -2442,7 +2442,6 @@ class Item extends AlmaObject {
 		'base_status' => '//base_status',
 		'physical_material_type_code' => '//physical_material_type',
 		'physical_material_type' => '//physical_material_type/@desc',
-		'inventory_date' => '//inventory_date',
 		'location' => '//location/@desc',
 		'location_code' => '//location',
 		'library' => '//location/@desc',
