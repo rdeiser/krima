@@ -14,7 +14,7 @@ grimas below:
 ### Hale Refill Workflows
 * [UnboxingWorkflow](grimas/UnboxingWorkflow/UnboxingWorkflow.php) -- adds Date in Internal Note 3 and displays Item Information
 * [UnboxingWorkflowAlt](grimas/UnboxingWorkflowAlt/UnboxingWorkflowAlt.php) -- trys to add Date in Inventory Date Field and displays Item Information
-* [DisplayItem](grimas/DisplayItem/DisplayItemAlt.php) -- display's Item information for Unboxing workflow
+* [DisplayItem](grimas/DisplayItem/DisplayItem.php) -- display's Item information for Unboxing workflow
 
 ### Display or Print records
 * [PrintBib](grimas/PrintBib/PrintBib.php) -- display bib record in printable web page
