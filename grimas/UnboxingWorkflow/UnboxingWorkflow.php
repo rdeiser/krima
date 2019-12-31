@@ -8,7 +8,7 @@ class UnboxingWorkflow extends GrimaTask {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item['internal_note_3'] = date("m/d/Y");
-		/*$item['inventory_date'] = date("Y-m-d H:00:00");*/
+		$item['inventory_date'] = date("Y-m-d H:00:00");
 		$item->updateAlma();
 }
 	function print_success(){
