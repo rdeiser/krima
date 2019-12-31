@@ -7,18 +7,14 @@ using APIs. Check out the [documentation](docs/) to learn how to
 grimas below:
 
 ### Admin Options
-* [AdminAddinstitution](grimas/AdminAddInstitution/AdminAddInstitution.php) -- Add Institution
-* [AdminRenameUser](AdminRenameUser/AdminRenameUser.php) -- Rename User
 * [AdminListUsers](grimas/AdminListUsers/AdminListUsers.php) -- List Users
-* [AdminDemoteUser](grimas/AdminDemoteUser/AdminDemoteUser.php) -- Demote User
-* [AdminResetPassword](grimas/AdminDemoteUser/AdminDemoteUser.php) -- Rest Password
-* [AdminDeleteUser](grimas/AdminDeleteUser/AdminDeleteUser.php) -- Delete User
 * [Login](grimas/Login/Login.php) -- Login
 * [Logout](grimas/Logout/Logout.php) -- Logout
 
 ### Hale Refill Workflows
 * [UnboxingWorkflow](grimas/UnboxingWorkflow/UnboxingWorkflow.php) -- adds Date in Internal Note 3 and displays Item Information
 * [UnboxingWorkflowAlt](grimas/UnboxingWorkflowAlt/UnboxingWorkflowAlt.php) -- trys to add Date in Inventory Date Field and displays Item Information
+* [DisplayItem](grimas/DisplayItem/DisplayItemAlt.php) -- display's Item information for Unboxing workflow
 
 ### Display or Print records
 * [PrintBib](grimas/PrintBib/PrintBib.php) -- display bib record in printable web page
