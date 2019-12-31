@@ -2,7 +2,7 @@
     <Title>Unboxing WorkflowAlt</Title>
      <Field
         label="Barcode of physical item"
-        name="'unboxed_barcode'"
+        name="'barcode'"
         required="yes"
         placeholder="Scan barcode..."
     />
