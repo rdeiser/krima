@@ -6,4 +6,9 @@
         required="yes"
         placeholder="Scan barcode..."
     />
+	<Field
+        name="inventorydate"
+		required="no"
+        visible="no"
+    />
 </GrimaForm>
