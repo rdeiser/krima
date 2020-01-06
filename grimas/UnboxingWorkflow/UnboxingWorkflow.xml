@@ -1,14 +1,5 @@
 <GrimaForm>
     <Title>Unboxing Workflow</Title>
-    <Field
-        name="date"
-        label="Today's Date"
-        shortname="n"
-        autocomplete="on"
-        required="no"
-        visible="no"
-        placeholder="MM/DD/YYYY"
-    />
      <Field
         label="Barcode of phsyical item"
         name="unboxed_barcode"
