@@ -5,6 +5,5 @@
 					<input class="col-9 form-control znew" type="text" name="barcode" id="barcode" size="20" placeholder="SCAN NEXT BARCODE"/>
 				  </div>
 				</div>
-				<input type=hidden" name="adding" value="true">
                 <input class="btn btn-primary btn-lg active" type="submit" autofocus="autofocus" value="Submit">
               </form>
