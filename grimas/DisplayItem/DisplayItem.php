@@ -11,8 +11,6 @@ class DisplayItem extends GrimaTask {
 		$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		$item['inventory_date'] = date("Y-m-d");
 		$item->updateAlma();
-		
-		$this->splatVars['item'] = $this->item;
 	}
 }
 
