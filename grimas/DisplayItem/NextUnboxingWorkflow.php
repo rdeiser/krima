@@ -2,7 +2,7 @@
 
 require_once("../grima-lib.php");
 
-class NextUnboxingWorkflow extends GrimaTask {
+class UnboxingWorkflow extends GrimaTask {
 
 	function do_task() {
 		$item = new Item();
@@ -13,8 +13,8 @@ class NextUnboxingWorkflow extends GrimaTask {
 		$item->updateAlma();
 }
 	function print_success(){
-			GrimaTask::call('DisplayItem', array('next_barcode' => $this['next_barcode']));
+			GrimaTask::call('DisplayItem', array('unboxed_barcode' => $this['next_barcode']));
 	}
 }
 
-NextUnboxingWorkflow::RunIt();
+UnboxingWorkflow::RunIt();
