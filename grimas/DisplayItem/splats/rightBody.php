@@ -1,4 +1,4 @@
-              <form method="post" action="UnboxingWorkflow.php">
+              <form method="post" action="NextUnboxingWorkflow.php">
 			  <input type="hidden" name="unboxed_barcode" value="<?=$e($item['barcode'])?>">
 			  <div class="form-row col-12 pb-4">
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
