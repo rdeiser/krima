@@ -1,2 +1,2 @@
-              <form method="post" action="MoreItems.php">
+              <form method="post" action="DisplayItem.php">
               </form>
