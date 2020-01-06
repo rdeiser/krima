@@ -3,7 +3,7 @@
     <Field
         label="Barcode of unboxed item"
         name="unboxed_barcode"
-        required="no"
+        required="yes"
         placeholder="Scan barcode..."
     />
 	<Field
