@@ -16,7 +16,7 @@ grimas below:
 <!--* [UnboxingWorkflowAlt](grimas/UnboxingWorkflowAlt/UnboxingWorkflowAlt.php) -- trys to add Date in Inventory Date Field and displays Item Information-->
 * [DisplayItem](grimas/DisplayItem/DisplayItem.php) -- display's Item information for Unboxing workflow
 
-### Display or Print records
+<!--### Display or Print records
 * [PrintBib](grimas/PrintBib/PrintBib.php) -- display bib record in printable web page
 * [PrintHolding](grimas/PrintHolding/PrintHolding.php) -- display holding record in printable web page
 * [Hierarchy](grimas/Hierarchy/Hierarchy.php) -- view bib/mfhds/items in hierarchy view
@@ -46,4 +46,4 @@ grimas below:
 * [ViewXmlBib](grimas/ViewXmlBib/ViewXmlBib.php) -- view Bib record as Bib object XML
 * [ViewXmlHolding](grimas/ViewXmlHolding/ViewXmlHolding.php) -- view Holding record as Holding object XML
 * [ViewXmlItem](grimas/ViewXmlItem/ViewXmlItem.php) -- view Item record as Item object XML
-* [ViewXmlPortfolio](grimas/ViewXmlPortfolio/ViewXmlPortfolio.php) -- view Portfolio record as Electronic Portfolio object XML
+* [ViewXmlPortfolio](grimas/ViewXmlPortfolio/ViewXmlPortfolio.php) -- view Portfolio record as Electronic Portfolio object XML-->
