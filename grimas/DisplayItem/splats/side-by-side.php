@@ -1,6 +1,4 @@
-        <h1 class="page-header text-center"><?=$e($title)?>
-			<a class='d-print-none viewlink' href="../UnboxingWorkflow/UnboxingWorklfow.php"(New Scan)</a>
-		</h1>
+        <h1 class="page-header text-center"><?=$e($title)?></h1>
         <div class="row">
           <div class="col">
             <div class="card">
