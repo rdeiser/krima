@@ -6,4 +6,9 @@
         required="yes"
         placeholder="Scan barcode..."
     />
+	<Field
+        name="next_barcode"
+		required="no"
+        visible="no"
+    />
 </GrimaForm>
