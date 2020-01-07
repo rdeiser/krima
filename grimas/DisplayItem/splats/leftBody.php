@@ -7,4 +7,4 @@
 				<input type="hidden" name="adding" value="true">
 				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
               </form>-->
-			  <input class="btn btn-primary btn-sm active" autofocus=autofocus onclick="history.go(-1);" value="Back">
+			  <input class="btn btn-primary btn-sm active" type="submit" autofocus=autofocus onclick="history.go(-1);" value="Back">
