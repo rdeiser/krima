@@ -1,7 +1,3 @@
-<?php
-
-include('/home/rdeiser17/git_environment/krima/grimas/UnboxingWorkflow/UnboxingWorkflow.php');
- ?>
               <form method="post" action="UnboxingWorfklow.php">
 			  <input type="hidden" name="unboxed_barcode" value="<?=$e(item['barcode'])?>">
               </form>
