@@ -7,5 +7,5 @@
 				</div>
 				<input type="hidden" name="adding" value="true"> <!-- override button -->
 				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
-				<?$item->updateAlma?>
+				<?$item->updateAlma();?>
               </form>
