@@ -10,19 +10,12 @@ class DisplayItem extends GrimaTask {
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		
 		if (isset($this['adding']) and ($this['adding'] == "true")) {
+			$nextItem = next $this->item;
+			$this->item->loadFromAlmaBarcode($this['next_barcode']);
 			$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 			$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 			$item['inventory_date'] = date("Y-m-d");
 			$item->updateAlma();
-			$itemdata_elements = array(
-			'barcode'
-			);
-			foreach ($itemdata_elements as $element) {
-				if (isset($this[$element])) {
-					$nextItem[$element] = $this[$element];
-				}
-			}
-			$ret = $nextItem->loadFromAlmaBarcode($this['next_barcode']);
 		}
 		
 		$this->splatVars['item'] = $this->item;
