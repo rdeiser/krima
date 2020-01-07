@@ -1,13 +1,11 @@
         <h1 class="page-header text-center"><?=$e($title)?></h1>
         <div class="row">
 		<div class="col">
-            <div class="card">
+            <div>
               <!--<div class="card-header">
                 <h2 class="card-title"><?=$e($leftTitle)?></h2>
               </div>-->
-              <div>
 <?= $t('leftBody', array('item' => $item)) ?>
-              </div>
             </div>
           </div>
           <div class="col">
