@@ -1,8 +1,5 @@
         <h1 class="page-header text-center"><?=$e($title)?></h1>
         <div class="row">
-		<div class="col">
-<?= $t('leftBody', array('item' => $item)) ?>
-          </div>
           <div class="col">
             <div class="card">
               <div class="card-header">
