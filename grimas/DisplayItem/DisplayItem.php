@@ -23,5 +23,6 @@ class DisplayItem extends GrimaTask {
 	}
 
 }
+}
 
 DisplayItem::RunIt();
