@@ -13,15 +13,7 @@ class DisplayItem extends GrimaTask {
 			$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 			$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 			$item['inventory_date'] = date("Y-m-d");
-			$nextItem = $this->item;
-			$itemdatea_elements = array(
-				'barcode'
-			);
-			foreach ($itemdata_elemetns as $element) {
-				if (isset($this[$element])) {
-					$nextItem[$element] = $this[$element];
-				}
-				$item->updateAlma();
+			$item->updateAlma();
 		}
 		
 		$this->splatVars['item'] = $this->item;
