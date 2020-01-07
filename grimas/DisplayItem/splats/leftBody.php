@@ -1,22 +1,9 @@
-              <form method="post">
-			  <?php
-
-require_once("../grima-lib.php");
-
-class UnboxingWorkflow extends GrimaTask {
-
-	function do_task() {
-		$item = new Item();
-		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
-		$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
-		$item['inventory_date'] = date("Y-m-d");
-		$item->updateAlma();
-}
-	function print_success(){
-			GrimaTask::call('DisplayItem', array('unboxed_barcode' => $this['unboxed_barcode']));
-	}
-}
-
-UnboxingWorkflow::RunIt();?>
+              <form method="post" action="DisplayItem.php">
+			  <input type="hidden" name="unboxed_barcode" value="<?=$e(item['barcode'])?>">
+				<div class="form-row col-12 pb-4">
+					<label class="col-3 form-check-label" for="unboxed_barcode">Barcode:</label>
+					<input class="col-9 form-control znew" type="text" name="barcode" id="barcode" size="20" placeholder="SCAN NEW BARCODE"/>
+				</div>
+				<input type="hidden" name="adding" value="true"> <!-- override button -->
+				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
               </form>
