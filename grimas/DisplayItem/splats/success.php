@@ -2,7 +2,7 @@
 		array(
 			'item' => $item,
 			'title' => 'Item Display',
-			'leftTitle' => 'Scan Next Barcode',
+			'leftTitle' => '',
 			'rightTitle' => 'Item Information:',
 		 )
 	)
