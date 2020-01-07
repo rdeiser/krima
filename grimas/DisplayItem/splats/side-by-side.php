@@ -5,7 +5,7 @@
               <!--<div class="card-header">
                 <h2 class="card-title"><?=$e($leftTitle)?></h2>
               </div>-->
-              <div class="card-body">
+              <div>
 <?= $t('leftBody', array('item' => $item)) ?>
               </div>
             </div>
