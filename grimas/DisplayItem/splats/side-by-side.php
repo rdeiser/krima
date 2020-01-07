@@ -3,10 +3,10 @@
           <!--<div class="col">
             <div class="card">
               <div class="card-header">
-                <h2 class="card-title"><?=$e($leftTitle)?></h2>
+                <h2 class="card-title"><//?=$e($leftTitle)?></h2>
               </div>
               <div class="card-body">
-<?= //$t('leftBody', array('item' => $item)) ?>
+<//?= $t('leftBody', array('item' => $item)) ?>
               </div>
             </div>
           </div>-->
