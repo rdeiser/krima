@@ -16,5 +16,4 @@ class UnboxingWorkflow extends GrimaTask {
 }
 
 UnboxingWorkflow::RunIt();?>
-				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
               </form>
