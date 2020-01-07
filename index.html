@@ -17,40 +17,34 @@ grimas below:</p>
 <ul>
 <li><a href="grimas/DisplayItem/DisplayItem.php">DisplayItem</a> -- display's Item information for Unboxing workflow</li>
 </ul>
-<h3 id="display-or-print-records">Display or Print records</h3>
-<ul>
-<li><a href="grimas/PrintBib/PrintBib.php">PrintBib</a> -- display bib record in printable web page</li>
-<li><a href="grimas/PrintHolding/PrintHolding.php">PrintHolding</a> -- display holding record in printable web page</li>
-<li><a href="grimas/Hierarchy/Hierarchy.php">Hierarchy</a> -- view bib/mfhds/items in hierarchy view</li>
-<li><a href="grimas/ResolveLink/ResolveLink.php">ResolveLink</a> -- resolve a link in Alma/Primo window</li>
-<li><a href="grimas/ShowItemsFromHoldings/ShowItemsFromHoldings.php">ShowItemsFromHoldings</a> -- display all items from a holding record</li>
-</ul>
-<h3 id="edit-records">Edit Records</h3>
-<ul>
-<li><a href="grimas/InsertOclcNo/InsertOclcNo.php">InsertOclcNo</a> -- insert OCLC number into 035</li>
-<li><a href="grimas/Boundwith/Boundwith.php">Boundwith</a> -- create boundwith in Alma using bib 501/774, holding 014</li>
-<li><a href="grimas/RemoveTempLocation/RemoveTempLocation.php">RemoveTempLocation</a> -- remove temporary location from item</li>
-<li><a href="grimas/AddInternalNote/AddInternalNote.php">AddInternalNote</a> -- add internal note 1 to an item record</li>
-<li><a href="grimas/MarkImportTemporaryLocation/MarkImportTemporaryLocation.php">MarkImportTemporaryLocation</a> -- mark items from an import job as being in a temporary location</li>
-<li><a href="grimas/AppendToNoteOnSet/AppendToNoteOnSet.php">AppendToNoteOnSet</a> -- add a note to every item in a set, appending if there is already a note there</li>
-</ul>
-<h3 id="add-new-records">Add New Records</h3>
-<ul>
-<li><a href="grimas/CreateBriefBib/CreateBriefBib.php">CreateBriefBib</a> -- create a brief bib with specified 245a</li>
-<li><a href="grimas/DuplicateBib/DuplicateBib.php">DuplicateBib</a> -- create a duplicate copy of a bib</li>
-<li><a href="grimas/MoreItems/MoreItems.php">MoreItems</a> -- add more items to a serial or set, based on the first one</li>
-</ul>
-<h3 id="delete-records">Delete Records</h3>
-<ul>
-<li><a href="grimas/DeleteTree/DeleteTree.php">DeleteTree</a> -- delete bib and all of its inventory from Alma</li>
-<li><a href="grimas/DeleteBib/DeleteBib.php">DeleteBib</a> -- delete bib from Alma</li>
-<li><a href="grimas/DeleteItem/DeleteItem.php">DeleteItem</a> -- delete item from Alma</li>
-<li><a href="grimas/DeletePortfolio/DeletePortfolio.php">DeletePortfolio</a> -- delete portfolio from Alma</li>
-</ul>
-<h3 id="view-xml-for-development-or-debugging">View XML for Development or Debugging</h3>
-<ul>
-<li><a href="grimas/ViewXmlBib/ViewXmlBib.php">ViewXmlBib</a> -- view Bib record as Bib object XML</li>
-<li><a href="grimas/ViewXmlHolding/ViewXmlHolding.php">ViewXmlHolding</a> -- view Holding record as Holding object XML</li>
-<li><a href="grimas/ViewXmlItem/ViewXmlItem.php">ViewXmlItem</a> -- view Item record as Item object XML</li>
-<li><a href="grimas/ViewXmlPortfolio/ViewXmlPortfolio.php">ViewXmlPortfolio</a> -- view Portfolio record as Electronic Portfolio object XML</li>
-</ul>
+<!--### Display or Print records
+* [PrintBib](grimas/PrintBib/PrintBib.php) -- display bib record in printable web page
+* [PrintHolding](grimas/PrintHolding/PrintHolding.php) -- display holding record in printable web page
+* [Hierarchy](grimas/Hierarchy/Hierarchy.php) -- view bib/mfhds/items in hierarchy view
+* [ResolveLink](grimas/ResolveLink/ResolveLink.php) -- resolve a link in Alma/Primo window
+* [ShowItemsFromHoldings](grimas/ShowItemsFromHoldings/ShowItemsFromHoldings.php) -- display all items from a holding record
+
+### Edit Records
+* [InsertOclcNo](grimas/InsertOclcNo/InsertOclcNo.php) -- insert OCLC number into 035
+* [Boundwith](grimas/Boundwith/Boundwith.php) -- create boundwith in Alma using bib 501/774, holding 014
+* [RemoveTempLocation](grimas/RemoveTempLocation/RemoveTempLocation.php) -- remove temporary location from item
+* [AddInternalNote](grimas/AddInternalNote/AddInternalNote.php) -- add internal note 1 to an item record
+* [MarkImportTemporaryLocation](grimas/MarkImportTemporaryLocation/MarkImportTemporaryLocation.php) -- mark items from an import job as being in a temporary location
+* [AppendToNoteOnSet](grimas/AppendToNoteOnSet/AppendToNoteOnSet.php) -- add a note to every item in a set, appending if there is already a note there
+
+### Add New Records
+* [CreateBriefBib](grimas/CreateBriefBib/CreateBriefBib.php) -- create a brief bib with specified 245a
+* [DuplicateBib](grimas/DuplicateBib/DuplicateBib.php) -- create a duplicate copy of a bib
+* [MoreItems](grimas/MoreItems/MoreItems.php) -- add more items to a serial or set, based on the first one
+
+### Delete Records
+* [DeleteTree](grimas/DeleteTree/DeleteTree.php) -- delete bib and all of its inventory from Alma
+* [DeleteBib](grimas/DeleteBib/DeleteBib.php) -- delete bib from Alma
+* [DeleteItem](grimas/DeleteItem/DeleteItem.php) -- delete item from Alma
+* [DeletePortfolio](grimas/DeletePortfolio/DeletePortfolio.php) -- delete portfolio from Alma
+
+### View XML for Development or Debugging
+* [ViewXmlBib](grimas/ViewXmlBib/ViewXmlBib.php) -- view Bib record as Bib object XML
+* [ViewXmlHolding](grimas/ViewXmlHolding/ViewXmlHolding.php) -- view Holding record as Holding object XML
+* [ViewXmlItem](grimas/ViewXmlItem/ViewXmlItem.php) -- view Item record as Item object XML
+* [ViewXmlPortfolio](grimas/ViewXmlPortfolio/ViewXmlPortfolio.php) -- view Portfolio record as Electronic Portfolio object XML-->
