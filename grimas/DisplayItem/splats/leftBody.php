@@ -13,6 +13,9 @@ class UnboxingWorkflow extends GrimaTask {
 		$item['inventory_date'] = date("Y-m-d");
 		$item->updateAlma();
 }
+	function print_success(){
+			GrimaTask::call('DisplayItem', array('unboxed_barcode' => $this['unboxed_barcode']));
+	}
 }
 
 UnboxingWorkflow::RunIt();?>
