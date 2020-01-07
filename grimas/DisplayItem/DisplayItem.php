@@ -8,6 +8,7 @@ class DisplayItem extends GrimaTask {
 
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$item->updateAlma();
 		
 		if (isset($this['adding']) and ($this['adding'] == "true")) {
 			$this->item = new Item();
