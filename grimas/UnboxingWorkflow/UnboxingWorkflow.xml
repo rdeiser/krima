@@ -11,5 +11,4 @@
 		required="no"
         visible="no"
     />
-	<input autofocus="autofocus"/>
 </GrimaForm>
