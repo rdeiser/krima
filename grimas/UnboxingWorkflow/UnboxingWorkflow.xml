@@ -5,6 +5,7 @@
         name="unboxed_barcode"
         required="yes"
         placeholder="Scan barcode..."
+		autofocus="autofocus"
     />
 	<Field
         name="next_barcode"
