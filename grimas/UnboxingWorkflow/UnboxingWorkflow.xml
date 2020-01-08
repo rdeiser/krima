@@ -5,11 +5,11 @@
         name="unboxed_barcode"
         required="yes"
         placeholder="Scan barcode..."
-		autofocus="autofocus"
     />
 	<Field
         name="next_barcode"
 		required="no"
         visible="no"
     />
+	<input autofocus="autofocus"/>
 </GrimaForm>
