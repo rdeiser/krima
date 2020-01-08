@@ -44,6 +44,7 @@
       autocomplete="<?=$e($auto)?>"
       type="<?=$e($type)?>"
       value="<?=$e($value)?>"
+	  autofocus="autofocus"
     />
 <?php endif ?>
 <?php if (isset($error_message)): ?>
