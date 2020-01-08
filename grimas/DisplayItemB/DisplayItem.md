@@ -1,9 +1,12 @@
-# Unboxing 
+# MoreItems - add multiple similar items to a holding
 
-This grima displays necessary information needed for Unboxing physical materials.  Please make sure the information displayed matches the physical piece.  If the information is incorrect, place on review book truck.  If the information is correct place the physical item in the appropriate box based on the Statistics Note 3.
+This grima helps you add multiple items to a record, such as a
+set or serial record. After adding each record, you will be
+prompted to add a new one, with the option of changing fields
+like Enumeration and Chronology.
 
 ## Input
-* Scan or type the Barcode found on piece
+* Barcode of "model" item, on which copies will be based
 
 ## Procedure
 The first form asks for a model item. If you're adding
