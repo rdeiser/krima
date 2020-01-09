@@ -1,4 +1,4 @@
-<?= $t('side-by-side', 
+<?= $t('rightBody', 
 		array(
 			'item' => $item,
 			'title' => 'Unboxing WorkflowC',
