@@ -13,6 +13,7 @@
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <form method="post" action="../UnboxingWorkflowB/UnboxingWorkflowB.php">
+				<div class="col">
 				<div class="card">
 				<div class="card-body">
 				<div class="form-row col-12 pb-4">
@@ -20,6 +21,7 @@
 					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
 				</div>
 				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
+				</div>
 				</div>
 				</div>
               </form>
