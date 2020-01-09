@@ -1,0 +1,14 @@
+<GrimaForm>
+    <Title>Unboxing Workflow</Title>
+     <Field
+        label="Barcode of phsyical item"
+        name="unboxed_barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+	<Field
+        name="next_barcode"
+		required="no"
+        visible="no"
+    />
+</GrimaForm>
