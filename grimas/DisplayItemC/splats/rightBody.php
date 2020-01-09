@@ -1,5 +1,5 @@
 		<h1 class="page-header text-center"><?=$e(title)?></h1>
-		<div class='card-body'>
+		<div class="card-body">
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
