@@ -1,8 +1,8 @@
 <?= $t('side-by-side', 
 		array(
 			'item' => $item,
-			'title' => 'Unboxing WorkflowB',
-			/*'leftTitle' => 'Scan Next Barcode',*/
+			'title' => 'Unboxing WorkflowC',
+			'bottomTitle' => 'Scan Next Barcode',
 			'rightTitle' => 'Item Information:',
 		 )
 	)
