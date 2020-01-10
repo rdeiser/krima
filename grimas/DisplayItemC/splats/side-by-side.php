@@ -6,7 +6,7 @@
                 <h2 class="card-title"><?=$e($leftTitle)?></h2>
               </div>
               <div class="card-body">
-<?= $t('bottomBody', array('item' => $item)) ?>
+<?= $t('leftBody', array('item' => $item)) ?>
               </div>
             </div>
           </div>
