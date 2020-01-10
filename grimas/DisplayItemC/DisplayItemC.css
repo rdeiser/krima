@@ -5,6 +5,10 @@
     background-color: #ffff00;
 }
 
+.card {
+	background-color: #cd5555;
+}
+
 label {
 	font-weight: bold;
 }
