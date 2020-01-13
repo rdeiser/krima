@@ -6,6 +6,15 @@
     barcode_elt.addEventListener('focus',onUse);
 });*/
 
-if(index==="destination") {
+/*if(index==="card-stat3") {
 	if(value==="ANNEX ingest"){contents+='<style>#"+tooler+" {background-color:green;}</style>"}
 }
+
+*/
+if (Statistics Note == "ANNEX ingest") {
+	card-stat3 = (card-stat3 == "ANNEX");
+}
+
+var COLORMAP = [
+{card-stat3; "ANNEX",       color: "blue"}
+];
