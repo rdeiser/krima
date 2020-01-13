@@ -14,22 +14,6 @@
 	text-align: center;
 }
 
-tr#line1 span#a {
-	display: inline;
-}
-
-tr#line1:hover span#a {
-	display: none;
-}
-
-tr#line1 span#b {
-	display: none;
-}
-
-tr#line1:hover span#b {
-	display: inline;
-}
-
 label {
 	font-weight: bold;
 }
