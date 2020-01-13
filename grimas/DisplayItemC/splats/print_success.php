@@ -13,8 +13,5 @@
         <!-- success -->
 <?= $t('success') ?>
       </div>
-	  	<?= if ($item['statistics_note_3'] == 'ANNEX ingest');
-			$style = 'style=="color: green:"';
-			?>
   </body>
 </html>
