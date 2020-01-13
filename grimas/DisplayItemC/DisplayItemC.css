@@ -9,6 +9,11 @@
 	font-weight: bold;
 }
 
+.card-title {
+	font-weight: bold;
+	text-align: center;
+}
+
 label {
 	font-weight: bold;
 }
