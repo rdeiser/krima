@@ -1,4 +1,4 @@
-              <!--<table class="table">
+              <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
 				<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>
