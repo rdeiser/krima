@@ -9,7 +9,14 @@
 				<tr><th>Inventory Date</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Inventory Number</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3</th><td><?=$e($item['internal_note_3'])?></td></tr>
-				<tr><th>Statistics Note 3</th><td><?=$e($item['statistics_note_3'])?></td></tr>
+				<tr><th>Statistics Note 3</th><td><?=$e($item['statistics_note_3'])?>
+				<?=$f=array();
+				$f["$item"] = "statistics_note_3";
+				$f["value"] = "ANNEX ingest";
+				$f["css"]="'background-color':'#FBEC88', 'color':'green'";
+				?>
+				
+				</td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <form method="post" action="../UnboxingWorkflowB/UnboxingWorkflowB.php">
