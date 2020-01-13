@@ -10,8 +10,8 @@
 				<tr><th>Inventory Number</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3</th><td><?=$e($item['internal_note_3'])?></td></tr>
 				<tr><th>Statistics Note 3</th><td><?=$e($item['statistics_note_3'])?>
-				<?php if ($item['statistics_note_3']=="ANNEX ingest");
-					'<span class="card-stat3">'.$item['statistics_note_3'].'</span>';
+				<?php if ($item['statistics_note_3']=='ANNEX ingest');
+					$style = 'class="statnote;"';
 					?>
 				
 				</td></tr>
