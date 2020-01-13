@@ -11,10 +11,3 @@
 }
 
 */
-if (Statistics Note == "ANNEX ingest") {
-	card-stat3 = (card-stat3 == "ANNEX");
-}
-
-var COLORMAP = [
-{card-stat3; "ANNEX",       color: "blue"}
-];
