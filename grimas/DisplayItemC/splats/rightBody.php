@@ -10,11 +10,9 @@
 				<tr><th>Inventory Number</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3</th><td><?=$e($item['internal_note_3'])?></td></tr>
 				<tr><th>Statistics Note 3</th><td><?=$e($item['statistics_note_3'])?>
-				<?=$f=array();
-				$f["$item"] = "statistics_note_3";
-				$f["value"] = "ANNEX ingest";
-				$f["css"]="'background-color':'#FBEC88', 'color':'green'";
-				?>
+				<?php if ($item['statistics_note_3']=="ANNEX ingest");
+					'<span class="card-stat3">'.$item['statistics_note_3'].'</span>';
+					?>
 				
 				</td></tr>
               </table>
