@@ -1,6 +1,6 @@
               <table class="table">
-                <t<tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
+                <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
+				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e($item['call_number'])?></td></tr>
 				<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
