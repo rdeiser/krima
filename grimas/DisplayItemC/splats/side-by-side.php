@@ -5,7 +5,7 @@
 			$style = 'style="background-color: #6495ed;"';
 	}
 	else if ($item['statistics_note_3']=='HALE return') {
-			$style = 'style="background-color: #4f2684;"';
+			$style = 'style="background-color: #9f79ee;"';
 	}
 					?>
 		<h1 class="page-header text-center"><?=$e($title)?></h1>
@@ -13,7 +13,7 @@
           <div class="col">
             <div class="card" <?=$style?>>
               <div class="card-header">
-                <h2 class="card-title"><?=$e($rightTitle)?></h2>
+                <h2 class="card-title"><?=$e($rightTitle)?><?=$e($item['statistics_note_3'])?></h2>
               </div>
               <div class="card-body">
 <?= $t('rightBody', array('item' => $item)) ?>
