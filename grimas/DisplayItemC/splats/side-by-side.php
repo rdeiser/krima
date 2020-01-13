@@ -1,5 +1,5 @@
 <?php if ($item['statistics_note_3']=='ANNEX ingest');
-					$style = 'style="background-color: green;"';
+					$style = 'class="statnote"';
 					?>
 		<h1 class="page-header text-center"><?=$e($title)?></h1>
         <div class="row">
