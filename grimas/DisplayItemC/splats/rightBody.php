@@ -28,5 +28,4 @@
 				</div>
 				</div>
 				</div>
-				<script src="DisplayItemC.js"></script>
               </form>
