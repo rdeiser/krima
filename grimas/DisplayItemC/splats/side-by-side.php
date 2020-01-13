@@ -1,7 +1,7 @@
 <?php if ($item['statistics_note_3']=='To be WITHDRAWN');
 			$style = 'style="background-color: #cd5555;"';
 	/*else if ($item['statistics_note_3']=='ANNEX ingest');
-			$style = 'style="background-color: #6495ed;"';
+			$style = 'style="background-color: #6495ed;"';*/
 	else if ($item['statistics_note_3']=='HALE return');
 			$style = 'style="background-color: #4f2684;"';*/
 					?>
