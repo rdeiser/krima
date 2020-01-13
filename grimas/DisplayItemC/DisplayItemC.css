@@ -14,26 +14,6 @@
 	text-align: center;
 }
 
-.flip>span {
-	color: transparent;
-	float: none;
-}
-
-.flip:hover>span {
-	color: black;
-	float: left;
-}
-
-.flip>span:first-child {
-	color: black;
-	float: left;
-}
-
-.flip:hover>span:first-child {
-	color: transparent;
-	float: none;
-}
-
 label {
 	font-weight: bold;
 }
