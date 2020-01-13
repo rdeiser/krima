@@ -1,5 +1,5 @@
               <table class="table">
-                <tr><th><span id="a">Title:</span></th><th><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
+                <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
 				<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
