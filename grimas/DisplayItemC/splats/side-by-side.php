@@ -18,9 +18,6 @@
               <div class="card-body">
 <?= $t('rightBody', array('item' => $item)) ?>
               </div>
-			  <div class="card-body">
-<?= $t('leftBody', array('item' => $item)) ?>
-              </div>
             </div>
           </div>
         </div>
