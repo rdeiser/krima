@@ -1,4 +1,3 @@
-<!DOCTYPE html>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
@@ -16,7 +15,7 @@
 				funciton
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
-			  <form method="post" action="../UnboxingWorkflowC/UnboxingWorkflowC.php">
+			  <!--<form method="post" action="../UnboxingWorkflowC/UnboxingWorkflowC.php">
 				<div class="col">
 				<div class="card">
 				<div class="card-body">
@@ -28,4 +27,4 @@
 				</div>
 				</div>
 				</div>
-              </form>
+              </form>-->
