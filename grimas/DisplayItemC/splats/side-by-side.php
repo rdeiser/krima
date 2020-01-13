@@ -1,7 +1,7 @@
         <h1 class="page-header text-center"><?=$e($title)?></h1>
         <div class="row">
           <div class="col">
-            <div class="card-stat3">
+            <div class="card">
               <div class="card-header">
                 <h2 class="card-title"><?=$e($rightTitle)?></h2>
               </div>
