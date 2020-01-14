@@ -9,7 +9,7 @@ if ($item['process_type']=='') {
 }*/
 ?>
 <!--Following php color codes the Fulfillment Note if it matches one of the patterns-->
-<?php{
+<?php
 if ($item['fulfillment_note']=='') {
 		$style = 'style=";"';
 }
@@ -78,7 +78,6 @@ if ($item['fulfillment_note']=='') {
 }
 	else if ($item['fulfillment_note']=='*route*') {
 		$style = 'style="background-color:#cd3700;"';
-}
 }
 ?>
               <table class="table">
