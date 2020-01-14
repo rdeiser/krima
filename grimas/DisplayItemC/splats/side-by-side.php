@@ -5,7 +5,7 @@
 			$style = 'style="background-color: #6495ed;"';
 	}
 	else if ($item['statistics_note_3']=='HALE return') {
-			$style = 'style="background-color: #9f79ee;"';
+			$style = 'style="background-color: #ab82ff;"';
 	}
 	else if ($item['statistics_note_3']=='') {
 			$text = 'Send to Problem Shelf';
