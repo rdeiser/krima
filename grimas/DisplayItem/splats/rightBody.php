@@ -11,8 +11,8 @@ if ($item['process_type']=='') {
 <?php
 /*if ($item['fulfillment_note']=='') {
 		$style = 'style=";"';
-}*/
-	/*else*/ if ($item['fulfillment_note']=='send*') {
+}
+	else if ($item['fulfillment_note']=='send*') {
 		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='withdraw*') {
@@ -77,7 +77,7 @@ if ($item['process_type']=='') {
 }
 	else if ($item['fulfillment_note']=='*route*') {
 		$style = 'style="background-color:#cd3700;"';
-}
+}*/
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
