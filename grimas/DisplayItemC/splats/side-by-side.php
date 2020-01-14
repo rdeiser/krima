@@ -13,14 +13,7 @@
           <div class="col">
             <div class="card" <?=$style?>>
               <div class="card-header">
-                <h2 class="card-title"><?=
-				$item='0';
-				if $item['statistics_note_3']{
-					echo $e($item['statistics_note_3']);
-				}
-				else if !empty($e($item['statistics_note_3'])){
-					print_r("Send to Problem Shelf <br>");
-				}?></h2>
+                <h2 class="card-title"><?=$e($item['statistics_note_3'])?></h2>
               </div>
               <div class="card-body">
 <?= $t('rightBody', array('item' => $item)) ?>
