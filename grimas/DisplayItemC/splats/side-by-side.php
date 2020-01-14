@@ -7,6 +7,9 @@
 	else if ($item['statistics_note_3']=='HALE return') {
 			$style = 'style="background-color: #9f79ee;"';
 	}
+	else if ($item['statistics_note_3']=='') {
+			$style = 'style="background-color: green;"';
+	}
 					?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
