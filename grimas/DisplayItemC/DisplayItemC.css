@@ -34,10 +34,6 @@
 	float: none;
 }
 
-:-moz-placeholder{
-	font-size: 10px;
-}
-
 label {
 	font-weight: bold;
 }
@@ -52,4 +48,11 @@ h1 {
 	border-radius: 0.1em;
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   font-size: 9pt; 
+}
+::-moz-placeholder { /* Firefox 19+ */
+   font-size: 9pt; 
 }
