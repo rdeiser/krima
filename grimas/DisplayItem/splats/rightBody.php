@@ -10,73 +10,73 @@ if ($item['process_type']=='') {
 <!--Following php color codes the Fulfillment Note if it matches one of the patterns-->
 <?php
 if ($item['fulfillment_note']=='') {
-		$style2 = 'style=";"';
+		$style = 'style=";"';
 }
 	else if ($item['fulfillment_note']=='send*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='withdraw*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='voyager*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='transfer*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='return*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='please*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='lost*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='give*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='ILL*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='binding*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='route*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*send*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*withdraw*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*voyager*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*transfer*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*return*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*please*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*lost*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*give*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*ILL*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*binding*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='*route*') {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style = 'style="background-color:#cd3700;"';
 }
 ?>
               <table class="table">
@@ -86,7 +86,7 @@ if ($item['fulfillment_note']=='') {
 				<tr><th class="flip"><span>Barcode:</span><span>Códigos de procedencia:</span></th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th class="flip"><span>Location:</span><span>Ubicación:</span></th><td><?=$e($item['location'])?></td></tr>
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
-				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr <?=$style?>><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<!--<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
