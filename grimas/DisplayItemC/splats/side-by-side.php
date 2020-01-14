@@ -8,7 +8,7 @@
 			$style = 'style="background-color: #9f79ee;"';
 	}
 					?>
-		<h1 class="page-header text-center"><?=$e($title)?></h1>
+		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
           <div class="col">
             <div class="card" <?=$style?>>
