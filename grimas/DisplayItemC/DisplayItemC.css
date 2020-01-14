@@ -4,7 +4,7 @@
 .znew {
     background-color: #ffff00;
 }
-
+/*Bolds the contents of Statistics Note 3 field*/
 .statnote {
 	font-weight: bold;
 }
@@ -13,7 +13,7 @@
 	font-weight: bold;
 	text-align: center;
 }
-
+/*The following .flip section is for the cursor hover effect for the english/spanish text*/
 .flip>span {
 	color: transparent;
 	float: none;
@@ -49,7 +49,7 @@ h1 {
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
 }
-
+/*The following reduces the placeholder font size*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
    font-size: 7pt; 
 }

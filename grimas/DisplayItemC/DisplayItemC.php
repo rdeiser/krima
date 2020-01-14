@@ -8,7 +8,7 @@ class DisplayItemC extends GrimaTask {
 
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		
+		//For future testing to combine both grimas into one file-red 01/2020
 		/*if (isset($this['adding']) and ($this['adding'] == "true")) {
 			foreach ($this->item as $barcode) {
 			$this->item = new Item();

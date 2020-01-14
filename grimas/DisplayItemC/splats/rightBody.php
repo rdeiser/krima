@@ -1,3 +1,4 @@
+<!--Following php color codes the Process type if it is populated-->
 <?php
 if ($item['process_type']=='') {
 		$style = 'style=";"';
@@ -5,7 +6,7 @@ if ($item['process_type']=='') {
 	else if ($item['process_type']) {
 		$style = 'style="background-color:#cd3700;"';
 }
-
+/*Following php color codes the Fulfillment Note if it matches one of the patterns*/
 if ($item['fulfillment_note']=='') {
 		$style = 'style=";"';
 }
@@ -92,6 +93,7 @@ if ($item['fulfillment_note']=='') {
 				<tr><th></th><td></dt></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
+			  <!--The following combines the two grimas ontop of each other-->
 			  <form method="post" action="../UnboxingWorkflowC/UnboxingWorkflowC.php">
 				<div class="col">
 				<div class="card" style="width: 500px;left: 225px;">

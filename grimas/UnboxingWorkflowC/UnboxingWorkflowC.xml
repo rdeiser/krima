@@ -1,5 +1,5 @@
 <GrimaForm>
-    <Title>Unboxing WorkflowC</Title>
+    <Title>K-State Item Information</Title>
      <Field
         label="Barcode of physical item"
         name="unboxed_barcode"
