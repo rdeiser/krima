@@ -15,7 +15,7 @@
               <div class="card-header">
                 <h2 class="card-title"><?=
 				$item['statistics_note_3']='0';
-				if $e($item['statistics_note_3']){
+				if $item['statistics_note_3']{
 					echo $e($item['statistics_note_3']);
 				}
 				else if !empty($e($item['statistics_note_3'])){
