@@ -23,7 +23,7 @@ if ($item['process_type']=='') {
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <form method="post" action="../UnboxingWorkflowC/UnboxingWorkflowC.php">
 				<div class="col">
-				<div class="card-next">
+				<div class="card">
 				<div class="card-body">
 				<div class="form-row col-12 pb-4">
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
