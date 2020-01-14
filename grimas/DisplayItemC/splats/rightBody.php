@@ -1,5 +1,6 @@
-<?php if (!empty($item['process_type'])) {
-		$style = 'style="background-color:;"';
+<?php
+$i($item['process_type'])=0;
+if (!empty($item['process_type'])) {
 }
 	else if ($item['process_type']) {
 		$style = 'style="background-color:red;"';
