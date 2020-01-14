@@ -1,7 +1,7 @@
 <GrimaForm>
-    <Title>Unboxing WorkflowC</Title>
+    <Title>Unboxing Workflow</Title>
      <Field
-        label="Barcode of physical item"
+        label="Barcode of phsyical item"
         name="unboxed_barcode"
         required="yes"
         placeholder="Scan barcode..."
