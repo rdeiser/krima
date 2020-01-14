@@ -1,12 +1,12 @@
 <!--Following php color codes the Process type if it is populated-->
-<?php{
+<?php{/*
 if ($item['process_type']=='') {
 		$style = 'style=";"';
 }
 	else if ($item['process_type']) {
 		$style = 'style="background-color:#cd3700;"';
 }
-}
+}*/
 ?>
 <!--Following php color codes the Fulfillment Note if it matches one of the patterns-->
 <?php{
