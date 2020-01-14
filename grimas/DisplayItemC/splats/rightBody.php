@@ -5,6 +5,13 @@ if ($item['process_type']=='') {
 	else if ($item['process_type']) {
 		$style = 'style="background-color:#cd3700;"';
 }
+
+if ($item['fulfillment_note']=='') {
+		$style = 'style=";"';
+}
+	else if ($item['fulfillment_note']=='send*') {
+		$style = 'style="background-color:#cd3700;"';
+}
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
@@ -13,7 +20,7 @@ if ($item['process_type']=='') {
 				<tr><th class="flip"><span>Barcode:</span><span>Códigos de procedencia:</span></th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th class="flip"><span>Location:</span><span>Ubicación:</span></th><td><?=$e($item['location'])?></td></tr>
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
-				<tr><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr <?=$style?>><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
