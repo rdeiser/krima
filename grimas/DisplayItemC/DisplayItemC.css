@@ -51,8 +51,8 @@ h1 {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-   font-size: 9pt; 
+   font-size: 5pt; 
 }
 ::-moz-placeholder { /* Firefox 19+ */
-   font-size: 9pt; 
+   font-size: 5pt; 
 }
