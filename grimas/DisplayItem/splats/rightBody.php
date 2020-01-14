@@ -12,7 +12,7 @@ if ($item['process_type']=='') {
 if ($item['fulfillment_note']=='') {
 		$style2 = 'style=";"';
 }
-	else if ($item['fulfillment_note']=='send to jesus') {
+	else if (fnmatch($item['fulfillment_note']=='send*')) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 	/*else if ($item['fulfillment_note']=='withdraw*') {
