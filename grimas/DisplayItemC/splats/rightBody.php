@@ -12,6 +12,69 @@ if ($item['fulfillment_note']=='') {
 	else if ($item['fulfillment_note']=='send*') {
 		$style = 'style="background-color:#cd3700;"';
 }
+	else if ($item['fulfillment_note']=='withdraw*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='voyager*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='transfer*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='return*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='please*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='lost*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='give*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='ILL*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='binding*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='route*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*send*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*withdraw*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*voyager*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*transfer*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*return*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*please*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*lost*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*give*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*ILL*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*binding*') {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='*route*') {
+		$style = 'style="background-color:#cd3700;"';
+}
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
