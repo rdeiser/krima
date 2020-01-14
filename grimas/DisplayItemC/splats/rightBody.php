@@ -1,11 +1,60 @@
 <?php
-($item['process_type']=='null');
-if (!empty($item['process_type'])) {
-		$style = 'style= "text/css;"';
+if ($item['process_type']=='Acquisition') {
+			$style = 'style="background-color: #cd3700;"';
 }
-	else if ($item['process_type']) {
-		$style = 'style="background-color:red;"';
+
+else if ($item['process_type']=='Claimed Returned') {
+			$style = 'style="background-color: #cd3700;"';
 }
+
+else if ($item['process_type']=='Hold Shelf') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='In Process') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='In Transit to Remote Storage') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Loan') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Lost') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Lost Resource Sharing Item') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Lost and paid') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Missing') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Requested') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Resource Sharing Request') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Technical-Migration') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
+else if ($item['process_type']=='Transit') {
+			$style = 'style="background-color: #cd3700;"';
+}
+
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
