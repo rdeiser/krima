@@ -9,13 +9,13 @@ if ($item['process_type']=='') {
 ?>
 <!--Following php color codes the Fulfillment Note if it matches one of the patterns-->
 <?php
-/*if ($item['fulfillment_note']=='') {
-		$style = 'style=";"';
+if ($item['fulfillment_note']=='') {
+		$style2 = 'style=";"';
 }
 	else if ($item['fulfillment_note']=='send*') {
-		$style = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700;"';
 }
-	else if ($item['fulfillment_note']=='withdraw*') {
+	/*else if ($item['fulfillment_note']=='withdraw*') {
 		$style = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']=='voyager*') {
