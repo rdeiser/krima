@@ -19,7 +19,7 @@ if ($item['process_type']=='') {
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
 				<tr><th>Statistics Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>
 				</td></tr>
-				<tr></tr>
+				<th></th>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <form method="post" action="../UnboxingWorkflowC/UnboxingWorkflowC.php">
