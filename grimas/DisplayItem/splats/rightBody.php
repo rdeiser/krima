@@ -85,10 +85,10 @@ if ($item['fulfillment_note']=='') {
 				<tr><th class="flip"><span>Location:</span><span>Ubicación:</span></th><td><?=$e($item['location'])?></td></tr>
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style?>><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
-				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
+				<!--<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
-				<tr><th>Statistics Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>
+				<tr><th>Statistics Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>-->
 				</td></tr>
 				<tr><th></th><td></dt></tr>
               </table>
