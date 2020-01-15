@@ -13,7 +13,7 @@ class UnboxingWorkflowB extends GrimaTask {
 		$item->updateAlma();
 }
 	function print_success(){
-			GrimaTask::call('DisplayItemC', array('unboxed_barcode' => $this['unboxed_barcode']));
+			GrimaTask::call('DisplayItemB', array('unboxed_barcode' => $this['unboxed_barcode']));
 	}
 }
 
