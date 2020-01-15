@@ -89,8 +89,8 @@ if ($item['process_type']=='') {
 				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<!--<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
-				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
-				<tr><th>Statistics Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>-->
+				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
+				<tr><th>Statistics Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>
 				</td></tr>
 				<tr><th></th><td></dt></tr>
               </table>
