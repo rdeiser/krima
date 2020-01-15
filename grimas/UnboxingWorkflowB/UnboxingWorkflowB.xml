@@ -1,0 +1,14 @@
+<GrimaForm>
+    <Title>K-State Item Information</Title>
+     <Field
+        label="Barcode of physical item"
+        name="unboxed_barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+	<Field
+        name="next_barcode"
+		required="no"
+        visible="no"
+    />
+</GrimaForm>
