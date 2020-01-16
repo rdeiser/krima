@@ -1,5 +1,4 @@
 <?php 
-function $item['statistics_note_3'](){
 if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #cd5555;"';
 }
@@ -12,7 +11,6 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 	else if ($item['statistics_note_3']=='') {
 			$text = 'Send to Problem Shelf';
 	}
-}
 					?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
