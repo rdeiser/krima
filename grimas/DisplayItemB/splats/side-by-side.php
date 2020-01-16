@@ -1,5 +1,5 @@
 <?php 
-function location(){
+function $item['statistics_note_3'](){
 if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #cd5555;"';
 }
