@@ -7,9 +7,8 @@ if ($item['process_type']=='') {
 		$style = 'style="background-color:#cd3700;"';
 }
 //Following php color codes the Fulfillment Note if it matches one of the patterns
-if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
+if (preg_match("/[sS]end/", $item['fulfillment_note']))
 		$style2 = 'style="background-color:#cd3700;"'
-}
 
 	else if (preg_match("/[rR]te/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"'
