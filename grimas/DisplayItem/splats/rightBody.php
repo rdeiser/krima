@@ -8,43 +8,43 @@ if ($item['process_type']=='') {
 }
 //Following php color codes the Fulfillment Note if it matches one of the patterns
 if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 
 	else if (preg_match("/[rR]te/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 
 	else if ((preg_match("/[wW]ithdraw/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	
 	else if ((preg_match("/[vV]oyager/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[tT]ransfer/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[rR]eturn/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[pP]lease/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[lL]ost/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[gG]ive/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[iI][lL][lL]/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[bB]inding/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 	else if ((preg_match("/[rR]oute/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#cd3700"';
 }
 
 	else if ($item['fulfillment_note']=='') {
