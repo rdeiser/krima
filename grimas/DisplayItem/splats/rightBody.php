@@ -1,6 +1,6 @@
 <?php
 //Following php color codes the Process type if it is populated
-if (isset$item['process_type']) {
+if (isset($item['process_type'])) {
 		$style = 'style="background-color:#cd3700;"';
 }
 //Following php color codes the Fulfillment Note if it matches one of the patterns
