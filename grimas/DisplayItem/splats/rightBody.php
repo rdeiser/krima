@@ -9,7 +9,7 @@ if ($item['process_type']=='') {
 //Following php color codes the Fulfillment Note if it matches one of the patterns
 
 	//else if (fnmatch("send*",$txt)) {
-if (preg_match("/[a-zA-Z]","send")); {
+if (preg_match($item['fulfillment_note']=='"/[a-zA-Z]","send"')); {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 
