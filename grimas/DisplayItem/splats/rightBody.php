@@ -10,10 +10,15 @@ if ($item['process_type']=='') {
 if (preg_match("/[a-zA-z]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
-/*if ($item['fulfillment_note']=='') {
+
+	else if (preg_match("/[rR]te/", $item['fulfillment_note'])) {
+		$style2 = 'style="background-color:#cd3700;"';
+}
+
+	else if ($item['fulfillment_note']=='') {
 		$style2 = 'style=";"';
 }
-	else if (fnmatch("send*",$txt)) {
+	/*else if (fnmatch("send*",$txt)) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 	/*else if ($item['fulfillment_note']=='withdraw*') {
