@@ -13,11 +13,10 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 	else if (preg_match("/[rR]te/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
-/*
 	else if ((preg_match("/[wW]ithdraw/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"'
 }
-	
+/*	
 	else if ((preg_match("/[vV]oyager/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"'
 }
