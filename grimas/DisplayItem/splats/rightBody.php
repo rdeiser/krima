@@ -7,7 +7,7 @@ if ($item['process_type']=='') {
 		$style = 'style="background-color:#cd3700;"';
 }
 //Following php color codes the Fulfillment Note if it matches one of the patterns
-if (preg_match("/[a-zA-z]end/", $item['fulfillment_note'])) {
+if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 
@@ -15,75 +15,41 @@ if (preg_match("/[a-zA-z]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 
+	else if ((preg_match("/[wW]ithdraw/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	
+	else if ((preg_match("/[vV]oyager/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[tT]ransfer/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[rR]eturn/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[pP]lease/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[lL]ost/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[gG]ive/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[iI][lL][lL]/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[bB]inding/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+	else if ((preg_match("/[rR]oute/", $item['fulfillment_note'])) {
+		$style = 'style="background-color:#cd3700;"';
+}
+
 	else if ($item['fulfillment_note']=='') {
 		$style2 = 'style=";"';
 }
-	/*else if (fnmatch("send*",$txt)) {
-		$style2 = 'style="background-color:#cd3700;"';
-}
-	/*else if ($item['fulfillment_note']=='withdraw*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='voyager*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='transfer*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='return*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='please*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='lost*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='give*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='ILL*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='binding*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='route*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*send*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*withdraw*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*voyager*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*transfer*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*return*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*please*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*lost*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*give*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*ILL*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*binding*') {
-		$style = 'style="background-color:#cd3700;"';
-}
-	else if ($item['fulfillment_note']=='*route*') {
-		$style = 'style="background-color:#cd3700;"';
-}*/
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
