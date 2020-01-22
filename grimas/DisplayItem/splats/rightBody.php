@@ -13,6 +13,12 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 	else if (preg_match("/[rR]te/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
+	else if (preg_match("/[wW]ithdrawn/", $item['fulfillment_note'])) {
+		$style2 = 'style="background-color:#cd3700;"';
+}
+	else if ($item['fulfillment_note']=='') {
+		$style2 = 'style=";"';
+}
 /*
 	else if ((preg_match("/[wW]ithdraw/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"'
@@ -44,10 +50,10 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 	else if ((preg_match("/[rR]oute/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"'
 }
-*/
+
 	else if ($item['fulfillment_note']=='') {
 		$style2 = 'style=";"';
-}
+}*/
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
