@@ -1608,6 +1608,7 @@ class AlmaObject implements ArrayAccess {
 		$xpath = new DomXpath($this->xml);
 		$node = $xpath->query($this->el_address[$offset]);
 		$node[0]->nodeValue = $value;
+		$node =nodeValue = $value;
 	}
 
 	function offsetUnset($offset) {
