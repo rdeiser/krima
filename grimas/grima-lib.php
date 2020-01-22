@@ -1604,10 +1604,15 @@ class AlmaObject implements ArrayAccess {
 		return null;
 	}
 
-	function offsetSet($offset, $value) {
+	if (function offsetSet($offset, $value)) {
 		$xpath = new DomXpath($this->xml);
 		$node = $xpath->query($this->el_address[$offset]);
 		$node[0]->nodeValue = $value;
+	}
+		else if (function offsetSet($offset, $value)) {
+		$xpath = new DomXpath($this->xml);
+		$node = $xpath->query($this->el_address[$offset]);
+		$node[0]->nodeValue = null;
 	}
 
 	function offsetUnset($offset) {
