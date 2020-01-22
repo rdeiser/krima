@@ -16,6 +16,15 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 	else if (preg_match("/[wW]ithdrawn/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
+	else if (preg_match("/[wW]ithdraw/", $item['fulfillment_note'])) {
+		$style2 = 'style="background-color:#cd3700;"';
+}
+	else if (preg_match("/[vV]oyager/", $item['fulfillment_note'])) {
+		$style2 = 'style="background-color:#cd3700;"';
+}
+	else if (preg_match("/[tT]transfer/", $item['fulfillment_note'])) {
+		$style2 = 'style="background-color:#cd3700;"';
+}
 	else if ($item['fulfillment_note']=='') {
 		$style2 = 'style=";"';
 }
