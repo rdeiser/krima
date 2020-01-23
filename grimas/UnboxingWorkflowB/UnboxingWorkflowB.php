@@ -11,6 +11,7 @@ class UnboxingWorkflowB extends GrimaTask {
 		$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		if (empty($item['inventory_date'])){
 			$item['inventory_date'] = date_create("Y-m-d");
+			echo date_format($item['inventory_date'],"Y-m-d \Z");
 		}
 		$item->updateAlma();
 }
