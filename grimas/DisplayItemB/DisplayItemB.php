@@ -17,5 +17,6 @@ class DisplayItemB extends GrimaTask {
 		$this->splatVars['item'] = $this->item;
 }
 }
+}
 
 DisplayItemB::RunIt();
