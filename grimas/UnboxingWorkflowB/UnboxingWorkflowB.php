@@ -10,7 +10,7 @@ class UnboxingWorkflowB extends GrimaTask {
 		$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 		$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		if (empty($item['inventory_date'])){
-			$item['inventory_date'] = date_create("Y-m-d");
+			$item['inventory_date'] = date_create("2020-01-23");
 			echo date_format($item['inventory_date'],"Y-m-d \Z");
 		}
 		$item->updateAlma();
