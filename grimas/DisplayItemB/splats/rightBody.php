@@ -99,7 +99,7 @@ if ($item['fulfillment_note']=='') {
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <!--The following combines the two grimas ontop of each other-->
 			  <!--<form method="post" action="../UnboxingWorkflowB/UnboxingWorkflowB.php">-->
-			  <form method="post" action="/DisplayItemB.php">
+			  <form method="post" action="../DisplayItemB.php">
 				<div class="col">
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
