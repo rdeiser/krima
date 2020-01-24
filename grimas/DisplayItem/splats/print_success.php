@@ -2,6 +2,7 @@
 <html>
   <head>
 <?=$t('head')?>
+<meta name="google" content="notranslate">
   </head>
   <body>
       <div class="container task-<?=$e($basename)?>">
