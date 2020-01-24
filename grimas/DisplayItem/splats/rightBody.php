@@ -55,7 +55,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 else if (preg_match("/[dD]bm/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
-else if (preg_match("/[dD]DM/", $item['fulfillment_note'])) {
+else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 	else if ($item['fulfillment_note']) {
