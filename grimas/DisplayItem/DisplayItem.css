@@ -34,6 +34,11 @@
 	float: none;
 }
 
+td {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 label {
 	font-weight: bold;
 }
