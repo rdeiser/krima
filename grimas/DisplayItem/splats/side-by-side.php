@@ -11,6 +11,7 @@
 			$text = '';
 	}
 	else if ($item['statistics_note_3']=='') {
+			$style = 'style=";"';
 			$text = 'Send to Problem Shelf';
 	}
 					?>
