@@ -34,6 +34,9 @@
 	float: none;
 }
 
+.flip {
+	width: 333px;
+}
 td {
 	display: flex;
 	flex-wrap: wrap;
