@@ -17,6 +17,7 @@ The next form will display the **Unboxed** physical item information.  The **Des
 ![Screenshot of grima form](images/DisplayItem-out2.PNG)
 
 When ready, you can scan the next barcode using the form at the bottom of the page:
+
 ![Screenshot of grima form](images/DisplayItem-out3.PNG)
 
 ## Color Code Table
