@@ -7,24 +7,24 @@ This application facilitates the **Unboxing Workflow** by providing you with imp
 
 ## Procedure
 The first form asks for you to scan a barcode.  This barcode can be scanned with the barcode scanner or by being typed in.  When you have located the barcode on the physical piece, enter that barcode into the form:
-![Screenshot of grima form](images/Displayitem-out0.png)
+![Screenshot of grima form](images/DisplayItem-out0.png)
 
 If the barcode does not exist within the system you will get an error.  Check the physical piece for other barocdes and if they all return the following error, place the physical item on the **Problem Shelf**:
-![Screenshot of grima form](images/Displayitem-out1.png)
+![Screenshot of grima form](images/DisplayItem-out1.png)
 
 The next form will display the **Unboxed** physical item information.  The **Destination** will display at the top of the page followed by **Title**, **Call Number**, **Description**, **Barcode**, **Location**, **Process Type**, **Fulfillment Note**, and the**Destination** again.  The background color of the form is related to the physical item's destination.  **Please review the color code table below.**  If the **Process Type** row has a background color of <span style="color:#cd3700">red</span> place the physical item on the **Problem Shelf**, ignoring the stated destination.  If the **Fulfillment Note** row has a background color of <span style="color:#cd3700">red</span> place the physical item on the **Problem Shelf**, ignoring the stated destination:
-![Screenshot of grima form](images/Displayitem-out2.png)
+![Screenshot of grima form](images/DisplayItem-out2.png)
 
 When ready, you can scan the next barcode using the form at the bottom of the page:
-![Screenshot of grima form](images/Displayitem-out3.png)
+![Screenshot of grima form](images/DisplayItem-out3.png)
 
 ## Color Code Table
 
 |Destination|Description|
 |---|---|
-|![Screenshot of grima form](images/Displayitem-out4.png)|Place physical item on **HALE return** shelves|
-|![Screenshot of grima form](images/Displayitem-out6.png)|Place physical item on **ANNEX ingest** shelves|
-|![Screenshot of grima form](images/Displayitem-out5.png)|Place physical item on **To be WITHDRAWN** shelves|
-|![Screenshot of grima form](images/Displayitem-out9.png)|Place physical item on **Problem Shelf**|
-|![Screenshot of grima form](images/Displayitem-out7.png)|Place physical item on **Problem Shelf**|
-|![Screenshot of grima form](images/Displayitem-out8.png)|Place physical item on **Problem Shelf**|
+|![Screenshot of grima form](images/DisplayItem-out4.png)|Place physical item on **HALE return** shelves|
+|![Screenshot of grima form](images/DisplayItem-out6.png)|Place physical item on **ANNEX ingest** shelves|
+|![Screenshot of grima form](images/DisplayItem-out5.png)|Place physical item on **To be WITHDRAWN** shelves|
+|![Screenshot of grima form](images/DisplayItem-out9.png)|Place physical item on **Problem Shelf**|
+|![Screenshot of grima form](images/DisplayItem-out7.png)|Place physical item on **Problem Shelf**|
+|![Screenshot of grima form](images/DisplayItem-out8.png)|Place physical item on **Problem Shelf**|
