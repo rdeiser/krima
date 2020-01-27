@@ -20,9 +20,11 @@ When ready, you can scan the next barcode using the form at the bottom of the pa
 
 ## Color Code Table
 
-|Destination|Color|Description|
-|---|---|---|
-|<span style="background-color:#ab82ff>**Hale return**</span>|$1600|||
-|   |   |   |
-|   |   |   |
-|   |   |   |
+|Destination|Description|
+|---|---|
+|![Screenshot of grima form](images/Displayitem-out4.png)|Place physical item on **HALE return** shelves|
+|![Screenshot of grima form](images/Displayitem-out6.png)|Place physical item on **ANNEX ingest** shelves|
+|![Screenshot of grima form](images/Displayitem-out5.png)|Place physical item on **To be WITHDRAWN** shelves|
+|![Screenshot of grima form](images/Displayitem-out9.png)|Place physical item on **Problem Shelf**|
+|![Screenshot of grima form](images/Displayitem-out7.png)|Place physical item on **Problem Shelf**|
+|![Screenshot of grima form](images/Displayitem-out8.png)|Place physical item on **Problem Shelf**|
