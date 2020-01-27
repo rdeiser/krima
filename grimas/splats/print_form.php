@@ -8,7 +8,7 @@
       <div class="container task-<?=$e($basename)?>">
         <div class="container mt-4 position-relative">
           <div class="position-absolute mx-auto help-button">
-            <a class="btn btn-info" href="<?=$e($basename)?>.md" target="_blank">?</a>
+            <a class="btn btn-info" href="<?=$e($basename)?>.html" target="_blank">?</a>
           </div>
         </div>
         <!-- form -->
