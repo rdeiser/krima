@@ -1,40 +1,28 @@
-# MoreItems - add multiple similar items to a holding
+# K-State Item Information - displays item information
 
-This grima helps you add multiple items to a record, such as a
-set or serial record. After adding each record, you will be
-prompted to add a new one, with the option of changing fields
-like Enumeration and Chronology.
+This application facilitates the **Unboxing Workflow** by providing you with important information.  It provides you with the physical item's **Title**, **Call Number**, **Description**, **Barcode**, **Location**, **Process Type**, **Fulfillment Note**, and its final **Destination**.  The application is color coded to provide a stimulated eye response, so please review the color code table below.  After scanning your first barcode, you will be able to scan your next barcode from the results page.  If you have any questions please do not hesitate to ask Library Staff.
 
 ## Input
-* Barcode of "model" item, on which copies will be based
+* Barcode of **Unboxed** physical item found from the outside cover, inside cover, or within the first 5 pages.  The barcode can be scanned in using the barcode scanner or typed in.  The search is not case sensitive.  
 
 ## Procedure
-The first form asks for a model item. If you're adding
-the newest item to a serial, enter the barcode for the
-most recent issue, confirming that all fields (item policy, etc)
-are correct. If the holding you're adding items to doesn't have
-any yet, go ahead and add the first one as you normally would,
-making sure all fields are as you want them. Then enter that
-barcode into the form:
-![Screenshot of grima form](images/MoreItems-out0.png)
+The first form asks for you to scan a barcode.  This barcode can be scanned with the barcode scanner or by being typed in.  When you have located the barcode on the physical piece, enter that barcode into the form:
+![Screenshot of grima form](images/Displayitem-out0.png)
 
-The next form will show you some of the properties of the model
-item (on the right), and it also enter some of those into the
-form on the left, prompting you to create your new item:
-![Screenshot of grima form](images/MoreItems-out1.png)
+If the barcode does not exist within the system you will get an error.  Check the physical piece for other barocdes and if they all return the following error, place the physical item on the **Problem Shelf**:
+![Screenshot of grima form](images/Displayitem-out1.png)
 
-Modify the fields you need to, such as incrementing the
-Enumeration and Chronology to add as the next item. No need
-to "generate" the description; it will change as you type!
-Then scan in the new item's barcode:
-![Screenshot of grima form](images/MoreItems-out2.png)
+The next form will display the **Unboxed** physical item information.  The **Destination** will display at the top of the page followed by **Title**, **Call Number**, **Description**, **Barcode**, **Location**, **Process Type**, **Fulfillment Note**, and the**Destination** again.  The background color of the form is related to the physical item's destination.  **Please review the color code table below.**  If the **Process Type** row has a background color of <span style="color:#cd3700">red</span> place the physical item on the **Problem Shelf**, ignoring the stated destination.  If the **Fulfillment Note** row has a background color of <span style="color:#cd3700">red</span> place the physical item on the **Problem Shelf**, ignoring the stated destination:
+![Screenshot of grima form](images/Displayitem-out2.png)
 
-Submit the form to create the new item. After this is done,
-it will bring up the form again, using the item you just added
-as the next model:
-![Screenshot of grima form](images/MoreItems-out3.png)
+When ready, you can scan the next barcode using the form at the bottom of the page:
+![Screenshot of grima form](images/Displayitem-out3.png)
 
-Now you can quickly add lots of items in a sequence!
+## Color Code Table
 
-## API requirements
-* Bibs - read/write
+|Destination|Color|Description|
+|---|---|---|
+|<span style="background-color:#ab82ff>**Hale return**</span>|$1600|||
+|   |   |   |
+|   |   |   |
+|   |   |   |

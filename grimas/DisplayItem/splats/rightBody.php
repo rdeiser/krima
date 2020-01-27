@@ -75,7 +75,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?=$e($item['statistics_note_3'])?>
 				</td></tr>
-				<tr><th></th><td></dt></tr>
+				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <!--The following combines the two grimas ontop of each other-->
