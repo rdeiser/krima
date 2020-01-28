@@ -1,5 +1,5 @@
 theme: jekyll-theme-dinky
-baseurl: /
+baseurl: https://rdeiser.github.io/krima/
 repository: rdeiser/krima
 destination: dist
 exclude: [
