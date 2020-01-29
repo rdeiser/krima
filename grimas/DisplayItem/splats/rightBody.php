@@ -67,7 +67,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e($item['call_number'])?></td></tr>
 				<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>
 				<tr><th class="flip"><span>Barcode:</span><span>Códigos de procedencia:</span></th><td><?=$e($item['barcode'])?></td></tr>
-				<tr><th class="flip"><span>Location:</span><span>Ubicación:</span></th><td><?=$e($item['location'])?></td></tr>
+				<!--<tr><th class="flip"><span>Location:</span><span>Ubicación:</span></th><td><?=$e($item['location'])?></td></tr>-->
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Nota de servicios al usuario:</span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<!--<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
