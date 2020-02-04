@@ -10,7 +10,7 @@
 </a>
 </div>
 <h1 id="k-state-item-information---displays-item-information">K-State Item Information - muestra información del artículo</h1>
-<p id=introduccion>Esta aplicación facilita el flujo de trabajo de desempacar al proporcionarle información importante. Le proporciona el <strong>Título físico</strong>, <strong>Número de clasificación</strong>, <strong>Descripción</strong>, <strong>Códigos de procedencia</strong>, <strong>Tipo de proceso</strong>, <strong>Nota de Procesamiento</strong> y su <strong>Destino</strong> final. La aplicación está codificada por colores para proporcionar una respuesta visual estimulada, así que revise la tabla de códigos de color a continuación. Después de escanear su primer código de barras, podrá escanear su próximo código de barras desde la página de resultados. Si tiene alguna pregunta, no dude en preguntar al personal de la biblioteca.</p>
+<p id=introduccion>Esta aplicación facilita el flujo de trabajo de desempacar al proporcionarle información importante. Le proporciona el <strong>Título físico</strong>, <strong>Número de clasificación</strong>, <strong>Descripción</strong>, <strong>Código de barras</strong>, <strong>Tipo de proceso</strong>, <strong>Nota de Procesamiento</strong> y su <strong>Destino</strong> final. La aplicación está codificada por colores para proporcionar una respuesta visual estimulada, así que revise la tabla de códigos de color a continuación. Después de escanear su primer código de barras, podrá escanear su próximo código de barras desde la página de resultados. Si tiene alguna pregunta, no dude en preguntar al personal de la biblioteca.</p>
 <h2 id="entrada">Entrada</h2>
 <ul>
 <li>Códigos de barras del artículo físico desempaquetado encontrado desde la cubierta exterior, cubierta interior o dentro de las primeras 5 páginas. El código de barras puede escanearse con el escáner de código de barras o ingresarse. La búsqueda no distingue entre mayúsculas y minúsculas.</li>
@@ -18,10 +18,10 @@
 <h2 id="procedimiento">Procedimiento</h2>
 <p>El primer formulario le pide que escanee el código de barras. Estos códigos de barras se pueden escanear con el escáner de código de barras o ingresandolos. Cuando haya ubicado el código de barras en la pieza física, ingrese dichos códigos de forma en el formulario:
 <img src="images/DisplayItem-out0.PNG" alt="Screenshot of grima form" border="2"/></p>
-<p>Si el código de barras no existen dentro del sistema, recibirá un error. Verifique la pieza física para otros códigos de barras y si todos devuelven el siguiente error, coloque el artículo físico en el <strong>Estante del problema</strong>:
+<p>Si el código de barras no existen dentro del sistema, recibirá un error. Verifique la pieza física para otros códigos de barras y si todos devuelven el siguiente error, coloque el artículo físico en el <strong>Estante de problema</strong>:
 <img src="images/DisplayItem-out1.PNG" alt="Screenshot of grima form" border="2"/></p>
 <br>
-<p>El siguiente formulario mostrará la información del artículo físico <strong>desempaquetado</strong>. El Destino se mostrará en la parte superior de la página seguido de <strong>Título</strong>, <strong>Número de clasificación</strong>, <strong>Descripción</strong>, <strong>Códigos de barras</strong>, <strong>Tipo de proceso</strong>, <strong>Nota de Procesamiento</strong>, y el <strong>Destino</strong> nuevamente. El color de fondo del formulario está relacionado con el destino del artículo físico. <strong>Revise la tabla de códigos de color a continuación</strong>. Si la fila <strong>Tipo de proceso</strong> tiene un color de fondo de <span style=”color: #cd3700”>rojo</span> coloque el artículo físico en el <strong>Estante del problema</strong>, ignorando el destino indicado. Si la fila <strong>Nota de cumplimiento</strong> tiene un color de fondo <span style=”color: #cd3700”>rojo</span>, coloque el artículo físico en el <strong>Estante del problema</strong>, ignorando El destino indicado:
+<p>El siguiente formulario mostrará la información del artículo físico <strong>desempaquetado</strong>. El Destino se mostrará en la parte superior de la página seguido de <strong>Título</strong>, <strong>Número de clasificación</strong>, <strong>Descripción</strong>, <strong>Códigos de barras</strong>, <strong>Tipo de proceso</strong>, <strong>Nota de Procesamiento</strong>, y el <strong>Destino</strong> nuevamente. El color de fondo del formulario está relacionado con el destino del artículo físico. <strong>Revise la tabla de códigos de color a continuación</strong>. Si la fila <strong>Tipo de proceso</strong> tiene un color de fondo de <span style=”color: #cd3700”>rojo</span> coloque el artículo físico en el <strong>Estante de problema</strong>, ignorando el destino indicado. Si la fila <strong>Nota de cumplimiento</strong> tiene un color de fondo <span style=”color: #cd3700”>rojo</span>, coloque el artículo físico en el <strong>Estante de problema</strong>, ignorando El destino indicado:
 </p>
 <br>
 <p><img src="images/DisplayItem-out2esp.PNG" alt="Screenshot of grima form" border="2"/></p>
@@ -30,7 +30,16 @@
 <br>
 <br>
 <h2 id="color-code-table">Tabla de códigos de color</h2>
-<table border="3" width="100">
+<table border="3" width="100" style="
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-top: 1px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 1100px;
+">
 <thead>
 <tr>
 <th>Destino</th>
@@ -41,27 +50,27 @@
 <tr>
 <!--Added boarder to images-->
 <td><img src="images/DisplayItem-out4.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el artículo físico en los estantes de devolución <strong>HALE</strong></td>
+<td>Coloque el artículo en el carrito etiquetado<strong>Para HALE</strong></td>
 </tr>
 <tr>
 <td><img src="images/DisplayItem-out6.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el artículo físico en los estantes <strong> ANNEX ingest </strong></td>
+<td>a.	Coloque el artículo en el carrito etiquetado<strong> ANEXO</strong></td>
 </tr>
 <tr>
 <td><img src="images/DisplayItem-out5.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el elemento físico en los estantes <strong>Para RETIRAR</strong></td>
+<td>Coloque el artículo en el carrito etiquetado  <strong>Para Remover</strong></td>
 </tr>
 <tr>
 <td><img src="images/DisplayItem-out9.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el elemento físico en <strong> Plataforma de problemas </strong></td>
+<td>Lleve el artículo al estante etiquetado  <strong> Estante de problema </strong></td>
 </tr>
 <tr>
 <td><img src="images/DisplayItem-out7.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el elemento físico en <strong> Plataforma de problemas </strong></td>
+<td>Lleve el artículo al estante etiquetado  <strong> Estante de problema </strong></td>
 </tr>
 <tr>
 <td><img src="images/DisplayItem-out8.PNG" alt="Screenshot of grima form"/></td>
-<td>Coloque el elemento físico en <strong> Plataforma de problemas </strong></td>
+<td>Lleve el artículo al estante etiquetado  <strong> Estante de problema </strong></td>
 </tr>
 </tbody>
 </table>
