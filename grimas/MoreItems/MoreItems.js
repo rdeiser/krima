@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 		const chronology = ( chronology_i ? '(' + chronology_i + 
 			( useBoth && chronology_j ? ':' + chronology_j : '' ) + ')': '' );
 
-        const description = enumeration +  chronology;
+        const description = enumeration + ' ' + chronology;
 
         description_elt.value = description;
     };
