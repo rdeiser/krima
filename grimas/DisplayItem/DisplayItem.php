@@ -10,6 +10,7 @@ class DisplayItem extends GrimaTask {
 		//$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 		//$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		$item['inventory_date'] = date("Y-m-d");
+		//$item['inventory_date'] = date("Y-m-d g:i:s A");
 		$item->updateAlma();
 		}
 {
