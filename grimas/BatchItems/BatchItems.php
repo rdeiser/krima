@@ -2,7 +2,7 @@
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
-	public $holdinglist = array();
+	public $biblist = array();
 	
 	function do_task() {
 		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
