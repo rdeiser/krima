@@ -1,11 +1,11 @@
 <GrimaForm>
     <Title>Batch Item Record Creation</Title>
-    <Field
+	<Field
         name="holding_id"
-        label="Holdings without Item Records"
-        autocomplete="off"
-        required="yes"
-        placeholder="Holdings IDs Number, one per line."
-		rows="5"
+		lable="Holdings without Item Records"
+		autocomplete="off"
+		required="yes"
+		palceholder="Holdings IDs Number, one per line."
+		rows="20"
     />
 </GrimaForm>
