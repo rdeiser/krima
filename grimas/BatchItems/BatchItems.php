@@ -4,8 +4,8 @@ require_once("../grima-lib.php");
 class BatchItems extends GrimaTask {
 	public $holdinglist = array();
 	
-	function do task() {
-		$this->holding = preg_split('/\r\n|\r|\n/',$this['holding_id']);
+	function do_task() {
+		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
 
 		# BIBS
 		foreach ($this->bibs as $mmsid) {
