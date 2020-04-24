@@ -23,6 +23,10 @@ class BatchItems extends GrimaTask {
 			$this->item = new Item();
 			$newItem->addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 		}
+		
+		$this->splatVars['width'] = 12;
+		$this->splatVars['biblist'] = $this->biblist;
+		$this->splatVars['body'] = array( 'list', 'messages' );
 	}
 
 }
