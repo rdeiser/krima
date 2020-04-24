@@ -15,6 +15,10 @@ class BatchItems extends GrimaTask {
 			$this->biblist[] = $bib;
 		}
 
+		## HOLDING
+		$this->biblist[0]->getHoldings();
+		$mfhd = $this->biblist[0]->holdings[0];
+
 			$ret = $newItem->addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 			$this->item = new Item();
 			$this->item->xml = $ret;
