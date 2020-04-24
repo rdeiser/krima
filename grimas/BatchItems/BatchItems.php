@@ -6,20 +6,9 @@ class BatchItems extends GrimaTask {
 	public $biblist = array();
 	
 	function do_task() {
-		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
-
-		# BIBS
-		foreach ($this->bibs as $mmsid) {
-			$bib = new Bib();
-			$bib->loadFromAlma($mmsid);
-			$this->biblist[] = $bib;
-		}
-
-		## HOLDING
-		$this->biblist[0]->getHoldings();
-		$mfhd = $this->biblist[0]->holdings[0];
-
-		function do_task() {
+		$this->holdings = preg_split('/\r\n|\r|\n/',$this['mms']);
+		$this->holding->loadFromAlma($this['holding_id']);
+		foreach ($this->holding->item as $item) {
 			$this->item = new Item();
 			$newItem->addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 		}
