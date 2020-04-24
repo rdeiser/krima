@@ -1,4 +1,5 @@
 <?php
+
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
@@ -7,20 +8,15 @@ class BatchItems extends GrimaTask {
 	function do_task() {
 		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
 
+		# BIBS
 		foreach ($this->bibs as $mmsid) {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
 			$this->biblist[] = $bib;
 		}
 
-			$ret = $newItem->addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
-			$this->item = new Item();
-			$this->item->xml = $ret;
-
-		$this->splatVars['width'] = 12;
-		$this->splatVars['biblist'] = $this->biblist;
-		$this->splatVars['body'] = array( 'list', 'messages' );
-
 	}
+
 }
+
 BatchItems::RunIt();
