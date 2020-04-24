@@ -3,18 +3,29 @@
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
-	public $biblist = array();
+	public $holdinglist = array();
 	
 	function do_task() {
 		$this->holdings = preg_split('/\r\n|\r|\n/',$this['mms']);
-		$this->holding->loadFromAlma($this['holding_id']);
-		/*foreach ($this->holding->item as $item) {
+
+		# HOLDING
+		foreach ($this->holdings as $holdingid) {
+			$holding = new Holding();
+			$holding->loadFromAlma($holdingid);
+			$this->holdinglist[] = $holding;
+		}
+
+		## BIBS
+		$this->holdinglist[0]->getBib();
+		$mmsid = $this->holdinglist[0]->bib[0];
+
+		/*function do_task() {
 			$this->item = new Item();
 			$newItem->addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 		}*/
 		
 		$this->splatVars['width'] = 12;
-		$this->splatVars['biblist'] = $this->biblist;
+		$this->splatVars['holdinglist'] = $this->holdinglist;
 		$this->splatVars['body'] = array( 'list', 'messages' );
 	}
 
