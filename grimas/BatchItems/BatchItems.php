@@ -9,11 +9,13 @@ class BatchItems extends GrimaTask {
 		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
 
 		# BIBS
-		foreach ($this->bibs as $mmsid) {
-			$bib = new Bib();
+		foreach ($this->biblist as $bib) {/*($this->bibs as $mmsid) {*/
+			$this->biblist[0]/>getHoldings();
+			$mfhd = $this->biblist[0]->holdings[0];
+			/*$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
 			$this->biblist[] = $bib;
-			/*$this->bib->getHoldings();
+			$this->bib->getHoldings();
 			if ($holding['Library']=='HALE') {
 				addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 			$this->item = new Item();
