@@ -1,5 +1,5 @@
-<?php foreach($holdinglist as $holding): ?>
 <div class='card ml-4 holding'>
+<?php foreach($holdinglist as $holding): ?>
   <div class='card-header'>
     <h2 class='card-title'>Holding #<?=$e($holding['holding_id'])?>
       <a class='d-print-none viewlink' href="../PrintHolding/PrintHolding.php?holding_id=<?=$e($holding['holding_id'])?>">(view)</a>
@@ -20,5 +20,5 @@
       <?=$t('item', array('item' => $item))?>
     <?php endforeach ?>
   </div>
+  <?php endforeach ?>
 </div>
-           
