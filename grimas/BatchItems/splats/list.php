@@ -1,8 +1,7 @@
-<ul>
-<?php foreach($biblist as $bib): ?>
-<li><?= $bib->get_title_proper() ?>
- (<a href="../Hierarchy/Hierarchy.php?mms_id=<?= $bib['mms_id']?>">hierarchy</a>)
- (<a href="../PrintBib/PrintBib.php?mms_id=<?= $bib['mms_id']?>">view record</a>)
-</li>
-<?php endforeach ?>
-</ul>
+<div class='card mt-2 bib'>
+  <div class='card-header'>
+    <h1 class='card-title'>Holding #<?=$e($holding['holding_id'])?>
+      <a class='d-print-none viewlink' href="../PrintHolding/PrintHolding.php?holding_id=<?=$e($holding['holding_id'])?>">(view)</a>
+    </h1>
+  </div>
+  </div>
