@@ -14,13 +14,13 @@ class BatchItems extends GrimaTask {
 			$bib->loadFromAlma($mmsid);
 			$this->biblist[] = $bib;
 			$this->bib->getHoldings();
-			if ($holding['Library']=='HALE') {
+			/*if ($holding['Library']=='HALE') {
 				addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
 			$this->item = new Item();
 			$this->item->xml;
 			} else {
 				GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
-			}
+			}*/
 		}
 
 		$this->splatVars['biblist'] = $this->biblist;
