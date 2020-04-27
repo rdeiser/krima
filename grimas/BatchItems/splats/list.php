@@ -1,3 +1,4 @@
+<?php foreach($holdinglist as $holding): ?>
 <div class='card ml-4 holding'>
   <div class='card-header'>
     <h2 class='card-title'>Holding #<?=$e($holding['holding_id'])?>
