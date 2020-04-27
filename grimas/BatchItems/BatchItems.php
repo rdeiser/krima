@@ -3,30 +3,17 @@
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
-	public $biblist = array();
+	public $holdinglist = array();
 	
 	function do_task() {
-		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
-
-		# BIBS
-		foreach ($this->biblist as $bib) {/*($this->bibs as $mmsid) {*/
-			$this->biblist[0]/>getHoldings();
-			$mfhd = $this->biblist[0]->holdings[0];
-			/*$bib = new Bib();
-			$bib->loadFromAlma($mmsid);
-			$this->biblist[] = $bib;
-			$this->bib->getHoldings();
-			if ($holding['Library']=='HALE') {
-				addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
-			$this->item = new Item();
-			$this->item->xml;
-			} else {
-				GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
-			}*/
+		$this->holdings = preg_split('/\r\n|\r|\n/',$this['mfhd']);
+		foreach ($this->holding as $holdingid) {
+			$holding = new Holding();
+			$holding->loadFromAlma($holdingid);
+			$this->holdinglist[] = $holding;
 		}
-
-		$this->splatVars['biblist'] = $this->biblist;
-		$this->splatVars['body'] = array( 'holding', 'messages' );
+		
+		$this->splatVars['holding'] = $this->holding;
 	}
 
 }
