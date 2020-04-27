@@ -3,22 +3,29 @@
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
-	public $holdinglist = array();
+	public $biblist = array();
 	
 	function do_task() {
-		$this->holding = preg_split('/\r\n|\r|\n/',$this['mfhd']);
+		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
 
-		foreach ($this->holding as $holdingid) {
-			$this->holding = new Holding();
-			$this['mms_id']=Holding::getMmsFromHoldingID($this['holding_id']);
-			if ($this['mms_id']){
-				$this->holding->loadFromAlma(this['mms_id'],$this['holding_id']);
-				$this->holding->getItems();
-			$this->splatVars['holding']=$this->holding;
-			}else{
-				$this->splatVars['message']=$this->message;
+		# BIBS
+		foreach ($this->bibs as $mmsid) {
+			$bib = new Bib();
+			$bib->loadFromAlma($mmsid);
+			$this->biblist[] = $bib;
+			$this->bib->getHoldings();
+			if ($holding['Library']=='HALE') {
+				addToAlmaHolding($this->item['mms_id'],$this->item['holding_id']);
+			$this->item = new Item();
+			$this->item->xml;
+			} else {
+				GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
 			}
+		}
+
+		$this->splatVars['biblist'] = $this->biblist;
+		$this->splatVars['body'] = array( 'holding', 'messages' );
 	}
-}
+
 }
 BatchItems::RunIt();
