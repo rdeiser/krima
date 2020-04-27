@@ -6,8 +6,8 @@ class BatchItems extends GrimaTask {
 	public $holdinglist = array();
 	
 	function do_task() {
-		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holdingid']);
-		foreach ($this->holding as $holding) {
+		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
+		foreach ($this->holding as $holding_id) {
 			$holding = new Holding();
 			$holding->loadFromAlma('holding_id');
 			$this->holdinglist[] = $holding;
