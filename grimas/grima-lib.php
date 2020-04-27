@@ -2245,7 +2245,7 @@ class Holding extends AlmaObjectWithMARC {
 		global $grima;
 
 		$report = new AnalyticsReport();
-		$report->path = "/shared/UK Libraries- University of Kentucky (UKY)/Reports/Kathryn/HoldingToMMS";
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/HoldingToMMS";
 		$report->filter = '
 <sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
 xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
