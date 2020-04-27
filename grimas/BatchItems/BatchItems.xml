@@ -2,7 +2,7 @@
     <Title>Batch Item Record Creation</Title>
     <Field
         <Field
-        name="mhfd"
+        name="holdingid"
         label="Bibs with holdings without items"
         autocomplete="off"
         required="yes"
