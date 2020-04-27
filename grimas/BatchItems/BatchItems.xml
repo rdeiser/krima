@@ -1,21 +1,12 @@
 <GrimaForm>
     <Title>Batch Item Record Creation</Title>
     <Field
-        name="mfhd"
-        label="Holdings that need Item Records"
+        <Field
+        name="mms"
+        label="Bibs with holdings without items"
         autocomplete="off"
         required="yes"
-        placeholder="Holding IDs, one per line."
-		rows="10"
+        placeholder="MMS IDs, one per line.
+		rows="5"
     />
-    <Field
-        name="mms"
-		required="no"
-		visible="no"
-	/>
-	<Field
-		name="adding"
-		required="no"
-		visible="no"
-	/>
 </GrimaForm>
