@@ -12,9 +12,9 @@ class BatchItems extends GrimaTask {
 			$holding->loadFromAlma('holding_id');
 			$this->holdinglist[] = $holding;
 		}
-	}
+	
 		$this->splatVars['holdinglist'] = $this->holdinglist;
 		$this->splatVars['body'] = array( 'list', 'messages' );
-
+	}
 }
 BatchItems::RunIt();
