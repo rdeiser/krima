@@ -3,7 +3,7 @@
 require_once("../grima-lib.php");
 
 class BatchItems extends GrimaTask {
-	public $biblist = array();
+	public $holdinglist = array();
 
 	function do_task() {
 		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
@@ -13,9 +13,9 @@ class BatchItems extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			$this->holding->loadFromAlma($this['mms_id'],$holdingid);
 			$this->holding->getItems();
-			$this->splatVars['holding'] = $this->holding;
 			$this->holdinglist[] = $holding;
 		}
+			$this->splatVars['holding'] = $this->holding;
 		/*$this->splatVars['width'] = 12;
 		$this->splatVars['holdinglist'] = $this->holdinglist;
 		$this->splatVars['body'] = array( 'list', 'messages' );*/
