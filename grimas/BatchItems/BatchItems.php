@@ -24,7 +24,7 @@ class BatchItems extends GrimaTask {
 			$this->item = new Item();
 			$item->updateAlma();
 		}*/
-		//$this->splatVars['holding'] = $this->holding;
+		$this->splatVars['holding'] = $this->holding;
 		/*$this->splatVars['width'] = 12;
 		$this->splatVars['holdinglist'] = $this->holdinglist;
 		$this->splatVars['body'] = array( 'list', 'messages' );*/
