@@ -10,7 +10,7 @@ class BatchItems extends GrimaTask {
 		foreach ($this->holdings as $mfhd) {
 			$holding = new Holding();
 			$holding['mms_id'] = Holding::getMmsFromHoldingID($holding['holding_id']);
-			$holding->holding->loadFromAlma($this['mms_id'],$this[$mfhd]);
+			$holding->holding->loadFromAlma($this['mms_id'],$mfhd);
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
 			$this->holdinglist[] = $holding;
