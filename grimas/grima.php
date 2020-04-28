@@ -43,7 +43,7 @@ if (preg_match("/(norm|normalize|filter) (\d+) (with (.*))/",$msg,$m)) {
 }
 
 #
-#       filter <holding_id> with <filter>
+#       filter <mms_id> with <filter>
 #
 if (preg_match("/(norm|normalize|filter) (\d+) (with (.*))/",$msg,$m)) {
         if (is_mmsid($m[2])) {
