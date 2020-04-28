@@ -6,7 +6,7 @@
         label="Bibs with holdings without items"
         autocomplete="off"
         required="yes"
-        placeholder="MMS IDs, one per line.
+        placeholder="MMS IDs, one per line."
 		rows="5"
     />
 </GrimaForm>
