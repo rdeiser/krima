@@ -32,7 +32,18 @@ if (preg_match("/^hierarchy( .*)/",$msg,$m)) {
 }
 
 #
-#       filter <mms_id> with <filter>
+#       filter <holding_id> with <filter>
+#
+if (preg_match("/(norm|normalize|filter) (\d+) (with (.*))/",$msg,$m)) {
+        if (is_holdingid($m[2])) {
+                do_redirect("zf.php?mms_id=" . $m[2] . "&filter=" . $m[4]);
+        } else {
+                # Holding ID form
+        }
+}
+
+#
+#       filter <holding_id> with <filter>
 #
 if (preg_match("/(norm|normalize|filter) (\d+) (with (.*))/",$msg,$m)) {
         if (is_mmsid($m[2])) {
