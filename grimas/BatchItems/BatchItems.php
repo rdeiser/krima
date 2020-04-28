@@ -16,10 +16,10 @@ class BatchItems extends GrimaTask {
 			$this->holdinglist[] = $holding;
 		}
 
-		foreach ($this->holdinglist as $holding) {
-			$newItem->addToAlmaHolding($this->item['mms_id'],$this->item[$holdingid]);
+		foreach ($this->holdinglist as $item) {
+			$item->addToAlmaHolding($this->item['mms_id'],$this->item[$holdingid]);
 			$this->item = new Item();
-			$holding->updateAlma();
+			$item->updateAlma();
 		}
 			$this->splatVars['holding'] = $this->holding;
 		/*$this->splatVars['width'] = 12;
