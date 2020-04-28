@@ -1,7 +1,6 @@
 <GrimaForm>
     <Title>Batch Item Record Creation</Title>
     <Field
-        <Field
         name="holding_id"
         label="Bibs with holdings without items"
         autocomplete="off"
