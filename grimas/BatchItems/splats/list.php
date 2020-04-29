@@ -1,7 +1,7 @@
 <ul>
     <?php foreach ($holdinglist as $holding): ?>
-    <li><?=$e($holding['holding_id'])?>
-	(<a class='d-print-none viewlink' href="../PrintHolding/PrintHolding.php?holding_id=<?=$e($holding['holding_id'])?>">(view)</a>)
+    <li><h1><?=$e($holding['holding_id'])?></h1>
+	(<a href="../PrintHolding/PrintHolding.php?holding_id=<?=$e($holding['holding_id'])?>">(view)</a>)
 </li>
     <?php endforeach ?>
 </ul>
