@@ -12,15 +12,16 @@ class BatchItems extends GrimaTask {
 			$holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			$holding->loadFromAlma($this['mms_id'],$holdingid);
+			$item->addToAlmaHolding($this['mms_id'],$holdingid);
 			//$this->addToAlmaHolding($this['mms_id'],$holdingid,$item);
 			//$this->holding->postItem();
 			$this->holdinglist[] = $holding;
 		}
-		foreach ($this->holding as $item{
+		/*foreach ($this->holding as $item{
 			//$item = new Item();
 			//$item['barcode'] = '';
 			$item->addToAlmaHolding($this['mms_id'],$holdingid);
-		}
+		}*/
 
 		/*foreach ($this->holdinglist as $holding){
 			$this->holding->getItems();
