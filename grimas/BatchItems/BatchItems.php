@@ -30,10 +30,10 @@ class BatchItems extends GrimaTask {
 			//$item->updateAlma();
 		}*/
 		//$this->holding->getItems();
-		$this->splatVars['holding'] = $this->holding;
+		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
-		//$this->splatVars['holdinglist'] = $this->holdinglist;
-		//$this->splatVars['body'] = array( 'list', 'messages' );
+		$this->splatVars['holdinglist'] = $this->holdinglist;
+		$this->splatVars['body'] = array( 'holding', 'messages' );
 	}
 }
 BatchItems::RunIt();
