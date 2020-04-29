@@ -17,7 +17,7 @@ class BatchItems extends GrimaTask {
 			$this->holdinglist[] = $holding;
 		}
 		foreach ($this->holdinglist as $holding{
-			$item = new Item();
+			$item = new Item()
 			$item['barcode'] = '';
 			$item->addToAlmaHolding($this['mms_id'],$holding['holding_id']);
 		}
