@@ -9,13 +9,13 @@ class BatchItems extends GrimaTask {
 		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
 
 		foreach ($this->holdings as $holdingid) {
+			$this->holdinglist[] = $holding;
 			$this->holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			$this->holding->loadFromAlma($this['mms_id'],$holdingid);
 			//$this->addToAlmaHolding($this['mms_id'],$holdingid,$item);
 			//$this->holding->postItem();
 			$this->holding->getItems();
-			$this->holdinglist[] = $holding;
 		}
 
 		/*foreach ($this->holdinglist as $holding){
