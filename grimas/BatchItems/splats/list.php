@@ -4,10 +4,8 @@
 	(<a href="../PrintHolding/PrintHolding.php?holding_id=<?=$e($holding['holding_id'])?>">Print Record</a>)
 </li>
     <?php endforeach ?>
-</ul>
-<ul>
-<?php foreach ($holdinglist->items as $item): ?>
-<?=$e($item['item_pid'])?>
+	<?php foreach ($holdinglist->items as $item): ?>
+<li><?=$e($item['item_pid'])?>
 <?=$e($item['barcode'])?>
-<?php endforeach ?>
+<?php endforeach ?></li>
 </ul>
