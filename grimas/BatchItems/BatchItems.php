@@ -13,27 +13,13 @@ class BatchItems extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			$holding->loadFromAlma($this['mms_id'],$holdingid);
 			$item = new Item();
-			$item['barcode'] = '';
+			$item['barcode'] = 'redTEST_alpha';
+			$item['inventory_date'] = '1976-01-01';
+			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+			$item['statistics_note_3'] = 'HALE return';
 			$item->addToAlmaHolding($this['mms_id'],$holdingid);
 			$this->holdinglist[] = $holding;
 		}
-		/*foreach ($this->holding as $item{
-			//$item = new Item();
-			//$item['barcode'] = '';
-			$item->addToAlmaHolding($this['mms_id'],$holdingid);
-		}*/
-
-		/*foreach ($this->holdinglist as $holding){
-			$this->holding->getItems();
-		}*/
-
-		//foreach ($holding->items as $item) LOOK AT THIS!!!
-		/*foreach ($this->holdinglist as $newItem) {
-			unset($newItem['item_pid']);
-			$newItem->addToAlmaHolding($this['mms_id'],$holdingid,$item);
-			$this->item = new Item();
-			//$item->updateAlma();
-		}*/
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
