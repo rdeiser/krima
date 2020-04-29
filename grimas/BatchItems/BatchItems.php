@@ -18,9 +18,9 @@ class BatchItems extends GrimaTask {
 			$this->holdinglist[] = $holding;
 		}
 
-		foreach ($this->holdiinglist as $holding){
+		/*foreach ($this->holdiinglist as $holding){
 			$this->holding->getItems();
-		}
+		}*/
 
 		//foreach ($holding->items as $item) LOOK AT THIS!!!
 		/*foreach ($this->holdinglist as $newItem) {
