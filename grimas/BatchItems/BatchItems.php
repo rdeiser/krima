@@ -14,11 +14,9 @@ class BatchItems extends GrimaTask {
 			$this->holding->loadFromAlma($this['mms_id'],$holdingid);
 			//$this->addToAlmaHolding($this['mms_id'],$holdingid,$item);
 			//$this->holding->postItem();
-			//$this->holding->getItems();
+			$this->holding->getItems();
 			$this->holdinglist[] = $holding;
 		}
-			$this->holdinglist[0]->getItems();
-			$holdingid = $this->holdinglist[0]->items[0];
 
 		//foreach ($holding->items as $item) LOOK AT THIS!!!
 		/*foreach ($this->holdinglist as $newItem) {
