@@ -29,7 +29,7 @@ class BatchItems extends GrimaTask {
 		//$this->splatVars['holding'] = $this->holding;
 		$this->splatVars['width'] = 12;
 		$this->splatVars['holdinglist'] = $this->holdinglist;
-		$this->splatVars['body'] = array( 'list', 'messages' );*/
+		$this->splatVars['body'] = array( 'list', 'messages' );
 	}
 }
 BatchItems::RunIt();
