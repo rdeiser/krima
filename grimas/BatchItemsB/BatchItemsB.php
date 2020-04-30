@@ -18,6 +18,7 @@ class BatchItemsB extends GrimaTask {
 		$mfhd = $this->biblist[0]->holdings[0];
 
 		foreach ($this->biblist as $bib){
+			$bib->getHoldings();
 			if($mfhd['library_code']=='MAIN') {
 				$item = new Item();
 				$item['barcode'] = '';
