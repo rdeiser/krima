@@ -20,7 +20,7 @@ class BatchItemsB extends GrimaTask {
 				//$item['inventory_date'] = '1976-01-01';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = 'HALE return';
-				$item->addToAlmaHolding($mmsid,$this['holding_id'];
+				$item->addToAlmaHolding($mmsid,$this['holding_id']);
 			}
 			else {}
 		}
