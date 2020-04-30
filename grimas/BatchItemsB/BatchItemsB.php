@@ -17,7 +17,7 @@ class BatchItemsB extends GrimaTask {
 		$this->biblist[0]->getHoldings();
 		$mfhd = $this->biblist[0]->holdings[0];
 
-		foreach ($this->biblist as $bib)
+		foreach ($this->biblist as $bib){
 			if($mfhd['library_code']=='MAIN') {
 				$item = new Item();
 				$item['barcode'] = '';
@@ -39,6 +39,6 @@ class BatchItemsB extends GrimaTask {
 		//$this->splatVars['width'] = 12;
 		$this->splatVars['biblist'] = $this->biblist;
 		$this->splatVars['body'] = array( 'list', 'messages' );
-	}
+}
 }
 BatchItemsB::RunIt();
