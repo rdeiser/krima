@@ -12,9 +12,13 @@ class BatchItemsB extends GrimaTask {
 		foreach ($this->bibs as $mmsid) {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
-			$bib->getHoldings();
 			$this->biblist[] = $bib;
-			if($holding['library_code']=='MAIN') {
+		}
+		$this->biblist[0]->getHoldings();
+		$mfhd = $this->biblist[0]->holdings[0];
+
+		foreach ($this->biblist as $bib)
+			if($mfhd['library_code']=='MAIN') {
 				$item = new Item();
 				$item['barcode'] = '';
 				//$item['inventory_date'] = '1976-01-01';
