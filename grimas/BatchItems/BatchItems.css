@@ -1,8 +1,8 @@
-.div {
+/*.div {
 	counter-rest: section;
 }
 
 h1::before{
 	counter-increment: section;
 	content: "Holding " counter(section) ": ";
-	}
+	}*/
