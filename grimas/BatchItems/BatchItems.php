@@ -21,12 +21,12 @@ class BatchItems extends GrimaTask {
 			$count = $item['item_pid'];
 			$this->holdinglist[] = $holding;
 		}
-		//$this->addMessage('success',"Number of Item Records Added {count('$holdingid'])}");
+		$this->addMessage('success',"Number of Item Records Added {$count}");
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
-		$this->splatVars['holdinglist'] = $this->holdinglist;
-		$this->splatVars['body'] = array( 'holding', 'messages' );
+		//$this->splatVars['holdinglist'] = $this->holdinglist;
+		//$this->splatVars['body'] = array( 'holding', 'messages' );
 	}
 }
 BatchItems::RunIt();
