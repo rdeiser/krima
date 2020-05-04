@@ -18,9 +18,10 @@ class BatchItems extends GrimaTask {
 			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			$item['statistics_note_3'] = 'HALE return';
 			$item->addToAlmaHolding($this['mms_id'],$holdingid);
-			$count = count($item['item_pid']);
+			//$count = count($item['item_pid']);
 			$this->holdinglist[] = $holding;
 		}
+		$count = count($item['item_pid']);
 		$this->addMessage('success',"Number of Item Records Added {$count}");
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
