@@ -18,12 +18,15 @@ class BatchItems extends GrimaTask {
 			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			$item['statistics_note_3'] = 'HALE return';
 			$item->addToAlmaHolding($this['mms_id'],$holdingid);
-			$count = (count($holding->itemList->items) > 0);
-			//$count = count($item['item_pid']);
 			$this->holdinglist[] = $holding;
 		}
-		//$count = count($item['item_pid'], COUNT_RECURSIVE);
-		$this->addMessage('success',"Number of Item Records Added {$count}");
+		$set =new Set()
+		$set->createFromImport($this['item_pid'],"TOTAL_RECORDS_IMPORTED");
+		sleep(2);
+		$set->getMembers();
+		
+		$size = count($set->members);
+		$this->addMessage('success',"Number of Item Records Added {$size}");
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
