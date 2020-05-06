@@ -20,7 +20,7 @@ class BatchItems extends GrimaTask {
 			$item->addToAlmaHolding($this['mms_id'],$holdingid);
 			$this->holdinglist[] = $holding;
 		}
-		$this->addMessage('success',"Number of Item Records Added {$size}");
+		$this->addMessage('success',"Successfully added an Item Record to {$holdingid}");
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
