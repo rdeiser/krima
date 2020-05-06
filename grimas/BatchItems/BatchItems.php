@@ -25,11 +25,11 @@ class BatchItems extends GrimaTask {
 			}
 			$this->holdinglist[] = $holding;
 		}
-		foreach ($this->holdinglist as $holding) {
+		/*foreach ($this->holdinglist as $holding) {
 			$count = count($holding->itemList->items, COUNT_RECURSIVE);
 		}
 		
-		$this->addMessage('success',"Total Number of Items Added {$count}");
+		$this->addMessage('success',"Total Number of Items Added {$count}");*/
 		//$this->holding->getItems();
 		//$this->splatVars['holding'] = $this->holding;
 		//$this->splatVars['width'] = 12;
