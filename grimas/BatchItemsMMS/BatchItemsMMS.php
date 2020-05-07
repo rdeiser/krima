@@ -10,7 +10,7 @@ class BatchItemsMMS extends GrimaTask {
 
 		foreach ($this->bibs as $mmsid) {
 			$bib = new Bib();
-			$this['holding_id'] = Bib::getHoldingIDFromMms($mmsid);
+			$this['holding_id'] = Holding::getHoldingIDFromMms($mmsid);
 			if ($this['holding_id']) {
 				$bib->loadFromAlma($mmsid,$this['holding_id']);
 				$item = new Item();
