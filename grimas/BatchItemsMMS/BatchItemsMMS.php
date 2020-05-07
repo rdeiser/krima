@@ -12,7 +12,7 @@ class BatchItemsMMS extends GrimaTask {
 			$bib = new Bib();
 			$this['holding_id'] = Holding::getHoldingIDFromMms($mmsid);
 			if ($this['holding_id']) {
-				$bib->loadFromAlma($mmsid)
+				$bib->loadFromAlma($mmsid);
 				$item = new Item();
 				$item['barcode'] = '';
 				//$item['inventory_date'] = '1976-01-01';
