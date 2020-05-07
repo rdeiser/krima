@@ -2236,6 +2236,30 @@ class Holding extends AlmaObjectWithMARC {
 	}
 // }}}
 
+//{{{ getHoldingIDFromMms (get) - gets the Holding ID for a MMS
+/**
+ * @brief populates the Holding ID
+  *
+*/
+	public static function getHoldingIDFromMms($mms_id) {
+		global $grima;
+
+		$report = new AnalyticsReport();
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/MMSToHolding";
+		$report->filter = '
+<sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
+xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <sawx:expr xsi:type="sawx:sqlExpression">"Bibliographic Details"."MMS Id"</sawx:expr><sawx:expr xsi:type="xsd:string">{mms_id}</sawx:expr></sawx:expr>';
+	
+		$report->runReport(array('mms_id' => $mms_id), 1);
+		if (count($report->rows) == 1) {
+			return $report->rows[0][1];
+		} else {
+			return null;
+		}
+
+
 // {{{ getMmsFromHoldingID (get) - gets the MMS for a holding ID
 /**
  * @brief populates the MMS ID 
