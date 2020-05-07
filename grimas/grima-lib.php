@@ -2260,7 +2260,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 
-<?
+
 // {{{ getHoldingIDIfNeeded (get) - populates Holding if needed
 /**
  * @brief populates the Holding ID if not already known
