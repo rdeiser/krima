@@ -2258,6 +2258,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		} else {
 			return null;
 		}
+	}
 
 
 // {{{ getMmsFromHoldingID (get) - gets the MMS for a holding ID
