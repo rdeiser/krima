@@ -2260,6 +2260,21 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 
+<?
+// {{{ getHoldingIDIfNeeded (get) - populates Holding if needed
+/**
+ * @brief populates the Holding ID if not already known
+ *
+*/
+	function getHoldingIfNeeded() {
+		global $grima;
+
+		if (!isset($this['holding_id']) or (!$this['holding_id'])) {
+			$this['holding_id'] = Bib::getHoldingIDFromMms($this['mms_id']);
+		}
+	}
+// }}}
+
 
 // {{{ getMmsFromHoldingID (get) - gets the MMS for a holding ID
 /**
