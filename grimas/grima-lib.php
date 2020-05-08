@@ -2112,7 +2112,6 @@ class HoldingsListEntry extends AlmaObject {
 		'library' => '//holding/library/@desc',
 		'location_code' => '//holding/location',
 		'location' => '//holding/location/@desc'
-		'suppress_from_publishing' => '//holding/suppress_from_publishing'
 	);
 	public $xml;
 
@@ -2220,6 +2219,7 @@ class Holding extends AlmaObjectWithMARC {
 		'inst_code' => "/holding/record/datafield[@tag='852']/subfield[@code='a']",
 		'library_code' => "/holding/record/datafield[@tag='852']/subfield[@code='b']",
 		'location_code' => "/holding/record/datafield[@tag='852']/subfield[@code='c']",
+		'suppress_from_publishing' => '//holding/suppress_from_publishing',
 	);
 // }}}
 
