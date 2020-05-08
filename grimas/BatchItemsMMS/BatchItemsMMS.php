@@ -18,9 +18,9 @@ class BatchItemsMMS extends GrimaTask {
 					$this->addMessage('warn', "Holdings record is suppressed for {$bib['mms_id']}");
 					continue;
 				} else {
-					$holding = $bib->holdings[0];
-					$holding->getItemList();
-				if (count($holding->itemList->items) = 0) {
+				//	$holding = $bib->holdings[0];
+				//	$holding->getItemList();
+				//if (count($holding->itemList->items) = 0) {
 					$item = new Item();
 					$item['barcode'] = '';
 					//$item['inventory_date'] = '1976-01-01';
@@ -31,7 +31,7 @@ class BatchItemsMMS extends GrimaTask {
 					continue;
 				} else {
 					$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
-				}
+				//}
 			}
 				continue;
 			} else {
