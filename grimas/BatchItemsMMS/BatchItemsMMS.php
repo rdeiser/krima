@@ -33,12 +33,12 @@ class BatchItemsMMS extends GrimaTask {
 					//$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
 				}
 			}
-				continue;
-			} else {
+				//continue;
+			/*} else {
 				$this->addMessage('warn',"Bib {$mmsid} does not have a MAIN holdings record");
-			}
+			}*/
 			$this->biblist[] = $bib;
 }
 }
-}
+//}
 BatchItemsMMS::RunIt();
