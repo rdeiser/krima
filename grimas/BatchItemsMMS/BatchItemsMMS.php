@@ -30,8 +30,9 @@ class BatchItemsMMS extends GrimaTask {
 			}} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$mmsid}");
 			}
-			$this->biblist[] = $bib;
 		}
+			$this->biblist[] = $bib;
 	}
+}
 }
 BatchItemsMMS::RunIt();
