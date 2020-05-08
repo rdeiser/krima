@@ -14,7 +14,7 @@ class BatchItemsMMS extends GrimaTask {
 			$bib->getHoldings();
 			if ($holding['library_code'] = 'MAIN') {
 				$holding = $bib->holdings[0];
-				if ($holding['holding_suppress'] = 'true') {
+				if ($holding['suppress_from_publishing'] = 'true') {
 					$this->addMessage('warn', "Holdings record is suppressed for {$bib['mms_id']}");
 					continue;
 				} else {
