@@ -2112,7 +2112,7 @@ class HoldingsListEntry extends AlmaObject {
 		'library' => '//holding/library/@desc',
 		'location_code' => '//holding/location',
 		'location' => '//holding/location/@desc'
-		'holding_suppress' => '//holding/suppress_from_publishing'
+		'suppress_from_publishing' => '//holding/suppress_from_publishing'
 	);
 	public $xml;
 
