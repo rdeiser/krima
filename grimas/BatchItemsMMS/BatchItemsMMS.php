@@ -18,21 +18,22 @@ class BatchItemsMMS extends GrimaTask {
 					$this->addMessage('warn', "Holdings record is suppressed for {$bib['mms_id']}");
 					continue;
 				} else {
-				$holding->getItemList();
+					$holding = $bib->holdings[0];
+					$holding->getItemList();
 				if (count($holding->itemList->items) = 0) {
 					$item = new Item();
-				$item['barcode'] = '';
-				//$item['inventory_date'] = '1976-01-01';
-				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				$item['statistics_note_3'] = 'HALE return';
-				$item->addToAlmaHolding($mmsid,$this['holding_id']);
-				$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']}");
-				continue;
-			} else {
-				$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
+					$item['barcode'] = '';
+					//$item['inventory_date'] = '1976-01-01';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item['statistics_note_3'] = 'HALE return';
+					$item->addToAlmaHolding($mmsid,$this['holding_id']);
+					$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']}");
+					continue;
+				} else {
+					$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
+				}
 			}
-		}
-			continue;
+				continue;
 			} else {
 				$this->addMessage('warn',"Bib {$mmsid} does not have a MAIN holdings record");
 			}
