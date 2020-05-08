@@ -29,9 +29,9 @@ class BatchItemsMMS extends GrimaTask {
 					$item->addToAlmaHolding($mmsid,$this['holding_id']);
 					$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']}");
 					continue;
-				} else {
-					$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
-				//}
+				} //else {
+					//$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
+				}
 			}
 				continue;
 			} else {
