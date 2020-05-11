@@ -14,7 +14,6 @@ class BatchItemsMMS extends GrimaTask {
 			$bib->getHoldings();
 			if (count($bib->holdings) > 1) {
 				addMessage('warning', "More than one holding on bib {$mmsid}");
-				continue;
 			}
 			/*if ($holding['library_code'] = 'MAIN') {
 				$holding = $bib->holdings[0];
