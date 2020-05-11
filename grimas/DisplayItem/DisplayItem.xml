@@ -10,8 +10,8 @@
 		name="inventorydate"
 		date-type="all"
 		type="date"
-		required="no"
-		visible="yes"
+		required="yes"
+		visible="no"
 		value="01/01/1976"
 	/>
 	<!--For future testing to combine both grimas into one file-red 01/2020-->
