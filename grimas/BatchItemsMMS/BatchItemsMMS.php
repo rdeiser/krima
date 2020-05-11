@@ -12,7 +12,7 @@ class BatchItemsMMS extends GrimaTask {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
 			$bib->getHoldings();
-			if (count($bib->holdings > 1) {
+			if (count($bib->holdings) > 1) {
 				addMessage('warn', "More than one holding on bib {$mmsid}");
 				continue;
 			}
