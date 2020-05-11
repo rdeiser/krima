@@ -12,7 +12,11 @@ class BatchItemsMMS extends GrimaTask {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
 			$bib->getHoldings();
-			if ($holding['library_code'] = 'MAIN') {
+			if (count($bib->holdings > 1) {
+				addMessage('warn', "More than one holding on bib {$mmsid}");
+				continue;
+			}
+			/*if ($holding['library_code'] = 'MAIN') {
 				$holding = $bib->holdings[0];
 				if ($holding['suppress_from_publishing'] = 'true') {
 					$this->addMessage('warn', "Holdings record is suppressed for {$bib['mms_id']}");
@@ -31,7 +35,7 @@ class BatchItemsMMS extends GrimaTask {
 					continue;
 				} //else {
 					//$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
-				}
+				}*/
 			}
 				//continue;
 			/*} else {
