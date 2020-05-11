@@ -9,9 +9,9 @@
 	<Field
 		name="inventorydate"
 		date-type="all"
-		type="text"
+		type="date"
 		required="no"
-		visible="no"
+		visible="yes"
 	>
 	<date value="01/01/1976">Date</date>
 	</Field>
