@@ -6,6 +6,15 @@
         required="yes"
         placeholder="Scan barcode..."
     />
+	<Field
+		name="inventorydate"
+		date-type="all"
+		type="text"
+		required="no"
+		visible="no"
+	>
+	<date value="01/01/1976">Date</date>
+	</Field>
 	<!--For future testing to combine both grimas into one file-red 01/2020-->
 	<!--<Field
         name="next_barcode"
