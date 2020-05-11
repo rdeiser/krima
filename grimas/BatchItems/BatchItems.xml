@@ -7,9 +7,9 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
-	<option value="statistics_note_3">HALE return</option>
-	<option value="statistics_note_3">ANNEX ingest</option>
-	<option value="statistics_note_3">To be WITHDRAWN</option>
+	<option value="HALE return">HALE return</option>
+	<option value="ANNEX ingest">ANNEX ingest</option>
+	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
 	</Field>
     <Field
         name="holding_id"
