@@ -12,7 +12,6 @@
 		type="date"
 		required="no"
 		visible="no"
-		input="push"
 		value="01/01/1976"
 		>
 		<date value="01/01/1976">
