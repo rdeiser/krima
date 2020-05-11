@@ -10,7 +10,7 @@
 		name="inventorydate"
 		date-type="all"
 		type="date"
-		required="yes"
+		required="no"
 		visible="no"
 		value="01/01/1976"
 	/>
