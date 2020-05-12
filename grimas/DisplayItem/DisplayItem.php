@@ -10,7 +10,7 @@ class DisplayItem extends GrimaTask {
 		//$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 		//$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		if ($item['inventory_date'] == "") {
-			$item['inventory_date_new_value'] = date("Y-m-d")
+			$item['inventory_date_new_value'] = date("Y-m-d");
 		} else {
 			$item['inventory_date'] = date("Y-m-d");
 		}
