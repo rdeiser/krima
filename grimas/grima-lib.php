@@ -2490,6 +2490,7 @@ class Item extends AlmaObject {
 		'library_code' => '//location',
 		'policy' => '//policy',
 		'inventory_number' => '//inventory_number',
+		'inventory_date_new_value' => '//inventory_date_new_value',
 		'inventory_date' => '//inventory_date',
 		'item_policy' => '//policy',
 		'provenance' => '//provenance',
