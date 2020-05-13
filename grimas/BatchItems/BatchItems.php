@@ -20,8 +20,7 @@ class BatchItems extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid}");
-				} else {addMessage ('error',"Barcode issues {$holdingid}");
-				}
+				} else {}
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
