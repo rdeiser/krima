@@ -1054,7 +1054,7 @@ class Grima {
  *
  * @param string $$job_id
 */
-	function runchangephysicalitemjob($job_id) {
+	function runchangephysicalitemjob($job_id, $op) {
 
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <job>
@@ -1409,7 +1409,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 
-		$ret = $this->post('/almaws/v1/conf/jobs/M18?op=run', array(), array('job_id' => $job_id);
+		$ret = $this->post('/almaws/v1/conf/jobs'/, array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
