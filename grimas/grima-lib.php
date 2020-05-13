@@ -1054,7 +1054,7 @@ class Grima {
  *
  * @param string $$job_id
 */
-	function runchangephysicalitemjob($job_id, $op) {
+	/*function runchangephysicalitemjob($job_id, $op) {
 
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <job>
@@ -1413,7 +1413,7 @@ class Grima {
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
-	}
+	}*/
 
 // {{{ Set -> createSetFromImport (Create a Set)
 /**
