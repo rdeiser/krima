@@ -13,14 +13,12 @@ class BatchItems extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				$item = new Item();
-				if ($item['barcode'] != null) {
+				//$item = new Item();
 				//$item['inventory_date'] = '1976-01-01';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid}");
-				} else {}
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
