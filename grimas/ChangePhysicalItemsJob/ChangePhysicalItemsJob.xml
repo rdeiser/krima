@@ -1,0 +1,19 @@
+<GrimaForm>
+    <Title>Change Physical Items Job</Title>
+	<Field
+	name="setid"
+	label="Set ID:"
+	required="yes"
+	placeholder="Set ID Number"
+    />
+	<Field
+	name="jobid"
+	value="M18"
+	visable="no"
+	/>
+	<Field
+	name="op"
+	value="run"
+	visable="no"
+	/>
+</GrimaForm>
