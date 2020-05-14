@@ -1,11 +1,9 @@
 <GrimaForm>
     <Title>Update Item Record</Title>
     <Field
-        name="item_pid"
-        label="Item PID"
-        shortname="i"
-        autocomplete="off"
+        name="mms"
+        label="MMS"
         required="yes"
-        placeholder="Item ID of item to view..."
+        placeholder="MMS"
     />
 </GrimaForm>
