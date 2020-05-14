@@ -11,32 +11,13 @@ class BatchItemsMMS extends GrimaTask {
 		foreach ($this->bibs as $mmsid) {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
-			$bib->getHoldings();
-			if ($holding['library_code'] = 'MAIN') {
-				$holding = $bib->holdings[0];
-				if ($holding['suppress_from_publishing'] = 'true') {
-					$this->addMessage('warn', "Holdings record is suppressed for {$bib['mms_id']}");
-					continue;
-				} else {
-				//	$holding = $bib->holdings[0];
-				//	$holding->getItemList();
-				//if (count($holding->itemList->items) = 0) {
-					$item = new Item();
-					$item['barcode'] = '';
-					//$item['inventory_date'] = '1976-01-01';
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-					$item['statistics_note_3'] = 'HALE return';
-					$item->addToAlmaHolding($mmsid,$this['holding_id']);
-					$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']}");
-					continue;
-				} //else {
-					//$this->addMessage('warn',"Holding Record  for bib {$mmsid} has an Item Record");
-				}*/
-			}
-				//continue;
-			/*} else {
-				$this->addMessage('warn',"Bib {$mmsid} does not have a MAIN holdings record");
-			}*/
+			$this->biblist[0]->getHoldings();
+			$mfhd =$this->biblist[0]->holdings[0];
+			
+			$item = new Item();
+			$item->addToAlmaHolding($mmsid,$mfhd);
+		}
+			
 			$this->biblist[] = $bib;
 }
 }
