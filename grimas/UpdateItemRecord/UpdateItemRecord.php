@@ -8,7 +8,7 @@ class UpdateItemRecord extends GrimaTask {
 		$bib = new Bib();
 		$bib->loadFromAlma($this['mms']);
 		$bib->getHoldings();
-		$holding = $bib->holdings[0[;
+		$holding = $bib->holdings[0];
 		$holding->getItemList();
 		$item = $holding->itemList->items[0];
 		$item['statistics_note_3'] = 'HALE return';
