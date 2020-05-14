@@ -13,7 +13,7 @@ class BatchItemsMMS extends GrimaTask {
 			$bib->loadFromAlma($mmsid);
 			$bib->getHoldings();
 			$item = new Item();
-			$grima->postItem($mmsid,$this['holding_id'],$this-xml);
+			$item->addToAlmaHolding($mmsid,$this['holding_id']);
 		}
 			
 			$this->biblist[] = $bib;
