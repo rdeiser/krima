@@ -6,7 +6,7 @@ class UpdateItemRecord extends GrimaTask {
 
 	function do_task() {
 		$bib = new Bib();
-		$bib->loadFromAlma($mmsid);
+		$bib->loadFromAlma($this['mms']);
 		$bib->getHoldings();
 		$holding = $bib->holdings[0[;
 		$holding->getItemList();
