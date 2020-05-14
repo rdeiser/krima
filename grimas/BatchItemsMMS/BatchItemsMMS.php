@@ -14,6 +14,7 @@ class BatchItemsMMS extends GrimaTask {
 			$bib->getHoldings();
 			$item = new Item();
 			$item->addToAlmaHolding($mmsid,$this['holding_id']);
+			$this->addMessage('success',"Successfully added an Item Record to {$item['item_pid']}");
 		}
 			
 			$this->biblist[] = $bib;
