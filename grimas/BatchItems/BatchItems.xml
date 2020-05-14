@@ -17,6 +17,5 @@
         autocomplete="off"
         required="yes"
         placeholder="Holding Id without items, one per line."
-		rows="50"
     />
 </GrimaForm>
