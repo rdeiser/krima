@@ -13,7 +13,7 @@ class BatchItems extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				//$item = new Item();
+				$item = new Item();
 				//$item->($item['barcode']);
 				//$item['inventory_date'] = '1976-01-01';
 				//$item['statistics_note_2'] = 'FIRE 2018 OZONE';
