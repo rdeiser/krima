@@ -1,0 +1,22 @@
+<GrimaForm>
+    <Title>AS Decisions Populated</Title>
+	<Field
+	name="whichnote"
+	label="Unboxing Stat 3 Note:"
+	type="select"
+	required="yes"
+	placeholder="Unboxing Note"
+	>
+	<option value="HALE return">HALE return</option>
+	<option value="ANNEX ingest">ANNEX ingest</option>
+	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
+	</Field>
+    <Field
+        name="barcodes"
+        label="Barcodes needing Stat Note 2 and 3 Populated"
+        autocomplete="off"
+        required="yes"
+        placeholder="Barcodes, one per line."
+		rows="10"
+    />
+</GrimaForm>
