@@ -13,7 +13,6 @@ class BatchItemsMMS extends GrimaTask {
 			$bib->loadFromAlma($mmsid);
 			$bib->getHoldings();
 			$item = new Item();
-			$item['barcode'] = 'redTEST_2020';
 			//$item['barcode'] = 'HaleFire-000026';
 			//$item['barcode'] = $this['barcode'];
 			$item['is_magnetic'] = true;
