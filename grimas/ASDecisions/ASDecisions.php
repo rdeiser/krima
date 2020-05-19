@@ -3,10 +3,10 @@
 require_once("../grima-lib.php");
 
 class ASDecisions extends GrimaTask {
-	public $holdinglist = array();
+	public $barcodelist = array();
 
 	function do_task() {
-		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['holding_id']);
+		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
 			$item = new Item();
