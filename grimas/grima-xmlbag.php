@@ -114,7 +114,7 @@ class XMLAsArrayOfDOMNodesSpecifiedByXPath extends XMLAsArrayOfWhateversSpecifie
             $nodeList->context_node->appendChild( $value );
         }
     }
-    public function offsetUnset ( $offset ) {
+    /*public function offsetUnset ( $offset ) {
         $nodeList = $this->query( $offset );
         if( $nodeList->length === 1 ) {
             $node = $nodeList->item(0);
@@ -122,7 +122,7 @@ class XMLAsArrayOfDOMNodesSpecifiedByXPath extends XMLAsArrayOfWhateversSpecifie
                 $node->parentNode->removeChild( $node );
             }
         }
-    }
+    }*/
 }
 
 class XMLAsArrayOfDOMNodeListsSpecifiedByXPath extends XMLAsArrayOfWhateversSpecifiedByXPath {
