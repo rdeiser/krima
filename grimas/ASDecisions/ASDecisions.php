@@ -11,11 +11,13 @@ class ASDecisions extends GrimaTask {
 		foreach ($this->barcodes as $barcode) {
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			if ($item['statistics_note_2'] == '') {
+			if ($item['statistics_note_2'] == '' and $item['statistics_note_3'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-			} 
-			elseif ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
+			} elseif ($item['statistics_note_2'] == '*' and $item['statistics_note_3'] == '') {
+				$item['statistics_note_3'] = $this['whichnote'];
+			} elseif ($item['statistics_note_2'] == '' and $item['statistics_note_3'] == '*') {
+				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			}
 			$item->updateAlma();
 		}
