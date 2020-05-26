@@ -13,7 +13,7 @@ class ASDecisions extends GrimaTask {
 			$item->loadFromAlmaBarcode($barcode);
 			if (empty($item['statistics_note_2'])) {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-			} elseif ($item['statistics_note_2'] != '') {}
+			} else {}//elseif ($item['statistics_note_2'] != '') {}
 			if (empty($item['statistics_note_3'])) {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} elseif ($item['statistics_note_3'] != '') {}
