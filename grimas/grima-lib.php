@@ -1467,7 +1467,6 @@ class Grima {
 
 	}
 
-<?php
 	function createSet($population) {
 		# create blank set
 
