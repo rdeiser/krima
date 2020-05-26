@@ -1466,6 +1466,46 @@ class Grima {
 		return $ret;
 
 	}
+
+<?php
+	function createSet($population) {
+		# create blank set
+
+		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
+<set>
+  <name>Grima set Statnote2/3 Grima</name>
+  <description>Barcodes that were used to add Statnote2/3</description>
+  <type desc="Itemized">ITEMIZED</type>
+  <content desc="Physical items">ITEM</content>
+  <private desc="No">false</private>
+</set>';
+
+/*
+  Content:
+    BIB_MMS -- all titles
+    ITEM
+    PORTFOLIO
+    IEPA
+    FILE
+    AUTHORITY_MMS
+    IEP
+    IEE
+    IED
+    IEC
+*/
+
+/*
+  Population:
+*/
+
+		$bodyxml = new DomDocument();
+		$bodyxml->loadXML($body);
+
+		$ret = $this->post('/almaws/v1/conf/sets', array(), array('population' => $population),$bodyxml);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+
+	}
 // }}}
 
 // {{{ grima -> deleteSet (Delete a Set)
