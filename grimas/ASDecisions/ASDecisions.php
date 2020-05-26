@@ -16,7 +16,7 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} elseif ($item['statistics_note_2'] != '' and empty($item['statistics_note_3'])) {
 				$item['statistics_note_3'] = $this['whichnote'];
-			} elseif ($item['statistics_note_2'] == '' and $item['statistics_note_3'] == '*') {
+			} elseif (empty($item['statistics_note_2']) and $item['statistics_note_3'] != '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			}
 			$item->updateAlma();
