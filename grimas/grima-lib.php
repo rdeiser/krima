@@ -1472,7 +1472,7 @@ class Grima {
 
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <set>
-  <name>Statnote2/3 ' $set_name ' Grima</name>
+  <name>Statnote2/3 Grima</name>
   <description>Barcodes that were used to add Statnote2/3</description>
   <type desc="Itemized">ITEMIZED</type>
   <content desc="Physical items">ITEM</content>
