@@ -1472,7 +1472,7 @@ class Grima {
 
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <set>
-  <name>Grima set Statnote2/3 Grima</name>
+  <name>Statnote2/3 ' $set_name ' Grima</name>
   <description>Barcodes that were used to add Statnote2/3</description>
   <type desc="Itemized">ITEMIZED</type>
   <content desc="Physical items">ITEM</content>
@@ -1500,7 +1500,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 
-		$ret = $this->post('/almaws/v1/conf/sets', array(), array('population' => $population),$bodyxml);
+		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_name' => $set_name, 'population' => $population),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
