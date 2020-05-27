@@ -6,6 +6,8 @@ class ASDecisions extends GrimaTask {
 	public $barcodelist = array();
 
 	function do_task() {
+		$set = new Set();
+		$set->createSet($this['set_name']);
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
@@ -18,6 +20,8 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
 			$item->updateAlma();
+			$set = new Set();
+			$set->postSetMangeMembers;
 			$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']}");
 		}
 	}
