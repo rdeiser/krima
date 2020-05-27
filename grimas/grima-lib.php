@@ -1560,7 +1560,7 @@ class Grima {
 /**@{*/
 
 	# XXX check if blank filter is ok
-	function getAnalytics($path,$filter,$limit=25,$token=null) {
+	function getAnalytics($path,$filter,$limit=500,$token=null) {
 		return $this->get('/almaws/v1/analytics/reports',
 			array(),
 			array('path' => urlencode($path), 'filter' => urlencode($filter),
