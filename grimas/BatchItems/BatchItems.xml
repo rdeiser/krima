@@ -5,7 +5,7 @@
 	label="Fulfillment Note"
 	required="no"
 	placeholder="Fulfillment Note"
-	>
+	/>
 	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
