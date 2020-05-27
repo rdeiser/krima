@@ -7,7 +7,7 @@ class ASDecisions extends GrimaTask {
 
 	function do_task() {
 		$set = new Set();
-		$set->createSet($this['set_name']);
+		$set->createSet;
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
