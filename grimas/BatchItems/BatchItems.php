@@ -14,6 +14,7 @@ class BatchItems extends GrimaTask {
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
+				$item['fulfillment_note'] = 'Send to Main'
 				//$item['inventory_date'] = '1976-01-01';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
