@@ -15,7 +15,7 @@ class BatchItemsMMS extends GrimaTask {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdmain';
 				continue;
-			} 
+			} else {}
 			if ($holding['location_code'] = 'over') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdover';
