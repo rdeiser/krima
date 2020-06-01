@@ -1505,6 +1505,7 @@ class Grima {
 		return $ret;
 
 	}
+
 // }}}
 
 // {{{ grima -> deleteSet (Delete a Set)
@@ -3387,6 +3388,11 @@ class Set extends AlmaObject {
 	function createFromImport($job_id,$population) {
 		global $grima;
 		$this->xml = $grima->createSetFromImport($job_id,$population);
+	}
+
+	function createSet($set_name){
+		global $grima;
+		$this->xml =$grima->createSet($set_name);
 	}
 
 // {{{ Set -> loadFromAlma
