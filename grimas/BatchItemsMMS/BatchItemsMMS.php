@@ -9,14 +9,12 @@ class BatchItemsMMS extends GrimaTask {
 		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
 
 		foreach ($this->bibs as $mmsid) {
-			$bib = new Bib();
-			$bib->loadFromAlma($mmsid);
-			$bib->getHoldings();
 			$holding = new Holding();
+			$holding->loadFromAlma($mmsid,$this['holding_id']);
 			$holding['library_code'] = 'WITHDRAW';
 			if ($holding['location_code'] = 'main') {
 				$holding['location_code'] = 'wdmain';
-			} else {}
+			} else {}/*
 			if ($holding['location_code'] = 'over') {
 				$holding['location_code'] = 'wdover';
 			} else {}
@@ -31,7 +29,7 @@ class BatchItemsMMS extends GrimaTask {
 			} else {}
 			if ($holding['location_code'] = 'ref') {
 				$holding['location_code'] = 'wdref';
-			} else {}
+			} else {}*/
 			$holding->updateAlma();
 		}
 			
