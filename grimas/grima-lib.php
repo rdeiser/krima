@@ -1039,10 +1039,20 @@ class Grima {
 	}
 // }}}
 
-/*
-	function postSetManageMembers($set_id,$id_type,$op) {
+// postSetMembers
+// POST /almaws/v1/conf/sets/{set_id}
+	function postSetManageMembers($set_id){
+		$ret=$this->post('/almaws/v1/conf/sets/{set_id}',
+			array('set_id'=>$set_id),
+			array()
+		);
+		$this_>checkForErrorMessage($ret);
+		return $ret;
 	}
-*/
+/*	function postSetManageMembers($set_id,$id_type,$op) {
+	}*/
+
+
 // {{{ Job -> change physical items job (Run job)
 /**
  * @brief Run change physical items job
@@ -1428,6 +1438,7 @@ class Grima {
  * @param string $population ...
  * @return DomDocument Set object
 */
+
 	function createSetFromImport($job_instance_id, $population) {
 		# create blank set
 
@@ -3392,7 +3403,12 @@ class Set extends AlmaObject {
 
 	function createSet($name){
 		global $grima;
-		$this->xml =$grima->createSet($name);
+		$this->xml = $grima->createSet($name);
+	}
+
+	function postSetManageMembers($set_id){
+		global $grima;
+		$this->xml = $grima->postSetManageMembers($set_id);
 	}
 
 // {{{ Set -> loadFromAlma
