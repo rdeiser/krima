@@ -12,12 +12,26 @@ class BatchItemsMMS extends GrimaTask {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
 			$bib->getHoldings();
-			$item = new Item();
-			//$item['barcode'] = 'HaleFire-000026';
-			//$item['barcode'] = $this['barcode'];
-			$item['is_magnetic'] = true;
-			$item->addToAlmaHolding($mmsid,$this['holding_id'],$item);
-			$this->addMessage('success',"Successfully added an Item Record to {$item['item_pid']}:{$item['barcode']}");
+			$holding = new Holding();
+			$holding['library_code'] = 'WITHDRAW';
+			if ($holding['location_code'] = 'main') {
+				$holding['location_code'] = 'wdmain';
+			} else {}
+			if ($holding['location_code'] = 'over') {
+				$holding['location_code'] = 'wdover';
+			} else {}
+			if ($holding['location_code'] = 'cmc') {
+				$holding['location_code'] = 'wdcmc';
+			} else {}
+			if ($holding['location_code'] = 'juv') {
+				$holding['location_code'] = 'wdjuv';
+			} else {}
+			if ($holding['location_code'] = 'overplus') {
+				$holding['location_code'] = 'wdoverplus';
+			} else {}
+			if ($holding['location_code'] = 'ref') {
+				$holding['location_code'] = 'wdref';
+			} else {}
 		}
 			
 			$this->biblist[] = $bib;
