@@ -14,7 +14,7 @@ class BatchItemsMMS extends GrimaTask {
 			$holding['library_code'] = 'WITHDRAW';
 			if ($holding['location_code'] = 'main') {
 				$holding['location_code'] = 'wdmain';
-			} else {}/*
+			} else {}
 			if ($holding['location_code'] = 'over') {
 				$holding['location_code'] = 'wdover';
 			} else {}
@@ -29,11 +29,9 @@ class BatchItemsMMS extends GrimaTask {
 			} else {}
 			if ($holding['location_code'] = 'ref') {
 				$holding['location_code'] = 'wdref';
-			} else {}*/
+			} else {}
 			$holding->updateAlma();
 		}
-			
-			$this->biblist[] = $bib;
 }
 }
 //}
