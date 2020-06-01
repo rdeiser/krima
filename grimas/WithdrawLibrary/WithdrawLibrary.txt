@@ -1,0 +1,28 @@
+<GrimaForm>
+    <Title>Batch Item Record Creation</Title>
+	<Field
+	name="fulnote"
+	label="Fulfillment Note"
+	required="no"
+	placeholder="Fulfillment Note"
+	/>
+	<Field
+	name="whichnote"
+	label="Unboxing Stat 3 Note:"
+	type="select"
+	required="yes"
+	placeholder="Unboxing Note"
+	>
+	<option value="ANNEX ingest">ANNEX ingest</option>
+	<option value="HALE return">HALE return</option>
+	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
+	</Field>
+    <Field
+        name="holding_id"
+        label="Bibs with holdings without items"
+        autocomplete="off"
+        required="yes"
+        placeholder="Holding Id without items, one per line."
+		rows="20"
+    />
+</GrimaForm>

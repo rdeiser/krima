@@ -1,0 +1,11 @@
+<GrimaForm>
+    <Title>Change Library and Location to Withdraw Library</Title>
+    <Field
+        name="holding_id"
+        label="Holdings with Item Records marked to be withdrawn"
+        autocomplete="off"
+        required="yes"
+        placeholder="Holding Id, one per line."
+		rows="20"
+    />
+</GrimaForm>
