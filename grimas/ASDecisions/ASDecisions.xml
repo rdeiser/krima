@@ -1,6 +1,12 @@
 <GrimaForm>
     <Title>AS Decisions Populated</Title>
 	<Field
+	name="setName"
+	label="Alma Set Name"
+	required="yes"
+	placeholder="Alma Set Name"
+	/>
+	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
 	type="select"
