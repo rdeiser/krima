@@ -12,7 +12,7 @@ class ASDecisions extends GrimaTask {
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
-			$set->postSetManageMembers();
+			$set->postSetManageMembers($this['set_id']);
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
 			if ($item['statistics_note_2'] == '') {
