@@ -8,11 +8,11 @@ class ASDecisions extends GrimaTask {
 	function do_task() {
 		$set = new Set();
 		$set->createSet($this['setName']);
+		$set->postSetManageMembers($set_id);
 
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
-			$set->postSetManageMembers($set_id);
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
 			if ($item['statistics_note_2'] == '') {
