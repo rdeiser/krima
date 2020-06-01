@@ -15,31 +15,37 @@ class BatchItemsMMS extends GrimaTask {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdmain';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			if ($holding['location_code'] = 'over') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdover';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			if ($holding['location_code'] = 'cmc') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdcmc';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			if ($holding['location_code'] = 'juv') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdjuv';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			if ($holding['location_code'] = 'overplus') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdoverplus';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			if ($holding['location_code'] = 'ref') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdref';
 				$holding->updateAlma();
+				continue;
 			} else {}
 			
 		}
