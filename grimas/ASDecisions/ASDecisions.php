@@ -7,10 +7,8 @@ class ASDecisions extends GrimaTask {
 
 	function do_task() {
 		$set = new Set();
-		$set->createSet($this['setname'], "TOTAL_RECORDS_ADDED");
+		$set->createSet($this['set_name']);
 
-
-		$size = count($set->members)
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
