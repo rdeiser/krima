@@ -1041,10 +1041,10 @@ class Grima {
 
 // postSetMembers
 // POST /almaws/v1/conf/sets/{set_id}
-	function postSetManageMembers($set_id){
+	function postSetManageMembers($set_id,$id_type,$op){
 		$ret=$this->post('/almaws/v1/conf/sets/{set_id}',
 			array('set_id'=>$set_id),
-			array()
+			array('id_type'=>$id_type, 'op'=>$op)
 		);
 		$this_>checkForErrorMessage($ret);
 		return $ret;
