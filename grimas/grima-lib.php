@@ -1500,7 +1500,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 
-		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_name' => $name),$bodyxml);
+		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_name' => $set_name),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
