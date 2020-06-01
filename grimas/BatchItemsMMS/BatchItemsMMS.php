@@ -32,6 +32,7 @@ class BatchItemsMMS extends GrimaTask {
 			if ($holding['location_code'] = 'ref') {
 				$holding['location_code'] = 'wdref';
 			} else {}
+			$holding->updateAlma();
 		}
 			
 			$this->biblist[] = $bib;
