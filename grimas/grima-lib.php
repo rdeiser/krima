@@ -3421,7 +3421,11 @@ class Set extends AlmaObject {
 
 	function postSetManageMembers($set_id){
 		global $grima;
-		$this->xml = $grima->postSetManageMembers($set_id);
+
+		if (!isset($this['set_id'])
+		or (!$this['set_id'])) {
+			$this['set_id'] = Set::postSetManageMembers($this['set_id']);
+		}
 	}
 
 // {{{ Set -> loadFromAlma
