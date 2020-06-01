@@ -20,7 +20,7 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
 			$item->updateAlma();
-			$set = new Set();
+			//$set = new Set();
 			//$set->postSetMangeMembers;
 			$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']}");
 		}
