@@ -1041,16 +1041,29 @@ class Grima {
 
 // postSetMembers
 // POST /almaws/v1/conf/sets/{set_id}
-	function postSetManageMembers($set_id,$id_type,$op){
+/*	function postSetManageMembers($set_id,$id_type,$op){
 		$ret=$this->post('/almaws/v1/conf/sets/{set_id}',
 			array('set_id'=>$set_id),
 			array('id_type'=>$id_type, 'op'=>$op)
 		);
 		$this_>checkForErrorMessage($ret);
 		return $ret;
-	}
-/*	function postSetManageMembers($set_id,$id_type,$op) {
 	}*/
+	function postSetManageMembers($set_id,$id_type,$op) {
+		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
+<set>
+  <set_id></set_id>
+  <id_type>BARCODE</id_type>
+  <ob>add_members</ob>
+</set>';
+		$bodyxml = new DomDocument();
+		$bodyxml->loadXML($body);
+		
+		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_id' => $set_id, 'id_type' => $id_type, 'op' => $op),$bodyxml);
+		
+		$this->checkForErrorMessage($ret);
+		return $ret;
+	}
 
 
 // {{{ Job -> change physical items job (Run job)
