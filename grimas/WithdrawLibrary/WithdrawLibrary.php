@@ -13,7 +13,7 @@ class WithdrawLibrary extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				$holding = new Holding();
+				
 				if ($holding['location_code'] == 'main') {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdmain';
