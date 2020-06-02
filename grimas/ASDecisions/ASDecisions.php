@@ -14,7 +14,8 @@ class ASDecisions extends GrimaTask {
 
 		foreach ($this->barcodes as $barcode) {
 			$set = new Set();
-			$set->postSetManageMembers($set['set_id']);
+			$set->postSetManageMembers($set['set_id'], $barcode);
+			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
 			if ($item['statistics_note_2'] == '') {
