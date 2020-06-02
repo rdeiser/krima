@@ -1058,7 +1058,6 @@ class Grima {
 <members total_record_count="1">
   <member>
     <id>' . $barcode .'</id>
-    <description>' . $barcode .'</description>
   </member>
 </members>
 </set>';
