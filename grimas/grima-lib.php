@@ -1052,7 +1052,7 @@ class Grima {
 	function postSetManageMembers($set_id,$id_type,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <set>
-  <set_id></set_id>
+  <set_id>' . $set_id . '</set_id>
   <id_type>BARCODE</id_type>
   <ob>add_members</ob>
 </set>';
