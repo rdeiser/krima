@@ -1069,6 +1069,7 @@ class Grima {
 		
 		$this->checkForErrorMessage($ret);
 		return $ret;
+	}
 	/*function postSetManageMembers($set_id,$id_type,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <set>
