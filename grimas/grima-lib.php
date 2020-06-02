@@ -1054,6 +1054,7 @@ class Grima {
 
 <set>
   <id>' . $set_id .'>/id>
+  <op>add_members</op>
   <number_of_members>1</number_of_members>
 <members total_record_count="1">
   <member>
