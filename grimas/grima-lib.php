@@ -1049,7 +1049,7 @@ class Grima {
 		$this_>checkForErrorMessage($ret);
 		return $ret;
 	}*/
-	function postSetManageMembers($set_id, $item_pid, $barcode) {
+	function postSetManageMembers($set_id, $barcode) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
 
 <set>
@@ -1057,7 +1057,7 @@ class Grima {
   <number_of_members>1</number_of_members>
 <members total_record_count="1">
   <member>
-    <id>' . $item_pid .'</id>
+    <id>' . $barcode .'</id>
     <description>' . $barcode .'</description>
   </member>
 </members>
@@ -1065,7 +1065,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 		
-		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_id' => $set_id, 'item_pid' => $item_pid, 'barcode' => $barcode),$bodyxml);
+		$ret = $this->post('/almaws/v1/conf/sets', array(), array('set_id' => $set_id, 'barcode' => $barcode),$bodyxml);
 		
 		$this->checkForErrorMessage($ret);
 		return $ret;
