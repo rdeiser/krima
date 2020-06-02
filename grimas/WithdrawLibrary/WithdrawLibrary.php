@@ -39,7 +39,7 @@ class WithdrawLibrary extends GrimaTask {
 				$holding['location_code'] = 'wdref';
 			} else {}
 			$holding->updateAlma();
-				
+			$this->addMessage('success',"Successfully  modified {$holdingid} to {$holding['location_code']}");
 	}
 }
 }
