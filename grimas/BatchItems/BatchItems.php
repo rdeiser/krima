@@ -21,9 +21,9 @@ class BatchItems extends GrimaTask {
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
-				function print_success() {
+				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
-}
+}*/
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
