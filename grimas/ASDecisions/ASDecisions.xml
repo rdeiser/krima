@@ -1,6 +1,6 @@
 <GrimaForm>
     <Title>AS Decisions Populated</Title>
-	<Field
+	<!--<Field
 	name="setid"
 	label="Set ID"
 	required="no"
@@ -11,7 +11,7 @@
 	label="Alma Set Name"
 	required="yes"
 	placeholder="Alma Set Name"
-	/>
+	/>-->
 	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
