@@ -2725,7 +2725,7 @@ class Item extends AlmaObject {
 		global $grima;
 		$this->set_id = $set_id;
 		$this->barcode = $barcode;
-		$this->xml = $grima->postSet($mms_id,$barcode,$this->xml);
+		$this->xml = $grima->postSetManageMembers($mms_id,$barcode,$this->xml);
 		return $this->xml;
 	}
 	/*function updateAlma() {
