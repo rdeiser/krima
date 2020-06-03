@@ -1,6 +1,12 @@
 <GrimaForm>
     <Title>AS Decisions Populated</Title>
 	<Field
+	name="setid"
+	label="Set ID"
+	required="no"
+	placeholder="Set ID"
+	/>
+	<Field
 	name="setName"
 	label="Alma Set Name"
 	required="yes"
