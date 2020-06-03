@@ -2720,6 +2720,22 @@ class Item extends AlmaObject {
 			$this->xml
 		);
 	}
+//updateAlma (put) set
+	funciton addToAlmaSet($set_id,$barcode) {
+		global $grima;
+		$this->set_id = $set_id;
+		$this->barcode = $barcode;
+		$this->xml = $grima->postSet($mms_id,$barcode,$this->xml);
+		return $this->xml;
+	}
+	/*function updateAlma() {
+		global $grima;
+		return $grima->putSet(
+			$this['set_id'],
+			$this['barcode'],
+			$this->xml
+		);
+	}*/
 // }}}
 
 // {{{ Item -> deleteFromAlma (delete)
