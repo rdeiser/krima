@@ -14,10 +14,10 @@ class ASDecisions extends GrimaTask {
 
 		foreach ($this->barcodes as $barcode) {
 			$set = new Set();
-			$this['setName'] = Set::postSetManageMembers($setid);
+			//$this['setName'] = Set::postSetManageMembers($setid);
 			if ($this['setName']) {
-				$set->loadFromAlma($setid);
-				$set->addToAlmaSet();
+				$set->loadFromAlma($this['set_id']);
+				$set->addToAlmaSet($barcode);
 				continue;
 			} else {}
 				
