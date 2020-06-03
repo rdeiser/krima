@@ -2721,7 +2721,7 @@ class Item extends AlmaObject {
 		);
 	}
 //updateAlma (put) set
-	funciton addToAlmaSet($set_id,$barcode) {
+	function addToAlmaSet($set_id,$barcode) {
 		global $grima;
 		$this->set_id = $set_id;
 		$this->barcode = $barcode;
