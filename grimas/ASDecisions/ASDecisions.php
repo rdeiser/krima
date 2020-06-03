@@ -16,7 +16,7 @@ class ASDecisions extends GrimaTask {
 			$set = new Set();
 			//$this['setName'] = Set::postSetManageMembers($setid);
 			if ($this['setName']) {
-				$set->loadFromAlma($this['set_id']);
+				$set->loadFromAlma($set['set_id']);
 				$set->addToAlmaSet($barcode);
 				continue;
 			} else {}
