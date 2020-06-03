@@ -6,14 +6,21 @@ class ASDecisions extends GrimaTask {
 	public $barcodelist = array();
 
 	function do_task() {
-		//$set = new Set();
-		//$set->createSet($this['setName']);
+		$set = new Set();
+		$set->createSet($this['setName']);
 		//$set->postSetManageMembers($set['set_id']);
 
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
-			//$set = new Set();
+			$set = new Set();
+			$this['setName'] = Set::postSetManageMembers($setid);
+			if ($this['setName']) {
+				$set->loadFromAlma($setid);
+				$set->addToAlmaSet();
+				continue;
+			} else {}
+				
 			//$set->postSetManageMembers($set['set_id'], $barcode);
 			
 			$item = new Item();
