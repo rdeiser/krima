@@ -3070,7 +3070,7 @@ class Set extends AlmaObject {
 		$this->xml = $grima->createSet($name);
 	}
 
-	function postSetManageMembers(){
+	function getSetIDifNeeded(){
 		global $grima;
 
 		if (!isset($this['setName'])
