@@ -12,19 +12,19 @@ class BatchItemsMMS extends GrimaTask {
 			$holding = new Holding();
 			$holding->loadFromAlma($mmsid,$this['holding_id']);
 			$item = new Item();
-				$item['fulfillment_note'] = $this['fulnote'];
-				//$item['inventory_date'] = '1976-01-01';
-				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				$item['statistics_note_3'] = $this['whichnote'];
-				$item->addToAlmaHolding($this['mms_id'],$holdingid);
-				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+			$item['fulfillment_note'] = $this['fulnote'];
+			//$item['inventory_date'] = '1976-01-01';
+			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+			$item['statistics_note_3'] = $this['whichnote'];
+			$item->addToAlmaHolding($this['mms_id'],$holdingid);
+			//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+			$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
 }*/
-			} else {
+			}/* else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
-			}
+			}*/
 			$this->holdinglist[] = $holding;
 		}
 
