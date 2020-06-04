@@ -14,7 +14,7 @@ class BatchItemsMMS extends GrimaTask {
 			$item = new Item();
 			//$item['fulfillment_note'] = $this['fulnote'];
 			//$item['inventory_date'] = '1976-01-01';
-			$item['inventory_date'] = date("Y-m-d");
+			//$item['inventory_date'] = date("Y-m-d");
 			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			//$item['statistics_note_3'] = $this['whichnote'];
 			$item->addToAlmaHolding($mmsid,$this['holding_id']);
