@@ -645,7 +645,7 @@ class Grima {
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
 			array(),
-			//$item
+			$item
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
