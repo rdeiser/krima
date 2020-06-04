@@ -27,7 +27,7 @@ class ASDecisions extends GrimaTask {
 			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			function checkForErrorMessage() {
+			$this->checkForErrorMessage;
 			if ($error->length > 0) {
 				$this->addMessage('error',"Alma did not find:{$item['barcode']}");
 			} else {}
@@ -41,7 +41,6 @@ class ASDecisions extends GrimaTask {
 			$item->updateAlma();
 			$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']}");
 			//$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']} and set#{$set['set_id']}");
-			}
 		}
 	}
 }
