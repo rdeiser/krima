@@ -11,34 +11,23 @@ class BatchItemsMMS extends GrimaTask {
 		foreach ($this->bibs as $mmsid) {
 			$holding = new Holding();
 			$holding->loadFromAlma($mmsid,$this['holding_id']);
-			if ($holding['location_code'] == 'main') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdmain';
-			} else {}
-			if ($holding['location_code'] == 'over') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdover';
-			} else {}
-			if ($holding['location_code'] == 'cmc') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdcmc';
-			} else {}
-			if ($holding['location_code'] == 'juv') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdjuv';
-			} else {}
-			if ($holding['location_code'] == 'overplus') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdoverplus';
-			} else {}
-			if ($holding['location_code'] == 'ref') {
-				$holding['library_code'] = 'WITHDRAW';
-				$holding['location_code'] = 'wdref';
-			} else {}
-			$holding->updateAlma();
-
+			$item = new Item();
+				$item['fulfillment_note'] = $this['fulnote'];
+				//$item['inventory_date'] = '1976-01-01';
+				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+				$item['statistics_note_3'] = $this['whichnote'];
+				$item->addToAlmaHolding($this['mms_id'],$holdingid);
+				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+				/*function print_success() {
+    do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
+}*/
+			} else {
+				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
+			}
+			$this->holdinglist[] = $holding;
 		}
-}
-}
-//}
+
+	}
+
 BatchItemsMMS::RunIt();
