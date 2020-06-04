@@ -27,8 +27,8 @@ class ASDecisions extends GrimaTask {
 			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			if ($this->danger = true) {
-				$this->addMessage('danger',"Alma did not find {$item['barcode']}");
+			if ($this->addMessage = ('error','No items found for barcode')) {
+				$this->addMessage('error',"Alma did not find {$item['barcode']}");
 				continue;
 			} else {
 			
