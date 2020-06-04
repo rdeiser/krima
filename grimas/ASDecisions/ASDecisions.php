@@ -29,7 +29,7 @@ class ASDecisions extends GrimaTask {
 			$item->loadFromAlmaBarcode($barcode);
 			function checkForErrorMessage() {
 			if ($error->length > 0) {
-				throw new Exception("Alma did not find " . $error[0]->nodeValue);
+				$this->addMessage('error',"Alma did not find:{$item['barcode']}");
 			} else {}
 			
 			if ($item['statistics_note_2'] == '') {
