@@ -30,7 +30,6 @@ class ASDecisions extends GrimaTask {
 			function checkForErrorMessage() {
 			if ($error->length > 0) {
 				throw new Exception("Alma did not find " . $error[0]->nodeValue);
-				continue;
 			} else {
 			
 			if ($item['statistics_note_2'] == '') {
