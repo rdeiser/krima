@@ -27,7 +27,6 @@ class ASDecisions extends GrimaTask {
 			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			$this->checkForErrorMessage();
 			if ($error->length > 0) {
 				throw new Exception("Alma did not find " . $error[0]->nodeValue);
 				continue;
