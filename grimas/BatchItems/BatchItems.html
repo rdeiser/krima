@@ -1,0 +1,22 @@
+﻿<h1 id="batchitems---add-item-records-to-alma-in-batch">BatchItems - Add Item Records to Alma in Batch</h1>
+<p>This grima helps you add multiple Item Records to Alma at one time.  This grima will also populate the Statistics Note 2 &quot;FIRE 2018 OZONE&quot; and the Statistics Note 3 of the user's choice.  After adding the Item Record you will see a list of generated messages providing you with the barcode of the new record.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>Holdings Id number for which you want the Item Record associated with.</li>
+</ul>
+<h2 id="procedure">Procedure</h2>
+<p>The first box of the form ask you which Statistics Note 3 phrase you would like populated.  This is a drop-down option that allows you to choose the needed defined phrase:<img src="images/BatchItems-out0.png" alt="Screenshot of grima form" /><br />
+The next part of the form is where you will input your Holdings Id number(s).  Input each Holdings Id number on its own line without any spacing:
+<img src="images/BatchItems-out1.png" alt="Screenshot of grima form" /></p>
+<p>After you have chosen the appropriate Statistics Note 3 phrase and provided the Holdings Id number(s), one per line, click the submit button.</p>
+<p>When the grima is completed, a list of messages will appear for each Holdings Id number that is provided.  There are two messages.  The first message will look like the following:
+<img src="images/BatchItems-out2.png" alt="Screenshot of grima form" /></p>
+<p>Which means that Alma could not find the Holdings Record because it has been deleted or recently created.</p>
+<p>The second message will look like the following:
+<img src="images/BatchItems-out3.png" alt="Screenshot of grima form" /></p>
+<p>This message provides the Holdings Id and the Barcode for the newly created Item Record.</p>
+<h2 id="api-requirements">API requirements</h2>
+<ul>
+<li>Bibs - read/write</li>
+<li>Analytics - read/write</li>
+</ul>
