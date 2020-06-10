@@ -2,7 +2,7 @@
 
 require_once("../grima-lib.php");
 
-class DeleteTree extends GrimaTask {
+class DeleteTreePO extends GrimaTask {
 
 	function do_task() {
 		$bib = new Bib();
@@ -10,9 +10,10 @@ class DeleteTree extends GrimaTask {
 		$bib->getHoldings();
 		$holding = $bib->holdings[0];
 		$holding = new Holding();
-		$withdrawn_phrase = "withdrawn" . date("m-Y")
-		$holding->appendField("852","8","",array('h' => $withdrawn_phrase));
-		$holding->getItemList();
+		//$withdrawn_phrase = "withdrawn" . date("m-Y")
+		$holding->appendField("852","8","","");
+		$holding->updateAlma();
+		/*$holding->getItemList();
 		if (count($holding->itemList->items) > 1) {
 			addMessage('warn', "More than one item on holding {$holding['holding_id']}");
 			//continue;
@@ -23,7 +24,7 @@ class DeleteTree extends GrimaTask {
 		
 		$bib->deleteTreeFromAlma();
 		$this->addMessage('success',
-			"deleted bib {$this['mms_id']} and all inventory with Statistics Note 1 = {$item['statistics_note_1']}");
+			"deleted bib {$this['mms_id']} and all inventory with Statistics Note 1 = {$item['statistics_note_1']}");*/
 	}
 }
 
