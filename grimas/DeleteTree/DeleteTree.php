@@ -21,7 +21,7 @@ class DeleteTree extends GrimaTask {
 			} else {}
 		}
 		
-		$bib->deleteTreeFromAlma();
+		$holding->deleteTreeFromAlma();
 		$this->addMessage('success',
 			"deleted bib {$this['mms_id']} and all inventory with Statistics Note 1 = {$item['statistics_note_1']}");
 	}
