@@ -26,5 +26,6 @@ class DeleteTree extends GrimaTask {
 			"deleted bib {$this['mms_id']} and all inventory with Statistics Note 1 = {$item['statistics_note_1']}");
 	}
 }
+}
 
 DeleteTree::RunIt();
