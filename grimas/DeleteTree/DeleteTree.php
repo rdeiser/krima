@@ -12,11 +12,14 @@ class DeleteTree extends GrimaTask {
 		$holding->getItemList();
 		if (count($holding->itemList->items) > 1) {
 			addMessage('warn', "More than one item on holding {$holding['holding_id']}");
-			continue;
+			//continue;
+		} else {
+		if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
+			if ($item['statistics_note_1'] == '') {
+				$item['statistics_note_1'] = 'WITHDRAWN';
+				$item->updateAlma();
+			} else {}
 		}
-		$item = $holding->itemList->items[0];
-		$item['statistics_note_1'] = 'WITHDRAWN';
-		$item->updateAlma();
 		
 		$bib->deleteTreeFromAlma();
 		$this->addMessage('success',
