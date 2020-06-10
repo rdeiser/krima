@@ -11,7 +11,11 @@ class DeleteTreePO extends GrimaTask {
 		$holding = $bib->holdings[0];
 		$holding = new Holding();
 		//$withdrawn_phrase = "withdrawn" . date("m-Y")
-		$holding->appendField("852","8","","");
+		$holding
+		$holding->appendField("852","8","",array(
+			'x' => "withdrawn"
+			)
+			);
 		$holding->updateAlma();
 		/*$holding->getItemList();
 		if (count($holding->itemList->items) > 1) {
