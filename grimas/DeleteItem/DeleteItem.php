@@ -7,7 +7,7 @@ class DeleteItem extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBCorX($this['item']);
-		if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
+		if ($item['statistics_note_3'] == 'To be WITHDRAWN') and $item['statistics_note_3'] == '' {
 		$item['statistics_note_1'] = 'WITHDRAWN';
 		$item->updateAlma();
 		$item->deleteFromAlma();
