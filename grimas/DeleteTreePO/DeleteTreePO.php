@@ -28,4 +28,4 @@ class DeleteTreePO extends GrimaTask {
 	}
 }
 
-DeleteTree::RunIt();
+DeleteTreePO::RunIt();
