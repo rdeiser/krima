@@ -13,7 +13,7 @@ class DeleteItem extends GrimaTask {
 		$item->deleteFromAlma();
 		$this->addMessage('success',"Deleted item {$this['item']}");
 		} else {
-			$this->addMessage('error',"Item Record for {$item['barcode']}") has Statistics Note 3 of :{$item['statistics_note_3']}");
+			$this->addMessage('error',"Item Record for {$item['barcode']} has Statistics Note 3 of :{$item['statistics_note_3']}");
 	}
 }
 
