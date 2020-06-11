@@ -4,6 +4,7 @@
 	name="itempolicy"
 	label="Item Policy"
 	required="no"
+	/>
 	<Field
 	name="fulnote"
 	label="Fulfillment Note"
