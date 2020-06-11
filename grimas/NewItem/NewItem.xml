@@ -1,0 +1,51 @@
+<GrimaForm>
+    <Title>New Item Record Creation</Title>
+	<Field
+	name="itempolicy"
+	label="Item Policy"
+	required="no"
+	<Field
+	name="fulnote"
+	label="Fulfillment Note"
+	required="no"
+	placeholder="Fulfillment Note"
+	/>
+	<Field
+	name="whichnote2"
+	label="Statistics Note 2"
+	type="select"
+	required="no"
+	>
+	<option></option>
+	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
+	<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>
+	<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
+	<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
+	<option value="LACKS ozone">LACKS ozone</option>
+	</Field>
+	<Field
+	name="whichnote"
+	label="Statistics Note 3:"
+	type="select"
+	required="no"
+	placeholder="Unboxing Note"
+	>
+	<option></option>
+	<option value="ANNEX ingest">ANNEX ingest</option>
+	<option value="HALE return">HALE return</option>
+	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
+	</Field>
+    <Field
+        name="holding_id"
+        label="Holdings Record without an Item Record"
+        autocomplete="off"
+        required="yes"
+        placeholder="Holding Id Number without an Item Record"
+    />
+	<Field
+        label="Barcode"
+        name="barcode"
+        required="no"
+        placeholder="Scan barcode..."
+    />
+</GrimaForm>
