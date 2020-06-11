@@ -19,7 +19,12 @@
 		name="institution"
 		label="Institution:"
         required="yes"
-	/>
+		type="select"
+		>
+		<option value="Kansas State University">Kansas State Univeristy</option>
+		<option value="Sandbox">Sandbox</option>
+		<option value="Production">Production</option>
+		</Field>
 	<Field
 		name="redirect_url"
 		type="hidden"
