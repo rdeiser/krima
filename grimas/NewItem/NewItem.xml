@@ -48,7 +48,7 @@
 	</Field>
 	<Field
 	name="statnote3"
-	label="Statistics Note 3:"
+	label="Statistics Note 3"
 	type="select"
 	required="no"
 	placeholder="Unboxing Note"
