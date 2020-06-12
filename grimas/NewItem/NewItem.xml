@@ -15,7 +15,7 @@
 	<Field
 	name="copyid"
 	label="Copy ID"
-	requrire="no"
+	requrired="no"
 	/>
 	<Field
 	name="itempolicy"
