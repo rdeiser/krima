@@ -5,9 +5,9 @@ require_once("../grima-lib.php");
 class NewItem extends GrimaTask {
 
 	function do_task() {
-		foreach ($this->holdings as $holdingid) {
+		foreach {
 			$holding = new Holding();
-			$holding->loadFromAlma($this['mmsid'],$holdingid);
+			$holding->loadFromAlma($this['mmsid'],$THIS['holding_id']);
 			/*$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);*/
 			if ($this['mmsid']) {
 				//$holding->loadFromAlma($this['mms_id'],$holdingid);
