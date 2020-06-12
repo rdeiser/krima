@@ -10,13 +10,11 @@ class NewItem extends GrimaTask {
 		foreach ($this->bibs as $mmsid) {
 			$holding = new Holding();
 			$holding->loadFromAlma($mmsid,$this['holding_id']);
-			$holding['copy_id'] = $this['copyid'];
-			$holding->updateAlma();
 			/*$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);*/
 			//if ($this['mmsid']) {
 				//$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
-				//$item['copy_id'] = $this['copyid'];
+				$item['copy_id'] = $this['copyid'];
 				$item['item_policy'] = $this['itempolicy'];
 				$item['pieces'] = $this['pieces'];
 				$item['public_note'] = $this ['pubnote'];
