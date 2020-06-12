@@ -18,6 +18,7 @@ class NewItem extends GrimaTask {
 				//$item['copy_id'] = $this['copyid'];
 				$item['item_policy'] = $this['itempolicy'];
 				$item['pieces'] = $this['pieces'];
+				$item['public_note'] = $this ['pubnote'];
 				$item['fulfillment_note'] = $this['fulnote'];
 				$item['statistics_note_2'] = $this['statnote2'];
 				$item['statistics_note_3'] = $this['statnote3'];
