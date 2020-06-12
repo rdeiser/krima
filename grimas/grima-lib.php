@@ -2192,6 +2192,7 @@ class HoldingsList extends AlmaObject {
 /** class HoldingsListEntry */
 class HoldingsListEntry extends AlmaObject {
 	protected $el_address = array(
+		'copy_id' => '//copy_id',
 		'holding_id' => '//holding_id',
 		'call_number' => '//holding/call_number',
 		'library_code' => '//holding/library',
