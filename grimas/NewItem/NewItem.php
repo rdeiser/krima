@@ -3,16 +3,15 @@
 require_once("../grima-lib.php");
 
 class NewItem extends GrimaTask {
-	public $biblist = array();
 
 	function do_task() {
-		$this->bibs = preg_split('/\r\n|\r|\n/',$this['mms']);
-		foreach ($this->bibs as $mmsid) {
+		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
+		foreach ($this->holdings as $holdingid) {
 			$holding = new Holding();
-			$holding->loadFromAlma($mmsid,$this['holding_id']);
-			/*$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);*/
-			//if ($this['mmsid']) {
-				//$holding->loadFromAlma($this['mms_id'],$holdingid);
+			$holding->loadFromAlma($holdingid,$this['mms_id']);
+			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
+			if ($this['mmsid']) {
+				/$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
 				//$item['copy_id'] = $this['copyid'];
 				$item['item_policy'] = $this['itempolicy'];
@@ -23,17 +22,12 @@ class NewItem extends GrimaTask {
 				$item['statistics_note_3'] = $this['statnote3'];
 				$item['barcode'] = $this['barcode'];
 				$item->addToAlmaHolding($mmsid,$this['holding_id']);
-				
-				$holding = new Holding();
-				$holding['copy_id'] = $this['copyid'];
-				$holding->updateAlma();
-				
-				$this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$item['barcode']}");
-			/*} else {
-				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$this['holding_id']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+			} else {
+				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
-		}*/
+		}
 	}
 }
-}
+
 NewItem::RunIt();
