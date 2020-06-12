@@ -5,7 +5,6 @@ require_once("../grima-lib.php");
 class NewItem extends GrimaTask {
 
 	function do_task() {
-		foreach {
 			$holding = new Holding();
 			$holding->loadFromAlma($this['mmsid'],$THIS['holding_id']);
 			/*$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);*/
@@ -23,7 +22,6 @@ class NewItem extends GrimaTask {
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
-		}
 	}
 }
 NewItem::RunIt();
