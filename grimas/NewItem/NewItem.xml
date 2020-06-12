@@ -1,8 +1,30 @@
 <GrimaForm>
     <Title>New Item Record Creation</Title>
 	<Field
+        name="holding_id"
+        label="Holdings Record without an Item Record"
+        autocomplete="off"
+        required="yes"
+        placeholder="Holding Id Number without an Item Record"
+    />
+	<Field
+	name="copyid"
+	label="Copy ID"
+	requrire="no"
+	/>
+	<Field
 	name="itempolicy"
 	label="Item Policy"
+	required="no"
+	/>
+	<Field
+	name="pieces"
+	label="Pieces"
+	required="no"
+	/>
+	<Field
+	name="pubnote"
+	label="Public Note"
 	required="no"
 	/>
 	<Field
@@ -12,7 +34,7 @@
 	placeholder="Fulfillment Note"
 	/>
 	<Field
-	name="whichnote2"
+	name="statnote2"
 	label="Statistics Note 2"
 	type="select"
 	required="no"
@@ -25,7 +47,7 @@
 	<option value="LACKS ozone">LACKS ozone</option>
 	</Field>
 	<Field
-	name="whichnote"
+	name="statnote3"
 	label="Statistics Note 3:"
 	type="select"
 	required="no"
@@ -36,13 +58,6 @@
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
 	</Field>
-    <Field
-        name="holding_id"
-        label="Holdings Record without an Item Record"
-        autocomplete="off"
-        required="yes"
-        placeholder="Holding Id Number without an Item Record"
-    />
 	<Field
         label="Barcode"
         name="barcode"
