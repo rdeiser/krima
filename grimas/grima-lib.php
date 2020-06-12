@@ -2302,6 +2302,7 @@ class Holding extends AlmaObjectWithMARC {
 // {{{ $el_address
 	public $el_address = array(
 		'holding_id' => '//holding_id',
+		'copy_id' => '//copy_id',
 		'inst_code' => "/holding/record/datafield[@tag='852']/subfield[@code='a']",
 		'library_code' => "/holding/record/datafield[@tag='852']/subfield[@code='b']",
 		'location_code' => "/holding/record/datafield[@tag='852']/subfield[@code='c']",

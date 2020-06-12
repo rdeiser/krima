@@ -14,9 +14,8 @@ class NewItem extends GrimaTask {
 			//if ($this['mmsid']) {
 				//$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
-				if ($item['copy_id'] == '') {
-					$item['copy_id'] = $this['copyid'];
-				}
+				$item['copy_id'] = '0';
+				$item['copy_id'] = $this['copyid'];
 				$item['item_policy'] = $this['itempolicy'];
 				$item['pieces'] = $this['pieces'];
 				$item['public_note'] = $this ['pubnote'];
