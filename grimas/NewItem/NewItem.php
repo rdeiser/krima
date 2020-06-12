@@ -7,9 +7,10 @@ class NewItem extends GrimaTask {
 	function do_task() {
 		foreach ($this->holdings as $holdingid) {
 			$holding = new Holding();
-			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
-			if ($this['mms_id']) {
-				$holding->loadFromAlma($this['mms_id'],$holdingid);
+			$holding->loadFromAlma($this['mmsid'],$this['holding_id']);
+			/*$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);*/
+			if ($this['mmsid']) {
+				//$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
 				$item['item_policy'] = $this['itempolicy'];
 				$item['fulfillment_note'] = $this['fulnote'];
