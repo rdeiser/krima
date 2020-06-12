@@ -15,6 +15,7 @@
 	<Field
 	name="copyid"
 	label="Copy ID"
+	required="no"
 	/>
 	<Field
 	name="itempolicy"
