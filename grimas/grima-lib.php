@@ -2274,6 +2274,14 @@ class Holding extends AlmaObjectWithMARC {
 		}
 	}
 
+	function offsetSet($offset,$value) {
+		if ($ofset == "copy_id") {
+		$this->el_override['mms_id'] = $value;
+		} else {
+			parent::offsetSet($offset,$value);
+		}
+	}
+
 	function offsetGet($offset) { #XXX TEST
 		if ($offset == "library") {
 			$lib = new Library();
