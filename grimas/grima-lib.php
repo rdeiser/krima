@@ -2192,7 +2192,6 @@ class HoldingsList extends AlmaObject {
 /** class HoldingsListEntry */
 class HoldingsListEntry extends AlmaObject {
 	protected $el_address = array(
-		'copy_id' => '//copy_id',
 		'holding_id' => '//holding_id',
 		'call_number' => '//holding/call_number',
 		'library_code' => '//holding/library',
@@ -2269,14 +2268,6 @@ class Holding extends AlmaObjectWithMARC {
 	function offsetSet($offset,$value) {
 		if ($offset == "mms_id") {
 			$this->el_override['mms_id'] = $value;
-		} else {
-			parent::offsetSet($offset,$value);
-		}
-	}
-
-	function offsetSet($offset,$value) {
-		if ($ofset == "copy_id") {
-		$this->el_override['mms_id'] = $value;
 		} else {
 			parent::offsetSet($offset,$value);
 		}
