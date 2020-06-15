@@ -39,6 +39,18 @@
 	placeholder="Fulfillment Note"
 	/>
 	<Field
+	name="statnote1"
+	label="Statistics Note 1"
+	type="select"
+	required="no"
+	>
+	<option></option>
+	<option value="MISSING 2020">MISSING 2020</option>
+	<option value="LOST 2020">LOST 2020</option>
+	<option value="WITHDRAWN">WITHDRAWN</option>
+	<option value="WITHDRAWN DUE TO 2018 FIRE">WITHDRAWN DUE TO 2018 FIRE</option>
+	</Field>
+	<Field
 	name="statnote2"
 	label="Statistics Note 2"
 	type="select"
@@ -62,6 +74,9 @@
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
+	<option value="AHD HALE retrun">AHD HALE retrun</option>
+	<option value="AHD ANNEX ingest">AHD ANNEX ingest</option>
+	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
 	</Field>
 	<Field
         label="Barcode"
