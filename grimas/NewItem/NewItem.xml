@@ -60,6 +60,7 @@
 	label="Statistics Note 2"
 	type="select"
 	required="no"
+	value="<?php echo isset($_POST['holding_id']) ? $_POST['holding_id'] : ''?>"
 	>
 	<option></option>
 	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
