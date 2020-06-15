@@ -11,7 +11,8 @@ class NewItem extends GrimaTask {
 			$holding->loadFromAlma($holdingid,$this['mms_id']);
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mmsid']) {
-				/$holding->loadFromAlma($this['mms_id'],$holdingid);
+				$holding->loadFromAlma($this['mms_id'],$holdingid);
+				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Item();
 				//$item['copy_id'] = $this['copyid'];
 				$item['item_policy'] = $this['itempolicy'];
