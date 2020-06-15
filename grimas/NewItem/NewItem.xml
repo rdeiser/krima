@@ -61,14 +61,12 @@
 	type="select"
 	required="no"
 	>
-	<select name="select" id="">
 	<option></option>
-	<option value="FIRE 2018 OZONE" <?php echo (isset($_POST['select']) && $_POST['select'] === 'FIRE 2018 OZONE') ? 'selected' : ''; ?>>FIRE 2018 OZONE</option>
+	<option value="<?php echo $statnote2;?>">FIRE 2018 OZONE</option>
 	<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>
 	<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
 	<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
 	<option value="LACKS ozone">LACKS ozone</option>
-	</select>
 	</Field>
 	<Field
 	name="statnote3"
