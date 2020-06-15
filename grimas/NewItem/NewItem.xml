@@ -61,9 +61,10 @@
 	type="select"
 	required="no"
 	>
-	<option></option>
-	<option  value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
 	<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>
+	<!--<option></option>-->
+	<option  value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
+	<!--<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>-->
 	<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
 	<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
 	<option value="LACKS ozone">LACKS ozone</option>
