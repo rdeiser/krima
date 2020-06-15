@@ -1,16 +1,16 @@
 <GrimaForm>
     <Title>New Item Record Creation</Title>
-	<Field
+	<!--<Field
 	name="mms"
 	label="MMS ID"
 	required="yes"
-	/>
+	/>-->
 	<Field
-        name="holding_id"
-        label="Holdings Record without an Item Record"
-        autocomplete="off"
-        required="yes"
-        placeholder="Holding Id Number without an Item Record"
+	name="holding_id"
+	label="Holdings Record without an Item Record"
+	autocomplete="off"
+	required="yes"
+	placeholder="Holding Id Number without an Item Record"
     />
 	<!--<Field
 	name="copyid"
