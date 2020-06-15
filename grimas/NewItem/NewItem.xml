@@ -1,4 +1,4 @@
-<GrimaForm>
+<GrimaForm onsubmit="return false">
     <Title>New Item Record Creation</Title>
 	<!--<Field
 	name="mms"
@@ -26,6 +26,7 @@
 	<option value="book/ser">book/ser</option>
 	<option value="7 day">7 day</option>
 	<option value="no loan">no loan</option>
+	</Field>
 	<Field
 	name="pieces"
 	label="Pieces"
