@@ -10,6 +10,10 @@
 			$style = 'style="background-color: #ab82ff;"';
 			$text = '';
 	}
+	else if ($item['statistics_note_3']=='AHD HALE return') {
+			$style = 'style="background-color: #ab82ff;"';
+			$text = 'HALE return';
+	}
 	else if ($item['statistics_note_3']=='') {
 			$style = 'style=";"';
 			$text = 'Send to Problem Shelf';
