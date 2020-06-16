@@ -12,7 +12,7 @@
 	}
 	else if ($item['statistics_note_3']=='AHD HALE return') {
 			$style = 'style="background-color: #ab82ff;"';
-			$text = 'HALE return';
+			$text = '';
 	}
 	else if ($item['statistics_note_3']=='') {
 			$style = 'style=";"';
