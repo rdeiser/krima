@@ -22,7 +22,6 @@
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
-	<option value="AHD HALE retrun">AHD HALE return</option>
 	<option value="AHD ANNEX ingest">AHD ANNEX ingest</option>
 	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
 	</Field>
