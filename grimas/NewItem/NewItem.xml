@@ -68,6 +68,7 @@
 	<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
 	<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
 	<option value="LACKS ozone">LACKS ozone</option>
+	<option></option>
 	</Field>
 	<Field
 	name="statnote3"
