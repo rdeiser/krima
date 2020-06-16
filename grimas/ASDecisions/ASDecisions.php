@@ -30,9 +30,9 @@ class ASDecisions extends GrimaTask {
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
-			/*if ($item['statistics_note_3'] == 'AHD HALE return') {
-				$item['statistics_note_3'] = 'HALE return';
-			} else {}*/
+			if ($item['statistics_note_3'] == 'AHD HALE retrun') {
+				$item['statistics_note_3'] = 'AHD HALE return';
+			} else {}
 			if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
