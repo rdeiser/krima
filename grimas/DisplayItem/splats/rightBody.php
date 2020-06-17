@@ -73,7 +73,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?=$pattern = '/AHD/'; $replacement = ' d'; if (preg_match("/AHD/i",$item['statistics_note_3'])) { preg_replace($pattern,$replacement,$item['statistics_note_3']);}?>
+				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?=$pattern = '/AHD/'; $replacement = ' '; if (preg_match("/AHD/i",$item['statistics_note_3'])) { preg_replace($pattern,$replacement,$item['statistics_note_3']);}?>
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
