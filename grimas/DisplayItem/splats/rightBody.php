@@ -84,7 +84,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?
 				if ($item['statistics_note_3'] == 'AHD HALE return') {
 					<?=preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);?>
-				} else {
+				} /*else {
 					<?=$e ($item['statistics_note_3'])?>
 				}
 				if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
@@ -96,7 +96,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 					<?=preg_replace('/(AHD To be WITHDRAWN)/', 'To be WITHDRAWN', $item['statistics_note_3']);?>
 				} else {
 					<?=$e ($item['statistics_note_3'])?>
-				}
+				}*/
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
