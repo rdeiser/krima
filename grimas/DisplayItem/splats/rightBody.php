@@ -83,7 +83,7 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?
 				if ($item['statistics_note_3'] == 'AHD HALE return') {
-					<?=preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);?>
+					preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);
 				} /*else {
 					<?=$e ($item['statistics_note_3'])?>
 				}
