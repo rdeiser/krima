@@ -14,6 +14,14 @@
 			$style = 'style="background-color: #ab82ff;"';
 			$text = '';
 	}
+	else if ($item['statistics_note_3']=='AHD To be WITHDRAWN') {
+			$style = 'style="background-color: #cd5555;"';
+			$text = '';
+}
+	else if ($item['statistics_note_3']=='AHD ANNEX ingest') {
+			$style = 'style="background-color: #6495ed;"';
+			$text = '';
+	}
 	else if ($item['statistics_note_3']=='') {
 			$style = 'style=";"';
 			$text = 'Send to Problem Shelf';
