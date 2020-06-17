@@ -1,22 +1,12 @@
 <?php
-if ($item['statistics_note_3']=='AHD HALE return') {
-	$pattern = array();
-	$pattern = '/AHD HALE return)/';
-	$replace = array();
-	$replace = '/HALE return)/';
-}
-if ($item['statistics_note_3']=='AHD ANNEX ingest') {
-	$pattern = array();
-	$pattern = '/AHD ANNEX ingest)/';
-	$replace = array();
-	$replace = '/ANNEX ingest)/';
-}
-if ($item['statistics_note_3']=='AHD To be WITHDRAWN') {
-	$pattern = array();
-	$pattern = '/AHD To be WITHDRAWN)/';
-	$replace = array();
-	$replace = '/To be WITHDRAWN)/';
-}
+$patterns = array();
+$patterns[0] = '/AHD HALE return)/';
+$patterns[1] = '/AHD ANNEX ingest)/';
+$patterns[2] = '/AHD To be WITHDRAWN)/';
+$replacements = array();
+$replacements[0] = '/HALE return)/';
+$replacements[1] = '/ANNEX ingest)/';
+$replacements[2] = '/To be WITHDRAWN)/';
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
@@ -24,7 +14,7 @@ if ($item['process_type']=='') {
 	else if ($item['process_type']) {
 		$style = 'style="background-color:#cd3700;"';
 }
-//Following php color codes the Fulfillment Note if it matches one of the pattern
+//Following php color codes the Fulfillment Note if it matches one of the patterns
 if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
@@ -91,7 +81,9 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
+				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);
+				preg_replace('/(AHD ANNEX ingest)/', 'ANNEX ingest', $item['statistics_note_3']);
+				preg_replace('/(AHD To be WITHDRAWN)/', 'To be WITHDRAWN', $item['statistics_note_3']);?>
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
