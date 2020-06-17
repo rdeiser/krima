@@ -2,6 +2,16 @@
 if ($item['statistics_note_3'] == 'AHD HALE return') {
 	$pattern = '/(AHD HALE return)/';
 	$replace = 'HALE return';
+} else {
+	$replace = $item['statistics_note_3';
+}
+if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
+	$pattern = '/(AHD ANNEX ingest)/';
+	$replace = 'ANNEX ingest';
+}
+if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+	$pattern = '/(AHD To be WITHDRAWN)/';
+	$replace = 'To be WITHDRAWN';
 }
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
