@@ -81,9 +81,16 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);
-				preg_replace('/(AHD ANNEX ingest)/', 'ANNEX ingest', $item['statistics_note_3']);
-				preg_replace('/(AHD To be WITHDRAWN)/', 'To be WITHDRAWN', $item['statistics_note_3']);?>
+				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?
+				if ($item['statistics_note_3'] == 'AHD HALE return') {
+					<?=preg_replace('/(AHD HALE return)/', 'HALE return', $item['statistics_note_3']);?>
+				} else if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
+					<?=preg_replace('/(AHD ANNEX ingest)/', 'ANNEX ingest', $item['statistics_note_3']);?>
+				} else if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+					<?=preg_replace('/(AHD To be WITHDRAWN)/', 'To be WITHDRAWN', $item['statistics_note_3']);?>
+				} else {
+					<?=$e ($item['statistics_note_3'])?>
+				}
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
