@@ -2565,7 +2565,7 @@ class Item extends AlmaObject {
 
 	public $el_address = array(
 		'item_pid' => '//pid',
-		//'barcode' => '//barcode',
+		'barcode' => '//barcode',
 		'creation_date' => '//creation_date',
 		'modification_date' => '//modification_date',
 		'base_status' => '//base_status',
