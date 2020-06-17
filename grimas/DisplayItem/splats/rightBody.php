@@ -1,11 +1,20 @@
 <?php
+if ($item['statistics_note_3'] == 'HALE return') {
+	$pattern = '/(HALE return)/';
+	$replace = 'HALE return';
+} 
+if ($item['statistics_note_3'] == 'ANNEX ingest') {
+	$pattern = '/(ANNEX ingest)/';
+	$replace = 'ANNEX ingest';
+}
+if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
+	$pattern = '/(To be WITHDRAWN)/';
+	$replace = 'To be WITHDRAWN';
+}
 if ($item['statistics_note_3'] == 'AHD HALE return') {
 	$pattern = '/(AHD HALE return)/';
 	$replace = 'HALE return';
-} else {
-	$pattern = $item['statistics_note_3'];
-	$replace = $item['statistics_note_3'];
-}
+} 
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 	$pattern = '/(AHD ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
