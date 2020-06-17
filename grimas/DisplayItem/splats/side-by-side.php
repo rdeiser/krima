@@ -23,10 +23,7 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
-if ($item['statistics_note_3'] == '') {
-	$pattern = '//';
-	$replace = 'Send to Problem Shelf';
-}
+
 if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #cd5555;"';
 			$text = '';
