@@ -71,8 +71,6 @@ else if (preg_match("/[dD]BM/", $item['fulfillment_note'])) {
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Nota de Procesamiento:<!--Nota de servicios al usuario:--></span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
-				<tr><th class="flip"><span>Holding Copy ID:</span><span>Holding Copy ID:</span></th><td><?=$e($holding['copy_id'])?></td></tr>
-				<tr><th class="flip"><span>Copy ID:</span><span>Copy ID:</span></th><td><?=$e($item['copy_id'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?=$pattern = '/AHD/'; $replacement = ''; if (preg_match("/AHD/i",$item['statistics_note_3'])) { preg_replace($pattern,$replacement,$item['statistics_note_3']);}?>
