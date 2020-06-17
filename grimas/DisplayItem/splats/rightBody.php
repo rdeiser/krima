@@ -1,6 +1,5 @@
 <?php
 if ($item['statistics_note_3'] == 'AHD HALE return' {
-$pattern = array();
 $pattern = '/(AHD HALE return)/';
 $replace = 'HALE return';
 }
