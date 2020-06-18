@@ -27,6 +27,15 @@ class ASDecisions extends GrimaTask {
 			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
+			if ($this['whichnote']=='AHD HALE return'){
+				$item['statsitcs_note_3'] = $this['whichnote']
+			}
+			if ($this['whichnote']=='AHD ANNEX ingest'){
+				$item['statsitcs_note_3'] = $this['whichnote']
+			}
+			if ($this['whichnote']=='AHD To be WITHDRAWN'){
+				$item['statsitcs_note_3'] = $this['whichnote']
+			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
