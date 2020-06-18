@@ -2751,7 +2751,7 @@ class Item extends AlmaObject {
 			/*foreach ($barcode as $barcode) {
 				$barcode->parentNode->removeChild($barcode);
 			}*/
-			appendInnerXML($elt, $xmlString );
+			//appendInnerXML($elt, $xmlString );
 		}
 		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
 		return $this->xml;
