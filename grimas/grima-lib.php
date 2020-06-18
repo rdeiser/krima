@@ -2744,19 +2744,34 @@ class Item extends AlmaObject {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
-		function removeBarcode() {
+		/*function removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
 			$xpath->parentNode->removeChild(barcode);
 			/*foreach ($barcode as $barcode) {
 				$barcode->parentNode->removeChild($barcode);
-			}*/
+			}
 			$xpath->setInnerXML( $elt, $xmlString );
 			//appendInnerXML($elt, $xmlString );
+		}*/
+		$this->xml = $grima->removeBarcode($mms_id,$holding_id,$this->xml);
+		return $this->xml;
+	}
+	
+	function removeBarcode($barcode) {
+		$xpath = new DomXpath($this->xml);
+		$xpath->query("//item_data/barcode")
+		$itemdatas = $xpath->query("//item_data");
+		$barcodes = $xpath->query("//item_data/barcode");
+		foreach ($itemdatas as $itemdata) {
+			$itemdata->parentNode->removeChild($barcodes);
 		}
+		appendInnerXML($itemdatas);
+		
 		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
 		return $this->xml;
 	}
+		
 // }}}
 
 // {{{ updateAlma (put)
