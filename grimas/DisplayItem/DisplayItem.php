@@ -12,7 +12,7 @@ class DisplayItem extends GrimaTask {
 		$item['inventory_date'] = date("Y-m-d");
 		//$item['inventory_date'] = date("Y-m-d g:i:s A");
 		if ($item[statstics_note_3] != '') {
-			if ($item['in_temp_location'] == 'true' {
+			if ($item['in_temp_location'] == 'true') {
 				$item['in_temp_location'] = 'false';
 			}
 		}
