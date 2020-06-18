@@ -2744,12 +2744,12 @@ class Item extends AlmaObject {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
-		function setInnerXML( $elt, $xmlString ) {
+		function removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
 			//$xpath->sed 's/<barcode>.*<\/barcode>/<barcode\/>/';
-			foreach ($nodes as $node) {
-				$node->parentNode->removeChild($node);
+			foreach ($barcode as $barcode) {
+				$barcode->parentNode->removeChild($barcode);
 			}
 			appendInnerXML($elt, $xmlString );
 		}
