@@ -11,9 +11,8 @@ class DisplayItem extends GrimaTask {
 		//$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
 		$item['inventory_date'] = date("Y-m-d");
 		//$item['inventory_date'] = date("Y-m-d g:i:s A");
-		if (item['in_tem_location'] == 'true') {
+		if ($item['in_tem_location'] == 'true') {
 			$item['in_temp_location'] = 'false';
-			updateAlma();
 		}
 		$item->updateAlma();
 		}
