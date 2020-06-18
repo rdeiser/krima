@@ -2747,10 +2747,10 @@ class Item extends AlmaObject {
 		function removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
-			//$xpath->sed 's/<barcode>.*<\/barcode>/<barcode\/>/';
-			foreach ($barcode as $barcode) {
+			$xpath->sed 's/<barcode>.*<\/barcode>/<barcode\/>/';
+			/*foreach ($barcode as $barcode) {
 				$barcode->parentNode->removeChild($barcode);
-			}
+			}*/
 			appendInnerXML($elt, $xmlString );
 		}
 		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
