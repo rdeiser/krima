@@ -2760,7 +2760,7 @@ class Item extends AlmaObject {
 	
 	function removeBarcode($barcode) {
 		$xpath = new DomXpath($this->xml);
-		$xpath->query("//item_data/barcode")
+		$xpath->query("//item_data/barcode");
 		$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
 		//$xpath->removeChild("//item_data/barcode")
 		//$itemdatas = $xpath->query("//item_data");
