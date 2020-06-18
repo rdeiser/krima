@@ -667,6 +667,11 @@ class Grima {
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
 	function postItemNBC($mms_id,$holding_id,$item) {
+		function removeBarcode() {
+			$xpath = new DomXpath($this->xml);
+			$xpath->query("//item_data/barcode");
+			$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
+		}
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
 			array(),
@@ -2744,11 +2749,11 @@ class Item extends AlmaObject {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
-		function removeBarcode() {
+		/*function removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
 			$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
-		}
+		}*/
 		/*function removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
