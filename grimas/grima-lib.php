@@ -652,6 +652,31 @@ class Grima {
 	}
 // }}}
 
+// {{{ postItemNBC (Create Item)
+/**
+ * @brief Create Item - add a new item to a holding in Alma without barcode data
+ *
+ * Makes a call to the API:
+ * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
+ *
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items
+ *
+ * @param string $mms_id		- MMS ID of Bib record
+ * @param string $holding_id	- Holding ID of Holding record
+ * @param DomDocument $item		- Item object to add to Alma as new record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+	function postItemNBC($mms_id,$holding_id,$item) {
+		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
+			array(),
+			$item
+			);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+	}
+// }}}
+
 // {{{ putItem (Update Item information)
 /**
  * @brief Update Item information - replace item record in Alma
@@ -2704,6 +2729,30 @@ class Item extends AlmaObject {
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->xml = $grima->postItem($mms_id,$holding_id,$this->xml);
+		return $this->xml;
+	}
+// }}}
+
+// {{{ Item -> addToAlmaHoldingNBC (post)
+/**
+ * @brief add new item record to holding in Alma without barcode data
+ * @param string $mms_id MMS ID of bib record
+ * @param string $holding_id Holding ID of holding record to add item to
+ * @return DomDocument item object as it now appears in Alma
+ */
+	function addToAlmaHoldingNBC($mms_id,$holding_id) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		function removeBarcode() {
+			$xpath = new DomXpath($this->xml);
+			$xpath->query("//item_data/barcode");
+			foreach ($nodes as $node) {
+				$node->parentNode->removeChild($node);
+			}
+			appendInnerXML($elt, $xmlString );
+		}
+		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
 		return $this->xml;
 	}
 // }}}
