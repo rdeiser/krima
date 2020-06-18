@@ -1,10 +1,10 @@
 <GrimaForm onsubmit="return false">
     <Title>New Item Record Creation</Title>
-	<Field
+	<!--<Field
 	name="mms"
 	label="MMS ID"
 	required="yes"
-	/>
+	/>--->
 	<Field
 	name="holding_id"
 	label="Holdings Record without an Item Record"
