@@ -1821,7 +1821,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$xpath = new DomXpath($this->xml);
 		$barcodex = $xpath->query("//item_data/barcode");
 		foreach( $barcodex as $barcode) {
-			$barcode->parentNode->removeChild( $barcode );
+			$barcode->parentNode->removeChild($barcode);
 		}
 	}
 
