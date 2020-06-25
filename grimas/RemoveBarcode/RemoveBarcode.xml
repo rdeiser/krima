@@ -1,0 +1,9 @@
+<GrimaForm>
+    <Title>Remove Barcode</Title>
+    <Field
+        label="Barcode to remove"
+        name="barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+</GrimaForm>
