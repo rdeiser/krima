@@ -5,13 +5,14 @@ require_once("../grima-lib.php");
 class RemoveBarcode extends GrimaTask {
 	
 	function do_task() {
-
-		$item = new Item();
-		$item->loadFromAlmaBarcode($this['barcode_remove']);
-		$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-		$item->deleteBarcode($this['barcode_remove']);
-		$item->updateAlma();
-		
+		$this->barcodex = $this['barcode_remove'];
+		foreach ($this->barcodex as $barcode) {
+			$item = new Item();
+			$item->loadFromAlmaBarcode($barcode);
+			$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+			$item->deleteBarcode($barcode);
+			$item->updateAlma();
+		}
 
 	}
 
