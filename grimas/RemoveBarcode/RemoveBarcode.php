@@ -6,7 +6,7 @@ class RemoveBarcode extends GrimaTask {
 	
 	function do_task() {
 		$item->item = new Item();
-		$item->loadFromAlmaBarcode($this['barcode']);
+		$item->loadFromAlmaBarcode($this['barcode_remove']);
 		$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 		//$item->deleteBarcode();
 		$item->updateAlma();
