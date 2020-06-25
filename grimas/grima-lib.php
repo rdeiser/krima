@@ -1810,6 +1810,22 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectBarcode -> deleteBarcode
+/**
+ * @brief delete barcode from item record
+ *
+ * @param 
+ */
+ 
+	function deleteBarcode() {
+		$xpath = new DomXpath($this->xml);
+		$barcodex = $xpath->query("//item_data/barcode");
+		foreach( $barcodex as $barcode) {
+			$barcode->parentNode->removeChild( $barcode );
+		}
+	}
+
+// }}}
 // {{{ AlmaObjectWithMARC -> deleteField
 /**
  * @brief delete all $tag fields from the MARC record
