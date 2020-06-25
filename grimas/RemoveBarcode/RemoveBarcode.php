@@ -13,9 +13,9 @@ class RemoveBarcode extends GrimaTask {
 
 	}
 
-	function print_success() {
+	/*function print_success() {
 		GrimaTask::call('ViewXmlItem', array('item_pid' => $item['item_pid']));
-	}
+	}*/
 		
 }
 
