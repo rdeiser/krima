@@ -1817,9 +1817,9 @@ class AlmaObjectWithMARC extends AlmaObject {
  * @param 
  */
  
-	function deleteBarcode() {
+	function deleteBarcode($barcode) {
 		$xpath = new DomXpath($this->xml);
-		$barcodex = $xpath->query("//item_data");//"//item_data/barcode"
+		$barcodex = $xpath->query("//item_data[@barcode='$barcode']");//"//item_data/barcode"
 		foreach( $barcodex as $barcode) {
 			$barcode->parentNode->removeChild($barcode);
 		}
