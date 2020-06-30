@@ -24,7 +24,7 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$replace = 'To be WITHDRAWN';
 }
 if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
-	$pattern = '//';
+	$pattern = '/(PHYSICAL CONDITION REVIEW)';
 	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] == '') {
