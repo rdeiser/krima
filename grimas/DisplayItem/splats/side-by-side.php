@@ -23,7 +23,7 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
-if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
 	$pattern = '/(PHYSICAL CONDITION REVIEW)/';
 	$replace = 'Send to Condition Review Shelf';
 }
