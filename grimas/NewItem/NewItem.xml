@@ -84,6 +84,7 @@
 	<option value="AHD HALE return">AHD HALE return</option>
 	<option value="AHD ANNEX ingest">AHD ANNEX ingest</option>
 	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
+	<option value="PHYSICAL CONDITION REVIEW">PHYSICAL CONDITION REVIEW</option>
 	</Field>
 	<Field
         label="Barcode"
