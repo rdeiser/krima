@@ -23,6 +23,10 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
+if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW)/';
+	$replace = 'Send to Condition Review Shelf';
+}
 if ($item['statistics_note_3'] == '') {
 	$pattern = '/^/';
 	$replace = 'Send to Problem Shelf';
@@ -50,6 +54,10 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 }
 	else if ($item['statistics_note_3']=='AHD ANNEX ingest') {
 			$style = 'style="background-color: #6495ed;"';
+			$text = '';
+	}
+	else if ($item['statistics_note_3']=='PHYSICAL CONDITION REVIEW') {
+			$style = 'style=";"';
 			$text = '';
 	}
 	else if ($item['statistics_note_3']=='') {

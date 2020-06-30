@@ -23,10 +23,15 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
+	$pattern = '//';
+	$replace = 'Send to Condition Review Shelf';
+}
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
+
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
