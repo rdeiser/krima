@@ -16,7 +16,7 @@
 	name="copyid"
 	label="Copy ID"
 	required="no"
-	value="0"
+	placeholder="0"
 	/>
 	<Field
 	name="itempolicy"
@@ -32,7 +32,7 @@
 	name="pieces"
 	label="Pieces"
 	required="no"
-	value="1"
+	placeholder="1"
 	/>
 	<Field
 	name="pubnote"
