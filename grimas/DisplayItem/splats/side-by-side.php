@@ -11,8 +11,8 @@ if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
-if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
-	$pattern = '/(PHYSICAL CONDITION REVIEW)/';
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'PHYSICAL CONDITION REVIEW';
 }
 if ($item['statistics_note_3'] == 'AHD HALE return') {
