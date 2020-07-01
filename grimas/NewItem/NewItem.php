@@ -23,7 +23,7 @@ class NewItem extends GrimaTask {
 					$item['statistics_note_2'] = $this['statnote2'];
 					$item['statistics_note_3'] = $this['statnote3'];
 					$item->addToAlmaHolding($this['mms'],$holdingid);
-					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']}");
 				/*if(isset($this['barcode']) && null !== $this['barcode']) {
 					$item = new Itemnbc();
 					$item['copy_id'] = $this['copyid'];
