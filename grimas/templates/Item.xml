@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <item>
+  <holding_data>
+    <copy_id>0</copy_id>
+    <in_temp_location>false</in_temp_location>
+    <temp_library/>
+    <temp_location/>
+    <temp_call_number_type/>
+    <temp_call_number/>
+    <temp_policy/>
+    <due_back_date/>
+  </holding_data>
   <item_data>
-    <barcode></barcode>
+    <!--<barcode></barcode>-->
     <base_status desc="Item in place">1</base_status>
     <physical_material_type desc="Book">BOOK</physical_material_type>
     <policy/>
@@ -27,6 +37,7 @@
     <chronology_l/>
     <chronology_m/>
     <description/>
+    <inventory_date/>
     <alternative_call_number/>
     <alternative_call_number_type/>
     <storage_location_id/>
