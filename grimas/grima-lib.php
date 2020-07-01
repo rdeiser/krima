@@ -2762,7 +2762,7 @@ class Item extends AlmaObject {
  * @return DomDocument item object as it now appears in Alma
  */
  	function addToAlmaHoldingNBC($mms_id, $holding_id) {
-		
+		global $grima;
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <item>
   <holding_data>
