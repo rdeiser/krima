@@ -15,9 +15,17 @@ class NewItem extends GrimaTask {
 				$holding->loadFromAlma($this['mms'],$holdingid);
 				if(empty($this['barcode'])) {
 					$item = new Itemnbc();
-					$item['copy_id'] = $this['copyid'];
+					if (empty($this['copyid'])) {
+						$item['copy_id'] = '0';
+					} else {
+						$item['copy_id'] = $this['copyid'];
+					}
 					$item['item_policy'] = $this['itempolicy'];
-					$item['pieces'] = $this['pieces'];
+					if (empty($this['pieces'])) {
+						$item['pieces'] = '1';
+					} else {
+						$item['pieces'] = $this['pieces'];
+					}
 					$item['inventory_date'] = date("Y-m-d");
 					$item['public_note'] = $this ['pubnote'];
 					$item['fulfillment_note'] = $this['fulnote'];
@@ -28,9 +36,17 @@ class NewItem extends GrimaTask {
 					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']}");
 				} else {
 					$item = new Item();
-					$item['copy_id'] = $this['copyid'];
+					if (empty($this['copyid'])) {
+						$item['copy_id'] = '0';
+					} else {
+						$item['copy_id'] = $this['copyid'];
+					}
 					$item['item_policy'] = $this['itempolicy'];
-					$item['pieces'] = $this['pieces'];
+					if (empty($this['pieces'])) {
+						$item['pieces'] = '1';
+					} else {
+						$item['pieces'] = $this['pieces'];
+					}
 					$item['inventory_date'] = date("Y-m-d");
 					$item['public_note'] = $this ['pubnote'];
 					$item['fulfillment_note'] = $this['fulnote'];
