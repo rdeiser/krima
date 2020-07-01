@@ -17,6 +17,7 @@ class NewItem extends GrimaTask {
 				$item->addToAlmaHoldingNBC($this['mms'],$holdingid);
 				
 				$holding = new Holding();
+				$holding->loadFromAlma($this['mms'],$holdingid);
 				$holding->getItemList();
 				$item = $holding->itemList->items[0];
 				$item['statistics_note_3'] = $this['statnote3'];
