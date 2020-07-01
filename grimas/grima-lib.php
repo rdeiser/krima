@@ -2777,7 +2777,7 @@ class Item extends AlmaObject {
     <due_back_date></due_back_date>
   </holding_data>
   <item_data>
-    <physical_material_type>Book</physical_material_type>
+    <physical_material_type desc="Book">BOOK</physical_material_type>
     <policy>book/ser</policy>
     <provenance></provenance>
     <po_line></po_line>
