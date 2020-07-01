@@ -2604,6 +2604,322 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 }
 
 // }}}
+// {{{ class Itemnbc
+/** class Itemnbc */
+class Item extends AlmaObject {
+
+	public $el_address = array(
+		'item_pid' => '//pid',
+		'creation_date' => '//creation_date',
+		'modification_date' => '//modification_date',
+		'base_status' => '//base_status',
+		'physical_material_type_code' => '//physical_material_type',
+		'physical_material_type' => '//physical_material_type/@desc',
+		'location' => '//location/@desc',
+		'location_code' => '//location',
+		'library' => '//location/@desc',
+		'library_code' => '//location',
+		'policy' => '//policy',
+		'inventory_number' => '//inventory_number',
+		'inventory_date_new_value' => '//inventory_date_new_value',
+		'inventory_date' => '//inventory_date',
+		'item_policy' => '//policy',
+		'provenance' => '//provenance',
+		'po_line' => '//po_line',
+		'is_magnetic' => '//is_magnetic',
+		'arrival_date' => '//arrival_date',
+		'year_of_issue' => '//year_of_issue',
+		'enumeration_a' => '//enumeration_a',
+		'enumeration_b' => '//enumeration_b',
+		'enumeration_c' => '//enumeration_c',
+		'enumeration_d' => '//enumeration_d',
+		'enumeration_e' => '//enumeration_e',
+		'enumeration_f' => '//enumeration_f',
+		'enumeration_g' => '//enumeration_g',
+		'enumeration_h' => '//enumeration_h',
+		'chronology_i' => '//chronology_i',
+		'chronology_j' => '//chronology_j',
+		'chronology_k' => '//chronology_k',
+		'chronology_l' => '//chronology_l',
+		'chronology_m' => '//chronology_m',
+		'description' => '//description',
+		'alternative_call_number' => '//alternative_call_number',
+		'alternative_call_number_type' => '//alternative_call_number_type',
+		'storage_location_id' => '//storage_location_id',
+		'receiving_operator' => '//receiving_operator',
+		'process_type' => '//process_type',
+		'in_temp_location' => '//in_temp_location',
+ 		'mms_id' => '//mms_id',
+		'holding_id' => '//holding_id',
+		'title' => '//title',
+		'call_number' => '//call_number',
+		'pages' => '//pages',
+		'pieces' => '//pieces',
+		'public_note' => '//public_note',
+		'fulfillment_note' => '//fulfillment_note',
+		'internal_note_1' => '//internal_note_1',
+		'internal_note_2' => '//internal_note_2',
+		'internal_note_3' => '//internal_note_3',
+		'statistics_note_1' => '//statistics_note_1',
+		'statistics_note_2' => '//statistics_note_2',
+		'statistics_note_3' => '//statistics_note_3',
+		'requested' => '//requested',
+		'physical_condition' => '//physical_condition',
+		'temp_library' => '//temp_library',
+		'temp_location' => '//temp_location',
+		'copy_id' => '//copy_id',
+	);
+
+// {{{ loadFromAlma (get)
+/**
+ * @brief populates item record from Alma
+ *
+ * @param string $mms_id MMS ID of bib record
+ * @param string $holding_id Holding ID of holding record
+ * @param string $item_pid Item ID of item record
+ */
+	function loadFromAlma($mms_id,$holding_id,$item_pid) {
+		global $grima;
+		$this->xml = $grima->getItem($mms_id,$holding_id,$item_pid);
+	}
+// }}}
+
+// {{{ loadFromAlmaX (get)
+/**
+ * @brief populates item record from Alma, only needs item_pid
+ * @param string $item_pid item ID of record to load from Alma
+ */
+	function loadFromAlmaX($item_pid) {
+		global $grima;
+		$this->xml = $grima->getItem('X','X',$item_pid);
+	}
+// }}}
+
+// {{{ loadFromAlmaBarcode (get)
+/**
+ * @brief populates item record from Alma, using barcode
+ * @param string $barcode barcode of record to load from Alma
+ */
+	function loadFromAlmaBarcode($barcode) {
+		global $grima;
+		$this->xml = $grima->getItemBC($barcode);
+	}
+// }}}
+
+// {{{ loadFromAlmaBCorX (get)
+/**
+ * @brief populates item record from Alma using either identifier
+ *
+ * @param string $id identifer of record to load from Alma (can be barcode
+ * or item ID)
+ */
+	function loadFromAlmaBCorX($id) {
+		global $grima;
+		if (preg_match("/^23.*/",$id)) { # item_pid
+			# probably should know about suffix too
+			$this->loadFromAlmaX($id);
+		} else {
+			$this->loadFromAlmaBarcode($id);
+		}
+	}
+// }}}
+
+// {{{ loadFromItemListNode
+/**
+ * @brief populate item record from the information in an ItemList node
+ *
+ * @param DomNode $node node from an ItemList
+ */
+	function loadFromItemListNode($node) {
+		$this->xml = new DomDocument();
+		$this->xml->appendChild($this->xml->importNode($node,true));
+	}
+// }}}
+
+// {{{ Item -> addToAlmaHolding (post)
+/**
+ * @brief add new item record to holding in Alma
+ * @param string $mms_id MMS ID of bib record
+ * @param string $holding_id Holding ID of holding record to add item to
+ * @return DomDocument item object as it now appears in Alma
+ */
+	function addToAlmaHolding($mms_id,$holding_id) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		$this->xml = $grima->postItem($mms_id,$holding_id,$this->xml);
+		return $this->xml;
+	}
+// }}}
+
+// {{{ Item -> addToAlmaHoldingNBC (post)
+/**
+ * @brief add new item record to holding in Alma without barcode data
+ * @param string $mms_id MMS ID of bib record
+ * @param string $holding_id Holding ID of holding record to add item to
+ * @return DomDocument item object as it now appears in Alma
+ */
+ 	function addToAlmaHoldingNBC($mms_id, $holding_id) {
+		global $grima;
+		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
+<item>
+  <holding_data>
+    <holding_id> ' . $holding_id . '</holding_id>
+	<copy_id>0</copy_id>
+	<in_temp_location>false</in_temp_location>
+	<temp_library></temp_library>
+    <temp_location></temp_location>
+    <temp_call_number_type></temp_call_number_type>
+    <temp_call_number></temp_call_number>
+    <temp_policy></temp_policy>
+    <due_back_date></due_back_date>
+  </holding_data>
+  <item_data>
+    <physical_material_type desc="Book">BOOK</physical_material_type>
+    <policy>book/ser</policy>
+    <provenance></provenance>
+    <po_line></po_line>
+    <is_magnetic>false</is_magnetic>
+    <arrival_date></arrival_date>
+    <expected_arrival_date></expected_arrival_date>
+    <year_of_issue></year_of_issue>
+    <enumeration_a></enumeration_a>
+    <enumeration_b></enumeration_b>
+    <enumeration_c></enumeration_c>
+    <enumeration_d></enumeration_d>
+    <enumeration_e></enumeration_e>
+    <enumeration_f></enumeration_f>
+    <enumeration_g></enumeration_g>
+    <enumeration_h></enumeration_h>
+    <chronology_i></chronology_i>
+    <chronology_j></chronology_j>
+    <chronology_k></chronology_k>
+    <chronology_l></chronology_l>
+    <chronology_m></chronology_m>
+    <description></description>
+    <replacement_cost></replacement_cost>
+    <receiving_operator>GRIMA</receiving_operator>
+    <inventory_number></inventory_number>
+    <inventory_date>2020-07-01</inventory_date>
+    <inventory_price></inventory_price>
+    <receive_number></receive_number>
+    <weeding_number></weeding_number>
+    <weeding_date></weeding_date>
+    <alternative_call_number></alternative_call_number>
+    <alternative_call_number_type></alternative_call_number_type>
+    <alt_number_source></alt_number_source>
+    <storage_location_id></storage_location_id>
+    <pages></pages>
+    <pieces>1</pieces>
+    <public_note></public_note>
+    <fulfillment_note></fulfillment_note>
+    <internal_note_1></internal_note_1>
+    <internal_note_2></internal_note_2>
+    <internal_note_3></internal_note_3>
+    <statistics_note_1></statistics_note_1>
+    <statistics_note_2></statistics_note_2>
+    <statistics_note_3></statistics_note_3>
+    <physical_condition></physical_condition>
+  </item_data>
+</item>';
+		
+		$bodyxml = new DomDocument();
+		$bodyxml->loadXML($body);
+		$bodyxml = $grima->postItem($mms_id,$holding_id,$bodyxml);
+		return $bodyxml;
+
+		/*$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id), $bodyxml);
+		$this->checkForErrorMessage($ret);
+		return $ret;*/
+
+	}
+	/*function addToAlmaHoldingNBC($mms_id,$holding_id) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		/*function removeBarcode() {
+			$xpath = new DomXpath($this->xml);
+			$xpath->query("//item_data/barcode");
+			$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
+		}*/
+		/*function removeBarcode() {
+			$xpath = new DomXpath($this->xml);
+			$xpath->query("//item_data/barcode");
+			$xpath->parentNode->removeChild(barcode);
+			/*foreach ($barcode as $barcode) {
+				$barcode->parentNode->removeChild($barcode);
+			}
+			$xpath->setInnerXML( $elt, $xmlString );
+			//appendInnerXML($elt, $xmlString );
+		}
+		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
+		return $this->xml;
+	}
+	
+	function removeBarcode($barcode) {
+		$xpath = new DomXpath($this->xml);
+		$xpath->query("//item_data/barcode");
+		$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
+		//$xpath->removeChild("//item_data/barcode")
+		//$itemdatas = $xpath->query("//item_data");
+		//$barcodes = $xpath->query("//item_data/barcode");
+		//foreach ($itemdatas as $itemdata) {
+		//	$itemdata->parentNode->removeChild($barcodes);
+		//}
+		//appendInnerXML($itemdatas);
+		
+		$this->xml = $grima->postItemNBC($mms_id,$holding_id,$this->xml);
+		return $this->xml;
+	}*/
+		
+// }}}
+
+// {{{ updateAlma (put)
+/**
+ * @brief replace item record in Alma
+ * @return DomDocument item object as it now appears in Alma
+ */
+	function updateAlma() {
+		global $grima;
+		return $grima->putItem(
+			$this['mms_id'],
+			$this['holding_id'],
+			$this['item_pid'],
+			$this->xml
+		);
+	}
+//updateAlma (put) set
+	function addToAlmaSet($set_id,$barcode) {
+		global $grima;
+		$this->set_id = $set_id;
+		$this->barcode = $barcode;
+		$this->xml = $grima->postSetManageMembers($mms_id,$barcode,$this->xml);
+		return $this->xml;
+	}
+	/*function updateAlma() {
+		global $grima;
+		return $grima->putSet(
+			$this['set_id'],
+			$this['barcode'],
+			$this->xml
+		);
+	}*/
+// }}}
+
+// {{{ Item -> deleteFromAlma (delete)
+/**
+ * @brief delete record from Alma
+ *
+ * @param string $override should the item be deleted even if warnings exist? (default false)
+ * @param string $holdings method for handling holdings record left with no items (retain, delete, suppress)
+ */
+	function deleteFromAlma($override = "false", $holdings = "retain") {
+		global $grima;
+		$grima->deleteItem($this['mms_id'],$this['holding_id'],$this['item_pid'],$override,$holdings);
+	}
+// }}}
+
+}
 
 // {{{ class Item
 /** class Item */
