@@ -2761,7 +2761,7 @@ class Item extends AlmaObject {
  * @param string $holding_id Holding ID of holding record to add item to
  * @return DomDocument item object as it now appears in Alma
  */
- 	function addToAlmaHoldingNBC($mms_id, $holding_id) {
+ 	function addToAlmaHoldingNBC($mms_id, $holding_id, $item) {
 		
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <item>
