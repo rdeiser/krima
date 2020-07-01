@@ -2828,7 +2828,7 @@ class Item extends AlmaObject {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 
-		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id),array(), $item => $bodyxml);
+		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id),array(), $item, $bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
