@@ -34,11 +34,7 @@ class NewItem extends GrimaTask {
 					$item['statistics_note_3'] = $this['statnote3'];
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 					
-					$item = new Item();
-					$item->loadFromAlmaBCorX($item['item_pid']);
-					$item['internal_note_3'] = 'redTEST2020';
-					$item->updateAlma();
-					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']} and Barcode: {$item['barcode']}");
+					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']}");
 				} else {
 					$item = new Item();
 					if (empty($this['copyid'])) {
