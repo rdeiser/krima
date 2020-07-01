@@ -31,6 +31,7 @@
 	name="pieces"
 	label="Pieces"
 	required="no"
+	value="1"
 	/>
 	<Field
 	name="pubnote"
