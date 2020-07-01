@@ -14,8 +14,13 @@ class NewItem extends GrimaTask {
 			if ($this['mms']) {
 				$holding->loadFromAlma($this['mms'],$holdingid);
 				$item = new Item();
-				$item['statistics_note_3'] = $this['statnote3'];
 				$item->addToAlmaHoldingNBC($this['mms'],$holdingid);
+				
+				$holding = $bib->holdings[0];
+				$holding->getItemList();
+				$item = $holding->itemList->items[0];
+				$item['statistics_note_3'] = $this['statnote3'];
+					
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
