@@ -2750,7 +2750,7 @@ class Item extends AlmaObject {
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->xml = $grima->postItem($mms_id,$holding_id,$this->xml);
-		return $this->xml;
+		//return $this->xml;
 	}
 // }}}
 
