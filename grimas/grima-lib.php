@@ -2820,7 +2820,7 @@ class Item extends AlmaObject {
     <internal_note_3></internal_note_3>
     <statistics_note_1></statistics_note_1>
     <statistics_note_2></statistics_note_2>
-    <statistics_note_3></statistics_note_3>
+    <statistics_note_3>' . $this['statnote3'] . '</statistics_note_3>
     <physical_condition></physical_condition>
   </item_data>
 </item>';
