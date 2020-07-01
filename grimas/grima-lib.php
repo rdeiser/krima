@@ -2606,7 +2606,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 // }}}
 // {{{ class Itemnbc
 /** class Itemnbc */
-class Item extends AlmaObject {
+class Itemnbc extends AlmaObject {
 
 	public $el_address = array(
 		'item_pid' => '//pid',
