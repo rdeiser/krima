@@ -25,7 +25,7 @@ class NewItem extends GrimaTask {
 				//$item['barcode'] = $this['barcode'];
 				$item['barcode'] != $item['barcode'];
 				$item->addToAlmaHolding($this['mms'],$holdingid);
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode:");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
