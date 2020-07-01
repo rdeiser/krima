@@ -13,7 +13,7 @@ class NewItem extends GrimaTask {
 			$holding->loadFromAlma($this['mms'],$holdingid);
 			if ($this['mms']) {
 				$holding->loadFromAlma($this['mms'],$holdingid);
-				if(isset($this['barcode'])) {
+				if(empty($this['barcode'])) {
 					$item = new Item();
 					$item['copy_id'] = $this['copyid'];
 					$item['item_policy'] = $this['itempolicy'];
