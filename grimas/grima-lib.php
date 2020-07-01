@@ -2761,7 +2761,7 @@ class Item extends AlmaObject {
  * @param string $holding_id Holding ID of holding record to add item to
  * @return DomDocument item object as it now appears in Alma
  */
- 	function addToAlmaHoldingNBC($mms_id, $holding_id, $item) {
+ 	function addToAlmaHoldingNBC($mms_id, $holding_id) {
 		
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <item>
@@ -2824,13 +2824,15 @@ class Item extends AlmaObject {
     <physical_condition></physical_condition>
   </item_data>
 </item>';
-
+		
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
+		$body = $grima->postItem($mms_id,$holding_id,$body);
+		return $body;
 
-		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id),array(), $item, $bodyxml);
+		/*$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id), $bodyxml);
 		$this->checkForErrorMessage($ret);
-		return $ret;
+		return $ret;*/
 
 	}
 	/*function addToAlmaHoldingNBC($mms_id,$holding_id) {
