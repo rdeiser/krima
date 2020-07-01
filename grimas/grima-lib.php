@@ -642,13 +642,13 @@ class Grima {
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
 	function postItem($mms_id,$holding_id,$item) {
-		/*$ret =*/ $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
+		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
 			array(),
 			$item
 			);
 		$this->checkForErrorMessage($ret);
-		//return $ret;
+		return $ret;
 	}
 // }}}
 
@@ -2750,7 +2750,7 @@ class Item extends AlmaObject {
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->xml = $grima->postItem($mms_id,$holding_id,$this->xml);
-		//return $this->xml;
+		return $this->xml;
 	}
 // }}}
 
@@ -2828,7 +2828,7 @@ class Item extends AlmaObject {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 		$bodyxml = $grima->postItem($mms_id,$holding_id,$bodyxml);
-		return $bodyxml;
+		//return $bodyxml;
 
 		/*$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id), $bodyxml);
 		$this->checkForErrorMessage($ret);
