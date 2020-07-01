@@ -11,7 +11,7 @@
     <due_back_date/>
   </holding_data>
   <item_data>
-    <!--<barcode></barcode>-->
+    <barcode></barcode>
     <base_status desc="Item in place">1</base_status>
     <physical_material_type desc="Book">BOOK</physical_material_type>
     <policy/>
