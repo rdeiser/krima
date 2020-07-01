@@ -31,8 +31,9 @@
 	name="pieces"
 	label="Pieces"
 	required="no"
-	value="1"
-	/>
+	>
+	<option>1</option>
+	</Field>
 	<Field
 	name="pubnote"
 	label="Public Note"
