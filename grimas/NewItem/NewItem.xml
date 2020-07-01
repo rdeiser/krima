@@ -1,4 +1,4 @@
-<GrimaForm onsubmit="return false">
+<GrimaForm autocomplete="on">
     <Title>New Item Record Creation</Title>
 	<Field
 	name="mms"
@@ -16,6 +16,8 @@
 	name="copyid"
 	label="Copy ID"
 	required="no"
+	default="0"
+	placeholder="0"
 	/>
 	<Field
 	name="itempolicy"
@@ -31,9 +33,9 @@
 	name="pieces"
 	label="Pieces"
 	required="no"
-	>
-	<option>1</option>
-	</Field>
+	default="1"
+	placeholder="1"
+	/>
 	<Field
 	name="pubnote"
 	label="Public Note"
