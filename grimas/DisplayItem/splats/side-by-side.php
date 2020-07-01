@@ -13,7 +13,7 @@ if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
 }
 if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = 'PHYSICAL CONDITION REVIEW';
+	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] == 'AHD HALE return') {
 	$pattern = '/(AHD HALE return)/';
@@ -56,7 +56,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #6495ed;"';
 			$text = '';
 	}
-	else if ($item['statistics_note_3']=='PHYSICAL CONDITION REVIEW') {
+	else if ($item['statistics_note_3']=='PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 			$style = 'style=";"';
 			$text = '';
 	}
