@@ -43,7 +43,6 @@
 	name="fulnote"
 	label="Fulfillment Note"
 	required="no"
-	placeholder="Fulfillment Note"
 	/>
 	<Field
 	name="statnote1"
