@@ -14,7 +14,7 @@ class NewItem extends GrimaTask {
 			if ($this['mms']) {
 				$holding->loadFromAlma($this['mms'],$holdingid);
 				if(isset($this['barcode']) && null !== $this['barcode']) {
-					$item = new Item();
+					$item = new Itemnbc();
 					$item['copy_id'] = $this['copyid'];
 					$item['item_policy'] = $this['itempolicy'];
 					$item['pieces'] = $this['pieces'];
@@ -27,7 +27,7 @@ class NewItem extends GrimaTask {
 					$item->addToAlmaHolding($this['mms'],$holdingid);
 					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 				} else {
-					$item = new Itemnbc();
+					$item = new Item();
 					$item['copy_id'] = $this['copyid'];
 					$item['item_policy'] = $this['itempolicy'];
 					$item['pieces'] = $this['pieces'];
