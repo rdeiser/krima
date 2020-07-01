@@ -2813,8 +2813,8 @@ class Item extends AlmaObject {
     <storage_location_id></storage_location_id>
     <pages></pages>
     <pieces>1</pieces>
-    <public_note>Public note</public_note>
-    <fulfillment_note>Fulfillment note</fulfillment_note>
+    <public_note></public_note>
+    <fulfillment_note></fulfillment_note>
     <internal_note_1></internal_note_1>
     <internal_note_2></internal_note_2>
     <internal_note_3></internal_note_3>
