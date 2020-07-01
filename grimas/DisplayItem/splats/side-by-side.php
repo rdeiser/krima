@@ -11,6 +11,10 @@ if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW)/';
+	$replace = 'PHYSICAL CONDITION REVIEW';
+}
 if ($item['statistics_note_3'] == 'AHD HALE return') {
 	$pattern = '/(AHD HALE return)/';
 	$replace = 'HALE return';
@@ -22,10 +26,6 @@ if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW') {
-	$pattern = '/(PHYSICAL CONDITION REVIEW)/';
-	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] == '') {
 	$pattern = '/^/';
