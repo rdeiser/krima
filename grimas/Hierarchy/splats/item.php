@@ -10,7 +10,7 @@
       <dd class="col-md-10 barcode"><?=$e($item['barcode'])?>
       <dt class="col-md-2 text-right description">Description:</dt>
       <dd class="col-md-10 description"><?=$e($item['description'])?>
-	  <dt class="col-md-2 text-left ">Statistics Note 3:</dt>
+	  <dt class="col-md-2 text-right ">Statistics Note 3:</dt>
       <dd class="col-md-10"><?=$e($item['statistics_note_3'])?>
     </dl>
   </div>
