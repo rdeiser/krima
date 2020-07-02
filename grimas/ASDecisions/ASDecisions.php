@@ -27,7 +27,7 @@ class ASDecisions extends GrimaTask {
 			
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			$item['barcode']=='';
+			unset($item['barcode']);
 			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statsitcs_note_3'] = $this['whichnote'];
 			}
