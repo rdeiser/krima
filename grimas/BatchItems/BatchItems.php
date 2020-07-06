@@ -23,8 +23,10 @@ class BatchItems extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
-				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+				$this->item = new Item();
+				$this->item->loadFromAlmaX($this['item_pid']);
+				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
 }*/
