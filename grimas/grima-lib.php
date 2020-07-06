@@ -652,7 +652,7 @@ class Grima {
 	}
 // }}}
 
-// {{{ postItemNBC (Create Item)
+// {{{ postItemNBC (Create Item)--red 07/2020 do not use
 /**
  * @brief Create Item - add a new item to a holding in Alma without barcode data
  *
@@ -666,12 +666,12 @@ class Grima {
  * @param DomDocument $item		- Item object to add to Alma as new record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-	function postItemNBC($mms_id,$holding_id,$item) {
+	/*function postItemNBC($mms_id,$holding_id,$item) {
 		/*Ifunction removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
 			$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
-		}*/
+		}
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
 			array(),
@@ -679,7 +679,7 @@ class Grima {
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
-	}
+	}*/
 // }}}
 
 // {{{ putItem (Update Item information)
@@ -2604,7 +2604,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 }
 
 // }}}
-// {{{ class Itemnbc
+// {{{ class Itemnbc -- red 07/2020 current  does not add <barcode></barcode> to the payload
 /** class Itemnbc */
 class Itemnbc extends AlmaObject {
 
@@ -2752,7 +2752,7 @@ class Itemnbc extends AlmaObject {
 	}
 // }}}
 
-// {{{ Item -> addToAlmaHoldingNBC (post)
+// {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
  * @brief add new item record to holding in Alma without barcode data
  * @param string $mms_id MMS ID of bib record
@@ -3054,7 +3054,7 @@ class Item extends AlmaObject {
 	}
 // }}}
 
-// {{{Item -> addInventoryDate
+// {{{Item -> addInventoryDate--red 07/2020
 /**
  * @brief addes Inventory date to the Item record xml
  * @param Inventory Date
@@ -3087,14 +3087,14 @@ class Item extends AlmaObject {
 	}
 // }}}
 
-// {{{ Item -> addToAlmaHoldingNBC (post)
+// {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
  * @brief add new item record to holding in Alma without barcode data
  * @param string $mms_id MMS ID of bib record
  * @param string $holding_id Holding ID of holding record to add item to
  * @return DomDocument item object as it now appears in Alma
  */
- 	function addToAlmaHoldingNBC($mms_id, $holding_id) {
+ 	/*function addToAlmaHoldingNBC($mms_id, $holding_id) {
 		global $grima;
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' . '>
 <item>
@@ -3165,9 +3165,9 @@ class Item extends AlmaObject {
 
 		/*$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items', array('mms_id' => $mms_id, 'holding_id' => $holding_id), $bodyxml);
 		$this->checkForErrorMessage($ret);
-		return $ret;*/
+		return $ret;
 
-	}
+	}*/
 	/*function addToAlmaHoldingNBC($mms_id,$holding_id) {
 		global $grima;
 		$this->mms_id = $mms_id;
