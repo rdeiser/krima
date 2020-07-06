@@ -3054,6 +3054,23 @@ class Item extends AlmaObject {
 	}
 // }}}
 
+// {{{Item -> addInventoryDate
+/**
+ * @brief addes Inventory date to the Item record xml
+ * @param Inventory Date
+ */
+	function addInventoryDate($date) {
+		$xpath = new DomXpath($this->xml);
+		$idates = $xpath->query("//item_data");
+	
+		foreach ($idates as $idate){
+			$idate = $this->xml->createElement("inventory_date");
+			$idate->appendChild($this->xml->createTextNode($date));
+			$idates[0]->appendChild($idate);
+		}
+	}
+// }}}
+
 // {{{ Item -> addToAlmaHolding (post)
 /**
  * @brief add new item record to holding in Alma
