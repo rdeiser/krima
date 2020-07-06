@@ -15,7 +15,10 @@ class BatchItems extends GrimaTask {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				$item = new Itemnbc();
 				//$item['fulfillment_note'] = $this['fulnote'];
+				$item['item_policy'] = 'book/ser';
+				$item['pieces'] = '1';
 				$item['inventory_date'] = '1976-01-01';
+				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
