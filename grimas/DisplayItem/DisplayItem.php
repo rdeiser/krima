@@ -9,7 +9,8 @@ class DisplayItem extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		//$item['internal_note_3'] = ('Inventory Date:').date("m/d/Y");
 		//$item['inventory_number'] = ('Inventory Date:').date("m/d/Y");
-		$item['inventory_date'] = date("Y-m-d");
+		$item->addInventoryDate(date("Y-m-d"));
+		//$item['inventory_date'] = date("Y-m-d");
 		if ($item['statistics_note_3'] == 'ANNEX ingest') {
 			$item['in_temp_location'] = 'false';
 		}
