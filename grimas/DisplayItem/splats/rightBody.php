@@ -68,7 +68,42 @@ if ($item['location'] == 'ref') {
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-
+if ($item['location'] == 'juv') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
+if ($item['location'] == 'cmc') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
+if ($item['location'] == 'over') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
+if ($item['location'] == 'overplus') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
+if ($item['location'] == 'dowref') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
+if ($item['location'] == 'ref') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		}
+	}
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
