@@ -13,18 +13,7 @@ class ASDecisions extends GrimaTask {
 		$this->barcodes = preg_split('/\r\n|\r|\n/',$this['barcodes']);
 
 		foreach ($this->barcodes as $barcode) {
-			//$set = new Set();
-			//$this['setName'] = Set::postSetManageMembers($setid);
-			/*if ($this['setName']) {
-				$set->loadFromAlma($set['set_id']);
-				$postSetManageMembers($set['set_id'],$barcode);
-				$set->addToAlmaSet();
-				//$set->addToAlmaSet($set['set_id'],$barcode);
-				continue;
-			} else {}*/
-				
-			//$set->postSetManageMembers($set['set_id'], $barcode);
-			
+
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
 			$item->addInventoryDate("1976-01-01");
