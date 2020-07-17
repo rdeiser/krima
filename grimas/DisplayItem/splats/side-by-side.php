@@ -2,7 +2,7 @@
 //popup alert for juv,cmc,over,overplus,dowref, and ref
 //message box on the screen
 if ($item['location'] == 'over') {
-	echo'<script>alert("Send to Problem Shelf")</script>';
+	echo'<script>alert("Send {$item['barcode']} to Problem Shelf")</script>';
 }
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
