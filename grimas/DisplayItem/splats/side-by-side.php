@@ -5,8 +5,6 @@ if ($item['location'] == 'juv') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
-		$style = 'style=";"';
-		$text = '';
 	}
 }
 if ($item['statistics_note_3'] == 'HALE return') {
