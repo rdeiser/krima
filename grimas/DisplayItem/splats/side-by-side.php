@@ -1,12 +1,4 @@
 <?php 
-//popup alert for juv,cmc,over,overplus,dowref, and ref
-//message box on the screen
-if ($item['location'] == 'juv') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-	}
-}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'HALE return';
@@ -71,6 +63,12 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 	else if ($item['statistics_note_3']=='') {
 			$style = 'style=";"';
 			//$text = 'Send to Problem Shelf';
+	}
+	if ($item['location'] == 'juv') {
+		if ($item['statistics_note_3'] == 'HALE return') {
+			$pattern = '/(HALE return)/';
+			$replace = 'Send to Problem Shelf';
+		}
 	}
 					?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
