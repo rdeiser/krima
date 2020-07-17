@@ -2,7 +2,10 @@
 //popup alert for juv,cmc,over,overplus,dowref, and ref
 //message box on the screen
 if ($item['location'] == 'juv') {
-	echo'<script>alert("Send to Problem Shelf")</script>';
+	$style = 'style=";"';
+	$text = '';
+	$pattern = '/^/';
+	$replace = 'Send to Problem Shelf';
 }
 if ($item['location'] == 'cmc') {
 	echo'<script>alert("Send to Problem Shelf")</script>';
