@@ -10,11 +10,11 @@ class NewItem extends GrimaTask {
 
 		foreach ($this->holdings as $holdingid) {
 			$holding = new Holding();
-			$holding->loadFromAlma($this['mms'],$holdingid);
-			if ($this['mms']) {
-				$holding->loadFromAlma($this['mms'],$holdingid);
+			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
+			if ($this['mms_id']) {
+				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				if(empty($this['barcode'])) {
-					$item = new Item();//nbc();
+					$item = new Itemnbc();
 					if (empty($this['copyid'])) {
 						$item['copy_id'] = '0';
 					} else {
@@ -32,7 +32,8 @@ class NewItem extends GrimaTask {
 					$item['statistics_note_1'] = $this['statnote1'];
 					$item['statistics_note_2'] = $this['statnote2'];
 					$item['statistics_note_3'] = $this['statnote3'];
-					$item->addToAlmaHolding($this['mms'],$holdingid);
+					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					
 					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']}");
 				} else {
 					$item = new Item();
@@ -54,7 +55,7 @@ class NewItem extends GrimaTask {
 					$item['statistics_note_2'] = $this['statnote2'];
 					$item['statistics_note_3'] = $this['statnote3'];
 					$item['barcode'] = $this['barcode'];
-					$item->addToAlmaHolding($this['mms'],$holdingid);
+					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 				}
 			} else {
