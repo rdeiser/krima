@@ -14,7 +14,7 @@ class NewItem extends GrimaTask {
 			if ($this['mms']) {
 				$holding->loadFromAlma($this['mms'],$holdingid);
 				if(empty($this['barcode'])) {
-					$item = new Itemnbc();
+					$item = new Item();//nbc();
 					if (empty($this['copyid'])) {
 						$item['copy_id'] = '0';
 					} else {
