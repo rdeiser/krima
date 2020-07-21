@@ -26,6 +26,16 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
+				$item['library'] = 'WITHDRAW';
+				if ($item['location'] == 'main') {
+					$item['location'] = 'wdmain';
+				}
+				if ($item['location'] == 'over') {
+					$item['location'] = 'wdover';
+				}
+				if ($item['location'] == 'overplus') {
+					$item['location'] = 'wdoverplus';
+				}
 			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
@@ -34,6 +44,19 @@ class ASDecisions extends GrimaTask {
 			if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
+			if ($this['whichnote'] == 'To be WITHDRAWN') {
+				$item['statistics_note_3'] = $this['whichnote'];
+				$item['library'] = 'WITHDRAW';
+				if ($item['location'] == 'main') {
+					$item['location'] = 'wdmain';
+				}
+				if ($item['location'] == 'over') {
+					$item['location'] = 'wdover';
+				}
+				if ($item['location'] == 'overplus') {
+					$item['location'] = 'wdoverplus';
+				}
+			}
 			$item->updateAlma();
 			$this->addMessage('success',"Successfully updated Item Recored for: {$item['barcode']}");
 			//$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']} and set#{$set['set_id']}");
