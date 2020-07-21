@@ -3071,17 +3071,33 @@ class Item extends AlmaObject {
 	}
 // }}}
 
-// {{{Item -> changeItemLocation($library_code, $location_code)--red 07/2020
+// {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
 /**
  * @brie changes the Physical Item's location from the Item Record
- * @parm location code and library code
+ * @parm library and library code
  */
 	function changeItemLibrary($library_code, $library) {
 		$xpath = new DomXpath ($this-xml);
-		$ilocations = $xpath->query("//item_data/library[@desc='$library']");
+		$ilibraries = $xpath->query("//item_data/library[@desc='$library']");
+		
+		foreach ($ilibraries as $ilibrary) {
+			$ilibrary->appendField($library_code, $library);
+			$ilibraries[0]->appendChild($ilibrary);
+		}
+	}
+// }}}
+
+// {{{Item -> changeItemLocation($location_code, $location)--red 07/2020
+/**
+ * @brie changes the Physical Item's location from the Item Record
+ * @parm location and location code
+ */
+	function changeItemLocation($location_code, $location) {
+		$xpath = new DomXpath ($this-xml);
+		$ilocations = $xpath->query("//item_data/location[@desc='$location']");
 		
 		foreach ($ilocations as $ilocation) {
-			$ilocation->appendField($library,$library_code);
+			$ilocation->appendField($location_code, $location);
 			$ilocations[0]->appendChild($ilocation);
 		}
 	}
