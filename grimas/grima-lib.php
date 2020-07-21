@@ -3071,6 +3071,22 @@ class Item extends AlmaObject {
 	}
 // }}}
 
+// {{{Item -> changeItemLocation($library_code, $location_code)--red 07/2020
+/**
+ * @brie changes the Physical Item's location from the Item Record
+ * @parm location code and library code
+ */
+	function changeItemLibrary($library_code, $library) {
+		$xpath = new DomXpath ($this-xml);
+		$ilocations = $xpath->query("//item_data/library[@desc='$library']");
+		
+		foreach ($ilocations as $ilocation) {
+			$ilocation->appendField($library,$library_code);
+			$ilocations[0]->appendChild($ilocation);
+		}
+	}
+// }}}
+
 // {{{ Item -> addToAlmaHolding (post)
 /**
  * @brief add new item record to holding in Alma

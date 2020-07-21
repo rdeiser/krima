@@ -26,11 +26,13 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
-				$item['library'] = 'WITHDRAW';
-				$item['library_code'] = 'WITHDRAW';
+				$library_code = 'WITHDRAW';
+				$library = 'WITHDRAW';
+				$item->changeItemLibrary($library_code,$library);
 				if ($item['location'] == 'main') {
-					$item['location'] = 'wdmain';
-					$item['location_code'] = 'wdmain';
+					$location_code = 'wdmain';
+					$location = 'wdmain';
+					$item->changeItemLocation($location_code,$location);
 				}
 				if ($item['location'] == 'over') {
 					$item['location'] = 'wdover';
