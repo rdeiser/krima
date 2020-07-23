@@ -26,14 +26,6 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
-				if($item['location_code'] == 'main') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdmain';
-				}
-				if($item['location_code'] == 'juv') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdjuv';
-				}
 			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
@@ -42,7 +34,83 @@ class ASDecisions extends GrimaTask {
 			if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
-			if ($this['whichnote'] == 'To be WITHDRAWN') {
+			if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+				if($item['location_code'] == 'cmc') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdcmc';
+				}
+				if($item['location_code'] == 'juv') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdjuv';
+				}
+				if($item['location_code'] == 'main') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmain';
+				}
+				if($item['location_code'] == 'over') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdover';
+				}
+				if($item['location_code'] == 'overplus') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdoverplus';
+				}
+				if($item['location_code'] == 'ref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdref';
+				}
+			}
+			if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
+				if($item['location_code'] == 'cmc') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdcmc';
+				}
+				if($item['location_code'] == 'juv') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdjuv';
+				}
+				if($item['location_code'] == 'main') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmain';
+				}
+				if($item['location_code'] == 'over') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdover';
+				}
+				if($item['location_code'] == 'overplus') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdoverplus';
+				}
+				if($item['location_code'] == 'ref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdref';
+				}
+			}
+			if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REV') {
+				if($item['location_code'] == 'cmc') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdcmc';
+				}
+				if($item['location_code'] == 'juv') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdjuv';
+				}
+				if($item['location_code'] == 'main') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmain';
+				}
+				if($item['location_code'] == 'over') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdover';
+				}
+				if($item['location_code'] == 'overplus') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdoverplus';
+				}
+				if($item['location_code'] == 'ref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdref';
+				}
 			}
 			$item->updateAlma();
 			$this->addMessage('success',"Successfully updated Item Recored for: {$item['barcode']}");
