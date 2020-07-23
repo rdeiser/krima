@@ -3076,7 +3076,7 @@ class Item extends AlmaObject {
  * @brie changes the Physical Item's location from the Item Record
  * @parm library and library code
  */
-	function changeItemLibrary($library_code, $library) {
+	/*function changeItemLibrary($library_code, $library) {
 		$xpath = new DomXpath ($this-xml);
 		$ilibraries = $xpath->query("//item_data/library[@desc='$library']");
 		
@@ -3084,7 +3084,7 @@ class Item extends AlmaObject {
 			$ilibrary->appendField($library_code, $library);
 			$ilibraries[0]->appendChild($ilibrary);
 		}
-	}
+	}*/
 // }}}
 
 // {{{Item -> changeItemLocation($location_code, $location)--red 07/2020
@@ -3092,7 +3092,7 @@ class Item extends AlmaObject {
  * @brie changes the Physical Item's location from the Item Record
  * @parm location and location code
  */
-	function changeItemLocation($location_code, $location) {
+	/*function changeItemLocation($location_code, $location) {
 		$xpath = new DomXpath ($this-xml);
 		$ilocations = $xpath->query("//item_data/location[@desc='$location']");
 		
@@ -3100,7 +3100,7 @@ class Item extends AlmaObject {
 			$ilocation->appendField($location_code, $location);
 			$ilocations[0]->appendChild($ilocation);
 		}
-	}
+	}*/
 // }}}
 
 // {{{ Item -> addToAlmaHolding (post)

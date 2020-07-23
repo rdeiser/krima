@@ -26,22 +26,6 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
-				$library_code = 'WITHDRAW';
-				$library = 'WITHDRAW';
-				$item->changeItemLibrary($library_code,$library);
-				if ($item['location'] == 'main') {
-					$location_code = 'wdmain';
-					$location = 'wdmain';
-					$item->changeItemLocation($location_code,$location);
-				}
-				if ($item['location'] == 'over') {
-					$item['location'] = 'wdover';
-					$item['location_code'] = 'wdover';
-				}
-				if ($item['location'] == 'overplus') {
-					$item['location'] = 'wdoverplus';
-					$item['location_code'] = 'wdoverplus';
-				}
 			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
@@ -51,21 +35,6 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}
 			if ($this['whichnote'] == 'To be WITHDRAWN') {
-				$item['statistics_note_3'] = $this['whichnote'];
-				$item['library'] = 'WITHDRAW';
-				$item['library_code'] = 'WITHDRAW';
-				if ($item['location'] == 'main') {
-					$item['location'] = 'wdmain';
-					$item['location_code'] = 'wdmain';
-				}
-				if ($item['location'] == 'over') {
-					$item['location'] = 'wdover';
-					$item['location_code'] = 'wdover';
-				}
-				if ($item['location'] == 'overplus') {
-					$item['location'] = 'wdoverplus';
-					$item['location_code'] = 'wdoverplus';
-				}
 			}
 			$item->updateAlma();
 			$this->addMessage('success',"Successfully updated Item Recored for: {$item['barcode']}");
