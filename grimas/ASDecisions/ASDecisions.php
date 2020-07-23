@@ -26,6 +26,9 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
+				if($item['location_code'] == 'main') {
+					$item['location_code'] = 'wdmain';
+				}
 			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
