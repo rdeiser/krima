@@ -16,7 +16,7 @@ class ASDecisions extends GrimaTask {
 
 			$item = new Item();
 			$item->loadFromAlmaBarcode($barcode);
-			if (isset($item['inventory_date'])) {
+			if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
 			}
 			//unset($item['barcode']);
