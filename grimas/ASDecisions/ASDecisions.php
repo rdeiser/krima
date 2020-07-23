@@ -30,6 +30,10 @@ class ASDecisions extends GrimaTask {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdmain';
 				}
+				if($item['location_code'] == 'juv') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdjuv';
+				}
 			}
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
