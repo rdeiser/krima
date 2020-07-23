@@ -36,7 +36,7 @@ class BatchItemsMMS extends GrimaTask {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdref';
 					}
-					$holding->updateAlma();
+
 				}
 				if ($this['whichnote'] == 'To be WITHDRAWN'){
 					if ($holding['location_code'] == 'main') {
@@ -63,7 +63,7 @@ class BatchItemsMMS extends GrimaTask {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdref';
 					}
-					$holding->updateAlma();
+
 				}
 				if ($this['whichnote'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
 					if ($holding['location_code'] == 'main') {
@@ -90,8 +90,9 @@ class BatchItemsMMS extends GrimaTask {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdref';
 					}
-					$holding->updateAlma();
 				}
+				$holding->updateAlma();
+
 			$item = new Itemnbc();
 				//$item['fulfillment_note'] = $this['fulnote'];
 				$item['item_policy'] = 'book/ser';
