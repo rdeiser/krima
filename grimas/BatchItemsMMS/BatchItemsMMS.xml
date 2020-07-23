@@ -21,7 +21,6 @@
         autocomplete="off"
         required="yes"
         placeholder="Bib Id with holdings without items, one per line."
-		rows="5"
     />
 	<Field
 		name="holding_id"
