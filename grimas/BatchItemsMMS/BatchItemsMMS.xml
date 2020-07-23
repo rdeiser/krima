@@ -1,5 +1,20 @@
 <GrimaForm>
     <Title>Batch Item Record Creation MMS Id</Title>
+	<Field
+	name="whichnote"
+	label="Unboxing Stat 3 Note:"
+	type="select"
+	required="yes"
+	placeholder="Unboxing Note"
+	>
+	<option value="ANNEX ingest">ANNEX ingest</option>
+	<option value="HALE return">HALE return</option>
+	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
+	<option value="AHD HALE return">AHD HALE return</option>
+	<option value="AHD ANNEX ingest">AHD ANNEX ingest</option>
+	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
+	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
+	</Field>
     <Field
         name="mms"
         label="Bibs with holdings without items"
