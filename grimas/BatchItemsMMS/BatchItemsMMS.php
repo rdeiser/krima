@@ -91,7 +91,6 @@ class BatchItemsMMS extends GrimaTask {
 						$holding['location_code'] = 'wdref';
 					}
 				}
-				$holding->updateAlma();
 
 			$item = new Itemnbc();
 				//$item['fulfillment_note'] = $this['fulnote'];
@@ -102,7 +101,8 @@ class BatchItemsMMS extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($mmsid,$this['holding_id']);
-				
+
+			$holding->updateAlma();
 			$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']} with Barcode: {$item['item_pid']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
