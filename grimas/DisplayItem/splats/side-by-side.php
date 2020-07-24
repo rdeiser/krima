@@ -78,7 +78,14 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 		}
 	}
-	if ($item['location'] == 'over') {
+	if ($item['location'] == 'main') {
+		if ($item['statistics_note_3'] == 'HALE return') {
+			$pattern = '/(HALE return)/';
+			$replace = 'Send to Problem Shelf';
+			$style = 'style=";"';
+		}
+	}
+	/*if ($item['location'] == 'over') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
@@ -91,7 +98,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	}
+	}*/
 	if ($item['location'] == 'dowref') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
