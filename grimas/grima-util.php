@@ -87,6 +87,23 @@ function mfhd_get($mms_id,$holding_id) {
 	return $response;
 }
 
+function scan_in($mms_id,$holding_id,$item_pid) {
+	require_once("grima-config.php");
+	$url = $hostname . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
+	$ch = curl_init();
+	$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
+	$templateParamValues = array(urlencode($mms_id,$holding_id,$item_pid));
+	$url = str_replace($templateParamNames, $templateParamValues, $url);
+	$queryParams ='?&apikey='. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('department') . '=' . urlencode('Lost-Paid') . '&' . urlencode('work_order_type') . '=' . urlencode('Lost-Paid') . '&' . urlencode('status') . '=' . urlencode('NoRefund') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&' . urlencode($apikey);
+	curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+	$response = curl_exec($ch);
+	curl_close($ch);
+
+}
+
 /*
 function importXML($DOM, $content) {
     $DOMInnerXML = new DOMDocument();

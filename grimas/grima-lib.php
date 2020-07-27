@@ -1043,6 +1043,44 @@ class Grima {
 /**@}*/
 //}}}
 
+//{{{Scan-in APIs
+/**@name ScanIn APIs */
+/**@{*/
+
+// {{{ ScanIn -> ScanIn
+/**
+ * @brief Scan-in operation on item
+ *
+ * Makes a call to the API:
+ * [API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs/)
+ *
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}
+ *
+ * @param string $mms_id		- MMS ID of Bib record
+ * @param string $holding_id	- Holding ID of Holding record
+ * @param DomDocument $item_id		- Item ID of Item record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+	/*function ScanInFulfillment($barcode) {
+		global $grima;
+		$item_pid = Item::getPIDFromBarcode($barcode)
+		$holding_id = Item::getHoldingIDFromBarcode($barcode)
+		$mms_id = Item::getMMSFromBarcode($barcode);
+		$this->xml = $grima->ScanIn($mms_id,$holding_id,$item_pid);
+		$this['mms_id'] = $mms_id;
+		$this['holding_id'] = $holding_id;
+		$this['item_pid'] = $item_id;
+	}*/
+
+	function ScanIn($mms_id,$holding_id,$item_pid) {
+		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
+			);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+	}
+//}}}
+
 //{{{Set APIs
 /**@name Set APIs */
 /**@{*/
@@ -2987,6 +3025,84 @@ class Item extends AlmaObject {
 		'temp_location' => '//temp_location',
 		'copy_id' => '//copy_id',
 	);
+
+// {{{ getPIDFromBarcode (get) - gets the Holding ID from a barcode
+/**
+ * @brief populates the Holding ID
+ *
+*/
+	public static function getHoldingIDFromBarcode($barcode) {
+		global $grima;
+
+		$report = new AnalyticsReport();
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/BarcodeToHolding";
+		$report->filter = '
+<sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
+xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Barcode"</sawx:expr><sawx:expr xsi:type="xsd:string">{barcode}</sawx:expr>
+</sawx:expr>';
+	
+		$report->runReport(array('barcode' => $barcode), 1);
+		if (count($report->rows) == 1) {
+			return $report->rows[0][1];
+		} else {
+			return null;
+		}
+	}
+// }}}
+
+// {{{ getPIDFromBarcode (get) - gets the Item_PID from a barcode
+/**
+ * @brief populates the Item PID
+ *
+*/
+	public static function getPIDFromBarcode($barcode) {
+		global $grima;
+
+		$report = new AnalyticsReport();
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/BarcodeToPID";
+		$report->filter = '
+<sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
+xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Barcode"</sawx:expr><sawx:expr xsi:type="xsd:string">{barcode}</sawx:expr>
+</sawx:expr>';
+	
+		$report->runReport(array('barcode' => $barcode), 1);
+		if (count($report->rows) == 1) {
+			return $report->rows[0][1];
+		} else {
+			return null;
+		}
+	}
+// }}}
+
+// {{{ getPIDFromBarcode (get) - gets the Item_PID from a barcode
+/**
+ * @brief populates the Item PID
+ *
+*/
+	public static function getMMSFromBarcode($barcode) {
+		global $grima;
+
+		$report = new AnalyticsReport();
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/BarcodeToMMS";
+		$report->filter = '
+<sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
+xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <sawx:expr xsi:type="sawx:sqlExpression">"Physical Item Details"."Barcode"</sawx:expr><sawx:expr xsi:type="xsd:string">{barcode}</sawx:expr>
+</sawx:expr>';
+	
+		$report->runReport(array('barcode' => $barcode), 1);
+		if (count($report->rows) == 1) {
+			return $report->rows[0][1];
+		} else {
+			return null;
+		}
+	}
+// }}}
 
 // {{{ loadFromAlma (get)
 /**

@@ -1,0 +1,10 @@
+<GrimaForm>
+    <Title>ScanInReturn</Title>
+	<Field
+		name="barcode"
+		label="Barcode"
+		autocomplete="off"
+		required="yes"
+		placeholder="Barcode"
+	/>
+</GrimaForm>
