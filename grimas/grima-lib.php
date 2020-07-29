@@ -1073,6 +1073,9 @@ class Grima {
 	}*/
 
 	function ScanIn($mms_id,$holding_id,$item_pid) {
+		$library = '';
+		$circ_desk = '';
+		
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
 			);
