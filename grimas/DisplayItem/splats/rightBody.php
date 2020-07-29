@@ -44,13 +44,13 @@ if ($item['location'] == 'cmc') {
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-if ($item['location_code'] == 'main') {
+/*if ($item['location_code'] == 'main') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}
-/*if ($item['location'] == 'over') {
+	}*/
+if ($item['location'] == 'over') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -61,7 +61,7 @@ if ($item['location'] == 'overplus') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}*/
+	}
 if ($item['location'] == 'dowref') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
@@ -86,13 +86,13 @@ if ($item['location'] == 'cmc') {
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-if ($item['location'] == 'main') {
+/*if ($item['location'] == 'main') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}
-/*if ($item['location'] == 'over') {
+	}*/
+if ($item['location'] == 'over') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -103,7 +103,7 @@ if ($item['location'] == 'overplus') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}*/
+	}
 if ($item['location'] == 'dowref') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
