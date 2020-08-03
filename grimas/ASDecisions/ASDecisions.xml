@@ -12,7 +12,7 @@
 	required="yes"
 	placeholder="Alma Set Name"
 	/>-->
-	<field
+	<Field
 	name="whichnote2"
 	label="Stat note2"
 	type="select"
