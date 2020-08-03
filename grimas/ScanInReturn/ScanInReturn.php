@@ -9,8 +9,8 @@ class ScanInReturn extends GrimaTask {
 		
 		$item->ScanIn($item['mms_id'],$item['holding_id'],$item['item_pid']);
 		//scan_in($this->item['mms_id'],$this->item['holding_id'],$this->item['pid']);
+			$this->addMessage('success',"Successfully Scanned In: {$item['barcode']}");
 	}
-	$this->addMessage('success',"Successfully Scanned In: {$item['barcode']}");
 }
 
 ScanInReturn::RunIt();
