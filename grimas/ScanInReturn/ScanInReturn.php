@@ -13,5 +13,3 @@ class ScanInReturn extends GrimaTask {
 }
 
 ScanInReturn::RunIt();
-
-$item->addToAlmaHolding($this['mms_id'],$holdingid);
