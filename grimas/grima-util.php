@@ -101,6 +101,7 @@ function scan_in($mms_id,$holding_id,$item_pid) {
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 	$response = curl_exec($ch);
 	curl_close($ch);
+	return $response;
 
 }
 
