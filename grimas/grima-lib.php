@@ -1074,6 +1074,7 @@ class Grima {
 
 	function scan_in($mms_id,$holding_id,$item_pid) {
 		//require_once("grima-lib.php");
+		global $grima;
 		$url = $hostname . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
 		$ch = curl_init();
 		$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
