@@ -18,7 +18,7 @@
 	type="select"
 	required="no"
 	>
-	<option></option>
+	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
 	<option value="LACKS ozone">LACKS ozone</option>
 	</Field>
 	<Field
