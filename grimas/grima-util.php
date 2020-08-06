@@ -89,8 +89,8 @@ function mfhd_get($mms_id,$holding_id) {
 
 function scan_in($mms_id,$holding_id,$item_pid) {
 	require_once("grima-lib.php");
-	$url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
-	//$url = $server . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
+	//$url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
+	$url = $server . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
 	$ch = curl_init();
 	$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
 	$templateParamValues = array(urlencode($mms_id),urlencode($holding_id),urlencode($item_pid));
