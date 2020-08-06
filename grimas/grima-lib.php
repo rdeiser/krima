@@ -1072,7 +1072,7 @@ class Grima {
 		$this['item_pid'] = $item_id;
 	}*/
 
-	function scan_in($mms_id,$holding_id,$item_pid) {
+	/*function scan_in($mms_id,$holding_id,$item_pid) {
 		//require_once("grima-lib.php");
 		global $grima;
 		$url = $hostname . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
@@ -1089,7 +1089,7 @@ class Grima {
 		curl_close($ch);
 		return $response;
 
-}
+}*/
 	/*function ScanIn($mms_id,$holding_id,$item_pid) {
 		global $grima;
 		$this->mms_id = $mms_id;
