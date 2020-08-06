@@ -10,7 +10,7 @@ class ScanInReturn extends GrimaTask {
 		$this['barcode'] = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
 		$item->updateAlma();
 		//scan_in($this->item['mms_id'],$this->item['holding_id'],$this->item['pid']);
-			$this->addMessage('success',"Successfully Scanned In: {$item['barcode']} Process: {$item['process_type']}");
+			$this->addMessage('success',"{$response} Successfully Scanned In: {$item['barcode']} Process: {$item['process_type']}");
 	}
 }
 
