@@ -1072,12 +1072,12 @@ class Grima {
 		$this['item_pid'] = $item_id;
 	}*/
 
-	function ScanInFulfillment($barcode) {
+	/*function ScanInFulfillment($barcode) {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($barcode);
 	
 		$barcode = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
-	}
+	}*/
 	
 	
 	/*function ScanIn($mms_id,$holding_id,$item_pid) {
