@@ -87,7 +87,7 @@ function mfhd_get($mms_id,$holding_id) {
 	return $response;
 }
 
-/*function scan_in($mms_id,$holding_id,$item_pid) {
+function scan_in($mms_id,$holding_id,$item_pid) {
 	//require_once("grima-config.php");
 	require_once("grima-lib.php");
 	$url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
@@ -96,18 +96,18 @@ function mfhd_get($mms_id,$holding_id) {
 	$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
 	$templateParamValues = array(urlencode($mms_id),urlencode($holding_id),urlencode($item_pid));
 	$url = str_replace($templateParamNames, $templateParamValues, $url);
-	$queryParams ='?&apikey='. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK') . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false')/* . '&' . urlencode('$apikey');
+	$queryParams ='?&apikey='. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK') . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&' . urlencode('$apikey');
 	curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	//curl_setopt($ch, CURLOPT_HEADER, FALSE);
-	curl_setopt($ch, CURLOPT_HEADER, TRUE);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization:apikey7xx15c350b09d034ea285340d95897d4ca8'));
+	curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	//curl_setopt($ch, CURLOPT_HEADER, TRUE);
+	//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization:apikey7xx15c350b09d034ea285340d95897d4ca8'));
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 	$response = curl_exec($ch);
 	curl_close($ch);
 	return $response;
 
-}*/
+}
 
 /*
 function importXML($DOM, $content) {
