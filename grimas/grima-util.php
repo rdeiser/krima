@@ -101,7 +101,7 @@ function scan_in($mms_id,$holding_id,$item_pid) {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	//curl_setopt($ch, CURLOPT_HEADER, FALSE);
 	curl_setopt($ch, CURLOPT_HEADER, TRUE);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization:apikeyl7xx15c350b09d034ea285340d95897d4ca8'));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization:apikey7xx15c350b09d034ea285340d95897d4ca8'));
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 	$response = curl_exec($ch);
 	curl_close($ch);
