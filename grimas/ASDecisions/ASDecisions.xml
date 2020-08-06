@@ -12,7 +12,7 @@
 	required="yes"
 	placeholder="Alma Set Name"
 	/>-->
-	<Field
+	<!--<Field
 	name="whichnote2"
 	label="Stat note2"
 	type="select"
@@ -20,7 +20,7 @@
 	>
 	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
 	<option value="LACKS ozone">LACKS ozone</option>
-	</Field>
+	</Field>-->
 	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
