@@ -1043,70 +1043,6 @@ class Grima {
 /**@}*/
 //}}}
 
-//{{{Scan-in APIs
-/**@name ScanIn APIs */
-/**@{*/
-
-// {{{ ScanIn -> ScanIn
-/**
- * @brief Scan-in operation on item
- *
- * Makes a call to the API:
- * [API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs/)
- *
- *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}
- *
- * @param string $mms_id		- MMS ID of Bib record
- * @param string $holding_id	- Holding ID of Holding record
- * @param DomDocument $item_id		- Item ID of Item record
- * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
- */
-	/*function ScanInFulfillment($barcode) {
-		global $grima;
-		$item_pid = Item::getPIDFromBarcode($barcode)
-		$holding_id = Item::getHoldingIDFromBarcode($barcode)
-		$mms_id = Item::getMMSFromBarcode($barcode);
-		$this->xml = $grima->ScanIn($mms_id,$holding_id,$item_pid);
-		$this['mms_id'] = $mms_id;
-		$this['holding_id'] = $holding_id;
-		$this['item_pid'] = $item_id;
-	}*/
-
-	/*function scan_in($mms_id,$holding_id,$item_pid) {
-		//require_once("grima-lib.php");
-		global $grima;
-		$url = $hostname . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
-		$ch = curl_init();
-		$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
-		$templateParamValues = array(urlencode($mms_id,$holding_id,$item_pid));
-		$url = str_replace($templateParamNames, $templateParamValues, $url);
-		$queryParams ='?&apikey='. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK') . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&' . urlencode($apikey);
-		curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		$response = curl_exec($ch);
-		curl_close($ch);
-		return $response;
-
-}*/
-	/*function ScanIn($mms_id,$holding_id,$item_pid) {
-		global $grima;
-		$this->mms_id = $mms_id;
-		$this->holding_id = $holding_id;
-		$this->item_pid = $item_pid;
-		scan_in($mms_id,$holding_id,$item_pid);
-		$library = '';
-		$circ_desk = '';
-		
-		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
-			);
-		$this->checkForErrorMessage($ret);
-		return $ret;
-	}*/
-//}}}
-
 //{{{Set APIs
 /**@name Set APIs */
 /**@{*/
@@ -3129,6 +3065,70 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 // }}}
+
+//{{{Scan-in APIs
+/**@name ScanIn APIs */
+/**@{*/
+
+// {{{ ScanIn -> ScanIn
+/**
+ * @brief Scan-in operation on item
+ *
+ * Makes a call to the API:
+ * [API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs/)
+ *
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}
+ *
+ * @param string $mms_id		- MMS ID of Bib record
+ * @param string $holding_id	- Holding ID of Holding record
+ * @param DomDocument $item_id		- Item ID of Item record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+	/*function ScanInFulfillment($barcode) {
+		global $grima;
+		$item_pid = Item::getPIDFromBarcode($barcode)
+		$holding_id = Item::getHoldingIDFromBarcode($barcode)
+		$mms_id = Item::getMMSFromBarcode($barcode);
+		$this->xml = $grima->ScanIn($mms_id,$holding_id,$item_pid);
+		$this['mms_id'] = $mms_id;
+		$this['holding_id'] = $holding_id;
+		$this['item_pid'] = $item_id;
+	}*/
+
+	/*function scan_in($mms_id,$holding_id,$item_pid) {
+		//require_once("grima-lib.php");
+		global $grima;
+		$url = $hostname . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
+		$ch = curl_init();
+		$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
+		$templateParamValues = array(urlencode($mms_id,$holding_id,$item_pid));
+		$url = str_replace($templateParamNames, $templateParamValues, $url);
+		$queryParams ='?&apikey='. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK') . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&' . urlencode($apikey);
+		curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;
+
+}*/
+	/*function ScanIn($mms_id,$holding_id,$item_pid) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		$this->item_pid = $item_pid;
+		scan_in($mms_id,$holding_id,$item_pid);
+		$library = '';
+		$circ_desk = '';
+		
+		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
+			);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+	}*/
+//}}}
 
 // {{{ loadFromAlma (get)
 /**
