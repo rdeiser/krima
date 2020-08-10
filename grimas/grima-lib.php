@@ -299,7 +299,7 @@ class Grima {
  * @param array $URLparams - URL parameters
  * @param array $QSparams - query string parameters
  */
-	function postIn($url,$URLparams,$QSparams) {
+	/*function postIn($url,$URLparams,$QSparams) {
 		foreach ($URLparams as $k => $v) {
 			$url = str_replace('{'.$k.'}',urlencode($v),$url);
 		}
@@ -323,7 +323,7 @@ class Grima {
 			throw new Exception("Network error: " . curl_error($ch));
 		}
 		curl_close($ch);
-	}
+	}*/
 // }}}
 
 // {{{ checkForErrorMessage - checks for errorMessage tag, throws exceptions
@@ -702,14 +702,14 @@ class Grima {
  * @param DomDocument $item		- Item object to add to Alma as new record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
- 	function postinscan($mms_id,$holding_id,$item_pid) {
+ 	/*function postinscan($mms_id,$holding_id,$item_pid) {
 		$ret = $this->postIn('almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 		array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
 		);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 	}
-	/*function postItemNBC($mms_id,$holding_id,$item) {
+	function postItemNBC($mms_id,$holding_id,$item) {
 		/*Ifunction removeBarcode() {
 			$xpath = new DomXpath($this->xml);
 			$xpath->query("//item_data/barcode");
@@ -2795,13 +2795,13 @@ class Itemnbc extends AlmaObject {
 	}
 // }}}
 
-	function scanin($mms_id,$holding_id,$item_pid) {
+	/*function scanin($mms_id,$holding_id,$item_pid) {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_id = $item_id;
 		$grima->postinscan($mms_id,$holding_id,$item_pid);
-	}
+	}*/
 
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
@@ -3146,7 +3146,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this['item_pid'] = $item_id;
 	}*/
 
-		function scanInFulfillment($mms_id,$holding_id,$item_pid) {
+		/*function scanInFulfillment($mms_id,$holding_id,$item_pid) {
 		$url = $this->server . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
 		$ch = curl_init();
 		$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
@@ -3160,7 +3160,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$response = curl_exec($ch);
 		curl_close($ch);
 		return $response;
-}
+}*/
 	/*function ScanIn($mms_id,$holding_id,$item_pid) {
 		global $grima;
 		$this->mms_id = $mms_id;
