@@ -2795,6 +2795,14 @@ class Itemnbc extends AlmaObject {
 	}
 // }}}
 
+	function scanin($mms_id,$holding_id,$item_pid) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		$this->item_id = $item_id;
+		$grima->postinscan($mms_id,$holding_id,$item_pid);
+	}
+
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
  * @brief add new item record to holding in Alma without barcode data
