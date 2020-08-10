@@ -7,8 +7,8 @@ class ScanInReturn extends GrimaTask {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['barcode']);
 		
-		//$this['barcode'] = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
-		$item->scanin($item['mms_id'],$item['holding_id'],$item['item_pid']);
+		$this['barcode'] = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
+		//$item->scanin($item['mms_id'],$item['holding_id'],$item['item_pid']);
 		//$this['barcode'] = postinscan($item['mms_id'],$item['holding_id'],$item['item_pid']);
 		$item->updateAlma();
 		//scan_in($this->item['mms_id'],$this->item['holding_id'],$this->item['pid']);
