@@ -3,10 +3,6 @@
 ###############################################################################
 #  UTILITIES
 ###############################################################################
-class Grima {
-	public $server;
-	public $apikey;
-}
 
 function XMLtoWeb( $DOM ) {
 	header('Content-Type: text/plain');
