@@ -3309,6 +3309,11 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	}
 // }}}
 
+	function fulfillmentscan($barcode) {
+		$item = new Item();
+		$item->loadFromAlmaBarcode($barcode);
+		$barcode = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
+	}
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
  * @brief add new item record to holding in Alma without barcode data
