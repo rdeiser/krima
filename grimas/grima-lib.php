@@ -7,7 +7,8 @@
 
 require_once("grima-util.php");
 require_once("grima-xmlbag.php");
-require_once "grima-splats.php";
+require_once("grima-splats.php");
+require_once("grima-splats.php");
 
 // {{{ class Grima
 /** @class Grima */
