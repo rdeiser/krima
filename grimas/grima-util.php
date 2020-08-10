@@ -87,7 +87,7 @@ function mfhd_get($mms_id,$holding_id) {
 	return $response;
 }
 
-/*function scan_in($mms_id,$holding_id,$item_pid) {
+function scan_in($mms_id,$holding_id,$item_pid) {
 	//require_once("grima-config.php");
 	require_once("grima-lib.php");
 	//$url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
@@ -107,7 +107,7 @@ function mfhd_get($mms_id,$holding_id) {
 	curl_close($ch);
 	return $response;
 
-}*/
+}
 
 /*
 function importXML($DOM, $content) {
