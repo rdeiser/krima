@@ -299,21 +299,31 @@ class Grima {
  * @param array $URLparams - URL parameters
  * @param array $QSparams - query string parameters
  */
-	function scanInFulfillment($mms_id,$holding_id,$item_pid) {
-		$url = $this->server . 'almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
+	function postIn($url,$URLparams,$QSparams) {
+		foreach ($URLparams as $k => $v) {
+			$url = str_replace('{'.$k.'}',urlencode($v),$url);
+		}
+		$url = $this->server . $url . '?apikey=' . urlencode($this->apikey);
+		foreach ($QSparams as $k => $v) {
+			$url .= "&$k=$v";
+		}
 		$ch = curl_init();
-		$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
-		$templateParamValues = array(urlencode($mms_id),urlencode($holding_id),urlencode($item_pid));
-		$url = str_replace($templateParamNames, $templateParamValues, $url);
-		$queryParams ='?'. urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('external_id') . '=' . urlencode('false') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK') . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&apikey=' . urlencode($this->apikey);
-		curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+		$response = curl-exec($ch);
+		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyxml);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
 		$response = curl_exec($ch);
+		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+		if (curl_errno($ch)) {
+			throw new Exception("Network error: " . curl_error($ch));
+		}
 		curl_close($ch);
-		return $response;
-}
+	}
 // }}}
 
 // {{{ checkForErrorMessage - checks for errorMessage tag, throws exceptions
@@ -692,6 +702,13 @@ class Grima {
  * @param DomDocument $item		- Item object to add to Alma as new record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
+ 	function postinscan($mms_id,$holding_id,$item_pid) {
+		$ret = $this->postIn('almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
+		array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
+		);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+	}
 	/*function postItemNBC($mms_id,$holding_id,$item) {
 		/*Ifunction removeBarcode() {
 			$xpath = new DomXpath($this->xml);
