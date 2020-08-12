@@ -301,7 +301,7 @@ class Grima {
  * @param array $QSparams - query string parameters
  */
 
-	function postIn($url,$URLparams,$QSparams) {
+	/*function postIn($url,$URLparams,$QSparams) {
 		$URLparams = array('{mms_id}','{holding_id}','{item_pid}');
 		$QSparams = array(urlencode($mms_id,$holding_id,$item_pid));
 		}
@@ -321,7 +321,7 @@ class Grima {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
 		$response = curl_exec($ch);
 		curl_close($ch);
-	}
+	}*/
 // }}}
 
 // {{{ checkForErrorMessage - checks for errorMessage tag, throws exceptions
@@ -3324,7 +3324,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
-		$grima->postItem2($mms_id,$holding_id,$item_pid);
+		$grima->postItem($mms_id,$holding_id,$item_pid);
 		return $this->xml;
 	}
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
