@@ -3352,7 +3352,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
-		$grima->postItem($mms_id,$holding_id,$item_pid);
+		$grima->postItem2($mms_id,$holding_id,$item_pid);
 		return $this->xml;
 	}
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
