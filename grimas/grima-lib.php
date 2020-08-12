@@ -685,13 +685,10 @@ class Grima {
 		return $ret;
 	}
 	
-		function postItem2($mms_id,$holding_id,$item_pid) {
+		function postItem2($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
-			array(),
-			'op' = 'scan'
-			'library' = 'MAIN'
-			'circ_desk' = 'DEFAULT_CIRC_DESK'
+			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
