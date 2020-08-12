@@ -730,7 +730,7 @@ class Grima {
  *
  * @param string $mms_id		- MMS ID of Bib record
  * @param string $holding_id	- Holding ID of Holding record
- * @param DomDocument $item		- Item object to add to Alma as new record
+ * @param string $item_pid	- Item PID of Item record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
 		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
@@ -739,7 +739,7 @@ class Grima {
 			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
 		$this->checkForErrorMessage($ret);
-		return $ret;
+		return $response;
 	}
 // }}}
 
