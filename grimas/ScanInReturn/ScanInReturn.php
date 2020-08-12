@@ -1,5 +1,6 @@
 <?php
 require_once("../grima-lib.php");
+require_once("../grima-util.php");
 
 class ScanInReturn extends GrimaTask {
 
