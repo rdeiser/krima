@@ -5,7 +5,7 @@
  *		(c) 2019 Kathryn Lybarger. CC-BY-SA
  */
 
-//require_once("grima-util.php");
+require_once("grima-util.php");
 require_once("grima-xmlbag.php");
 require_once("grima-splats.php");
 require_once("grima-splats.php");
