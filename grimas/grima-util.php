@@ -133,6 +133,6 @@ function appendInnerXML($DOM, $element, $content) {
 }
 */
 
-/*function join_paths(...$paths) {
+function join_paths(...$paths) {
 	return preg_replace('~[/\\\\]+~', DIRECTORY_SEPARATOR, implode(DIRECTORY_SEPARATOR, $paths));
-}*/
+}
