@@ -301,9 +301,9 @@ class Grima {
  * @param array $QSparams - query string parameters
  */
 
-	/*function postIn($url,$URLparams,$QSparams) {
-		foreach ($URLparams as $k => $v) {
-			$url = str_replace('{'.$k.'}',urlencode($v),$url);
+	function postIn($url,$URLparams,$QSparams) {
+		$URLparams = array('{mms_id}','{holding_id}','{item_pid}');
+		$QSparams = array(urlencode($mms_id,$holding_id,$item_pid));
 		}
 		$url = $this->server . $url . '?apikey=' . urlencode($this->apikey);
 		foreach ($QSparams as $k => $v) {
@@ -320,12 +320,8 @@ class Grima {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyxml);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
 		$response = curl_exec($ch);
-		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
-		if (curl_errno($ch)) {
-			throw new Exception("Network error: " . curl_error($ch));
-		}
 		curl_close($ch);
-	}*/
+	}
 // }}}
 
 // {{{ checkForErrorMessage - checks for errorMessage tag, throws exceptions
@@ -691,7 +687,12 @@ class Grima {
 	
 		function postItem2($mms_id,$holding_id,$item_pid) {
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid));
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
+			array(),
+			'op' = 'scan'
+			'library' = 'MAIN'
+			'circ_desk' = 'DEFAULT_CIRC_DESK'
+			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 	}
@@ -3318,10 +3319,13 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	}
 // }}}
 
-	function fulfillmentscan($barcode) {
-		$item = new Item();
-		$item->loadFromAlmaBarcode($barcode);
-		$barcode = scan_in($item['mms_id'],$item['holding_id'],$item['item_pid']);
+	function fulfillmentscan($mms_id,$holding_id,$item_pid) {
+		global $grima;
+		$this->mms_id = $mms_id;
+		$this->holding_id = $holding_id;
+		$this->item_pid = $item_pid;
+		$grima->postItem2($mms_id,$holding_id,$item_pid);
+		return $this->xml;
 	}
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
