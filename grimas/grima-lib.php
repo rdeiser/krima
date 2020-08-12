@@ -739,7 +739,7 @@ class Grima {
 			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
 		$this->checkForErrorMessage($ret);
-		return $response;
+		return $ret;
 	}
 // }}}
 
@@ -3316,8 +3316,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
-		$grima->postScan($mms_id,$holding_id,$item_pid);
-		return $response;
+		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid);
+		return $this->xml;
 	}
 
 // }}}
