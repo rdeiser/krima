@@ -319,6 +319,7 @@ function scan_in($mms_id,$holding_id,$item_pid) {
 	$response = curl_exec($ch);
 	curl_close($ch);
 	return $response;
+}
 	/*function postIn($url,$URLparams,$QSparams) {
 		foreach ($URLparams as $k => $v) {
 			$url = str_replace('{'.$k.'}',urlencode($v),$url);
