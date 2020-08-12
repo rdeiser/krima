@@ -220,7 +220,6 @@ class Grima {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyxml);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
 		$response = curl_exec($ch);
 		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
