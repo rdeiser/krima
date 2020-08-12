@@ -86,8 +86,8 @@ function mfhd_get($mms_id,$holding_id) {
 	curl_close($ch);
 	return $response;
 }
-
-function scan_in($mms_id,$holding_id,$item_pid) {
+//The following scan in coding did not function properly--red 08/12/2020
+/*function scan_in($mms_id,$holding_id,$item_pid) {
 	//require_once("grima-config.php");
 	require_once("grima-lib.php");
 	//$url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}';
@@ -97,7 +97,7 @@ function scan_in($mms_id,$holding_id,$item_pid) {
 	$templateParamNames = array('{mms_id}','{holding_id}','{item_pid}');
 	$templateParamValues = array(urlencode($mms_id),urlencode($holding_id),urlencode($item_pid));
 	$url = str_replace($templateParamNames, $templateParamValues, $url);
-	$queryParams ='?apikey=' . urlencode('$apikey') . '&' . urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK')/* . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&apikey=' . urlencode($apikey)*/;
+	$queryParams ='?apikey=' . urlencode('$apikey') . '&' . urlencode('op') . '=' . urlencode('scan') . '&' . urlencode('library') . '=' . urlencode('MAIN') . '&' . urlencode('circ_desk') . '=' . urlencode('DEFAULT_CIRC_DESK')/* . '&' . urlencode('work_order_type') . '=' . urlencode('72hr') . '&' . urlencode('status') . '=' . urlencode('72hr_Quarantine') . '&' . urlencode('done') . '=' . urlencode('false') . '&' . urlencode('auto_print_slip') . '=' . urlencode('false') . '&' . urlencode('place_on_hold_shelf') . '=' . urlencode('false') . '&' . urlencode('confirm') . '=' . urlencode('false') . '&' . urlencode('register_in_house_use') . '=' . urlencode('false') . '&apikey=' . urlencode($apikey);
 	curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -108,7 +108,7 @@ function scan_in($mms_id,$holding_id,$item_pid) {
 	curl_close($ch);
 	return $response;
 
-}
+}*/
 
 /*
 function importXML($DOM, $content) {
