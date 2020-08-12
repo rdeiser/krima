@@ -205,6 +205,37 @@ class Grima {
 		}
 		return $xml;
 	}
+	
+		function post2($url,$URLparams,$QSparams) {
+		foreach ($URLparams as $k => $v) {
+			$url = str_replace('{'.$k.'}',urlencode($v),$url);
+		}
+		$url = $this->server . $url . '?apikey=' . urlencode($this->apikey);
+		foreach ($QSparams as $k => $v) {
+			$url .= "&$k=$v";
+		}
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyxml);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+		$response = curl_exec($ch);
+		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+		if (curl_errno($ch)) {
+			throw new Exception("Network error: " . curl_error($ch));
+		}
+		curl_close($ch);
+		$xml = new DOMDocument();
+		try {
+			$xml->loadXML($response);
+		} catch (Exception $e) {
+			throw new Exception("Malformed XML from Alma: $e");
+		}
+		return $xml;
+	}
 // }}}
 
 // {{{ put - general function for PUT (update) API calls
@@ -686,7 +717,7 @@ class Grima {
 	}
 	
 		function postItem2($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
-		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
+		$ret = $this->post2('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
 			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
