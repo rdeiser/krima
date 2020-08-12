@@ -691,7 +691,7 @@ class Grima {
 	
 		function postItem2($mms_id,$holding_id,$item_pid) {
 		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid);
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid));
 		$this->checkForErrorMessage($ret);
 		return $ret;
 	}
