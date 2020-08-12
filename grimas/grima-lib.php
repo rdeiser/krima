@@ -205,8 +205,17 @@ class Grima {
 		}
 		return $xml;
 	}
-	
-		function post2($url,$URLparams,$QSparams) {
+// }}}
+
+// {{{ postscanin - general function for POST (Scan In) API calls
+/**
+ * @brief general function for POST (Scan In) API calls
+ *
+ * @param string $url - URL pattern string with parameters in {}
+ * @param array $URLparams - URL parameters
+ * @param array $QSparams - query string parameters
+ */
+		function postscanin($url,$URLparams,$QSparams) {
 		foreach ($URLparams as $k => $v) {
 			$url = str_replace('{'.$k.'}',urlencode($v),$url);
 		}
@@ -714,9 +723,24 @@ class Grima {
 		$this->checkForErrorMessage($ret);
 		return $ret;
 	}
-	
-		function postItem2($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
-		$ret = $this->post2('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
+// }}}
+
+// {{{ postScanIn (Create Item)
+/**
+ * @brief Create Item - add a new item to a holding in Alma
+ *
+ * Makes a call to the API:
+ * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
+ *
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items
+ *
+ * @param string $mms_id		- MMS ID of Bib record
+ * @param string $holding_id	- Holding ID of Holding record
+ * @param DomDocument $item		- Item object to add to Alma as new record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+		function postScanIn($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
+		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
 			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
@@ -3351,7 +3375,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
-		$grima->postItem2($mms_id,$holding_id,$item_pid);
+		$grima->postScanIn($mms_id,$holding_id,$item_pid);
 		return $this->xml;
 	}
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
