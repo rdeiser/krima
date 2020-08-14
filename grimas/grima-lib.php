@@ -235,8 +235,17 @@ class Grima {
 		if (curl_errno($ch)) {
 			throw new Exception("Network error: " . curl_error($ch));
 		}
+		/*curl_close($ch);
+		return $response;*/
+		
 		curl_close($ch);
-		return $response;
+		$xml = new DOMDocument();
+		try {
+			$xml->loadXML($response);
+		} catch (Exception $e) {
+			throw new Exception("Malformed XML from Alma: $e");
+		}
+		return $xml;
 	}
 // }}}
 
