@@ -3267,7 +3267,11 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$xpath = new DomXpath($this->xml);
 		$addinfos = $xpath->query("//additional_info");
 		
-		echo $addinfos;
+		if($addinfos->lenght > 0) {
+			$note = $addinfos->item(0);
+			echo "{$node->nodeName} - {$node->nodeValue}";
+		}
+		//echo $addinfos;
 	}
 // }}}
 
