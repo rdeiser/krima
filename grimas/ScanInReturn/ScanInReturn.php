@@ -9,6 +9,7 @@ class ScanInReturn extends GrimaTask {
 		$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid']);
 		//$item->addInfo();
 		//echo $item['additional_info'];
+		$this->item->loadFromAlmaX($item['item_pid']);
 		function print_success() {
 		XMLtoWeb($this->item->xml);
 	}
