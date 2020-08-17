@@ -3501,6 +3501,12 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 // }}}
 
+// {{{ class AddtionalInfo
+/** class AdditionalInfo */
+class AdditionalInfo extends AlmaObject {
+}
+// }}}
+
 // {{{ class ElectronicCollection
 /** class ElectronicCollection */
 class ElectronicCollection extends AlmaObject {
