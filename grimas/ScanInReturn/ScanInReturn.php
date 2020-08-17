@@ -14,6 +14,3 @@ class ScanInReturn extends GrimaTask {
 }
 
 ScanInReturn::RunIt();
-
-class AdditionalInfo extends AlmaObject {
-}
