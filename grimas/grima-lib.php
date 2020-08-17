@@ -3262,6 +3262,13 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			$idates[0]->appendChild($idate);
 		}
 	}
+	
+	function addInfo() {
+		$xpath = new DomXpath($this->xml);
+		$addinfos = $xpath->query("//additional_info");
+		
+		echo $addinfos;
+	}
 // }}}
 
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
