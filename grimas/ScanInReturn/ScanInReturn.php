@@ -11,8 +11,9 @@ class ScanInReturn extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaX($item['item_pid']);
 		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid']);
+		echo $item['additional_info'];
 
-		$this->addMessage('success',"Successfully Scanned In: {$item['barcode']} Additional Information: {$item['additional_info']}");
+		//$this->addMessage('success',"Successfully Scanned In: {$item['barcode']} Additional Information: {$item['additional_info']}");
 	}
 	
 	/*function print_success() {
