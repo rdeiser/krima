@@ -752,43 +752,6 @@ class Grima {
 	}
 // }}}
 
-// {{{ postItemNBC (Create Item)--red 07/2020 do not use
-/**
- * @brief Create Item - add a new item to a holding in Alma without barcode data
- *
- * Makes a call to the API:
- * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
- *
- *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items
- *
- * @param string $mms_id		- MMS ID of Bib record
- * @param string $holding_id	- Holding ID of Holding record
- * @param DomDocument $item		- Item object to add to Alma as new record
- * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
- */
- 	/*function postinscan($mms_id,$holding_id,$item_pid) {
-		$ret = $this->postIn('almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
-		array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid)
-		);
-		$this->checkForErrorMessage($ret);
-		return $ret;
-	}
-	function postItemNBC($mms_id,$holding_id,$item) {
-		/*Ifunction removeBarcode() {
-			$xpath = new DomXpath($this->xml);
-			$xpath->query("//item_data/barcode");
-			$xpath->removeNode = currNode.removeChild(currNode.childNodes[2]);
-		}
-		$ret = $this->post('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id),
-			array(),
-			$item
-			);
-		$this->checkForErrorMessage($ret);
-		return $ret;
-	}*/
-// }}}
-
 // {{{ putItem (Update Item information)
 /**
  * @brief Update Item information - replace item record in Alma
@@ -3263,17 +3226,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			$idates[0]->appendChild($idate);
 		}
 	}
-	
-	/*function addInfo() {
-		$xpath = new DomXpath($this->xml);
-		$addinfos = $xpath->query("//additional_info");
-		
-		foreach ($addinfos->lenght > 0) {
-			$node = $addinfos->item(0);
-			echo "{$node->nodeName} - {$node->nodeValue}";
-		}
-		//echo $addinfos;
-	}*/
 // }}}
 
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
