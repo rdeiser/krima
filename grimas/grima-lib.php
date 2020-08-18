@@ -3263,7 +3263,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 	
-	function addInfo() {
+	/*function addInfo() {
 		$xpath = new DomXpath($this->xml);
 		$addinfos = $xpath->query("//additional_info");
 		
@@ -3272,7 +3272,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			echo "{$node->nodeName} - {$node->nodeValue}";
 		}
 		//echo $addinfos;
-	}
+	}*/
 // }}}
 
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
