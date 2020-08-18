@@ -3517,6 +3517,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 /** class AdditionalInfo */
 
 class AdditionalInfo extends AlmaObject {
+	public $items = array();
 	public $xml;
 }
 // }}}
