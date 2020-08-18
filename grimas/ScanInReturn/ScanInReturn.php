@@ -7,8 +7,7 @@ class ScanInReturn extends GrimaTask {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['barcode']);
 		$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid']);
-	}
-	function do_task() {
+
 		$this->item = new Item();
 		$this->item->loadFromAlmaX($item['item_pid']);
 	}
