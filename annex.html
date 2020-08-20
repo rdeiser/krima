@@ -41,49 +41,16 @@
 
 <h3 id="hale-refill-workflow">Hale Refill Workflow</h3>
 <ul>
-  <li><a href="grimas/DisplayItem/DisplayItem.php">Unboxing Workflow Scan In Items</a> – updates Inventory Date with date of scan and displays Item Information</li><!--
-  <li><a href="grimas/UnboxingWorkflow/UnboxingWorkflow.php">UnboxingWorkflow</a> – adds Date in Internal Note 3, Inventory Number and Inventory Date and displays Item Information</li>
-  <li><a href="grimas/DisplayItem/DisplayItem.php">DisplayItem</a> – displays Item information for Unboxing work flow minus inventory date</li>-->
-  <li><a href="grimas/DisplayItempp/DisplayItempp.php">Unboxing Workflow Scan In Items with Popup</a> – updates Inventory Date with date of scan and displays Item Information</li>
-  <li><a href="grimas/BatchItems/BatchItems.php">Batch Item Record Creation</a> - Holdings ID Number Input - Adds inventory date 01/01/1976 and modifies Statstics Note 2 and Statstics Note 3</li>
-  <li>IN PROGRESS, DO NOT USE-<a href="grimas/BatchItemsMMS/BatchItemsMMS.php">Single Item Record creation with mmsid and holdingsid</a></li>
-  <h4 id="batch-item-record-creation">Simulates Alma Jobs for AS Decisions</h4>
-<ul>
-  <li><a href="grimas/ASDecisions/ASDecisions.php">Change Physical Items Job</a> - Adds inventory date 01/01/1976 and modifies Statstics Note 2 and Statstics Note 3</li>
-  <li><a href="grimas/WithdrawLibrary/WithdrawLibrary.php">Change Physical Holdings Job</a> - Simulates Unboxing Normalization Rule</li>
-</ul>
-</ul>
-<!--<h3 id="batch-item-record-creation">Batch Item Record Creation</h3>
-<ul>
-  <li><a href="grimas/BatchItems/BatchItems.php">Batch Item Record Creation</a> - Holdings ID Number Input</li>
-</ul>-->
-<!--<h3 id="batch-item-record-creation">Batch Item Record Creation MMS Id-IN PROGRESS, DO NOT USE</h3>
-<ul>
-  <li><a href="grimas/BatchItemsMMS/BatchItemsMMS.php">Single Item Record creation with mmsid and holdingsid</a> -IN PROGRESS, DO NOT USE</li>
-  <!--<li><a href="grimas/UpdateItemRecord/UpdateItemRecord.php">UpdateItemRecord</a>
-</ul>-->
-<!--<h4 id="batch-item-record-creation">Simulates Alma Jobs for AS Decisions</h4>
-<ul>
-  <li><a href="grimas/ASDecisions/ASDecisions.php">Change Physical Items Job</a> - Modifies Statstics Note 2 and Statstics Note 3</li>
-  <li><a href="grimas/WithdrawLibrary/WithdrawLibrary.php">Change Physical Holdings Job</a> - Simulates Unboxing Normalization Rule</li>
-</ul>-->
-<h3 id="fulfill">Fulfillment</h3>
-<ul>
-  <li><a href="grimas/ScanInReturn/ScanInReturn.php">ScanInReturn</a></li>
-</ul>
-<h3 id="admin">Admin Options</h3>
-<ul>
-  <li><a href="grimas/Logout/Logout.php">Logout</a></li>
-  <li><a href="grimas/AdminListUsers/AdminListUsers.php">AdminListUsers</a> – List Users</li>
-  <li><a href="grimas/AdminAddInstitution/AdminAddInstitution.php">Admin Add Instituttion</a> – Add Instituttion</li>
+  <li><a href="grimas/DisplayItem/DisplayItem.php">Unboxing Workflow Scan In Items</a> – updates Inventory Date with date of scan and displays Item Information</li>
 </ul>
 
-<!--
-<h3 id="hale-refill-workflow">Hale Refill Workflows Alternative</h3>
+<h3 id="add-new-records">Add New Records</h3>
 <ul>
-  <li><a href="grimas/UnboxingWorkflowB/UnboxingWorkflowB.php">UnboxingWorkflowB</a> – adds Date in Internal Note 3, Inventory Number and Inventory Date and displays Item Information</li>
-  <li><a href="grimas/DisplayItemB/DisplayItemB.php">DisplayItemB</a> – displays Item information for Unboxing work flow with inventory date</li>
-</ul>-->
+  <!--<li><a href="grimas/CreateBriefBib/CreateBriefBib.php">CreateBriefBib</a> – create a brief bib with specified 245a</li>
+  <li><a href="grimas/DuplicateBib/DuplicateBib.php">DuplicateBib</a> – create a duplicate copy of a bib</li>-->
+  <li><a href="grimas/MoreItems/MoreItems.php">MoreItems</a> – add more items to a serial or set, based on the first one</li>
+  <li><a href="grimas/NewItem/NewItem.php">NewItem</a> – add a new Item Record to Alma based off of a Holdings ID Number</li>
+</ul>
 
 <h3 id="display-or-print-records">Display or Print records</h3>
 <ul>
@@ -94,25 +61,14 @@
   <li><a href="grimas/ShowItemsFromHoldings/ShowItemsFromHoldings.php">ShowItemsFromHoldings</a> – display all items from a holding record</li>
 </ul>
 
-<h3 id="edit-records">Edit Records</h3>
+<h3 id="admin">Admin Options</h3>
 <ul>
-  <li><a href="grimas/InsertOclcNo/InsertOclcNo.php">InsertOclcNo</a> – insert OCLC number into 035</li>
-  <li><a href="grimas/Boundwith/Boundwith.php">Boundwith</a> – create boundwith in Alma using bib 501/774, holding 014</li>
-  <li><a href="grimas/RemoveTempLocation/RemoveTempLocation.php">RemoveTempLocation</a> – remove temporary location from item</li>
-  <li><a href="grimas/AddInternalNote/AddInternalNote.php">AddInternalNote</a> – add internal note 1 to an item record</li>
-  <li><a href="grimas/MarkImportTemporaryLocation/MarkImportTemporaryLocation.php">MarkImportTemporaryLocation</a> – mark items from an import job as being in a temporary location</li>
-  <li><a href="grimas/AppendToNoteOnSet/AppendToNoteOnSet.php">AppendToNoteOnSet</a> – add a note to every item in a set, appending if there is already a note there</li>
+  <li><a href="grimas/Logout/Logout.php">Logout</a></li>
+  <li><a href="grimas/AdminListUsers/AdminListUsers.php">AdminListUsers</a> – List Users</li>
+  <li><a href="grimas/AdminAddInstitution/AdminAddInstitution.php">Admin Add Instituttion</a> – Add Instituttion</li>
 </ul>
 
-<h3 id="add-new-records">Add New Records</h3>
-<ul>
-  <li><a href="grimas/CreateBriefBib/CreateBriefBib.php">CreateBriefBib</a> – create a brief bib with specified 245a</li>
-  <li><a href="grimas/DuplicateBib/DuplicateBib.php">DuplicateBib</a> – create a duplicate copy of a bib</li>
-  <li><a href="grimas/MoreItems/MoreItems.php">MoreItems</a> – add more items to a serial or set, based on the first one</li>
-  <li><a href="grimas/NewItem/NewItem.php">NewItem</a> – add a new Item Record to Alma based off of a Holdings ID Number</li>
-</ul>
-
-<h3 id="delete-records">Delete Records</h3>
+<!--<h3 id="delete-records">Delete Records</h3>
 <ul>
   <li><a href="grimas/DeleteTree/DeleteTree.php">DeleteTree</a> – delete bib and all of its inventory from Alma</li>
   <li><a href="grimas/DeleteTreePO/DeleteTreePO.php">DeleteTreePO</a> – delete item record, suppress bib and holdings, and add withdrawn phrase to holdings</li>
@@ -128,7 +84,7 @@
   <li><a href="grimas/ViewXmlHolding/ViewXmlHolding.php">ViewXmlHolding</a> – view Holding record as Holding object XML</li>
   <li><a href="grimas/ViewXmlItem/ViewXmlItem.php">ViewXmlItem</a> – view Item record as Item object XML</li>
   <li><a href="grimas/ViewXmlPortfolio/ViewXmlPortfolio.php">ViewXmlPortfolio</a> – view Portfolio record as Electronic Portfolio object XML</li>
-</ul>
+</ul>-->
 
       </section>
 
