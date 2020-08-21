@@ -6,6 +6,10 @@ class ScanInReturn extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['barcode']);
+		
+		/*if $this['library'] == 'MAIN' {
+			$circ_desk = 'DEFAULT_CIRC_DESK';
+			}*/
 
 		$this->item = new Item();
 		$this->item->loadFromAlmaX($item['item_pid']);
