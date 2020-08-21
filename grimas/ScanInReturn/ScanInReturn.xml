@@ -3,14 +3,14 @@
 	<Field
 	name="library"
 	label="Library Circ Desk"
-	required="yes"
 	type="select"
+	required="yes"
+	placeholder="Circ Desk"
 	>
 	<option value="MAIN">Hale Library</option>
 	<option value="ARCH">Paul Weigel Library of Architecture, Planning & Design</option>
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
-		
 	<Field
 		name="barcode"
 		label="Barcode"
