@@ -728,24 +728,24 @@ class Grima {
 	}
 // }}}
 
-// {{{ postScan (Scan In Item)
+// {{{ postScan (Create Item)
 /**
- * @brief Scan In Item - Scan In Item Record into Fulfillment Scan In
+ * @brief Create Item - add a new item to a holding in Alma
  *
  * Makes a call to the API:
  * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
  *
- *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}'
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items
  *
  * @param string $mms_id		- MMS ID of Bib record
  * @param string $holding_id	- Holding ID of Holding record
  * @param string $item_pid	- Item PID of Item record
- * @return DomDocument Item object as it now appears in Alma with Additional Info https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library,$circ_desk = 'DEFAULT_CIRC_DESK') {
+		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK') {
 		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),$this['library'] = $library,
-			array('op' => $op,'circ_desk' => $circ_desk)
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
+			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
@@ -3284,13 +3284,12 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  * @param string $item_pid Item PID of item record
  * @return Curl Response
  */
-	function fulfillmentscan($mms_id,$holding_id,$item_pid,$library) {
+	function fulfillmentscan($mms_id,$holding_id,$item_pid) {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
-		$this['library'] = $library;
-		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid,$library);
+		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid);
 		return $this->xml;
 	}
 
