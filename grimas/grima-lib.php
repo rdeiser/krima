@@ -742,7 +742,7 @@ class Grima {
  * @param string $item_pid	- Item PID of Item record
  * @return DomDocument Item object as it now appears in Alma with Additional Info https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library/,$circ_desk = 'DEFAULT_CIRC_DESK') {
+		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library,$circ_desk = 'DEFAULT_CIRC_DESK') {
 		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid,'library' => $library),
 			array('op' => $op,'circ_desk' => $circ_desk)
