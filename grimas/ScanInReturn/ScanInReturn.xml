@@ -8,7 +8,7 @@
 	placeholder="Circ Desk"
 	>
 	<option value="MAIN">Hale Library</option>
-	<option value="ARCH">Paul Weigel Library of Architecture, Planning & Design</option>
+	<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
 	<Field
