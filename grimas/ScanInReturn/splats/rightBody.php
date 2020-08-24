@@ -16,6 +16,7 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 				<!--<tr><th>Location:Lugar:</th><td><?=$e($item['location'])?></td></tr>-->
 				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th>Fulfillment Note:<!--Nota de servicios al usuario:--></th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
 				<tr><th>Destination:</th><td><?= preg_replace($pattern, $replace, $item['additional_info'])?></td></tr>
