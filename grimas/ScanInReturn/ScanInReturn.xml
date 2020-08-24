@@ -15,12 +15,14 @@
 	name="hold"
 	label="Place on Hold Shelf"
 	type="radio"
+	value="true"
 	required="no"
 	/>
 	<Field
 	name="done"
 	label="Done"
 	type="radio"
+	value="true"
 	required="no"
 	/>
 	<Field
