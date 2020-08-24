@@ -19,8 +19,8 @@
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
-					<label class="col-3 form-check-label" for="library">Library Circ Desk</label>
-					<select class="col-9 form-control znew" name="library" id="library" size="20">
+					<label for="library">Library Circ Desk</label>
+					<select name="library" id="library">
 						<option value="MAIN">Hale Library</option>
 						<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 						<option value="MATHPHYS">Math/Physics Library</option>
