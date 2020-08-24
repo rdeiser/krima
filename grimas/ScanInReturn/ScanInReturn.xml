@@ -12,6 +12,18 @@
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
 	<Field
+	name="hold"
+	label="Place on Hold Shelf"
+	type="radio"
+	required="no"
+	/>
+	<Field
+	name="done"
+	label="Done"
+	type="radio"
+	required="no"
+	/>
+	<Field
 		name="barcode"
 		label="Barcode"
 		autocomplete="off"
