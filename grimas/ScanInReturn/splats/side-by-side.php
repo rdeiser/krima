@@ -57,7 +57,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$text = '';
 	}
 	else if ($item['statistics_note_3']=='PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-			$style = 'style="#cd5555;"';
+			$style = 'style="background-color: #cd5555;"';
 			$text = '';
 	}
 	else if ($item['statistics_note_3']=='') {
