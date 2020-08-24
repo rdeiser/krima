@@ -1,3 +1,9 @@
+<?php
+if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
+	$pattern = "/^(Item's destination is: Hale Library.)/";
+	$replace = 'Hale Library';
+}
+?>
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e($item['call_number'])?></td></tr>
@@ -8,7 +14,8 @@
 				<tr <?=$style2?>><th>Fulfillment Note:<!--Nota de servicios al usuario:--></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
-				<tr><th>Destination:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
+				<tr><th>Destination:</th><td><?= preg_replace($pattern, $replace, $item['additional_info'])?></td></tr>
+				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
