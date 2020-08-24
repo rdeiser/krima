@@ -20,7 +20,7 @@
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
 					<label for="library">Library Circ Desk</label>
-					<select name="library" id="library">
+					<select name="library" id="library" style="width: 402px;" box-sizing: border-box>
 						<option value="MAIN">Hale Library</option>
 						<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 						<option value="MATHPHYS">Math/Physics Library</option>
