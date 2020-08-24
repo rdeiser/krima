@@ -742,10 +742,10 @@ class Grima {
  * @param string $item_pid	- Item PID of Item record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-		function postScan($mms_id,$holding_id,$item_pid,$op = 'scan',$library,$circ_desk = 'DEFAULT_CIRC_DESK') {
+		function postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk) {
 		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
-			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid, 'library' => $library),
-			array('op' => $op, 'circ_desk' => $circ_desk)
+			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
+			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
@@ -3289,8 +3289,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
 		$this->item_pid = $item_pid;
+		$this->op = $op;
 		$this->library = $library;
-		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid,$library);
+		$this->circ_desk = $circ_desk;
+		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk);
 		return $this->xml;
 	}
 
