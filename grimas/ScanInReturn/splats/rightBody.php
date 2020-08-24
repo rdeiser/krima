@@ -4,7 +4,7 @@ if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Pro
 	$replace = 'Hale Library';
 }
 if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
-	$pattern = "/^(Item's destination is: Reshelve to main.)/";
+	$pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
 	$replace = 'Hale Library';
 }
 ?>
