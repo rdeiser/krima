@@ -7,7 +7,7 @@
 				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th>Fulfillment Note:<!--Nota de servicios al usuario:--></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
-				<tr><th>Additional Info:</th><td><?=$e($this->item['additional_info'])?></td></tr>
+				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
 				<!--<tr><th>Destination:</th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>-->
 				</td></tr>
 				<tr><th></th><td></td></tr>
