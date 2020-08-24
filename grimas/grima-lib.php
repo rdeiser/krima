@@ -3284,7 +3284,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  * @param string $item_pid Item PID of item record
  * @return Curl Response
  */
-	function fulfillmentscan($mms_id,$holding_id,$item_pid,$library) {
+	function fulfillmentscan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk) {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
