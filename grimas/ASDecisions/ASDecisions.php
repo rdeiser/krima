@@ -15,7 +15,8 @@ class ASDecisions extends GrimaTask {
 		foreach ($this->barcodes as $barcode) {
 
 			$item = new Item();
-			$item->loadFromAlmaBarcode($barcode);
+			//$item->loadFromAlmaBarcode($barcode);
+			$item->loadFromAlmaBCorX($barcode);
 			
 			$item->addInventoryDate(date("Y-m-d"));
 			/*if ($item['inventory_date'] == '') {
