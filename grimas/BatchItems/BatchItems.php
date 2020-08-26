@@ -106,7 +106,7 @@ class BatchItems extends GrimaTask {
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				
 				$item = new Item();
-				$item->loadFromAlmaBCorX($item['item_pid');
+				$item->loadFromAlmaBCorX($item['item_pid']);
 				
 				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
