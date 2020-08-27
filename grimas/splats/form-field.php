@@ -34,6 +34,17 @@
       <?=$option?>
 <?php endforeach ?>
     </select>
+<?php elseif ($type=="radio"): ?>
+    <fieldset
+	  class="radios"
+	>
+	<input
+	  name="<?=$e($name)?>"
+      id="<?=$e($name)?>"
+	>
+	<label
+	  for="<?=$e($name)?>"
+	>
 <?php else: ?>
     <input
       class="form-control<?=$e($error_class)?>"
