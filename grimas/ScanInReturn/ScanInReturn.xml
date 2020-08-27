@@ -12,20 +12,28 @@
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
 	<Field
-	class="radios"
-	legend="Place on Hold Shelf:"
 	name="hold"
-	id="hold-yes"
-	type="radio"
-	value="true"
-	required="no"
-	label="Yes"
-	/>
+	label="Place on Hold Shelf:"
+	type="select"
+	requiered="yes"
+	>
+	<option value="false">No</option>
+	<option value="true">Yes</option>
+	</Field>
+	<Field
+	name="done"
+	label="Done"
+	type="select"
+	requiered="yes"
+	>
+	<option value="false">No</option>
+	<option value="true">Yes</option>
+	</Field>
 	<Field
 	class="radios"
-	legend="Done"
-	name="done"
-	id="done-yes"
+	legend="Register in-house use"
+	name="house"
+	id="house-yes"
 	type="radio"
 	value="true"
 	required="no"
