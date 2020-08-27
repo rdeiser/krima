@@ -15,6 +15,7 @@
 	class="radios"
 	legend="Place on Hold Shelf:"
 	name="hold"
+	id="hold-yes"
 	type="radio"
 	value="true"
 	required="no"
