@@ -21,6 +21,16 @@
 	required="no"
 	label="Yes"
 	/>
+	<Field
+	class="radios"
+	legend="Done"
+	name="done"
+	id="done-yes"
+	type="radio"
+	value="true"
+	required="no"
+	label="Yes"
+	/>
 	<!--<Field
 	name="doney"
 	label="Done"
