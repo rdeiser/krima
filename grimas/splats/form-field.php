@@ -39,7 +39,9 @@
     <fieldset
 	  class="radios"
 	>
+	<legend><?=$e($legend)?></legend>
 	<input
+	  class="row"
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>-yes"
 	  type="<?=$e($type)?>"
