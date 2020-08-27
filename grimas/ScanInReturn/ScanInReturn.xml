@@ -13,10 +13,9 @@
 	</Field>
 	<Field
 	class="radios"
-	legend="Place on Hold Shelf"
+	legend="Place on Hold Shelf:"
 	name="hold"
 	type="radio"
-	id="true"
 	value="true"
 	required="no"
 	label="Yes"
