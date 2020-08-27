@@ -39,12 +39,11 @@
 	  class="radios"
 	>
 	<legend
-	"<?=$e($legend)?>"
+	"<?=$e($label)?>"
 	>
 	<p class="row">
 	<input
 	  name="<?=$e($name)?>"
-      id="<?=$e($id)?>"
 	>
 	<label
 	  for="<?=$e($label)?>"
