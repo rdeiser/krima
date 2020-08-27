@@ -11,14 +11,17 @@
 	<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
-	<!--<Field
+	<Fieldset
+	class="radios"
+	legend="Place on Hold Shelf"
 	name="hold"
-	label="Place on Hold Shelf"
 	type="radio"
+	id="true"
 	value="true"
 	required="no"
+	label="Yes"
 	/>
-	<Field
+	<!--<Field
 	name="doney"
 	label="Done"
 	type="radio"
