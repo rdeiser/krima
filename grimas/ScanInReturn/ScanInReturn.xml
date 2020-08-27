@@ -11,7 +11,7 @@
 	<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 	<option value="MATHPHYS">Math/Physics Library</option>
 	</Field>
-	<Fieldset
+	<Field
 	class="radios"
 	legend="Place on Hold Shelf"
 	name="hold"
