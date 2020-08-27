@@ -12,10 +12,9 @@
   <input name="<?=$e($name)?>" id="<?=$e($name)?>" type="<?=$e($type)?>" value="<?=$e($value)?>" />
 <?php else: ?>
   <div class="form-group<?=$e($error_class)?>">
-<?php if ( isset($label) ): ?>
+<?php if ($type=="radio"): ?>
+<?php elseif ( isset($label) ): ?>
     <label for="<?=$e($name)?>"><?=$e($label)?></label>
-<?php elseif ($type=="radio"): ?>
-    <legend><?=$e($legend)?></legend>
 <?php endif ?>
 <?php if ($field->rows > 0): ?>
     <textarea
