@@ -13,7 +13,7 @@
 	</Field>
 	<Field
 	class="radios"
-	label="Place on Hold Shelf"
+	legend="Place on Hold Shelf"
 	name="hold"
 	type="radio"
 	id="true"
