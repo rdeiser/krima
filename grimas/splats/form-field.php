@@ -35,21 +35,13 @@
 <?php endforeach ?>
     </select>
 <?php elseif ($type=="radio"): ?>
-    <fieldset
-	  class="radios"
-	>
-	<legend
-	"<?=$e($label)?>"
-	>
-	<p class="row">
-	<input
-	  name="<?=$e($name)?>"
-      id="<?=$e($name)?>"
-	>
-	<label
-	  for="<?=$e($label)?>"
-	>
-	</p>
+    <fieldset class="radios">
+        <legend>Place on Hold Shelf</legend>
+        <p class="row">
+            <input type="radio" id="true" value="true" />
+            <label for="hold">Yes</label>
+        </p>
+    </fieldset>
 <?php else: ?>
     <input
       class="form-control<?=$e($error_class)?>"
