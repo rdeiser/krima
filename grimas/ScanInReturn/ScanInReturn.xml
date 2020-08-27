@@ -22,7 +22,7 @@
 	label="Yes"
 	/>
 	<Field
-	class="radios"
+	class="radios2"
 	name="hold"
 	id="hold-no"
 	type="radio"
