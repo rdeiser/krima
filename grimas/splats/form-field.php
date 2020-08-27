@@ -42,11 +42,11 @@
 	<legend><?=$e($legend)?></legend>
 	<input
 	  name="<?=$e($name)?>"
-      id="<?=$e($name)?>-yes"
+      id="<?=$e($id)?>"
 	  type="<?=$e($type)?>"
 	  value="<?=$e($value)?>"
 	>
-	<label for="<?=$e($name)?>-yes"><?=$e($label)?></label>
+	<label for="<?=$e($id)?>"><?=$e($label)?></label>
 	
 	<input
 	  name="<?=$e($name)?>"
