@@ -36,14 +36,14 @@
     </select>
 <?php elseif ($type=="radio"): ?>
     <fieldset
-	  class="<?=$e($name)?>"
+	  class="radios"
 	>
 	<input
 	  name="<?=$e($name)?>"
-      id="<?=$e($name)?>"
+      id="<?=$e($name)?>-yes"
 	>
 	<label
-	  for="<?=$e($name)?>"
+	  for="<?=$e($name)?>-yes"
 	>
 <?php else: ?>
     <input
