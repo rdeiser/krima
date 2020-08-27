@@ -44,6 +44,7 @@
 	<p class="row">
 	<input
 	  name="<?=$e($name)?>"
+      id="<?=$e($name)?>"
 	>
 	<label
 	  for="<?=$e($label)?>"
