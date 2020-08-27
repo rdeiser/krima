@@ -42,6 +42,7 @@
 	<input
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>-yes"
+	  type="<?=$e($type)?>"
 	>
 	<label for="<?=$e($name)?>-yes"><?=$e($label)?></label>
 <?php else: ?>
