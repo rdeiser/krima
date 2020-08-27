@@ -21,15 +21,6 @@
 	required="no"
 	label="Yes"
 	/>
-	<Field
-	class="radios2"
-	name="hold"
-	id="hold-no"
-	type="radio"
-	value="false"
-	required="no"
-	label="No"
-	/>
 	<!--<Field
 	name="doney"
 	label="Done"
