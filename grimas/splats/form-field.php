@@ -40,6 +40,7 @@
 	  class="radios"
 	>
 	<legend><?=$e($legend)?></legend>
+	<p class="row"/>
 	<input
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>-yes"
