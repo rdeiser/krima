@@ -12,6 +12,9 @@
   <input name="<?=$e($name)?>" id="<?=$e($name)?>" type="<?=$e($type)?>" value="<?=$e($value)?>" />
 <?php else: ?>
   <div class="form-group<?=$e($error_class)?>">
+  <?php elseif $type=="radio"): ?>
+  <div class="<?=$e($name)?>">
+  
 <?php if ( isset($label) ): ?>
     <label for="<?=$e($name)?>"><?=$e($label)?></label>
 <?php endif ?>
