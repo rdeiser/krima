@@ -14,6 +14,8 @@
   <div class="form-group<?=$e($error_class)?>">
 <?php if ( isset($label) ): ?>
     <label for="<?=$e($name)?>"><?=$e($label)?></label>
+<?php elseif ($type=="radio"): ?>
+    <legend><?=$e($legend)?></legend>
 <?php endif ?>
 <?php if ($field->rows > 0): ?>
     <textarea
@@ -42,9 +44,7 @@
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>-yes"
 	>
-	<label
-	  for="<?=$e($name)?>-yes"
-	>
+	<label for="<?=$e($name)?>-yes"><?=$e($label)?></label>
 <?php else: ?>
     <input
       class="form-control<?=$e($error_class)?>"
