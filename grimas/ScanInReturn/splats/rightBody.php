@@ -37,6 +37,13 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 						<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
 						<option value="MATHPHYS">Math/Physics Library</option>
 					</select>
+					<fieldset class="radios">
+						<legend>Place on Hold Shelf</legend>
+							<p class="row">
+								<input type="radio" id="true" value="true"/>
+								<label for="hold">Yes</label>
+							</p>
+						</fieldset>
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
 					<input class="col-9 form-control znew" type="text" name="barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
 				</div>
