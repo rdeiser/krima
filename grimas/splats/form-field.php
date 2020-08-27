@@ -36,7 +36,10 @@
     </select>
 <?php elseif ($type=="radio"): ?>
     <fieldset
-	  class="radios"
+	  class="<?=$e($name)?>"
+	>
+	<legend
+	"<?=$e($name)?>"
 	>
 	<input
 	  name="<?=$e($name)?>"
