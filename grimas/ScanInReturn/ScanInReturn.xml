@@ -19,7 +19,14 @@
 	value="true"
 	required="no"
 	label="Yes"
-	/>
+	><input
+	name="hold"
+	type="radio"
+	value="false"
+	required="no"
+	label="No"
+	>
+	</field>
 	<!--<Field
 	name="doney"
 	label="Done"
