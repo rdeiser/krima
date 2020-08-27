@@ -41,6 +41,7 @@
 	<legend
 	"<?=$e($name)?>"
 	>
+	<p class="row">
 	<input
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>"
@@ -48,6 +49,7 @@
 	<label
 	  for="<?=$e($name)?>"
 	>
+	</p>
 <?php else: ?>
     <input
       class="form-control<?=$e($error_class)?>"
