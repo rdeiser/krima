@@ -1688,6 +1688,7 @@ class GrimaFormField {
 	public $visible;
 	public $rows;
 	public $legend;
+	public $id;
 	protected $autocomplete;
 	protected $highlight;
 	public $error_condition = ""; /* can be warning or error */
@@ -1733,6 +1734,7 @@ class GrimaFormField {
 		$this->placeholder = $field->getAttribute('placeholder');
 		$this->rows = $field->getAttribute('rows');
 		$this->legend = $field->getAttribute('legend');
+		$this->id = $field->getAttribute('id');
 		$this->type = $field->getAttribute('type');
 		if (!$this->type) {
 			$this->type = 'input';
