@@ -47,14 +47,6 @@
 	  value="<?=$e($value)?>"
 	>
 	<label for="<?=$e($id)?>"><?=$e($label)?></label>
-	
-	<input
-	  name="<?=$e($name)?>"
-      id="<?=$e($name)?>-no"
-	  type="<?=$e($type)?>"
-	  value="<?=$e($value)?>"
-	>
-	<label for="<?=$e($name)?>-no"><?=$e($label)?></label>
 	</fieldset>
 <?php else: ?>
     <input
