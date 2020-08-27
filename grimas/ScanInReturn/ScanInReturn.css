@@ -37,7 +37,7 @@ h1 {
 
 .radios {
 	background-color: transparent;
-	positon: relative;
+	positon: absolute;
 	margin-bottom: 0;
 }
 
@@ -48,10 +48,10 @@ h1 {
 .radios legend {
 	left: 0;
 	padding: 0 6px;
-	position: absolute;
-	text-align: right;
+	position: relative;
+	text-align: left;
 	top: 2px;
-	width: 148px;
+	width: 500px;
 }
 
 .radios label {
