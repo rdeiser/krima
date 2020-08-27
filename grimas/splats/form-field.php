@@ -38,7 +38,6 @@
     <fieldset
 	  class="<?=$e($name)?>"
 	>
-	
 	<input
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>"
