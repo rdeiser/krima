@@ -37,7 +37,7 @@ h1 {
 
 .radios {
 	background-color: transparent;
-	positon: absolute;
+	positon: relative;
 	margin-bottom: 0;
 }
 
