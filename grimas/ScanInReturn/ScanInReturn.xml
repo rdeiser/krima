@@ -20,6 +20,15 @@
 	required="no"
 	label="Yes"
 	/>
+	<Field
+	class="radios"
+	legend="Place on Hold Shelf:"
+	name="hold"
+	type="radio"
+	value="false"
+	required="no"
+	label="No"
+	/>
 	<!--<Field
 	name="doney"
 	label="Done"
