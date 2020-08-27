@@ -45,6 +45,7 @@
 	  type="<?=$e($type)?>"
 	>
 	<label for="<?=$e($name)?>-yes"><?=$e($label)?></label>
+	</fieldset>
 <?php else: ?>
     <input
       class="form-control<?=$e($error_class)?>"
