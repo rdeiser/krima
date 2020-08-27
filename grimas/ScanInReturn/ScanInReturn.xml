@@ -39,6 +39,15 @@
 	required="no"
 	label="Yes"
 	/>
+	<Field
+	name="order"
+	label="Place in 72hr Quarantine "
+	type="select"
+	requiered="yes"
+	>
+	<option value="false">No</option>
+	<option value="true">Yes</option>
+	</Field>
 	<!--<Field
 	name="doney"
 	label="Done"
