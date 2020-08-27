@@ -36,18 +36,18 @@
     </select>
 <?php elseif ($type=="radio"): ?>
     <fieldset
-	  class="<?=$e($class)?>"
+	  class="radios"
 	>
 	<legend
-	"<?=$e($name)?>"
+	"<?=$e($legend)?>"
 	>
 	<p class="row">
 	<input
 	  name="<?=$e($name)?>"
-      id="<?=$e($name)?>"
+      id="<?=$e($id)?>"
 	>
 	<label
-	  for="<?=$e($name)?>"
+	  for="<?=$e($label)?>"
 	>
 	</p>
 <?php else: ?>
