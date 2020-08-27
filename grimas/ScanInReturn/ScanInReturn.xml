@@ -22,7 +22,6 @@
 	/>
 	<Field
 	class="radios"
-	legend="Place on Hold Shelf:"
 	name="hold"
 	type="radio"
 	value="false"
