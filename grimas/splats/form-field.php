@@ -43,6 +43,7 @@
 	  name="<?=$e($name)?>"
       id="<?=$e($name)?>-yes"
 	  type="<?=$e($type)?>"
+	  value="<?=$e($value)?>"
 	>
 	<label for="<?=$e($name)?>-yes"><?=$e($label)?></label>
 	</fieldset>
