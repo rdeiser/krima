@@ -108,6 +108,7 @@ class NewItem extends GrimaTask {
 						$item['pieces'] = $this['pieces'];
 					}
 					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
 					$item['public_note'] = $this ['pubnote'];
 					$item['fulfillment_note'] = $this['fulnote'];
 					$item['statistics_note_1'] = $this['statnote1'];
@@ -130,6 +131,7 @@ class NewItem extends GrimaTask {
 						$item['pieces'] = $this['pieces'];
 					}
 					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
 					$item['public_note'] = $this ['pubnote'];
 					$item['fulfillment_note'] = $this['fulnote'];
 					$item['statistics_note_1'] = $this['statnote1'];
