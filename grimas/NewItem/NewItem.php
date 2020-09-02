@@ -13,6 +13,87 @@ class NewItem extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
+				if ($this['whichnote'] == 'AHD To be WITHDRAWN'){
+					if ($holding['location_code'] == 'main') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdmain';
+					} 
+					if ($holding['location_code'] == 'over') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdover';
+					} 
+					if ($holding['location_code'] == 'cmc') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdcmc';
+					} 
+					if ($holding['location_code'] == 'juv') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdjuv';
+					} 
+					if ($holding['location_code'] == 'overplus') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdoverplus';
+					} 
+					if ($holding['location_code'] == 'ref') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdref';
+					}
+					$holding->updateAlma();
+				}
+				if ($this['whichnote'] == 'To be WITHDRAWN'){
+					if ($holding['location_code'] == 'main') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdmain';
+					} 
+					if ($holding['location_code'] == 'over') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdover';
+					} 
+					if ($holding['location_code'] == 'cmc') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdcmc';
+					} 
+					if ($holding['location_code'] == 'juv') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdjuv';
+					} 
+					if ($holding['location_code'] == 'overplus') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdoverplus';
+					} 
+					if ($holding['location_code'] == 'ref') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdref';
+					}
+					$holding->updateAlma();
+				}
+				if ($this['whichnote'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
+					if ($holding['location_code'] == 'main') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdmain';
+					} 
+					if ($holding['location_code'] == 'over') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdover';
+					} 
+					if ($holding['location_code'] == 'cmc') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdcmc';
+					} 
+					if ($holding['location_code'] == 'juv') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdjuv';
+					} 
+					if ($holding['location_code'] == 'overplus') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdoverplus';
+					} 
+					if ($holding['location_code'] == 'ref') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdref';
+					}
+					$holding->updateAlma();
+				}
 				if(empty($this['barcode'])) {
 					$item = new Itemnbc();
 					if (empty($this['copyid'])) {
