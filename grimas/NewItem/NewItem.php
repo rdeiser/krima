@@ -13,7 +13,7 @@ class NewItem extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				if ($this['whichnote'] == 'AHD To be WITHDRAWN'){
+				if ($this['statnote3'] == 'AHD To be WITHDRAWN'){
 					if ($holding['location_code'] == 'main') {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdmain';
@@ -40,7 +40,7 @@ class NewItem extends GrimaTask {
 					}
 					$holding->updateAlma();
 				}
-				if ($this['whichnote'] == 'To be WITHDRAWN'){
+				if ($this['statnote3'] == 'To be WITHDRAWN'){
 					if ($holding['location_code'] == 'main') {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdmain';
@@ -67,7 +67,7 @@ class NewItem extends GrimaTask {
 					}
 					$holding->updateAlma();
 				}
-				if ($this['whichnote'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
+				if ($this['statnote3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
 					if ($holding['location_code'] == 'main') {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdmain';
