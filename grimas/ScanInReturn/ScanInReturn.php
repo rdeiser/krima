@@ -10,7 +10,7 @@ class ScanInReturn extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaX($item['item_pid']);
 		if ($this['order'] == 'true') {
-			$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = 'Quarantine',$status = '72 Hour Quarantine',$done = $this['done'],$place_on_hold_shelf = $this['hold'],$register_in_house_use = 'false');
+			$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = 'Quarantine',$status = '72%20Hour%20Quarantine',$done = $this['done'],$place_on_hold_shelf = $this['hold'],$register_in_house_use = 'false');
 		}
 		//$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = $this['order'],$status = $this['status'],$done = $this['done'],$place_on_hold_shelf = $this['hold'],$register_in_house_use = $this['house']);
 
