@@ -29,7 +29,7 @@
 	<option value="false">No</option>
 	<option value="true">Yes</option>
 	</Field>
-	<Field
+	<!--<Field
 	class="radios"
 	legend="Register in-house use"
 	name="house"
@@ -38,7 +38,7 @@
 	value="true"
 	required="no"
 	label="Yes"
-	/>
+	/>-->
 	<Field
 	name="order"
 	label="Place in 72hr Quarantine "
@@ -73,12 +73,12 @@
 	visible="no"
 	/>
 	<field
-	name="workorder"
+	name="status"
 	required="no"
 	visible="no"
 	/>
 	<field
-	name="status"
+	name="department"
 	required="no"
 	visible="no"
 	/>

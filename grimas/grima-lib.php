@@ -742,10 +742,10 @@ class Grima {
  * @param string $item_pid	- Item PID of Item record
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-		function postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk) {
+		function postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk,$work_order_type,$status,$done,$place_on_hold_shelf,$register_in_house_use) {
 		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
-			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk)
+			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk, 'work_order_type' => $work_order_type, 'status' => $status, 'done' => $done, 'place_on_hold_shelf' => $place_on_hold_shelf, 'register_in_hosue_use' => $register_in_house_use)
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
@@ -3288,7 +3288,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  * @param string $item_pid Item PID of item record
  * @return Curl Response
  */
-	function fulfillmentscan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk) {
+	function fulfillmentscan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk,$work_order_type,$status,$done,$place_on_hold_shelf,$register_in_house_use) {
 		global $grima;
 		$this->mms_id = $mms_id;
 		$this->holding_id = $holding_id;
@@ -3296,7 +3296,12 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$this->op = $op;
 		$this->library = $library;
 		$this->circ_desk = $circ_desk;
-		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk);
+		$this->work_order_type = $;
+		$this->status = $status;
+		$this->done = $done;
+		$this->place_on_hold_shelf = $place_on_hold_shelf;
+		$this->register_in_house_use = $register_in_house_use;
+		$this->xml = $grima->postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk,$work_order_type,$status,$done,$place_on_hold_shelf,$register_in_house_use);
 		return $this->xml;
 	}
 
