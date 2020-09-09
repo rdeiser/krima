@@ -745,7 +745,7 @@ class Grima {
 		function postScan($mms_id,$holding_id,$item_pid,$op,$library,$circ_desk,$work_order_type,$status,$done,$place_on_hold_shelf,$register_in_house_use) {
 		$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
-			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk, 'work_order_type' => $work_order_type, 'status' => $status, 'done' => $done, 'place_on_hold_shelf' => $place_on_hold_shelf, 'register_in_hosue_use' => $register_in_house_use)
+			array('op' => $op, 'library' => $library, 'circ_desk' => $circ_desk, 'work_order_type' => $work_order_type, 'status' => $status, 'done' => $done, 'place_on_hold_shelf' => $place_on_hold_shelf, 'register_in_house_use' => $register_in_house_use)
 			);
 		$this->checkForErrorMessage($ret);
 		return $ret;
