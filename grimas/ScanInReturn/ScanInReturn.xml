@@ -62,24 +62,4 @@
 		required="yes"
 		placeholder="Barcode"
 	/>
-	<field
-	name="op"
-	required="no"
-	visible="no"
-	/>
-	<field
-	name="circ_desk"
-	required="no"
-	visible="no"
-	/>
-	<field
-	name="status"
-	required="no"
-	visible="no"
-	/>
-	<field
-	name="department"
-	required="no"
-	visible="no"
-	/>
 </GrimaForm>
