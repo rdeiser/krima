@@ -17,7 +17,7 @@ class ScanInReturn extends GrimaTask {
 		$this->item_>fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = $this['done'],$place_on_hold_shelf = $this['hold'],$register_in_house_use = 'false');
 		//$this->item_>fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = $this['order'],$status = $this['status'],$done = $this['done'],$place_on_hold_shelf = $this['hold'],$register_in_house_use = $this['house']);
 
-		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK');
+		//$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$circ_desk = 'DEFAULT_CIRC_DESK');
 		/*if $this['hold'] == 'true' {
 			$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = $this['library'],$place_on_hold_shelf = $this['hold'],$circ_desk = 'DEFAULT_CIRC_DESK');
 		} elseif {
