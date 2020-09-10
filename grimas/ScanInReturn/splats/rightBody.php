@@ -7,6 +7,10 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 	$pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
 	$replace = 'Hale Library';
 }
+if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
+	$pattern = "/^WORK_ORDER_DEPARTMENT/";
+	$replace = '72hr Quarantine';
+}
 ?>
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
@@ -14,7 +18,7 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 				<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>
 				<tr><th>Barcode:<!--Código de procedencia:--></th><td><?=$e($item['barcode'])?></td></tr>
 				<!--<tr><th>Location:Lugar:</th><td><?=$e($item['location'])?></td></tr>-->
-				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
+				<tr <?=$style?>><th>Process Type:</th><td><?= preg_replace($pattern, $replace, $item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th>Fulfillment Note:<!--Nota de servicios al usuario:--></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
