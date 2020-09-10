@@ -1,5 +1,5 @@
 <?php
-if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
+if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: .") {
 	$pattern = "/^(Item's destination is: Hale Library.)/";
 	$replace = 'Hale Library';
 }
