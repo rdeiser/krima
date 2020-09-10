@@ -35,9 +35,9 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 					<select name="library" id="library" style="width: 402px;" box-sizing: border-box>
 						<option value="MAIN">Hale Library</option>
 						<!--<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>-->
-						<option value="ARCH" <?php echo (isset($_POST['library']) && $_POST['library'] === 'option1') ? 'selected' : ''; ?>>Paul Weigel Library of Architecture, Planning, Design</option>
+						<option value="ARCH" <? echo (isset($_POST['library']) && $_POST['library'] === 'ARCH') ? 'selected' : ''; ?>>Paul Weigel Library of Architecture, Planning, Design</option>
 						<!--<option value="MATHPHYS">Math/Physics Library</option>-->
-						<option value="MATHPHYS" <?php echo (isset($_POST['library']) && $_POST['library'] === 'option1') ? 'selected' : ''; ?>>Math/Physics Library</option>
+						<option value="MATHPHYS" <? echo (isset($_POST['library']) && $_POST['library'] === 'MATHPHYS') ? 'selected' : ''; ?>>Math/Physics Library</option>
 					</select>
 					<label>Place on Hold Shelf</label>
 					<select name="hold" id="hold" style="width: 402px;" box-sizing: border-box>
