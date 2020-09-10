@@ -7,7 +7,7 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 	$pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: .)/";
 	$replace = 'Hale Library';
 }
-if ($item['additional_info'] =="tem's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
+if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
 	$pattern = "/^(tem's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: .)/";
 	$replace = 'Hale Library';
 }
