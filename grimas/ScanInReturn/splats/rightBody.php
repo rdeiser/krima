@@ -42,17 +42,20 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request
 					<label>Place on Hold Shelf</label>
 					<select name="hold" id="hold" style="width: 402px;" box-sizing: border-box>
 						<option value="false">No</option>
-						<option value="true">Yes</option>
+						<!--<option value="true">Yes</option>-->
+						<option value="true" <?php echo (isset($_POST['hold']) && $_POST['hold'] === 'true') ? 'selected' : ''; ?>>Yes</option>
 					</select>
 					<label>Done</label>
 					<select name="done" id="done" style="width: 402px;" box-sizing: border-box>
 						<option value="false">No</option>
-						<option value="true">Yes</option>
+						<!--<option value="true">Yes</option>-->
+						<option value="true" <?php echo (isset($_POST['done']) && $_POST['done'] === 'true') ? 'selected' : ''; ?>>Yes</option>
 					</select>
 					<label>Place in 72hr Quarantine</label>
 					<select name="order" id="order" style="width: 402px;" box-sizing: border-box>
 						<option value="false">No</option>
-						<option value="true">Yes</option>
+						<!--<option value="true">Yes</option>-->
+						<option value="true" <?php echo (isset($_POST['order']) && $_POST['order'] === 'true') ? 'selected' : ''; ?>>Yes</option>
 					</select>
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
 					<input class="col-9 form-control znew" type="text" name="barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
