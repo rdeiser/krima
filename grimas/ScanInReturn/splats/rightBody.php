@@ -1,6 +1,6 @@
 <?php
 if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^(Item's destination is: Hale Library.)/";
+	$pattern = "/^(Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: .)/";
 	$replace = 'Hale Library';
 }
 if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
