@@ -41,6 +41,10 @@ class NewItem extends GrimaTask {
 					$holding->updateAlma();
 				}
 				if ($this['statnote3'] == 'To be WITHDRAWN'){
+					if ($holding['location_code'] == 'annex') {
+						$holding['library_code'] = 'WITHDRAW';
+						$holding['location_code'] = 'wdmain';
+					} 
 					if ($holding['location_code'] == 'main') {
 						$holding['library_code'] = 'WITHDRAW';
 						$holding['location_code'] = 'wdmain';
