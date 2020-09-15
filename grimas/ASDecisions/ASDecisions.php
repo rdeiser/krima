@@ -95,6 +95,10 @@ class ASDecisions extends GrimaTask {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdref';
 				}
+				if($item['location_code'] == 'annex') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmain';
+				}
 			}
 			if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 				if($item['location_code'] == 'cmc') {
