@@ -44,7 +44,7 @@ if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
 				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
-				<tr><th>Destination:</th><td><?= if (preg_replace($pattern, $item['additional_info'], $matches)) { print_r($matches);}?></td></tr>
+				<tr><th>Destination:</th><td><?= preg_replace($pattern, $item['additional_info'], $matches)?></td></tr>
 				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
 				</td></tr>	
 				<tr><th></th><td></td></tr>
