@@ -4,12 +4,12 @@ if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Pro
 	$replace = 'Hale Library';
 }
 //if (isset($item['additional_info'])) {
-if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
+if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . /Requester: . Requester ID: . Place in Queue: 0") {
 	$pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
 	$replace = 'Hale Library';
 }
 if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^(Item's destination is\: Manage Locally \(Quarantine\)\. Request\/Process Type\: Quarantine\. Requester\: \. Requester ID\: \. Place in Queue\: 1)/";
+	$pattern = "/^Item's destination is/";
 	$replace = '72hr Quarantine';
 }
 if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
