@@ -21,7 +21,7 @@ if (isset($item['additional_info'])) {
 	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
 	$replace = '72hr Quarantine';
 }*/
-if (isset($item['additional_info'])) {
+if ($item['additional_info']) {
 	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
 	$replace = '72hr Quarantine';
 }
