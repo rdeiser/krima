@@ -12,7 +12,11 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to sortmain. Req
 	$pattern = "/^(Item's destination is: Reshelve to sortmain. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
 	$replace = 'Hale Library--sortmain';
 }
-if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
+/*if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
+	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
+	$replace = '72hr Quarantine';
+}*/
+if (isset($item['additional_info'])) {
 	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
 	$replace = '72hr Quarantine';
 }
@@ -34,7 +38,7 @@ if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
 				<tr><th>Destination:</th><td><?= preg_replace($pattern, $replace, $item['additional_info'])?></td></tr>
 				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
-				</td></tr>
+				</td></tr>	
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
