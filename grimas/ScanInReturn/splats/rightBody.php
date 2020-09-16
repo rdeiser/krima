@@ -12,7 +12,7 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to sortmain. Req
 	$pattern = "/^(Item's destination is: Reshelve to sortmain. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
 	$replace = 'Hale Library--sortmain';
 }
-if (isset($item['additional_info'])) {
+if ($item['additional_info'] =="Item's destination is: On Hold Shelf. Request/Process Type: Patron physical item request. Requester: Deiser II, Raymond. Requester ID: rdeiser. Place in Queue: 1") {
 	$pattern = "/Item's destination is: On Hold Shelf./i";
 	$replace = 'Hold Shelf';
 }
