@@ -16,6 +16,10 @@ if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantin
 	$pattern = array("/^(Item's destination is: Manage Locally (Quarantine). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/");
 	$replace = '72hr Quarantine';
 }
+if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
+	$pattern = "/Manage Locally (Quarantine)/i";
+	$replace = '72hr Quarantine';
+}
 if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
 	$pattern = "/^WORK_ORDER_DEPARTMENT/";
 	$replace = '72hr Quarantine';
