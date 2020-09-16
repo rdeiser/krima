@@ -13,7 +13,7 @@ if ($item['additional_info'] =="Item's destination is: Reshelve to sortmain. Req
 	$replace = 'Hale Library--sortmain';
 }
 if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^Item's destination is/";
+	$pattern = "/^(Item's destination is: Manage Locally (Quarantine). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
 	$replace = '72hr Quarantine';
 }
 if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
