@@ -11,10 +11,10 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['inventory_date'] = date("Y-m-d");
 		$item['library_code'] = 'WITHDRAW';
 		$item['location_code'] = 'wdgov';
-		if (isset($item['internal_note_1'])) {
+		if (empty($item['internal_note_1'])) {
 			$item['internal_note_1'] = 'Gov unboxing review';
 		} else {
-			$item['internal_note_1'] = 'Raymond stop';
+			$item['internal_note_1'] = 'Raymond go';
 		}
 		//$item['internal_note_1'] = 'Gov unboxing review';
 		$item->updateAlma();
