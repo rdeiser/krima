@@ -14,9 +14,8 @@ class WDGovDoc extends GrimaTask {
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 
-				$item = new Item();
+				$item = new Itemnbc();
 				//$item['fulfillment_note'] = $this['fulnote'];
-				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
 				$item['pieces'] = '1';
 				$item['inventory_date'] = date("Y-m-d");
@@ -26,6 +25,7 @@ class WDGovDoc extends GrimaTask {
 				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
+				$item['barcode'] = $this['barcode'];
 				$this->item['internal_note_1'] = 'Gov unboxing review';
 				$this->item['library_code'] = 'WITHDRAW';
 				$this->item['location_code'] = 'wdgov';
