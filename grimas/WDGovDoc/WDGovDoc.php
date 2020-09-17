@@ -13,16 +13,25 @@ class WDGovDoc extends GrimaTask {
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
+				if (isset($this['barcode'])) {
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+				} else {
+					$item = new Itemnbc();
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+				}
 
-				$item = new Itemnbc();
-				//$item['fulfillment_note'] = $this['fulnote'];
-				$item['item_policy'] = 'book/ser';
-				$item['pieces'] = '1';
-				$item['inventory_date'] = date("Y-m-d");
-				$item['receiving_operator'] = 'Grima';
-				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				$item->addToAlmaHolding($this['mms_id'],$holdingid);
-				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
 				$item['barcode'] = $this['barcode'];
