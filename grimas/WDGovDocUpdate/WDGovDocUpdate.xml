@@ -7,9 +7,4 @@
         required="no"
         placeholder="Barcode found on piece"
     />
-	<Field
-		name="holding_id"
-		label="Holding ID"
-		required="yes"
-	/>
 </GrimaForm>
