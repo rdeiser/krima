@@ -3230,6 +3230,17 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			$idates[0]->appendChild($idate);
 		}
 	}
+	
+	function InternalNote1() {
+		$xpath = new DomXpath($this->xml);
+		$notes = $xpath->query("//item_data/internal_note_1");
+		
+		foreach ($notes as $note){
+			if (isset(nodeValue)){
+				$note->substr_replace(nodeValue,'Gov unboxing review--',21);
+			}
+			$notes[0]->appendchild($note);
+		}
 // }}}
 
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
