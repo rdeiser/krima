@@ -1,5 +1,5 @@
 <GrimaForm>
-    <Title>WDGovDoc New Item Record</Title>
+    <Title>WDGovDoc Update Item Record</Title>
     <Field
         name="barcode"
         label="Barcode"
