@@ -20,8 +20,6 @@ class WDGovDocUpdate extends GrimaTask {
 		$item->updateAlma();
 				
 		$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
-		} else {
-			$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 	}
 }
 
