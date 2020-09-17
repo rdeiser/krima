@@ -14,8 +14,9 @@ class WDGovDoc extends GrimaTask {
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 
-				$item = new Itemnbc();
+				$item = new Item();
 				//$item['fulfillment_note'] = $this['fulnote'];
+				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
 				$item['pieces'] = '1';
 				$item['inventory_date'] = date("Y-m-d");
@@ -31,7 +32,7 @@ class WDGovDoc extends GrimaTask {
 				
 				$this->item->updateAlma();
 				
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
