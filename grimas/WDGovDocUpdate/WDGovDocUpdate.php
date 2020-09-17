@@ -11,7 +11,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['inventory_date'] = date("Y-m-d");
 		$item['library_code'] = 'WITHDRAW';
 		$item['location_code'] = 'wdgov';
-		if (is_null($item['internal_note_1'])) {
+		if (!empty($item['internal_note_1'])) {
 			/*$pattern = "/^";
 			$replace = "Gov unboxing review--";
 			preg_replace($pattern, $replace, $item['process_type']);*/
@@ -22,7 +22,7 @@ class WDGovDocUpdate extends GrimaTask {
 		//$item['internal_note_1'] = 'Gov unboxing review';
 		$item->updateAlma();
 				
-		$this->addMessage('success',"Successfully updated Barcode: {$item['barcode']}");
+		$this->addMessage('success',"{$item['internal_note_1']}Successfully updated Barcode: {$item['barcode']}");
 	}
 }
 
