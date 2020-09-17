@@ -3231,7 +3231,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 	
-	function InternalNote1() {
+	/*function InternalNote1() {
 		$xpath = new DomXpath($this->xml);
 		$notes = $xpath->query("//item_data/internal_note_1");
 		
@@ -3240,7 +3240,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 				$note->substr_replace(nodeValue,'Gov unboxing review--',21);
 			}
 			$notes[0]->appendchild($note);
-		}
+		}*/
 // }}}
 
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
@@ -3491,10 +3491,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 // {{{ class AddtionalInfo
 /** class AdditionalInfo */
 
-/*class AdditionalInfo extends AlmaObject {
+class AdditionalInfo extends AlmaObject {
 	public $items = array();
 	public $xml;
-}*/
+}
 // }}}
 
 // {{{ class ElectronicCollection
