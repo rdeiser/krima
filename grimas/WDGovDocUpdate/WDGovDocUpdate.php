@@ -12,8 +12,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['library_code'] = 'WITHDRAW';
 		$item['location_code'] = 'wdgov';
 		if (empty($item['internal_note_1'])) {
-			$input = 'Gov unboxing review--';
-			substr_replace($item['internal_note_1'],$input,21);
+			substr_replace($item['internal_note_1'],'Gov unboxing review--',21);
 		} else {
 			$item['internal_note_1'] = 'Raymond go';
 		}
