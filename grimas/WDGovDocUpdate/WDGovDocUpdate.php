@@ -14,8 +14,9 @@ class WDGovDocUpdate extends GrimaTask {
 		if (!empty($item['internal_note_1'])) {
 			/*$pattern = "/^";
 			$replace = "Gov unboxing review--";
-			preg_replace($pattern, $replace, $item['process_type']);*/
-			substr_replace("Gov unboxing review--",$item['internal_note_1'],21);
+			preg_replace($pattern, $replace, $item['process_type']);
+			substr_replace("Gov unboxing review--",$item['internal_note_1'],21);*/
+			$item['internal_note_1'] = 'Gov unboxing review';
 		} /*else {
 			$item['internal_note_1'] = 'Gov unboxing review';
 		}*/
