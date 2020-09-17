@@ -12,14 +12,18 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['library_code'] = 'WITHDRAW';
 		$item['location_code'] = 'wdgov';
 		if (isset($item['internal_note_1'])) {
-			substr_replace("Gov unboxing review--",$item['internal_note_1'],21);
+			/*$pattern = "/^";
+			$replace = "Gov unboxing review--";
+			preg_replace($pattern, $replace, $item['process_type']);*/
+			$input = 'Gov unboxing review--';
+			substr_replace($input,$item['internal_note_1'],21);
 		} else {
 			$item['internal_note_1'] = 'Gov unboxing review';
 		}
 		$item['internal_note_1'] = 'Gov unboxing review';
 		$item->updateAlma();
 				
-		$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+		$this->addMessage('success',"Successfully updated Barcode: {$item['barcode']}");
 	}
 }
 
