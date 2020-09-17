@@ -13,7 +13,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['location_code'] = 'wdgov';
 		if (empty($item['internal_note_1'])) {
 			$input = 'Gov unboxing review--';
-			substr_replace($input,$a,21);
+			substr_replace($input,$item['internal_note_1'],21);
 		} else {
 			$item['internal_note_1'] = 'Raymond go';
 		}
