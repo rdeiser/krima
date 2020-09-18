@@ -12,7 +12,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$item['library_code'] = 'WITHDRAW';
 		$item['location_code'] = 'wdgov';
 		//$item->InternalNote1();
-		$item['internal_note_1'] = 'Gov unboxing review';
+		//$item['internal_note_1'] = 'Gov unboxing review';
 		$item->updateAlma();
 				
 		$this->addMessage('success',"{$item['internal_note_1']}Successfully updated Barcode: {$item['barcode']}");
