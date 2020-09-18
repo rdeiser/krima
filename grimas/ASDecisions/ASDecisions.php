@@ -18,12 +18,12 @@ class ASDecisions extends GrimaTask {
 			//$item->loadFromAlmaBarcode($barcode);
 			$item->loadFromAlmaBCorX($barcode);
 			
-			$item->addInventoryDate(date("Y-m-d"));
+			//$item->addInventoryDate(date("Y-m-d"));
 			/*if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
 			}*/
-			//unset($item['barcode']);
-			if ($this['whichnote']=='AHD HALE return'){
+			unset($item['barcode']);
+			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}
 			if ($this['whichnote']=='AHD ANNEX ingest'){
@@ -40,11 +40,11 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
 			
-			$item['statistics_note_3'] = $this['whichnote'];
+			/*$item['statistics_note_3'] = $this['whichnote'];*/
 			/*if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}*/
-			if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+			/*if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 				if($item['location_code'] == 'cmc') {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdcmc';
@@ -125,7 +125,7 @@ class ASDecisions extends GrimaTask {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdref';
 				}
-			}
+			}*/
 			$item->updateAlma();
 			$this->addMessage('success',"Successfully updated Item Recored for: {$item['barcode']}");
 			//$this->addMessage('success',"Successfully updated Item Recored for:{$item['barcode']} and set#{$set['set_id']}");
