@@ -21,6 +21,7 @@ class WDGovDoc extends GrimaTask {
 					$item['inventory_date'] = date("Y-m-d");
 					$item['receiving_operator'] = 'Grima';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item['statistics_note_3'] = '';
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				} else {
 					$item = new Itemnbc();
@@ -29,6 +30,7 @@ class WDGovDoc extends GrimaTask {
 					$item['inventory_date'] = date("Y-m-d");
 					$item['receiving_operator'] = 'Grima';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item['statistics_note_3'] = '';
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				}
 
