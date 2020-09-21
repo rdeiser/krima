@@ -18,10 +18,10 @@ class ASDecisions extends GrimaTask {
 			//$item->loadFromAlmaBarcode($barcode);
 			$item->loadFromAlmaBCorX($barcode);
 			
-			$item->addInventoryDate(date("Y-m-d"));
-			/*if ($item['inventory_date'] == '') {
+			//$item->addInventoryDate(date("Y-m-d"));
+			if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
-			}*/
+			}
 			//unset($item['barcode']);
 			if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
@@ -40,10 +40,10 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
 			
-			$item['statistics_note_3'] = $this['whichnote'];
-			/*if ($item['statistics_note_3'] == '') {
+			//$item['statistics_note_3'] = $this['whichnote'];
+			if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
-			} else {}*/
+			} else {}
 			if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 				if($item['location_code'] == 'cmc') {
 					$item['library_code'] = 'WITHDRAW';
@@ -124,6 +124,56 @@ class ASDecisions extends GrimaTask {
 				if($item['location_code'] == 'ref') {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdref';
+				}
+			}
+			if ($item['statistics_note_3'] == 'Gov unboxing review') {
+				if($item['location_code'] == 'main') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgov';
+				}
+				if($item['location_code'] == 'gov') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgov';
+				}
+				if($item['location_code'] == 'govcen') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovcen';
+				}
+				if($item['location_code'] == 'govelect') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovelect';
+				}
+				if($item['location_code'] == 'govmap') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmap';
+				}
+				if($item['location_code'] == 'govmfile') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmfile';
+				}
+				if($item['location_code'] == 'govmic') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmic';
+				}
+				if($item['location_code'] == 'govover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovover';
+				}
+				if($item['location_code'] == 'govref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovref';
+				}
+				if($item['location_code'] == 'govmindex') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovmindex';
+				}
+				if($item['location_code'] == 'govoffmap') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovoffmap';
+				}
+				if($item['location_code'] == 'govposter') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovposter';
 				}
 			}
 			$item->updateAlma();
