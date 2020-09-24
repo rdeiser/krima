@@ -102,6 +102,60 @@ class BatchItemsMMS extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($mmsid,$this['holding_id']);
+				
+				$this->item = new Item();
+				$this->item->loadFromAlmaX($item['item_pid']);
+				if ($item['statistics_note_3'] == 'GOV UNBOXING review') {
+				if($item['location_code'] == 'main') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgov';
+				}
+				if($item['location_code'] == 'gov') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgov';
+				}
+				if($item['location_code'] == 'govcen') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovcen';
+				}
+				if($item['location_code'] == 'govelect') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovelect';
+				}
+				if($item['location_code'] == 'govmap') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmap';
+				}
+				if($item['location_code'] == 'govmfile') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmfile';
+				}
+				if($item['location_code'] == 'govmic') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovmic';
+				}
+				if($item['location_code'] == 'govover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovover';
+				}
+				if($item['location_code'] == 'govref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdgovref';
+				}
+				if($item['location_code'] == 'govmindex') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovmindex';
+				}
+				if($item['location_code'] == 'govoffmap') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovoffmap';
+				}
+				if($item['location_code'] == 'govposter') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovposter';
+				}
+				$this->item->updateAlma();
+			}
 
 			$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']} with Barcode: {$item['item_pid']}");
 				/*function print_success() {

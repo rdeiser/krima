@@ -126,7 +126,7 @@ class ASDecisions extends GrimaTask {
 					$item['location_code'] = 'wdref';
 				}
 			}
-			if ($item['statistics_note_3'] == 'Gov unboxing review') {
+			if ($item['statistics_note_3'] == 'GOV UNBOXING review') {
 				if($item['location_code'] == 'main') {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdgov';
