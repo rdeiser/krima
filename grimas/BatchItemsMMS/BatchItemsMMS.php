@@ -165,9 +165,17 @@ class BatchItemsMMS extends GrimaTask {
 				$this->item->updateAlma();
 				}
 			} else {
+				$this->item['barcode'] = $this['barcode'];
+				$item['item_policy'] = 'book/ser';
+				$item['pieces'] = '1';
+				$item['inventory_date'] = '1976-01-01';
+				$item['receiving_operator'] = 'Grima';
+				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+				$item['statistics_note_3'] = $this['whichnote'];
+				$item->addToAlmaHolding($mmsid,$this['holding_id']);
+				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
-				$this->item['barcode'] = $this['barcode'];
 				if ($this['whichnote'] == 'AHD To be WITHDRAWN'){
 					if ($this->item['location_code'] == 'main') {
 						$this->item['library_code'] = 'WITHDRAW';
