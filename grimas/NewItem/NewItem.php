@@ -35,7 +35,146 @@ class NewItem extends GrimaTask {
 					$item['statistics_note_3'] = $this['statnote3'];
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 					
-					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$item['item_pid']}");
+					$this->item = new Item();
+					$this->item->loadFromAlmaX($item['item_pid']);
+					if ($this['statnote3'] == 'AHD To be WITHDRAWN'){
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					} 
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
+					} 
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
+					} 
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
+					} 
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
+					} 
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
+					}
+					$this->item->updateAlma();
+				}
+				if ($this['statnote3'] == 'To be WITHDRAWN'){
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					} 
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					} 
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
+					} 
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
+					} 
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
+					} 
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
+					} 
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
+					}
+					$this->item->updateAlma();
+				}
+				if ($this['statnote3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					} 
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
+					} 
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
+					} 
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
+					} 
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
+					} 
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
+					}
+					$this->item->updateAlma();
+				}
+				if ($this['statnote3'] == 'Gov unboxing review'){
+					if($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
+					}
+					if($this->item['location_code'] == 'gov') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
+					}
+					if($this->item['location_code'] == 'govcen') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovcen';
+					}
+					if($this->item['location_code'] == 'govelect') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovelect';
+					}
+					if($this->item['location_code'] == 'govmap') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmap';
+					}
+					if($this->item['location_code'] == 'govmfile') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmfile';
+					}
+					if($this->item['location_code'] == 'govmic') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmic';
+					}
+					if($this->item['location_code'] == 'govover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovover';
+					}
+					if($this->item['location_code'] == 'govref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovref';
+					}
+					if($this->item['location_code'] == 'govmindex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovmindex';
+					}
+					if($this->item['location_code'] == 'govoffmap') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovoffmap';
+					}
+					if($this->item['location_code'] == 'govposter') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovposter';
+					}
+				$this->item->updateAlma();
+				}
+					
+					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with PID: {$this->item['barcode']}");
 				} else {
 					$item = new Item();
 					if (empty($this['copyid'])) {
@@ -62,142 +201,142 @@ class NewItem extends GrimaTask {
 					$this->item = new Item();
 					$this->item->loadFromAlmaX($item['item_pid']);
 					if ($this['statnote3'] == 'AHD To be WITHDRAWN'){
-					if ($item['location_code'] == 'main') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdmain';
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
 					} 
-					if ($item['location_code'] == 'over') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdover';
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
 					} 
-					if ($item['location_code'] == 'cmc') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdcmc';
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
 					} 
-					if ($item['location_code'] == 'juv') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdjuv';
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
 					} 
-					if ($item['location_code'] == 'overplus') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdoverplus';
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
 					} 
-					if ($item['location_code'] == 'ref') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdref';
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
 					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'To be WITHDRAWN'){
-					if ($item['location_code'] == 'annex') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdmain';
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
 					} 
-					if ($item['location_code'] == 'main') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdmain';
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
 					} 
-					if ($item['location_code'] == 'over') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdover';
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
 					} 
-					if ($item['location_code'] == 'cmc') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdcmc';
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
 					} 
-					if ($item['location_code'] == 'juv') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdjuv';
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
 					} 
-					if ($item['location_code'] == 'overplus') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdoverplus';
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
 					} 
-					if ($item['location_code'] == 'ref') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdref';
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
 					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
-					if ($item['location_code'] == 'main') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdmain';
+					if ($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
 					} 
-					if ($item['location_code'] == 'over') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdover';
+					if ($this->item['location_code'] == 'over') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdover';
 					} 
-					if ($item['location_code'] == 'cmc') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdcmc';
+					if ($this->item['location_code'] == 'cmc') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdcmc';
 					} 
-					if ($item['location_code'] == 'juv') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdjuv';
+					if ($this->item['location_code'] == 'juv') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdjuv';
 					} 
-					if ($item['location_code'] == 'overplus') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdoverplus';
+					if ($this->item['location_code'] == 'overplus') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdoverplus';
 					} 
-					if ($item['location_code'] == 'ref') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdref';
+					if ($this->item['location_code'] == 'ref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdref';
 					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'Gov unboxing review'){
-					if($item['location_code'] == 'main') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgov';
+					if($this->item['location_code'] == 'main') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
 					}
-					if($item['location_code'] == 'gov') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgov';
+					if($this->item['location_code'] == 'gov') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
 					}
-					if($item['location_code'] == 'govcen') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovcen';
+					if($this->item['location_code'] == 'govcen') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovcen';
 					}
-					if($item['location_code'] == 'govelect') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovelect';
+					if($this->item['location_code'] == 'govelect') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovelect';
 					}
-					if($item['location_code'] == 'govmap') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovmap';
+					if($this->item['location_code'] == 'govmap') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmap';
 					}
-					if($item['location_code'] == 'govmfile') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovmfile';
+					if($this->item['location_code'] == 'govmfile') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmfile';
 					}
-					if($item['location_code'] == 'govmic') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovmic';
+					if($this->item['location_code'] == 'govmic') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovmic';
 					}
-					if($item['location_code'] == 'govover') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovover';
+					if($this->item['location_code'] == 'govover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovover';
 					}
-					if($item['location_code'] == 'govref') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wdgovref';
+					if($this->item['location_code'] == 'govref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovref';
 					}
-					if($item['location_code'] == 'govmindex') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wgovmindex';
+					if($this->item['location_code'] == 'govmindex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovmindex';
 					}
-					if($item['location_code'] == 'govoffmap') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wgovoffmap';
+					if($this->item['location_code'] == 'govoffmap') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovoffmap';
 					}
-					if($item['location_code'] == 'govposter') {
-						$item['library_code'] = 'WITHDRAW';
-						$item['location_code'] = 'wgovposter';
+					if($this->item['location_code'] == 'govposter') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wgovposter';
 					}
 				$this->item->updateAlma();
 				}
-					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
+					$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$this->item['barcode']}");
 				}
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
