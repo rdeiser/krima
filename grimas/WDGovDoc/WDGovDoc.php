@@ -42,6 +42,9 @@ class WDGovDoc extends GrimaTask {
 					$this->item['library_code'] = 'WITHDRAW';
 					$this->item['location_code'] = 'wdgov';
 				}
+				if($this->item['location_code'] == 'wdmain') {
+					$this->item['location_code'] = 'wdgov';
+				}
 				if($this->item['location_code'] == 'gov') {
 					$this->item['library_code'] = 'WITHDRAW';
 					$this->item['location_code'] = 'wdgov';
