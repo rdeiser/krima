@@ -165,7 +165,8 @@ class BatchItemsMMS extends GrimaTask {
 				$this->item->updateAlma();
 				}
 			} else {
-				$this->item['barcode'] = $this['barcode'];
+				$item = new Item();
+				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
 				$item['pieces'] = '1';
 				$item['inventory_date'] = '1976-01-01';
