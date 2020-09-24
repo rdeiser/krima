@@ -28,4 +28,9 @@
 		label="Holding ID"
 		required="yes"
 	/>
+	<Field
+		name="barcode"
+		label="Barcode"
+		required="no"
+	/>
 </GrimaForm>
