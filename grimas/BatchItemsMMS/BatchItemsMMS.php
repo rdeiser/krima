@@ -105,59 +105,59 @@ class BatchItemsMMS extends GrimaTask {
 				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
-				if ($item['statistics_note_3'] == 'GOV UNBOXING review') {
-				if($item['location_code'] == 'main') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgov';
+				if ($this->item['statistics_note_3'] == 'GOV UNBOXING review') {
+				if($this->item['location_code'] == 'main') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgov';
 				}
-				if($item['location_code'] == 'gov') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgov';
+				if($this->item['location_code'] == 'gov') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgov';
 				}
-				if($item['location_code'] == 'govcen') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovcen';
+				if($this->item['location_code'] == 'govcen') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovcen';
 				}
-				if($item['location_code'] == 'govelect') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovelect';
+				if($this->item['location_code'] == 'govelect') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovelect';
 				}
-				if($item['location_code'] == 'govmap') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovmap';
+				if($this->item['location_code'] == 'govmap') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovmap';
 				}
-				if($item['location_code'] == 'govmfile') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovmfile';
+				if($this->item['location_code'] == 'govmfile') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovmfile';
 				}
-				if($item['location_code'] == 'govmic') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovmic';
+				if($this->item['location_code'] == 'govmic') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovmic';
 				}
-				if($item['location_code'] == 'govover') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovover';
+				if($this->item['location_code'] == 'govover') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovover';
 				}
-				if($item['location_code'] == 'govref') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wdgovref';
+				if($this->item['location_code'] == 'govref') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovref';
 				}
-				if($item['location_code'] == 'govmindex') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wgovmindex';
+				if($this->item['location_code'] == 'govmindex') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wgovmindex';
 				}
-				if($item['location_code'] == 'govoffmap') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wgovoffmap';
+				if($this->item['location_code'] == 'govoffmap') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wgovoffmap';
 				}
-				if($item['location_code'] == 'govposter') {
-					$item['library_code'] = 'WITHDRAW';
-					$item['location_code'] = 'wgovposter';
+				if($this->item['location_code'] == 'govposter') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wgovposter';
 				}
 				$this->item->updateAlma();
 			}
 
-			$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']} with Barcode: {$item['item_pid']}");
+			$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']} with Barcode: {$this->item['barcode']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
 }*/
