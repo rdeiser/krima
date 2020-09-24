@@ -127,6 +127,9 @@ class NewItem extends GrimaTask {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdgov';
 					}
+					if($this->item['location_code'] == 'wdmain') {
+						$this->item['location_code'] = 'wdgov';
+					}
 					if($this->item['location_code'] == 'gov') {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdgov';
@@ -288,6 +291,9 @@ class NewItem extends GrimaTask {
 				if ($this['statnote3'] == 'Gov unboxing review'){
 					if($this->item['location_code'] == 'main') {
 						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
+					}
+					if($this->item['location_code'] == 'wdmain') {
 						$this->item['location_code'] = 'wdgov';
 					}
 					if($this->item['location_code'] == 'gov') {
