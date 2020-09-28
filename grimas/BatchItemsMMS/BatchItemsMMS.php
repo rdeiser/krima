@@ -262,7 +262,7 @@ class BatchItemsMMS extends GrimaTask {
 					}
 					$this->item->updateAlma();
 				}
-				if ($this['whichnote'] == 'Gov unboxing review'){
+				if ($this['whichnote'] == 'GOV UNBOXING review'){
 					if($this->item['location_code'] == 'main') {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdgov';
