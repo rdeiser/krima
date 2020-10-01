@@ -13,6 +13,10 @@ class WDGovDocUpdate extends GrimaTask {
 			$item['library_code'] = 'WITHDRAW';
 			$item['location_code'] = 'wdgov';
 		}
+		if($item['library_code'] == 'MAIN') {
+			$item['library_code'] = 'WITHDRAW';
+			$item['location_code'] = 'wdgov';
+		}
 		if($item['location_code'] == 'wdmain') {
 			$item['location_code'] = 'wdgov';
 		}
