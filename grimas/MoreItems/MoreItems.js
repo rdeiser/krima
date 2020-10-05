@@ -19,8 +19,11 @@ document.addEventListener('DOMContentLoaded',()=>{
         const chronology_j = chronology_j_elt.value;
 		const chronology = ( chronology_i ? '(' + chronology_i + 
 			( useBoth && chronology_j ? ':' + chronology_j : '' ) + ')': '' );
-
-        const description = enumeration + ' ' + chronology;
+        if (enumeration_a == '') {
+			const description = chronology;
+		} else {
+			const description = enumeration + ' ' + chronology;
+		}
 
         description_elt.value = description;
     };
