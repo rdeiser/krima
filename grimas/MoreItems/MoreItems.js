@@ -12,18 +12,22 @@ document.addEventListener('DOMContentLoaded',()=>{
     const onUpdate = function(e) {
         const enumeration_a = enumeration_a_elt.value;
         const enumeration_b = enumeration_b_elt.value;
+
 		const enumeration = ( enumeration_a ? enumeration_a +
 			( useBoth && enumeration_b ? ':' + enumeration_b : '') : '' );
 
         const chronology_i = chronology_i_elt.value;
         const chronology_j = chronology_j_elt.value;
-		const chronology = ( chronology_i ? '(' + chronology_i + 
+
+        if (enumeration !=''){
+        	const chronology = ( chronology_i ? '(' + chronology_i + 
 			( useBoth && chronology_j ? ':' + chronology_j : '' ) + ')': '' );
-        if (enumeration_a == '') {
-			const description = chronology;
-		} else {
-			const description = enumeration + ' ' + chronology;
-		}
+        }else{
+        	const chronology = ( chronology_i ? chronology_i + 
+			( useBoth && chronology_j ? ':' + chronology_j : '' ) : '' );
+        }
+       
+       const description = enumeration + ' ' + chronology;
 
         description_elt.value = description;
     };
