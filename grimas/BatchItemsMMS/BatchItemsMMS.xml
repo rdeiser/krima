@@ -20,7 +20,7 @@
         name="mms"
         label="Bibs with holdings without items"
         autocomplete="off"
-        required="yes"
+        required="no"
         placeholder="Bib Id with holdings without items, one per line."
     />
 	<Field
