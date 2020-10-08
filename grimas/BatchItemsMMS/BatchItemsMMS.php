@@ -317,7 +317,7 @@ class BatchItemsMMS extends GrimaTask {
 
 		}
 
-			$this->addMessage('success',"Successfully added an Item Record to {$holding['holding_id']} with Barcode: {$this->item['barcode']}");
+			$this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$this->item['barcode']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
 }*/
