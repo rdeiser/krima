@@ -324,7 +324,6 @@ class BatchItemsMMS extends GrimaTask {
 			/* else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}*/
-			$this->holdinglist[] = $holding;
 		}
 
 	}
