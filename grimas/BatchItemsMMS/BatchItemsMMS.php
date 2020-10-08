@@ -171,7 +171,7 @@ class BatchItemsMMS extends GrimaTask {
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
-				$item->addToAlmaHolding($mmsid,$this['holding_id']);
+				$item->addToAlmaHolding($this['mms'],$this['holding_id']);
 				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
