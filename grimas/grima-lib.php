@@ -2533,8 +2533,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	function loadFromAlmaX($holding_id) {
 		global $grima;
 
-		$mms_id = Holding::getMmsFromHoldingID($holding_id);
-		$this->xml = $grima->getHolding($mms_id,$holding_id);
+		//$mms_id = Holding::getMmsFromHoldingID($holding_id);
+		$this->xml = $grima->getHolding($holding_id,$holding_id);
 		$this['mms_id'] = $mms_id;
 	}
 // }}}
