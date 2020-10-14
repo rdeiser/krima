@@ -66,7 +66,7 @@ if ($item['statistics_note_3'] = '') {
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
 				<tr <?=$style3?>><th>Destination:</th><td><?=preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
-				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
+				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e($item['statistics_note_3'])?>
 				</td></tr>	
 				<tr><th></th><td></td></tr>
               </table>
