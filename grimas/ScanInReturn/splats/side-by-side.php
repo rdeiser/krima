@@ -68,10 +68,33 @@ if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
+		if ($item['library'] =='ANNEX') {
+			$style = 'style="background-color: #6495ed;"';
+		} else if ($item['library'] =='MAIN') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library'] =='SALINA') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library'] =='ARCH') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library'] =='MATHPHYS') {
+			$style = 'style="background-color: #ab82ff;"';
+		}
 	} else {
 		$pattern = '//';
 		$replace = $item['temp_location'];
+		if ($item['temp_library'] =='ANNEX') {
+			$style = 'style="background-color: #6495ed;"';
+		} else if ($item['temp_library'] =='MAIN') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='SALINA') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='ARCH') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='MATHPHYS') {
+			$style = 'style="background-color: #ab82ff;"';
+		}
 	}
+
 }
 					?>
 <!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
