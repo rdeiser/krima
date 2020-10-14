@@ -36,6 +36,8 @@ class DisplayItem extends GrimaTask {
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$this->holding = new Holding();
+		$this->holding->loadFromAlma($holding['holding_id'],$holding['holding_id']);
 		$this->splatVars['item'] = $this->item;
 }
 }
