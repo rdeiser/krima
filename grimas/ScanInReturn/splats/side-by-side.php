@@ -1,4 +1,13 @@
 <?php 
+if (unset($item['statistics_note_3'])) {
+	if ($item['in_temp_location'] == 'false') {
+		$pattern = '//';
+		$replace = 'Send to'$item['library'];
+	} else {
+		$pattern = '//';
+		$replace = 'Send to'$item['location'];
+	}
+}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'Send to Hale Library';
