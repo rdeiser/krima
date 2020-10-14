@@ -61,15 +61,15 @@ if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
-		if ($item['library'] =='ANNEX') {
+		if ($item['library_code'] =='ANNEX') {
 			$style = 'style="background-color: #6495ed;"';
-		} else if ($item['library'] =='MAIN') {
+		} else if ($item['library_code'] =='MAIN') {
 			$style = 'style="background-color: #ab82ff;"';
-		} else if ($item['library'] =='SALINA') {
+		} else if ($item['library_code'] =='SALINA') {
 			$style = 'style="background-color: #ab82ff;"';
-		} else if ($item['library'] =='ARCH') {
+		} else if ($item['library_code'] =='ARCH') {
 			$style = 'style="background-color: #ab82ff;"';
-		} else if ($item['library'] =='MATHPHYS') {
+		} else if ($item['library_code'] =='MATHPHYS') {
 			$style = 'style="background-color: #ab82ff;"';
 		}
 	} else {
