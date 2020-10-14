@@ -6,6 +6,7 @@ if (empty($item['statistics_note_3'])) {
 	} else {
 		$pattern = '//';
 		$replace = $item['temp_location'];
+		$style = 'style="background-color: #cd5555;"';
 	}
 }
 ?>
@@ -15,12 +16,12 @@ if (empty($item['statistics_note_3'])) {
 				<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>
 				<tr><th>Barcode:<!--Código de procedencia:--></th><td><?=$e($item['barcode'])?></td></tr>
 				<!--<tr><th>Location:Lugar:</th><td><?=$e($item['location'])?></td></tr>-->
-				<tr <?//=$style?>><th>Process Type:</th><td><?= preg_replace($pattern, $replace, $item['process_type'])?></td></tr>
+				<tr <?//=$style?>><th>Process Type:</th><td><?=$e ($item['process_type'])?></td></tr>
 				<tr <?//=$style2?>><th>Fulfillment Note:<!--Nota de servicios al usuario:--></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
-				<tr><th>Destination:</th><td><?=preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
+				<tr <?=$style3?>><th>Destination:</th><td><?=preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
 				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
 				</td></tr>	
 				<tr><th></th><td></td></tr>
