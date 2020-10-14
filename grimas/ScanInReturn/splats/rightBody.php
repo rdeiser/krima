@@ -6,7 +6,7 @@ if (empty($item['statistics_note_3'])) {
 	} else {
 		$pattern = '//';
 		$replace = $item['temp_location'];
-		$style = 'style="background-color: #cd5555;"';
+		$style3 = 'style="background-color: #cd5555;"';
 	}
 }
 ?>
