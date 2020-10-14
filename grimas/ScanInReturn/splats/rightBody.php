@@ -1,4 +1,20 @@
 <?php
+if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
+        $pattern = "/^(Item's destination is: Hale Library. Request\/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1)/";
+        $replace = 'Hale Library';
+}
+if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
+        $pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
+        $replace = 'Hale Library';
+}
+if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
+        $pattern = "/^(Item's destination is\: Manage Locally \(Quarantine\)\. Request\/Process Type\: Quarantine\. Requester\: \. Requester ID\: \. Place in Queue\: 1)/";
+        $replace = '72hr Quarantine';
+}
+if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
+        $pattern = "/^WORK_ORDER_DEPARTMENT/";
+        $replace = '72hr Quarantine';
+}
 if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
