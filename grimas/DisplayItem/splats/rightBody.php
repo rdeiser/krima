@@ -184,6 +184,12 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 
 $holding = new Holding();
 $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+if ($holding['suppress_from_publishing'] = 'true'){
+	if (isset($item['statistics_note_3'])) {
+		$pattern = '/*/';
+		$replace = 'Send to Problem Shelf';
+		}
+}
 
 ?>
               <table class="table">
