@@ -182,6 +182,9 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
 
+$holding = new Holding();
+$holding->loadFromAlma($item['mms_id'],$item['holding_id'];
+
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
@@ -196,7 +199,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
-				<tr><th>Holding Suppressed:</th><td><?=$e($item['suppress_from_publishing'])?>
+				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
 				</td></tr>
 				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
 				</td></tr>
