@@ -58,7 +58,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 	}
 
 if (empty($item['statistics_note_3'])) {
-	if (empty($item['in_temp_location'])) {
+	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
 		if ($item['library'] =='ANNEX') {
