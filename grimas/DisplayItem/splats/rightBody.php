@@ -183,7 +183,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 }
 
 $holding = new Holding();
-$holding->loadFromAlma($item['mms_id'],$item['holding_id'];
+$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 
 ?>
               <table class="table">
