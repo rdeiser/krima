@@ -62,7 +62,7 @@ if (empty($item['statistics_note_3'])) {
 		$pattern = '//';
 		$replace = $item['library'];
 		if ($item['library'] =='ANNEX') {
-			$style = 'style="background-color: #6495ed;"';
+			$style = 'style="background-color: #ab82ff;"';
 		} else if ($item['library'] =='MAIN') {
 			$style = 'style="background-color: #ab82ff;"';
 		} else if ($item['library'] =='SALINA') {
