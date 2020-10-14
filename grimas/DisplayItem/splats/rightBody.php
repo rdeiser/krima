@@ -182,9 +182,6 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
 
-$this->holding = new Holding();
-$this->holding->loadFromAlma($holding['holding_id'],$holding['holding_id']);
-
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
