@@ -43,7 +43,7 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'Send to DBM';
 }
-if (empty($item['statistics_note_3'])) {
+if (null($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
