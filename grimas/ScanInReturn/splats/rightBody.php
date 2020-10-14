@@ -20,7 +20,7 @@ if (empty($item['statistics_note_3'])) {
 				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
-				<!--<tr><th>Destination:</th><td><?=$e ($item['statistics_note_3'])?></td></tr>-->
+				<tr><th>Destination:</th><td><?=$e ($item['statistics_note_3'])?></td></tr>
 				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
 				</td></tr>	
 				<tr><th></th><td></td></tr>
