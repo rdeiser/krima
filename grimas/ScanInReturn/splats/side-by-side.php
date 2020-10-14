@@ -70,7 +70,7 @@ if (empty($item['statistics_note_3'])) {
 		$replace = $item['library'];
 	} else {
 		$pattern = '//';
-		$replace = $item['location'];
+		$replace = $item['temp_location'];
 	}
 }
 					?>
