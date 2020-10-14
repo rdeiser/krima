@@ -27,10 +27,6 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'Send to DBM';
 }
-if ($item['statistics_note_3'] == '') {
-	$pattern = '/^/';
-	$replace = 'Send to DBM';
-}
 
 if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #cd5555;"';
@@ -60,10 +56,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style="background-color: #cd5555;"';
 			$text = '';
 	}
-	else if ($item['statistics_note_3']=='') {
-			$style = 'style=";"';
-			//$text = 'Send to Problem Shelf';
-	}
+
 if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
