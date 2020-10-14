@@ -1,13 +1,4 @@
 <?php 
-if (empty($item['statistics_note_3'])) {
-	if ($item['in_temp_location'] == 'false') {
-		$pattern = '//';
-		$replace = $item['library'];
-	} else {
-		$pattern = '//';
-		$replace = $item['location'];
-	}
-}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'Send to Hale Library';
@@ -73,6 +64,15 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			//$text = 'Send to Problem Shelf';
 	}
+if (empty($item['statistics_note_3'])) {
+	if ($item['in_temp_location'] == 'false') {
+		$pattern = '//';
+		$replace = $item['library'];
+	} else {
+		$pattern = '//';
+		$replace = $item['location'];
+	}
+}
 					?>
 <!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
