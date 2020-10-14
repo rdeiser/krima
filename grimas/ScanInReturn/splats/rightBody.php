@@ -1,36 +1,12 @@
 <?php
-if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^(Item's destination is: Hale Library. Request\/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1)/";
-	$replace = 'Hale Library';
-}
-//if (isset($item['additional_info'])) {
-if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . /Requester: . Requester ID: . Place in Queue: 0") {
-	$pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
-	$replace = 'Hale Library';
-}
-if ($item['additional_info'] =="Item's destination is: Reshelve to sortmain. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
-	$pattern = "/^(Item's destination is: Reshelve to sortmain. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
-	$replace = 'Hale Library--sortmain';
-}
-/*if ($item['additional_info'] =="Item's destination is: On Hold Shelf. Request/Process Type: Patron physical item request. Requester: Deiser II, Raymond. Requester ID: rdeiser. Place in Queue: 1") {*/
-if (isset($item['additional_info'])) {
-	$pattern = "/Item's destination is: On Hold Shelf./i";
-	$replace = 'Hold Shelf';
-}
-if (isset($item['additional_info'])) {
-	$pattern = "/Item's destination is: On Hold Shelf./i";
-}
-/*if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
-	$replace = '72hr Quarantine';
-}*/
-if (isset($item['additional_info'])) {
-	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
-	$replace = '72hr Quarantine';
-}
-if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
-	$pattern = "/^WORK_ORDER_DEPARTMENT/";
-	$replace = '72hr Quarantine';
+if (empty($item['statistics_note_3'])) {
+	if ($item['in_temp_location'] == 'false') {
+		$pattern = '//';
+		$replace = $item['library'];
+	} else {
+		$pattern = '//';
+		$replace = $item['temp_location'];
+	}
 }
 ?>
               <table class="table">
@@ -44,10 +20,7 @@ if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
 				<tr><th>Requested:</th><td><?=$e($item['requested'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Additional Info:</th><td><?=$e($item['additional_info'])?></td></tr>
-				<tr><th>Destination:</th><td><?if ($item['additional_info'] =="Item's destination is: Manage Locally (Quarantine). Request/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1") {
-	$pattern = "/^(Item's destination is: Manage Locally \(Quarantine\). Request\/Process Type: Quarantine. Requester: . Requester ID: . Place in Queue: 1)/";
-	$replace = '72hr Quarantine';
-} preg_replace($pattern, $replace, $item['process_type']?></td></tr>
+				<!--<tr><th>Destination:</th><td><?=$e ($item['statistics_note_3'])?></td></tr>-->
 				<tr><th>Stat Note 3:</th><td class="statnote"><?=$e ($item['statistics_note_3'])?>
 				</td></tr>	
 				<tr><th></th><td></td></tr>
