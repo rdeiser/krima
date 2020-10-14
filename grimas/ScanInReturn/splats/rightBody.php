@@ -15,6 +15,34 @@ if ($item['process_type'] =="WORK_ORDER_DEPARTMENT") {
         $pattern = "/^WORK_ORDER_DEPARTMENT/";
         $replace = '72hr Quarantine';
 }
+if ($item['statistics_note_3'] == 'HALE return') {
+	$pattern = '/(HALE return)/';
+	$replace = 'Send to Hale Library';
+} 
+if ($item['statistics_note_3'] == 'ANNEX ingest') {
+	$pattern = '/(ANNEX ingest)/';
+	$replace = 'Send to Annex';
+}
+if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
+	$pattern = '/(To be WITHDRAWN)/';
+	$replace = 'Send to DBM';
+}
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Send to DBM';
+}
+if ($item['statistics_note_3'] == 'AHD HALE return') {
+	$pattern = '/(AHD HALE return)/';
+	$replace = 'Send to Hale Library';
+} 
+if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
+	$pattern = '/(AHD ANNEX ingest)/';
+	$replace = 'Send to Annex';
+}
+if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
+	$pattern = '/(AHD To be WITHDRAWN)/';
+	$replace = 'Send to DBM';
+}
 if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
