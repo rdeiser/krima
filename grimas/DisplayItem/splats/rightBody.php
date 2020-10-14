@@ -204,6 +204,7 @@ if ($holding['suppress_from_publishing'] = 'true'){
 			$replace = 'Send to Problem Shelf';
 		}
 }
+}
 
 ?>
               <table class="table">
