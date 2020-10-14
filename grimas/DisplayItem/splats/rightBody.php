@@ -198,6 +198,8 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 				</td></tr>
 				<tr><th>Holding Suppressed:</th><td><?=$e($this->holding['suppress_from_publishing'])?>
 				</td></tr>
+				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
+				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
