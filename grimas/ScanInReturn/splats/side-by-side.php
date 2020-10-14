@@ -2,10 +2,10 @@
 if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
-		$replace = 'Send to'$item['library'];
+		$replace = $item['library'];
 	} else {
 		$pattern = '//';
-		$replace = 'Send to'$item['location'];
+		$replace = $item['location'];
 	}
 }
 if ($item['statistics_note_3'] == 'HALE return') {
