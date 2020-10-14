@@ -188,6 +188,20 @@ if ($holding['suppress_from_publishing'] = 'true'){
 	if ($item['statistics_note_3']== 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
+		}else if ($item['statistics_note_3']== 'HALE return') {
+			$pattern = '/(HALE return)/';
+			$replace = 'Send to Problem Shelf';
+		}
+} else {
+	$bib = new bib();
+	$bib->loadFromAlma($item['mms_id']);
+	if ($bib['suppress_from_publishing'] = 'true'){
+		if ($item['statistics_note_3']== 'AHD HALE return') {
+			$pattern = '/(AHD HALE return)/';
+			$replace = 'Send to Problem Shelf';
+		}else if ($item['statistics_note_3']== 'HALE return') {
+			$pattern = '/(HALE return)/';
+			$replace = 'Send to Problem Shelf';
 		}
 }
 
