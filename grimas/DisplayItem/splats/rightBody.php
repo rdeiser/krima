@@ -195,7 +195,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
-				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
+				<tr><th>Holding Suppressed:</th><td><?=$e( $this->holding['suppress_from_publishing'])?>
 				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
