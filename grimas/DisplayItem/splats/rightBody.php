@@ -192,7 +192,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
 		}
-}
+} else {
 	$bib = new bib();
 	$bib->loadFromAlma($item['mms_id']);
 	if ($bib['suppress_from_publishing'] == 'true'){
@@ -204,7 +204,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 			$replace = 'Send to Problem Shelf';
 		}
 }
-
+}
 
 ?>
               <table class="table">
@@ -221,7 +221,6 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
 				<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>
-				</td></tr>
 				<!--<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
 				</td></tr>
 				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
