@@ -182,9 +182,9 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
 
-/*$holding = new Holding();
+$holding = new Holding();
 $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-if ($holding['suppress_from_publishing'] = 'true'){
+if ($holding['suppress_from_publishing'] = 'false'){
 	if ($item['statistics_note_3']== 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -192,7 +192,7 @@ if ($holding['suppress_from_publishing'] = 'true'){
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
 		}
-} else {*/
+} else {
 	$bib = new bib();
 	$bib->loadFromAlma($item['mms_id']);
 	if ($bib['suppress_from_publishing'] = 'true'){
@@ -204,7 +204,7 @@ if ($holding['suppress_from_publishing'] = 'true'){
 			$replace = 'Send to Problem Shelf';
 		}
 }
-//}
+}
 
 ?>
               <table class="table">
