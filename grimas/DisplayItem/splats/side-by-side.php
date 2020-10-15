@@ -175,7 +175,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 				$replace = 'Send to Problem Shelf';
 				$style = 'style=";"';
 				}
-	}/*else {
+	}else {
 		$bib = new bib();
 		$bib->loadFromAlma($item['mms_id']);
 		if ($bib['suppress_from_publishing'] = 'true'){
@@ -189,7 +189,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 					$style = 'style=";"';
 				}
 		}
-	}*/
+	}
 					?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
