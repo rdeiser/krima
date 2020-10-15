@@ -184,7 +184,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 
 $holding = new Holding();
 $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-if (isset($holding['suppress_from_publishing'])){
+if ($holding['suppress_from_publishing'] = 'true'){
 	if ($item['statistics_note_3']== 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -195,7 +195,7 @@ if (isset($holding['suppress_from_publishing'])){
 } else {
 	$bib = new bib();
 	$bib->loadFromAlma($item['mms_id']);
-	if (isset($bib['suppress_from_publishing'])){
+	if ($bib['suppress_from_publishing'] = 'true'){
 		if ($item['statistics_note_3']== 'AHD HALE return') {
 			$pattern = '/(AHD HALE return)/';
 			$replace = 'Send to Problem Shelf';
