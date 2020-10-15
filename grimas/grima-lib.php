@@ -2008,8 +2008,8 @@ class Bib extends AlmaObjectWithMARC {
 		'author' => '//author',
 		'place_of_publication' => '//place_of_publication',
 		'publisher_const' => '//publisher_const',
-		'publisher' => '//publisher_const'
-		'suppress_from_publishing' => '//suppress_from_publishing',
+		'publisher' => '//publisher_const',
+		'suppress_from_publishing' => '//suppress_from_publishing'
 	);
 
 	function offsetGet($offset) {
