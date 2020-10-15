@@ -5,6 +5,7 @@
   <last_modified_by>10019559</last_modified_by>
   <last_modified_date>DATEZ</last_modified_date>
   <originating_system>01SAA_UKY</originating_system>
+  <suppress_from_publishing>false</suppress_from_publishing>
   <record>
     <leader>00148nx  a22000611n 4500</leader>
     <controlfield tag="005">DATETIME.0</controlfield>
