@@ -192,7 +192,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
 		}
-} else {
+} elseif ($bib['suppress_from_publishing'] == 'true'){
 	$bib = new bib();
 	$bib->loadFromAlma($item['mms_id']);
 	if ($bib['suppress_from_publishing'] == 'true'){
