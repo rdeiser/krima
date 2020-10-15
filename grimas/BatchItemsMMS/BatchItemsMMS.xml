@@ -18,19 +18,21 @@
 	</Field>
     <Field
         name="mms"
-        label="Bibs with holdings without items"
+        label="Bib MMS Id"
         autocomplete="off"
         required="no"
-        placeholder="Bib Id with holdings without items, one per line."
+        placeholder="MMS Id not required"
     />
 	<Field
 		name="holding_id"
 		label="Holding ID"
 		required="yes"
+		autofocus="yes"
 	/>
 	<Field
 		name="barcode"
 		label="Barcode"
 		required="no"
+		placeholder="Barcode not required"
 	/>
 </GrimaForm>
