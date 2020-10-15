@@ -8,7 +8,7 @@
 	placeholder="Unboxing Note"
 	>
 	<option value="ANNEX ingest">ANNEX ingest</option>
-	<option value="HALE return"><?php echo (isset($_POST['whichnote']) && $_POST['whichnote'] === 'HALE return') ? 'selected' : ''; ?>>HALE return</option>
+	<option value="HALE return"<?php echo (isset($_POST['whichnote']) && $_POST['whichnote'] === 'HALE return') ? 'selected' : ''; ?>>HALE return</option>
 	<!--<option value="HALE return">HALE return</option>-->
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
 	<option value="AHD HALE return">AHD HALE return</option>
