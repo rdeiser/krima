@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <holding>
+  <suppress_from_publishing>false</suppress_from_publishing>
   <record>
     <leader>00148nx  a22000611n 4500</leader>
     <controlfield tag="005"></controlfield>
