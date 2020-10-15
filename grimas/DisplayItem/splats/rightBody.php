@@ -195,7 +195,7 @@ if (isset($holding['suppress_from_publishing'])){
 } else {
 	$bib = new bib();
 	$bib->loadFromAlma($item['mms_id']);
-	if ($bib['suppress_from_publishing'] = 'true'){
+	if (isset($bib['suppress_from_publishing'])){
 		if ($item['statistics_note_3']== 'AHD HALE return') {
 			$pattern = '/(AHD HALE return)/';
 			$replace = 'Send to Problem Shelf';
