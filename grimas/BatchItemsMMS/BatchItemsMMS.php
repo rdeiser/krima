@@ -14,7 +14,7 @@ class BatchItemsMMS extends GrimaTask {
 				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
 				$item['pieces'] = '1';
-				$item['inventory_date'] = '1976-01-01';
+				$item['inventory_date'] = date("Y-m-d");
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
@@ -167,7 +167,7 @@ class BatchItemsMMS extends GrimaTask {
 				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
 				$item['pieces'] = '1';
-				$item['inventory_date'] = '1976-01-01';
+				$item['inventory_date'] = date("Y-m-d");
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
