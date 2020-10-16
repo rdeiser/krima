@@ -1,5 +1,5 @@
 <GrimaForm>
-    <Title>Batch Item Record Creation MMS Id</Title>
+    <Title>Single Item Record Creation</Title>
 	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
