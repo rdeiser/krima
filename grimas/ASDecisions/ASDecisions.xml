@@ -21,6 +21,7 @@
 	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
 	<option value="LACKS ozone">LACKS ozone</option>
 	</Field>-->
+	
 	<Field
 	name="whichnote"
 	label="Unboxing Stat 3 Note:"
@@ -28,14 +29,14 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
+	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
 	<option value="AHD HALE return">AHD HALE return</option>
 	<option value="AHD ANNEX ingest">AHD ANNEX ingest</option>
 	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
-	<!--<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>-->
-	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw" <?=$e echo (isset($_POST['whichnote']) && $_POST['whichnote'] === 'PHYSICAL CONDITION REVIEW For Possible Withdraw') ? 'selected' : ''; ?>>PHYSICAL CONDITION REVIEW</option>
+	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
 	<option value="GOV UNBOXING review">GOV UNBOXING review</option>
 	</Field>
     <Field
