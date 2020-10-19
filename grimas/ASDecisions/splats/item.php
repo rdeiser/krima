@@ -41,6 +41,7 @@
 </small>
   </div>
   <input class="btn btn-primary active" type="submit" value="Submit">
+  <?php $this->addMessage('success',"Successfully updated Item Recored for: {$item['barcode']}");?>
 </form>
                 <div class="messages mt-3">
                 </div>
