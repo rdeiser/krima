@@ -8,11 +8,6 @@
   <body>
     <div class="jumbotron">
       <div class="container task-ASDecisions">
-        <div class="container mt-4 position-relative">
-          <div class="position-absolute mx-auto help-button">
-            <a class="btn btn-info" href="ASDecisions.html" target="_blank">?</a>
-          </div>
-        </div>
         <!-- form -->
         		<div class="card">
 		  <div class="card-header">
