@@ -23,7 +23,7 @@ class ASDecisions extends GrimaTask {
 				$item->addInventoryDate("1976-01-01");
 			}
 			//unset($item['barcode']);
-			if ($this['whichnote']=='AHD HALE return'){
+			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}
 			if ($this['whichnote']=='AHD ANNEX ingest'){
@@ -31,7 +31,7 @@ class ASDecisions extends GrimaTask {
 			}
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
-			}
+			}*/
 			if ($this['whichnote']=='PHYSICAL CONDITION REVIEW For Possible Withdraw'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}
@@ -40,10 +40,10 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
 			
-			$item['statistics_note_3'] = $this['whichnote'];
-			/*if ($item['statistics_note_3'] == '') {
+			//$item['statistics_note_3'] = $this['whichnote'];
+			if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
-			} else {}*/
+			} else {}
 			if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 				if($item['location_code'] == 'cmc') {
 					$item['library_code'] = 'WITHDRAW';
