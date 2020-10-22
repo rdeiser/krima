@@ -29,7 +29,7 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
-	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
+	<!--<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>-->
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
