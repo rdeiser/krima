@@ -11,8 +11,8 @@ class DisplayItem extends GrimaTask {
 		//$item['inventory_date'] = date("Y-m-d");
 		$item['in_temp_location'] = 'false';
 		$item['temp_location'] == '';
-		$item['temp_call_numer_type'] == '';
-		$item['temp_call_numer'] == '';
+		$item['temp_call_number_type'] == '';
+		$item['temp_call_number'] == '';
 		$item['temp_policy'] == '';
 		/*if ($item['in_temp_location'] == 'true') {
 			
