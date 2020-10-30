@@ -3069,6 +3069,7 @@ class Item extends AlmaObject {
 		'temp_library' => '//temp_library',
 		'temp_location' => '//temp_location',
 		'temp_call_number_type' => '//temp_call_number_type',
+		'temp_call_number' => '//temp_call_number',
 		'temp_policy' => '//temp_policy',
 		'copy_id' => '//copy_id',
 		'additional_info' => '//additional_info',
