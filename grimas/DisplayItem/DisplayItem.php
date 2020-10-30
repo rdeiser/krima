@@ -32,8 +32,8 @@ class DisplayItem extends GrimaTask {
 			$item['in_temp_location'] = 'false';
 		}
 		if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-			$item['in_temp_location'] = 'false';*/
-		}
+			$item['in_temp_location'] = 'false';
+		}*/
 		//$item['inventory_date'] = date("Y-m-d g:i:s A");
 		/*if ($item['in_temp_location'] == 'true') {
 			$item['in_temp_location'] = 'false';
