@@ -9,6 +9,13 @@ class DisplayItem extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
 		//$item['inventory_date'] = date("Y-m-d");
+		$item['in_temp_location'] = 'false';
+		$item['temp_location'] == '';
+		$item['temp_call_numer_type'] == '';
+		$item['temp_call_numer'] == '';
+		$item['temp_policy'] == '';
+		/*if ($item['in_temp_location'] == 'true') {
+			
 		if ($item['statistics_note_3'] == 'ANNEX ingest') {
 			$item['in_temp_location'] = 'false';
 		}
@@ -25,7 +32,7 @@ class DisplayItem extends GrimaTask {
 			$item['in_temp_location'] = 'false';
 		}
 		if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-			$item['in_temp_location'] = 'false';
+			$item['in_temp_location'] = 'false';*/
 		}
 		//$item['inventory_date'] = date("Y-m-d g:i:s A");
 		/*if ($item['in_temp_location'] == 'true') {
