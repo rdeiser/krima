@@ -14,8 +14,8 @@ class DisplayItem extends GrimaTask {
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
 		unset($item['temp_policy']);
-		unset($item['temp_call_number_source']);
-		unset($item['temp_due_back_date']);
+		//unset($item['temp_call_number_source']);
+		unset($item['due_back_date']);
 		/*if ($item['in_temp_location'] == 'true') {
 			
 		if ($item['statistics_note_3'] == 'ANNEX ingest') {
