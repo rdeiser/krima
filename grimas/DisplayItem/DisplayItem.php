@@ -10,10 +10,12 @@ class DisplayItem extends GrimaTask {
 		$item->addInventoryDate(date("Y-m-d"));
 		//$item['inventory_date'] = date("Y-m-d");
 		$item['in_temp_location'] = 'false';
-		$item['temp_location'] = '';
-		$item['temp_call_number_type'] = '';
-		$item['temp_call_number'] = '';
-		$item['temp_policy'] = '';
+		unset($item['temp_location']);
+		unset($item['temp_call_number_type']);
+		unset($item['temp_call_number']);
+		unset($item['temp_policy']);
+		unset($item['temp_call_number_source']);
+		unset($item['temp_due_back_date']);
 		/*if ($item['in_temp_location'] == 'true') {
 			
 		if ($item['statistics_note_3'] == 'ANNEX ingest') {
