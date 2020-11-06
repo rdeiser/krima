@@ -9,6 +9,7 @@
     <temp_call_number/>
     <temp_policy/>
     <due_back_date/>
+	<alt_number_source/>
   </holding_data>
   <item_data>
     <barcode></barcode>
