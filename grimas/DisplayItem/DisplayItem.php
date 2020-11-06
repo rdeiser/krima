@@ -9,7 +9,9 @@ class DisplayItem extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
 		//$item['inventory_date'] = date("Y-m-d");
-		$item['in_temp_location'] = 'false';
+		if ($item['in_temp_location'] = 'true') {
+			$item['in_temp_location'] = 'false';
+		}
 		unset($item['temp_location']);
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
