@@ -99,6 +99,42 @@ class ASDecisions extends GrimaTask {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdmain';
 				}
+				if($item['location_code'] == 'musart') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusart';
+				}
+				if($item['location_code'] == 'musartover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusartov';
+				}
+				if($item['location_code'] == 'musscore') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusscore';
+				}
+				if($item['location_code'] == 'musartref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusartre';
+				}
+				if($item['location_code'] == 'muscd') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmuscd';
+				}
+				if($item['location_code'] == 'muscdover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmuscdove';
+				}
+				if($item['location_code'] == 'mediacoll') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmediacol';
+				}
+				if($item['location_code'] == 'medialp') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmedialp';
+				}
+				if($item['location_code'] == 'mediaover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmediaove';
+				}
 			}
 			if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 				if($item['location_code'] == 'cmc') {
@@ -124,6 +160,46 @@ class ASDecisions extends GrimaTask {
 				if($item['location_code'] == 'ref') {
 					$item['library_code'] = 'WITHDRAW';
 					$item['location_code'] = 'wdref';
+				}
+				if($item['location_code'] == 'annex') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmain';
+				}
+				if($item['location_code'] == 'musart') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusart';
+				}
+				if($item['location_code'] == 'musartover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusartov';
+				}
+				if($item['location_code'] == 'musscore') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusscore';
+				}
+				if($item['location_code'] == 'musartref') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmusartre';
+				}
+				if($item['location_code'] == 'muscd') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmuscd';
+				}
+				if($item['location_code'] == 'muscdover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmuscdove';
+				}
+				if($item['location_code'] == 'mediacoll') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmediacol';
+				}
+				if($item['location_code'] == 'medialp') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmedialp';
+				}
+				if($item['location_code'] == 'mediaover') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wdmediaove';
 				}
 			}
 			if ($item['statistics_note_3'] == 'GOV UNBOXING review') {
