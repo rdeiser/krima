@@ -163,7 +163,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }*/
 	else if (preg_match("/(\W|^)Archival\sbox.check\sin\sand\sgive\sto\sstaff|archival\sbox.check\sin\sand\sgive\sto\sstaff(\W|$)/", $item['fulfillment_note'])) {
-			$style2 = 'style=";"';
+			$style2 = 'style="#FFFF00;"';
 	}
 	else if (preg_match("/[iI]LL/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
