@@ -160,9 +160,12 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
 	/*else if (preg_match("/[gG]ive/", $item['fulfillment_note'])) {
+		if (preg_match("/Archival box\–check in and give to staff/", $item['fulfillment_note'])) {
+			$style2 = 'style="background-color:#FFFF00;"';
+		}else{
 		$style2 = 'style="background-color:#cd3700;"';
 }*/
-	else if (preg_match("/Archival box\–check/", $item['fulfillment_note'])) {
+	else if (preg_match("/Archival box\–check in and give to staff/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#FFFF00;"';
 }
 	else if (preg_match("/[iI]LL/", $item['fulfillment_note'])) {
