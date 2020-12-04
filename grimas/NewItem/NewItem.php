@@ -62,6 +62,46 @@ class NewItem extends GrimaTask {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
 					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
+					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'To be WITHDRAWN'){
@@ -93,6 +133,46 @@ class NewItem extends GrimaTask {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
 					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
+					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
@@ -119,6 +199,46 @@ class NewItem extends GrimaTask {
 					if ($this->item['location_code'] == 'ref') {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
+					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
 					}
 					$this->item->updateAlma();
 				}
@@ -228,6 +348,46 @@ class NewItem extends GrimaTask {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
 					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
+					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'To be WITHDRAWN'){
@@ -259,6 +419,46 @@ class NewItem extends GrimaTask {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
 					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
+					}
 					$this->item->updateAlma();
 				}
 				if ($this['statnote3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'){
@@ -285,6 +485,46 @@ class NewItem extends GrimaTask {
 					if ($this->item['location_code'] == 'ref') {
 						$this->item['library_code'] = 'WITHDRAW';
 						$this->item['location_code'] = 'wdref';
+					}
+					if ($this->item['location_code'] == 'annex') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmain';
+					}
+					if ($this->item['location_code'] == 'musart') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusart';
+					}
+					if ($this->item['location_code'] == 'musartover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartov';
+					}
+					if ($this->item['location_code'] == 'musscore') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusscore';
+					}
+					if ($this->item['location_code'] == 'musartref') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmusartre';
+					}
+					if ($this->item['location_code'] == 'muscd') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscd';
+					}
+					if ($this->item['location_code'] == 'muscdover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmuscdove';
+					}
+					if ($this->item['location_code'] == 'mediacoll') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediacol';
+					}
+					if ($this->item['location_code'] == 'medialp') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmedialp';
+					}
+					if ($this->item['location_code'] == 'mediaover') {
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdmediaove';
 					}
 					$this->item->updateAlma();
 				}

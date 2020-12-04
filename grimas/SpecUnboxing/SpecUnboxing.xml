@@ -1,0 +1,27 @@
+<GrimaForm>
+    <Title>K-State Item Information</Title>
+    <Field
+        label="Barcode of unboxed item"
+        name="unboxed_barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+	<Field
+		name="inventorydate"
+		date-type="all"
+		type="date"
+		required="no"
+		visible="no"
+		/>
+	<!--For future testing to combine both grimas into one file-red 01/2020-->
+	<!--<Field
+        name="next_barcode"
+		required="no"
+        visible="no"
+    />
+	<Field
+        name="adding"
+        required="no"
+        visible="no"
+    />-->
+</GrimaForm>

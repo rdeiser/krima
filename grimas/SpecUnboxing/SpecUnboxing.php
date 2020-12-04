@@ -1,0 +1,32 @@
+<?php
+
+require_once("../grima-lib.php");
+
+class LusUnboxing extends GrimaTask {
+
+	function do_task() {
+		{$item = new Item();
+		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$item->addInventoryDate(date("Y-m-d"));
+		//$item['inventory_date'] = date("Y-m-d");
+		if ($item['in_temp_location'] = 'true') {
+			$item['in_temp_location'] = 'false';
+		}
+		unset($item['temp_location']);
+		unset($item['temp_call_number_type']);
+		unset($item['temp_call_number']);
+		unset($item['temp_policy']);
+		//unset($item['alt_number_source']);
+		$item['due_back_date'] = '';
+
+		$item->updateAlma();
+		}
+{
+		$this->item = new Item();
+		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$this->splatVars['item'] = $this->item;
+}
+}
+}
+
+LusUnboxing::RunIt();
