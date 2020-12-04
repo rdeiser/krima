@@ -1,4 +1,8 @@
 <?php 
+if ($item['statistics_note_3'] == 'SPEC CONDITION') {
+	$pattern = '/(SPEC CONDITION)/';
+	$replace = 'SPEC CONDITION';
+}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'HALE return';
