@@ -163,7 +163,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }*/
 	else if (preg_match("/Archival box/", $item['fulfillment_note'])) {
-		$style2 = 'style="background-color:#cd3700;"';
+		$style2 = 'style="background-color:#FFFF00;"';
 }
 	else if (preg_match("/[iI]LL/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
