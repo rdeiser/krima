@@ -159,7 +159,7 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 	else if (preg_match("/[lL]ost/", $item['fulfillment_note'])) {
 		$style2 = 'style="background-color:#cd3700;"';
 }
-	else if (preg_match("/^[aA]rchival [bB]ox/", $item['fulfillment_note'])) {
+	else if (preg_match("/^[aA]rchival [bB]ox-check in and give to staff/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
 	else if (preg_match("/[gG]ive/", $item['fulfillment_note'])) {
