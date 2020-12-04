@@ -1,8 +1,4 @@
 <?php 
-if ($item['statistics_note_3'] == 'SPEC CONDITION') {
-	$pattern = '/(SPEC CONDITION)/';
-	$replace = 'SPEC CONDITION';
-}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'HALE return';
@@ -43,9 +39,11 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 	else if ($item['statistics_note_3']=='SPEC return') {
 			$style = 'style="background-color: #ab82ff;"';
 			$text = '';
+	}
 	else if ($item['statistics_note_3']=='SPEC CONDITION') {
 			$style = 'style="background-color: #FFFF00;"';
 			$text = '';
+	}
 	else if ($item['statistics_note_3']=='ANNEX ingest') {
 			$style = 'style="background-color: #6495ed;"';
 			$text = '';
