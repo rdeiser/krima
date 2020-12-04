@@ -2,7 +2,7 @@
 
 require_once("../grima-lib.php");
 
-class LusUnboxing extends GrimaTask {
+class SpecUnboxing extends GrimaTask {
 
 	function do_task() {
 		{$item = new Item();
@@ -29,4 +29,4 @@ class LusUnboxing extends GrimaTask {
 }
 }
 
-LusUnboxing::RunIt();
+SpecUnboxing::RunIt();
