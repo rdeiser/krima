@@ -32,16 +32,17 @@ class Boundwith extends GrimaTask {
 		}
 
 		foreach ($this->biblist as $bib) {
-			//$my501text = "Bound with: ";
+			$my501text = "Bound with: ";
 			$skip = $bib->get_title_proper();
-			/*foreach ($arrfor501 as $title) {
+			foreach ($arrfor501 as $title) {
 				if ($title != $skip) {
 					$my501text .= $title . "; ";
 				}
 			}
 			$my501text = preg_replace("/; $/",".",$my501text);
 			$bib->appendField("501"," "," ",array('a' => $my501text));
-			$bib->updateAlma();*/
+			$bib->deleteField(501)
+			$bib->updateAlma();
 		}
 
 		## HOLDING
@@ -50,7 +51,7 @@ class Boundwith extends GrimaTask {
 
 		foreach ($this->biblist as $k => $bib) {
 			if ($k > 0) {
-				$mfhd->appendField("014","1"," ",array('a' => $bib['mms_id']));
+				$mfhd->appendField("014","1"," ",array('a' => 'BOUNDWITH'));
 			}
 		}
 		$mfhd->updateAlma();
