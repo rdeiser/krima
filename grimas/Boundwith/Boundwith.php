@@ -49,9 +49,10 @@ class Boundwith extends GrimaTask {
 		$this->biblist[0]->getHoldings();
 		$mfhd = $this->biblist[0]->holdings[0];
 
-		foreach ($this->biblist as $bib) {
-			$maintitle = array_shift($bib);
-			$mfhd->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
+		foreach ($this->biblist as $k => $bib) {
+			if ($k > 0) {
+				$mfhd->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
+			}
 		}
 		$mfhd->updateAlma();
 
