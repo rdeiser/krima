@@ -16,7 +16,7 @@ class Boundwith extends GrimaTask {
 		}
 
 		# build array of unique titles
-		$arrfor501 = array();
+		//$arrfor501 = array();
 		foreach ($this->biblist as $k => $bib) {
 			$title = $bib->get_title_proper();
 			if ($k > 0) {
@@ -26,12 +26,12 @@ class Boundwith extends GrimaTask {
 					)
 				);
 			} 
-			if (!in_array($title,$arrfor501)) {
+			/*if (!in_array($title,$arrfor501)) {
 				$arrfor501[] = $title;
-			}
+			}*/
 		}
 
-		foreach ($this->biblist as $bib) {
+		/*foreach ($this->biblist as $bib) {
 			$my501text = "Bound with: ";
 			$skip = $bib->get_title_proper();
 			foreach ($arrfor501 as $title) {
@@ -42,7 +42,7 @@ class Boundwith extends GrimaTask {
 			$my501text = preg_replace("/; $/",".",$my501text);
 			$bib->appendField("501"," "," ",array('a' => $my501text));
 			$bib->updateAlma();
-		}
+		}*/
 
 		## HOLDING
 		$this->biblist[0]->getHoldings();
@@ -50,7 +50,7 @@ class Boundwith extends GrimaTask {
 
 		foreach ($this->biblist as $k => $bib) {
 			if ($k > 0) {
-				$mfhd->appendField("014","1"," ",array('a' => $bib['mms_id']));
+				$mfhd->appendField("014","1"," ",array('x' = 'BOUNDWITH'));
 			}
 		}
 		$mfhd->updateAlma();
