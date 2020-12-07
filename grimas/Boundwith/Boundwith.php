@@ -41,7 +41,7 @@ class Boundwith extends GrimaTask {
 			}
 			$my501text = preg_replace("/; $/",".",$my501text);
 			$bib->appendField("501"," "," ",array('a' => $my501text));
-			$bib->deleteField(501)
+			$bib->deleteField("501");
 			$bib->updateAlma();
 		}
 
