@@ -57,3 +57,8 @@ h1 {
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
 }
+.column {
+	float:left;
+	width: 20%;
+	padding:10px
+}
