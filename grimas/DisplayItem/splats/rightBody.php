@@ -184,6 +184,9 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 if (preg_match("/[aA]rchival [bB]ox/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
+if (preg_match("/0/", $item['copy_id'])) {
+	$style3 = 'style="opacity:0;"''
+}
 
 $holding = new Holding();
 $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
