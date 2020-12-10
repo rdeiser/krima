@@ -189,6 +189,11 @@ if (preg_match("/0/", $item['copy_id'])) {
 } else {
 	$style3 = 'style="opacity:1;"';
 }
+if (preg_match("//", $item['description'])) {
+	$style4 = 'style="opacity:0;"';
+} else {
+	$style4 = 'style="opacity:1;"';
+}
 
 $holding = new Holding();
 $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
@@ -217,7 +222,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e($item['call_number'])?><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e($item['call_number'])?><text <?=$style4?>>&nbsp;c.<?=$e($item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>
 				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
 				<!--<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>-->
