@@ -191,6 +191,8 @@ if (preg_match("/0/", $item['copy_id'])) {
 }
 if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
+	$patern2 = '//';
+	$replace2;
 } else {
 	$style4 = 'style="opacity:1;"';
 	$pattern2 = '/^/';
