@@ -1,0 +1,62 @@
+.text-lg {
+    font-size: 125%;
+}
+.znew {
+    background-color: #ffff00;
+}
+/*Bolds the contents of Statistics Note 3 field*/
+.statnote {
+	font-weight: bold;
+}
+
+.card-title {
+	font-weight: bold;
+	text-align: center;
+}
+
+td {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+label {
+	font-weight: bold;
+}
+
+body {
+	min-height: 100vh;
+	/*background-color: rgba(0,0,0,0.3);*/
+}
+
+h1 {
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 0.1em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+.radios {
+	background-color: transparent;
+	positon: relative;
+	margin-bottom: 0;
+}
+
+.radios .row{
+	margin:0 0 0 150px;
+}
+
+.radios legend {
+	left: 0;
+	padding: 0 6px;
+	position: relative;
+	text-align: left;
+	top: 2px;
+	width: 500px;
+}
+
+.radios label {
+	padding-left: 2px;
+	margin-right: 5px;
+	vertical-aligh: middle;
+	width: auto;
+}

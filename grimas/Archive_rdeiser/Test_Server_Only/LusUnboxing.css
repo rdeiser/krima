@@ -1,0 +1,59 @@
+.text-lg {
+    font-size: 125%;
+}
+.znew {
+    background-color: #ffff00;
+}
+/*Bolds the contents of Statistics Note 3 field*/
+.statnote {
+	font-weight: bold;
+}
+
+.card-title {
+	font-weight: bold;
+	text-align: center;
+}
+/*The following .flip section is for the cursor hover effect for the english/spanish text*/
+.flip>span {
+	color: transparent;
+	float: none;
+}
+
+.flip:hover>span {
+	color: black;
+	float: left;
+}
+
+.flip>span:first-child {
+	color: black;
+	float: left;
+}
+
+.flip:hover>span:first-child {
+	color: transparent;
+	float: none;
+}
+
+.flip {
+	width: 333px;
+}
+td {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+label {
+	font-weight: bold;
+}
+
+body {
+	min-height: 100vh;
+	/*background-color: rgba(0,0,0,0.3);*/
+}
+
+h1 {
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 0.1em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
