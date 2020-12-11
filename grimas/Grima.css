@@ -1,5 +1,7 @@
+/*.jumbotron color for test server*/
 .jumbotron {
   min-height: 100vh;
+  background-color: #F0C513;
 }
 
 .has-error input {
