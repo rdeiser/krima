@@ -1,8 +1,3 @@
-/*.jumbotron color for test server*/
-.jumbotron {
-	background-color: #F0C513;
-
-}
 .text-lg {
     font-size: 125%;
 }
@@ -53,8 +48,8 @@ label {
 
 body {
 	min-height: 100vh;
-	/*background-color: rgba(0,0,0,0.3);*/
-	background-color: #F0C513;
+	/*background-color: rgba(0,0,0,0.3);
+	background-color: #F0C513;*/
 }
 
 h1 {
