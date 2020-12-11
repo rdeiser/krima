@@ -1,11 +1,11 @@
 /*.jumbotron color for test server*/
 .jumbotron {
   min-height: 100vh;
-  background-color: #F0C513;
+  /*background-color: #F0C513;*/
 }
 body {
-	/*background-color: rgba(0,0,0,0.3);*/
-	background-color: #F0C513;
+	background-color: rgba(0,0,0,0.3);
+	/*background-color: #F0C513;*/
 }
 
 .has-error input {
