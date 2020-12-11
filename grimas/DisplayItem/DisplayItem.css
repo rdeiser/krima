@@ -48,8 +48,7 @@ label {
 
 body {
 	min-height: 100vh;
-	/*background-color: rgba(0,0,0,0.3);
-	background-color: #F0C513;*/
+	background-color: rgba(0,0,0,0.3);
 }
 
 h1 {
