@@ -189,6 +189,11 @@ if (preg_match("/0/", $item['copy_id'])) {
 } else {
 	$style3 = 'style="opacity:1;"';
 }
+if (preg_match("/1/", $item['copy_id'])) {
+	$style3 = 'style="opacity:0;"';
+} else {
+	$style3 = 'style="opacity:1;"';
+}
 if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
 } else {
