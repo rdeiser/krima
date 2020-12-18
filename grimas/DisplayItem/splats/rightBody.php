@@ -184,10 +184,10 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 if (preg_match("/[aA]rchival [bB]ox/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
-if (preg_match("/0/", $item['copy_id'])) {
+if (preg_match("/^0$/", $item['copy_id'])) {
 	$style3 = 'style="opacity:0;"';
 }
-	else if(preg_match("/1/", $item['copy_id'])) {
+	else if(preg_match("/^1$/", $item['copy_id'])) {
 	$style3 = 'style="opacity:0;"';
 }
 /*if (preg_match("/1/", $item['copy_id'])) {
