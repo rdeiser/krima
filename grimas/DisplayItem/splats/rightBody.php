@@ -184,17 +184,11 @@ if (preg_match("/[sS]end/", $item['fulfillment_note'])) {
 if (preg_match("/[aA]rchival [bB]ox/", $item['fulfillment_note'])) {
 		$style2 = 'style=";"';
 }
-if (preg_match("/^0$/", $item['copy_id'])) {
-	$style3 = 'style="opacity:0;"';
-}
-	else if(preg_match("/^1$/", $item['copy_id'])) {
-	$style3 = 'style="opacity:0;"';
-}
-/*if (preg_match("/1/", $item['copy_id'])) {
-	$style3 = 'style="opacity:0;"';
-} else {
+if (preg_match("/^([2-9]|[1-9][0-9]|[1-9][0-9][0-9])$/", $item['copy_id'])) {
 	$style3 = 'style="opacity:1;"';
-}*/
+} else {
+	$style3 = 'style="opacity:0;"';
+}
 if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
 } else {
