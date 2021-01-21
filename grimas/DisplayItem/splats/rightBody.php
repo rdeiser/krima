@@ -224,7 +224,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
-if (startswith($item['call_number'],'MAP')) {
+if (substr($item['call_number'],'MAP')) {
 	$pattern = '/(MAP)/';
 	$replace = '';
 	}
