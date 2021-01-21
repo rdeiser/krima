@@ -70,13 +70,13 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	} else if ($item['location'] == 'cmc') {
+	} /*else if ($item['location'] == 'cmc') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 			}
-		}
+		}*/
 	/*if ($item['location_code'] == 'main') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
