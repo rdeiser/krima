@@ -32,24 +32,28 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location'] == 'juv') {
+if ($item['location'] !== 'juv') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
+			$pattern = '/(AHD HALE return)/';
+			$replace = 'Send to Problem Shelf';
+			$style = 'style=";"';
+		}
+	}
+/*if ($item['location'] == 'cmc') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-if ($item['location'] == 'cmc') {
+if ($item['location_code'] == 'main') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-/*if ($item['location_code'] == 'main') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}*/
 if ($item['location'] == 'over') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
@@ -86,7 +90,7 @@ if ($item['location'] == 'cmc') {
 		$replace = 'Send to Problem Shelf';
 		}
 	}
-/*if ($item['location'] == 'main') {
+if ($item['location'] == 'main') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
