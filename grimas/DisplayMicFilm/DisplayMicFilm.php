@@ -24,29 +24,22 @@ class DisplayMicFilm extends GrimaTask {
 
 		$item->updateAlma();
 		}
-		{if ($item['statistics_note_3'] = '') {
-			{
-		$this->item = new Item();
-		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		$this->splatVars['item'] = $this->item;
-}
-		} else {
-			{
-				$holding = new Holding();
-				$holding->loadFromAlma('1234',$item['holding_id']);
-				
-				if ($holding['location_code'] == 'mic') {
-					$holding['location_code'] = 'microfilm';
-					}
-				$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
-				$holding->updateAlma();
-			}
+		{
+		$holding = new Holding();
+		$holding->loadFromAlma('1234',$item['holding_id']);
+		
+		if ($holding['location_code'] == 'mic') {
+			$holding['location_code'] = 'microfilm';
+		}
+		/*$subfield_k = "Raymond";
+		$holding->appendField("852","","",array('k' => $subfield_k));*/
+		$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
+		$holding->updateAlma();
 		}
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}
 }
 }
 }
