@@ -24,6 +24,7 @@ class DisplayMicFilm extends GrimaTask {
 
 		$item->updateAlma();
 		}
+		{
 		$holding = new Holding();
 		$holding->loadFromAlma('1234',$item['holding_id']);
 		
@@ -31,6 +32,7 @@ class DisplayMicFilm extends GrimaTask {
 			$holding['location_code'] = 'microfilm';
 		}
 		$holding->updateAlma();
+		}
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
