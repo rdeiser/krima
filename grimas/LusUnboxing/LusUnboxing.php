@@ -19,7 +19,7 @@ class LusUnboxing extends GrimaTask {
 		//unset($item['alt_number_source']);
 		//$item['due_back_date'] = '';
 		if (isset($item['due_back_date'])) {
-			$item['due_back_date'] = '';
+			$item['due_back_date'] = date();
 		}
 
 		$item->updateAlma();
