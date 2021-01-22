@@ -31,7 +31,16 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
-
+if ($item['location'] !== 'mic') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
+			$pattern = '/(AHD HALE return)/';
+			$replace = 'Send to Problem Shelf';
+			$style = 'style=";"';
+		}
+	}
 /*if ($item['location'] !== 'juv') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
