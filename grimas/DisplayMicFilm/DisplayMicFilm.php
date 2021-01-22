@@ -25,6 +25,11 @@ class DisplayMicFilm extends GrimaTask {
 		$item->updateAlma();
 		}
 		{if ($item['statistics_note_3'] = '') {
+			{
+		$this->item = new Item();
+		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$this->splatVars['item'] = $this->item;
+}
 		} else {
 			{
 				$holding = new Holding();
@@ -37,11 +42,11 @@ class DisplayMicFilm extends GrimaTask {
 				$holding->updateAlma();
 			}
 		}
-		}
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
+}
 }
 }
 }
