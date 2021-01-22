@@ -24,17 +24,19 @@ class DisplayMicFilm extends GrimaTask {
 
 		$item->updateAlma();
 		}
-		{
-		$holding = new Holding();
-		$holding->loadFromAlma('1234',$item['holding_id']);
-		
-		if ($holding['location_code'] == 'mic') {
-			$holding['location_code'] = 'microfilm';
+		{if !empty($item['statistics_note_3']) {
+		} else {
+			{
+				$holding = new Holding();
+				$holding->loadFromAlma('1234',$item['holding_id']);
+				
+				if ($holding['location_code'] == 'mic') {
+					$holding['location_code'] = 'microfilm';
+					}
+				$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
+				$holding->updateAlma();
+			}
 		}
-		/*$subfield_k = "Raymond";
-		$holding->appendField("852","","",array('k' => $subfield_k));*/
-		$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
-		$holding->updateAlma();
 		}
 {
 		$this->item = new Item();
