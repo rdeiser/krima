@@ -24,7 +24,7 @@ class DisplayMicFilm extends GrimaTask {
 
 		$item->updateAlma();
 		}
-		{if !empty($item['statistics_note_3']) {
+		{if (!empty($item['statistics_note_3'])) {
 		} else {
 			{
 				$holding = new Holding();
