@@ -17,7 +17,7 @@ class LusUnboxing extends GrimaTask {
 		unset($item['temp_call_number']);
 		unset($item['temp_policy']);
 		//unset($item['alt_number_source']);
-		$item['due_back_date'] = '';
+		//$item['due_back_date'] = '';
 
 		$item->updateAlma();
 		}
