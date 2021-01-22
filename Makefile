@@ -63,6 +63,8 @@ doxygen:
 export DATABASE_URL=sqlite:$(PWD)/standalone-config.sql
 HOST=127.0.0.1
 
+php74:IMAGE=php:7.4
+php73:IMAGE=php:7.3
 php72:IMAGE=php:7.2
 php71:IMAGE=php:7.1
 php70:IMAGE=php:7.0
