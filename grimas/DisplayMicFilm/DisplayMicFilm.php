@@ -31,7 +31,7 @@ class DisplayMicFilm extends GrimaTask {
 		if ($holding['location_code'] == 'mic') {
 			$holding['location_code'] = 'microfilm';
 		}
-		$holding->appendField("852","","",array('k' => ));
+		$holding->appendField("852","","",array('k' => ""));
 		$holding->updateAlma();
 		}
 {
