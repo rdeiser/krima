@@ -11,16 +11,13 @@ class LusUnboxing extends GrimaTask {
 		//$item['inventory_date'] = date("Y-m-d");
 		if ($item['in_temp_location'] = 'true') {
 			$item['in_temp_location'] = 'false';
+			$item['due_back_date'] = '';
 		}
 		unset($item['temp_location']);
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
 		unset($item['temp_policy']);
 		//unset($item['alt_number_source']);
-		$item['due_back_date'] = '';
-		/*if (isset($item['due_back_date'])) {
-			$item['due_back_date'] == '';
-		}*/
 
 		$item->updateAlma();
 		}
