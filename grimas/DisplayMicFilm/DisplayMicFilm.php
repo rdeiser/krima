@@ -7,7 +7,7 @@ class DisplayMicFilm extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		if ($item['material_type'] !== 'microfilm') {
+		if ($item['physical_material_type_code'] !== 'FILM') {
 			$this->splatVars['item'] = $this->item;
 		} else {
 			
