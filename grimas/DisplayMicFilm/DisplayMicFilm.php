@@ -5,8 +5,13 @@ require_once("../grima-lib.php");
 class DisplayMicFilm extends GrimaTask {
 
 	function do_task() {
-		{$item = new Item();
+		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		if ($item['material_type'] !== 'microfilm') {
+			$this->splatVars['item'] = $this->item;
+		} else {
+			
+		if ($item['location'] !== 'juv') {
 		$item->addInventoryDate(date("Y-m-d"));
 		//$item['inventory_date'] = date("Y-m-d");
 		if ($item['in_temp_location'] = 'true') {
@@ -40,6 +45,7 @@ class DisplayMicFilm extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
+}
 }
 }
 }
