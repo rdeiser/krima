@@ -10,8 +10,6 @@ class DisplayMicFilm extends GrimaTask {
 		if ($item['physical_material_type_code'] !== 'FILM') {
 			$this->splatVars['item'] = $this->item;
 		} else {
-			
-		if ($item['location'] !== 'juv') {
 		$item->addInventoryDate(date("Y-m-d"));
 		//$item['inventory_date'] = date("Y-m-d");
 		if ($item['in_temp_location'] = 'true') {
@@ -45,7 +43,6 @@ class DisplayMicFilm extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}
 }
 }
 }
