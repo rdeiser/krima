@@ -32,7 +32,7 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location'] !== 'juv') {
+if ($item['location'] !== 'main') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -95,7 +95,7 @@ if ($item['location'] == 'main') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}*/
+	}
 if ($item['location'] == 'over') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
@@ -119,7 +119,7 @@ if ($item['location'] == 'ref') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}
+	}*/
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
