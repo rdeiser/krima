@@ -36,7 +36,7 @@ class DisplayMicFilm extends GrimaTask {
 		}
 		/*$subfield_k = "Raymond";
 		$holding->appendField("852","","",array('k' => $subfield_k));*/
-		$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
+		//$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
 		$holding->updateAlma();
 		}
 {
