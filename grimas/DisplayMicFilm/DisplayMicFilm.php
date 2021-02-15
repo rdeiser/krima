@@ -31,10 +31,10 @@ class DisplayMicFilm extends GrimaTask {
 		$holding = new Holding();
 		$holding->loadFromAlma('1234',$item['holding_id']);
 		
-		if ($holding['location_code'] == 'mic') {
+		/*if ($holding['location_code'] == 'mic') {
 			$holding['location_code'] = 'microfilm';
 		}
-		/*$subfield_k = "Raymond";
+		$subfield_k = "Raymond";
 		$holding->appendField("852","","",array('k' => $subfield_k));*/
 		//$holding->deleteSubfieldMatching("852","k",'/(MICROFILM)/');
 		$holding->updateAlma();
