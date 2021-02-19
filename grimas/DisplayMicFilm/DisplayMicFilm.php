@@ -32,4 +32,4 @@ class DisplayMicFilm extends GrimaTask {
 }
 }
 
-DisplayItem::RunIt();
+DisplayMicFilm::RunIt();
