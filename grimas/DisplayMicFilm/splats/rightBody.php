@@ -104,7 +104,7 @@ if ($item['location'] == 'main') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}*/
+	}
 if ($item['location'] == 'over') {
 	if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$pattern = '/(AHD HALE return)/';
@@ -128,7 +128,7 @@ if ($item['location'] == 'ref') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		}
-	}
+	}*/
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
@@ -233,10 +233,15 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
+
+if (str_starts_with($item['call_number'], 'MICROFILM')) {
+	$pattern4 = '/(^MICROFILM)/';
+	$replace4 = '';
+}
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e ($item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<!--<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>-->
 				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
 				<!--<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>-->
