@@ -237,7 +237,10 @@ if ($holding['suppress_from_publishing'] == 'true'){
 if (str_starts_with($item['call_number'], 'MICROFILM')) {
 	$pattern4 = '/(^MICROFILM)/';
 	$replace4 = '';
+} else {
+	$item['call_number'];
 }
+	
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
