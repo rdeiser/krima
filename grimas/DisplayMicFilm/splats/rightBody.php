@@ -233,13 +233,8 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
-
-if (str_starts_with($item['call_number'], 'MICROFILM')) {
 	$pattern4 = '/(^MICROFILM)/';
 	$replace4 = '';
-} else {
-	echo $item['call_number'];
-}
 	
 ?>
               <table class="table">
