@@ -238,7 +238,7 @@ if (str_starts_with($item['call_number'], 'MICROFILM')) {
 	$pattern4 = '/(^MICROFILM)/';
 	$replace4 = '';
 } else {
-	$e ($item['call_number']);
+	echo $item['call_number'];
 }
 	
 ?>
