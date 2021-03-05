@@ -1,12 +1,12 @@
 <?php
-if ($item['statistics_note_3'] == 'HALE return') {
-	$pattern = '/(HALE return)/';
-	$replace = 'HALE return';
+if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
+	$pattern = '/(KU FDLP REQUEST)/';
+	$replace = 'Send to KU';
 }
 
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
-	$replace = 'Send to Problem Shelf';
+	$replace = 'GOV WITHDRAW';
 }
 
 if ($item['location'] !== 'microfilm') {
