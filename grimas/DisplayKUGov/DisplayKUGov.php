@@ -8,7 +8,6 @@ class DisplayKUGov extends GrimaTask {
 		{$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
-		//$item['inventory_date'] = date("Y-m-d");
 		if ($item['in_temp_location'] = 'true') {
 			$item['in_temp_location'] = 'false';
 		}
