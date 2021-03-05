@@ -7,18 +7,10 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
+} else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+	$pattern = '/^.{20}/';
+	$replace = 'Send to Problem Shelf';
 }
-
-if ($item['location'] !== 'microfilm') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
 ?>
               <table class="table">
 				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
