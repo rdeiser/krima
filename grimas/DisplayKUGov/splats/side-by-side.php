@@ -2,10 +2,14 @@
 if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$pattern = '/(KU FDLP REQUEST)/';
 	$replace = 'Send to KU';
-} 
+}
+
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
+} else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+	$pattern = '/^.{20}/';
+	$replace = 'Send to Problem Shelf';
 }
 
 if ($item['statistics_note_3']=='') {
@@ -15,17 +19,6 @@ if ($item['statistics_note_3']=='') {
 	else if ($item['statistics_note_3']=='KU FDLP REQUEST') {
 			$style = 'style="background-color: #ab82ff;"';
 			$text = '';
-	}
-	if ($item['location'] !== "microfilm") {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
 	}
 					?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
