@@ -7,10 +7,10 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
-} else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+} /*else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
 	$pattern = '/(ANNEX ingest)/';
 	$replace = 'Send to Problem Shelf';
-}
+}*/
 
 if ($item['statistics_note_3']=='') {
 			$style = 'style="background-color: #cd5555;"';
