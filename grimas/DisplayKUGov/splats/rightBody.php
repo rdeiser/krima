@@ -8,7 +8,7 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
 } else */if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
-	$pattern = '/^.{20}/';
+	$pattern = '/[A-z]/';
 	$replace = 'Send to Problem Shelf';
 }
 ?>
