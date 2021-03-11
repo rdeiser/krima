@@ -4,10 +4,10 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$replace = 'Send to KU';
 }
 
-if ($item['statistics_note_3'] == '') {
+/*if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
-} else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+} else */if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
 	$pattern = '/^.{20}/';
 	$replace = 'Send to Problem Shelf';
 }
