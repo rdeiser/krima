@@ -7,6 +7,7 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 if ($item['library_code'] == 'WITHDRAW') {
 	$pattern = '//';
 	$replace = 'GOV WITHDRAW';
+	$style = 'style="background-color: #cd5555;"';
 }else if ($item['library_code'] !== 'WITHDRAW') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
@@ -15,10 +16,6 @@ if ($item['library_code'] == 'WITHDRAW') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['statistics_note_3']=='') {
-			$style = 'style="background-color: #cd5555;"';
-			$text = '';
-}
 	else if ($item['statistics_note_3']=='KU FDLP REQUEST') {
 			$style = 'style="background-color: #ab82ff;"';
 			$text = '';
