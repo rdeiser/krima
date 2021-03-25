@@ -4,10 +4,10 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$replace = 'Send to KU';
 }
 
-if ($item['location_code'] == 'wdgov'or'wdgovcen'or'wdgovelect'or'wdgovmap'or'wdgovmfile'or'wdgovmic'or'wdgovover'or'wdgovref'or'wgovmindex'or'wgovoffmap'or'wgovposter') {
+if ($item['library_code'] = 'WITHDRAW';) {
 		$pattern = '//';
 		$replace = 'GOV WITHDRAW';
-} else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+}else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
 	$pattern = '/(ANNEX ingest)|(HALE return)|(To be WITHDRAWN)|(AHD ANNEX ingest)|(AHD HALE return)|(AHD To be WITHDRAWN)|(GOV UNBOXING review)|(PHYSICAL CONDITION REVIEW)|(Needs pam binder)/';
 	$replace = 'Send to Problem Shelf';
 }
