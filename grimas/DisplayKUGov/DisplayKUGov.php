@@ -134,7 +134,7 @@ class DisplayKUGov extends GrimaTask {
 			}
 		}
 		if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
-			if($item['location_code'] == 'gov|govcen|govelect|govmap|govmfile|govmic|govover|govref|ovmindex|govoffmap|govposter') {
+			if($item['location_code'] == 'gov') {
 				if ($item['statistics_note_1'] == '') {
 					$item['statistics_note_1'] = 'WITHDRAWN';
 				}
