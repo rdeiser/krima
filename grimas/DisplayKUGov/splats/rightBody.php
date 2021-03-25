@@ -4,7 +4,7 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$replace = 'Send to KU';
 }
 
-if ($item['library_code'] = 'WITHDRAW';) {
+if ($item['library_code'] = 'WITHDRAW') {
 		$pattern = '//';
 		$replace = 'GOV WITHDRAW';
 }else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
