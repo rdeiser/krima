@@ -20,7 +20,9 @@ class DisplayKUGov extends GrimaTask {
 		if (!empty($item['due_back_date'])) {
 			unset($item['due_back_date']);
 		}
-		
+				$item->updateAlma();
+		}
+		{
 		if ($item['statistics_note_3'] == '') {
 			if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 				if ($item['statistics_note_1'] == '') {
