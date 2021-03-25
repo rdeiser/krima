@@ -11,10 +11,10 @@ if ($item['library_code'] == 'WITHDRAW') {
 }else if ($item['library_code'] !== 'WITHDRAW') {
 	$pattern = '/[A-z]/';
 	$replace = 'Send to Problem Shelf';
-}else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
+}/*else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
 	$pattern = '/(ANNEX ingest)|(HALE return)|(To be WITHDRAWN)|(AHD ANNEX ingest)|(AHD HALE return)|(AHD To be WITHDRAWN)|(GOV UNBOXING review)|(PHYSICAL CONDITION REVIEW)|(Needs pam binder)/';
 	$replace = 'Send to Problem Shelf';
-}
+}*/
 
 	else if ($item['statistics_note_3']=='KU FDLP REQUEST') {
 			$style = 'style="background-color: #ab82ff;"';
