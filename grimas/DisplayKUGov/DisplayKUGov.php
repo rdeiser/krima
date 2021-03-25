@@ -22,7 +22,7 @@ class DisplayKUGov extends GrimaTask {
 		}
 		
 		if ($item['statistics_note_3'] == '') {
-			if($item['location_code'] == 'gov') {
+			if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'ovmindex'||'govoffmap'||'govposter') {
 				if ($item['statistics_note_1'] == '') {
 					$item['statistics_note_1'] = 'WITHDRAWN';
 				}
@@ -30,106 +30,38 @@ class DisplayKUGov extends GrimaTask {
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				}
 				$item['library_code'] = 'WITHDRAW';
+			}
+			if($item['location_code'] == 'gov') {
 				$item['location_code'] = 'wdgov';
 			}
 			if($item['location_code'] == 'govcen') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovcen';
 			}
 			if($item['location_code'] == 'govelect') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovelect';
 			}
 			if($item['location_code'] == 'govmap') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovmap';
 			}
 			if($item['location_code'] == 'govmfile') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovmfile';
 			}
 			if($item['location_code'] == 'govmic') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovmic';
 			}
 			if($item['location_code'] == 'govover') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovover';
 			}
 			if($item['location_code'] == 'govref') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovref';
 			}
 			if($item['location_code'] == 'govmindex') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wgovmindex';
 			}
 			if($item['location_code'] == 'govoffmap') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wgovoffmap';
 			}
 			if($item['location_code'] == 'govposter') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wgovposter';
 			}
 		}
@@ -144,46 +76,6 @@ class DisplayKUGov extends GrimaTask {
 				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovKU';
 			}
-			/*if($item['location_code'] == 'gov') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
-				$item['location_code'] = 'wdgovKU';
-			}
-			if($item['location_code'] == 'govcen') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
-				$item['location_code'] = 'wdgovKU';
-			}
-			if($item['location_code'] == 'govover') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
-				$item['location_code'] = 'wdgovKU';
-			}
-			if($item['location_code'] == 'govref') {
-				if ($item['statistics_note_1'] == '') {
-					$item['statistics_note_1'] = 'WITHDRAWN';
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-				}
-				$item['library_code'] = 'WITHDRAW';
-				$item['location_code'] = 'wdgovKU';
-			}*/
 		}
 
 		$item->updateAlma();
