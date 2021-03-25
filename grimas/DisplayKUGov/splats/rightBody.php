@@ -4,7 +4,7 @@ if ($item['statistics_note_3'] == 'KU FDLP REQUEST') {
 	$replace = 'Send to KU';
 }
 
-if ($item['location_code'] == 'wdgov'||'wdgovcen'||'wdgovelect'||'wdgovmap'||'wdgovmfile'||'wdgovmic'||'wdgovover'||'wdgovref'||'wgovmindex'||'wgovoffmap'||'wgovposter') {
+if ($item['location_code'] == 'wdgov'or'wdgovcen'or'wdgovelect'or'wdgovmap'or'wdgovmfile'or'wdgovmic'or'wdgovover'or'wdgovref'or'wgovmindex'or'wgovoffmap'or'wgovposter') {
 		$pattern = '//';
 		$replace = 'GOV WITHDRAW';
 } else if ($item['statistics_note_3'] !== 'KU FDLP REQUEST') {
