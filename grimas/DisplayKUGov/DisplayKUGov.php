@@ -144,6 +144,7 @@ class DisplayKUGov extends GrimaTask {
 				$item['library_code'] = 'WITHDRAW';
 				$item['location_code'] = 'wdgovKU';
 			}
+		}
 
 		$item->updateAlma();
 		}
