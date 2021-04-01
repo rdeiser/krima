@@ -38,6 +38,7 @@
 	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
 	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
 	<option value="GOV UNBOXING review">GOV UNBOXING review</option>
+	<option value="KU FDLP REQUEST">KU FDLP REQUEST</option>
 	</Field>
     <Field
         name="barcodes"
