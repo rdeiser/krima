@@ -7,6 +7,7 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
+	<option value="KU FDLP REQUEST">KU FDLP REQUEST</option>
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
 	<option value="To be WITHDRAWN">To be WITHDRAWN</option>
