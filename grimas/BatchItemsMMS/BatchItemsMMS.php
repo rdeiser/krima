@@ -10,6 +10,17 @@ class BatchItemsMMS extends GrimaTask {
 			$holding = new Holding();
 			$holding->loadFromAlma($this['holding_id'],$this['holding_id']);
 			
+				if ($this['whichnote'] == ''){
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
+					$item['statistics_note_1'] = 'WITHDRAWN';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+				} else {
+				$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
 				$item = new Item();
 				$item['barcode'] = $this['barcode'];
 				$item['item_policy'] = 'book/ser';
@@ -88,6 +99,7 @@ class BatchItemsMMS extends GrimaTask {
 						$this->item['location_code'] = 'wdmediaove';
 					}
 					$this->item->updateAlma();
+				}
 				}
 				if ($this['whichnote'] == 'To be WITHDRAWN'){
 					if ($this->item['location_code'] == 'annex') {
