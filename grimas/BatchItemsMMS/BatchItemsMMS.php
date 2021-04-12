@@ -21,6 +21,20 @@ class BatchItemsMMS extends GrimaTask {
 					$item['statistics_note_3'] = '';
 					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
 			}else {
+				if ($this['whichnote'] == 'KU FDLP REQUEST'){
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
+					$item['statistics_note_1'] = 'WITHDRAWN';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item['statistics_note_3'] = 'KU FDLP REQUEST';
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovKU ';
+					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
+				} else {
 			
 				$item = new Item();
 				$item['barcode'] = $this['barcode'];
