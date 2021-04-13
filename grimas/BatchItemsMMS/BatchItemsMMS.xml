@@ -7,7 +7,6 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
-	<option value="NOT KU FDLP REQUEST">NOT KU FDLP REQUEST</option>
 	<option value="KU FDLP REQUEST">KU FDLP REQUEST</option>
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
@@ -17,7 +16,7 @@
 	<option value="AHD To be WITHDRAWN">AHD To be WITHDRAWN</option>
 	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
 	<option value="GOV UNBOXING review">GOV UNBOXING review</option>
-	<option value=""></option>
+	<option value="">No Statistics Note 3</option>
 	</Field>
     <!--<Field
         name="mms"
