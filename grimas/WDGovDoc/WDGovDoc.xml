@@ -17,6 +17,16 @@
 		required="yes"
 	/>
 	<Field
+        name="chronology_i"
+        required="no"
+        visible="yes"
+    />
+	<Field
+        name="description"
+        required="no"
+        visible="no"
+    />
+	<Field
         name="barcode"
         label="Barcode"
         autocomplete="off"
