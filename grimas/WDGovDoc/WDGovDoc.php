@@ -6,13 +6,11 @@ class WDGovDoc extends GrimaTask {
 	public $holdinglist = array();
 
 	function do_task() {
-		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
-
-		foreach ($this->holdings as $holdingid) {
+		//$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
 			$holding = new Holding();
 			//$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
-			if ($holdingid) {
-				$holding->loadFromAlma($holdingid,$holdingid);
+			if ($this['holding_id']) {
+				$holding->loadFromAlma($this['holding_id'],$this['holding_id']);
 				if ($this['whichnote'] == 'KU FDLP REQUEST') {
 					$item = new Item();
 					$item['barcode'] = $this['barcode'];
@@ -23,7 +21,7 @@ class WDGovDoc extends GrimaTask {
 					$item['statistics_note_1'] = 'WITHDRAWN';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = $this['whichnote'];
-					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
 				}
 				if ($this['whichnote'] == 'NOT KU FDLP REQUEST') {
 					$item = new Item();
@@ -35,7 +33,7 @@ class WDGovDoc extends GrimaTask {
 					$item['statistics_note_1'] = 'WITHDRAWN';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = '';
-					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
 				}
 				if ($this['whichnote'] == 'GOV UNBOXING review') {
 					$item = new Item();
@@ -47,7 +45,7 @@ class WDGovDoc extends GrimaTask {
 					$item['statistics_note_1'] = 'WITHDRAWN';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = $this['whichnote'];
-					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
 				}
 				/* else {
 					$item = new Itemnbc();
@@ -127,12 +125,11 @@ class WDGovDoc extends GrimaTask {
 				
 				$this->item->updateAlma();
 				
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$this->item['barcode']}");
+				$this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$this->item['barcode']}");
 			} else {
-				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
+				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$this['holding_id']}");
 			}
 			$this->holdinglist[] = $holding;
-		}
 	}
 }
 WDGovDoc::RunIt();
