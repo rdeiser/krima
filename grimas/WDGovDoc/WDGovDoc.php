@@ -14,19 +14,39 @@ class WDGovDoc extends GrimaTask {
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				if ($this['whichnote'] == 'KU FDLP REQUEST') {
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
 					$item['statistics_note_1'] = 'WITHDRAWN';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = $this['whichnote'];
-					$this->item['library_code'] = 'WITHDRAW';
-					$this->item['location_code'] = 'wdgovKU';
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				}
 				if ($this['whichnote'] == 'NOT KU FDLP REQUEST') {
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
 					$item['statistics_note_1'] = 'WITHDRAWN';
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = '';
-					$this->item['library_code'] = 'WITHDRAW';
-					$this->item['location_code'] = 'wdgov';
+					$item->addToAlmaHolding($this['mms_id'],$holdingid);
+				}
+				if ($this['whichnote'] == 'GOV UNBOXING review') {
+					$item = new Item();
+					$item['barcode'] = $this['barcode'];
+					$item['item_policy'] = 'book/ser';
+					$item['pieces'] = '1';
+					$item['inventory_date'] = date("Y-m-d");
+					$item['receiving_operator'] = 'Grima';
+					$item['statistics_note_1'] = 'WITHDRAWN';
+					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+					$item['statistics_note_3'] = $this['whichnote'];
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
 				}
 				/* else {
