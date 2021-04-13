@@ -16,6 +16,8 @@ class WDGovDoc extends GrimaTask {
 					$item['barcode'] = $this['barcode'];
 					$item['item_policy'] = 'book/ser';
 					$item['pieces'] = '1';
+					$item['chronology_i'] = $this['chronology_i'];
+					$item['description'] = $this['chronology_i'];
 					$item['inventory_date'] = date("Y-m-d");
 					$item['receiving_operator'] = 'Grima';
 					$item['statistics_note_1'] = 'WITHDRAWN';
