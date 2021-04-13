@@ -11,16 +11,16 @@
 	<option value="GOV UNBOXING review">GOV UNBOXING review</option>
 	<option value="NOT KU FDLP REQUEST">NOT KU FDLP REQUEST</option>
 	</Field>
-    <Field
+	<Field
+		name="holding_id"
+		label="Holding ID"
+		required="yes"
+	/>
+	<Field
         name="barcode"
         label="Barcode"
         autocomplete="off"
         required="no"
         placeholder="Barcode found on piece"
     />
-	<Field
-		name="holding_id"
-		label="Holding ID"
-		required="yes"
-	/>
 </GrimaForm>
