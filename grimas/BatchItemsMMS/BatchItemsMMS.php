@@ -9,18 +9,6 @@ class BatchItemsMMS extends GrimaTask {
 		if (empty($this['mms'])) {
 			$holding = new Holding();
 			$holding->loadFromAlma($this['holding_id'],$this['holding_id']);
-			if ($this['whichnote'] == 'NOT KU FDLP REQUEST'){
-					$item = new Item();
-					$item['barcode'] = $this['barcode'];
-					$item['item_policy'] = 'book/ser';
-					$item['pieces'] = '1';
-					$item['inventory_date'] = date("Y-m-d");
-					$item['receiving_operator'] = 'Grima';
-					$item['statistics_note_1'] = 'WITHDRAWN';
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-					$item['statistics_note_3'] = $this['whichnote'];
-					$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
-			}else {
 			
 				$item = new Item();
 				$item['barcode'] = $this['barcode'];
@@ -31,7 +19,6 @@ class BatchItemsMMS extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
-			}
 				
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
