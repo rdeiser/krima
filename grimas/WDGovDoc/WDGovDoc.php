@@ -10,9 +10,9 @@ class WDGovDoc extends GrimaTask {
 
 		foreach ($this->holdings as $holdingid) {
 			$holding = new Holding();
-			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
-			if ($this['mms_id']) {
-				$holding->loadFromAlma($this['mms_id'],$holdingid);
+			//$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
+			if ($holdingid) {
+				$holding->loadFromAlma($holdingid,$holdingid);
 				if ($this['whichnote'] == 'KU FDLP REQUEST') {
 					$item = new Item();
 					$item['barcode'] = $this['barcode'];
