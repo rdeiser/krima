@@ -20,10 +20,24 @@ class WDGovDoc extends GrimaTask {
 					$item['pieces'] = '1';
 					$item['inventory_date'] = date("Y-m-d");
 					$item['receiving_operator'] = 'Grima';
-					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
-					$item['statistics_note_3'] = 'GOV UNBOXING review';
-					$item->addToAlmaHolding($this['mms_id'],$holdingid);
-				} else {
+					if ($this['whichnote'] == 'KU FDLP REQUEST') {
+						$item['statistics_note_1'] = 'WITHDRAWN';
+						$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+						$item['statistics_note_3'] = $this['whichnote'];
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgovKU';
+						$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					} else if ($this['whichnote'] == 'NOT KU FDLP REQUEST') {
+						$item['statistics_note_1'] = 'WITHDRAWN';
+						$item['statistics_note_2'] = 'FIRE 2018 OZONE';
+						$item['statistics_note_3'] = '';
+						$this->item['library_code'] = 'WITHDRAW';
+						$this->item['location_code'] = 'wdgov';
+						$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					} else {
+						$item['statistics_note_3'] = $this['whichnote'];
+						$item->addToAlmaHolding($this['mms_id'],$holdingid);
+					}/* else {
 					$item = new Itemnbc();
 					$item['item_policy'] = 'book/ser';
 					$item['pieces'] = '1';
@@ -32,12 +46,17 @@ class WDGovDoc extends GrimaTask {
 					$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 					$item['statistics_note_3'] = 'GOV UNBOXING review';
 					$item->addToAlmaHolding($this['mms_id'],$holdingid);
-				}
+				}*/
 
 				$this->item = new Item();
 				$this->item->loadFromAlmaX($item['item_pid']);
 				$item['barcode'] = $this['barcode'];
 				//$this->item['internal_note_1'] = 'Gov unboxing review';
+				if ($this->item['statistics_note_3'] == 'KU FDLP REQUEST') {
+					$this->item['library_code'] = 'WITHDRAW';
+					$this->item['location_code'] = 'wdgovKU';
+				}
+				
 				if($this->item['location_code'] == 'main') {
 					$this->item['library_code'] = 'WITHDRAW';
 					$this->item['location_code'] = 'wdgov';
