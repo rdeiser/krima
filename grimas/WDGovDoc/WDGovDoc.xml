@@ -18,6 +18,7 @@
 	/>
 	<Field
         name="chronology_i"
+		label="Chron Year"
         required="no"
         visible="yes"
     />
