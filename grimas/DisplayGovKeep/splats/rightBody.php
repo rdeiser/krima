@@ -2,7 +2,7 @@
 if ($item['statistics_note_3'] == 'HALE return') {
 	if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 		$pattern = '/(HALE return)/';
-		$replace = 'GOV HALE return';
+		$replace = $item['location'];
 	} else {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -131,7 +131,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
+				<tr><th>Library Location Code</th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
 				<!--<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>
 				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
