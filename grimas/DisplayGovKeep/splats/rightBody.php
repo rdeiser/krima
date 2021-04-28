@@ -3,10 +3,16 @@ if ($item['statistics_note_3'] == 'HALE return') {
 	if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 		$pattern = '/(HALE return)/';
 		$replace = 'GOV HALE return';
-	} else
+	} else {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
-} 
+	}
+}
+
+if ($item['statistics_note_3'] == '') {
+	$pattern = '/^/';
+	$replace = 'Send to Problem Shelf';
+}
 
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
