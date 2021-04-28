@@ -120,7 +120,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 }
 
 	//$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY|^BLU\-RAY\/DVD|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD|^DVD\-ROM|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
-	$pattern4 = '/(^CD\-ROM)/';
+	$pattern4 = '/(^DVD\-ROM)/';
 	$replace4 = '';
 
 ?>
