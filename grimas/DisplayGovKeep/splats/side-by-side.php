@@ -4,7 +4,7 @@ if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'GOV HALE return';
 	} else {
-		$pattern = '/(HALE return)/';
+		$pattern = '/^/';
 		$replace = 'Send to Problem Shelf';
 	}
 }
