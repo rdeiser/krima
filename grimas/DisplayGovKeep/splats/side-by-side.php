@@ -2,7 +2,7 @@
 if ($item['statistics_note_3'] == 'HALE return') {
 	if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 		$pattern = '/(HALE return)/';
-		$replace = $item['location'];
+		$replace = 'GOV HALE return';
 	}
 }else {
 		$pattern = '/(KU FDLP REQUEST)|(ANNEX ingest)|(HALE return)|(To be WITHDRAWN)|(AHD ANNEX ingest)|(AHD HALE return)|(AHD To be WITHDRAWN)|(GOV UNBOXING review)|(PHYSICAL CONDITION REVIEW)|(Needs pam binder)/';
