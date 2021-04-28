@@ -4,7 +4,7 @@ if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = $item['location'];
 	} else {
-		$pattern = '/(HALE return)/';
+		//$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 	}
 }
