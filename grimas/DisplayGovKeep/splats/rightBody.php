@@ -3,14 +3,14 @@ if ($item['statistics_note_3'] == 'HALE return') {
 	if($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 		$pattern = '/(HALE return)/';
 		$replace = $item['location'];
-		{
-			$holding = new Holding ();
+		/*{
+		$holding = new Holding ();
 		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 		if ($holding['location_code'] == 'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
 			$holding['location_code'] = 'gov';
 		}
 		$holding->updateAlma();
-		}
+		}*/
 	}
 }else {
 		$pattern = '/(KU FDLP REQUEST)|(ANNEX ingest)|(HALE return)|(To be WITHDRAWN)|(AHD ANNEX ingest)|(AHD HALE return)|(AHD To be WITHDRAWN)|(GOV UNBOXING review)|(PHYSICAL CONDITION REVIEW)|(Needs pam binder)/';
