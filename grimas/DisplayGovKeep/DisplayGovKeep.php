@@ -10,7 +10,7 @@ class DisplayGovKeep extends GrimaTask {
 		$item->addInventoryDate(date("Y-m-d"));
 		if ($item['item_policy'] !== 'book/ser') {
 			if ($item['location_code'] == 'gov'||'govcen'||'govelect'||'govmap'||'govmfile'||'govmic'||'govover'||'govref'||'govmindex'||'govoffmap'||'govposter') {
-				$item['item_policy'] = 'book/ser'];
+				$item['item_policy'] = 'book/ser';
 			}
 		}
 		$item->updateAlma();
