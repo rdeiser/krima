@@ -21,7 +21,6 @@ class DisplayGovKeep extends GrimaTask {
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
 		}
-		}
 	}
 }
 
