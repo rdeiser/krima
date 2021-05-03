@@ -8,7 +8,7 @@ class DisplayGovKeep extends GrimaTask {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
-		if ($item['location_code'] == 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
+		if ($item['location_code'] == 'govcen') {
 			$item['location_code'] = 'gov';
 			$item['item_policy'] = 'book/ser';
 			$item->updateAlma();
