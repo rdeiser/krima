@@ -13,7 +13,7 @@ class DisplayGovKeep extends GrimaTask {
 			$item['item_policy'] = 'book/ser';
 			$item->updateAlma();
 		}
-		if ($item['item_policy'] !== 'book/ser') {
+		/*if ($item['item_policy'] !== 'book/ser') {
 			if ($item['statistics_note_3'] == 'HALE return') {
 				$item = new Item();
 				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
@@ -22,7 +22,7 @@ class DisplayGovKeep extends GrimaTask {
 					$item->updateAlma();
 				}
 			}
-		}
+		}*/
 		
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
