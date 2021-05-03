@@ -18,7 +18,7 @@ class DisplayGovKeep extends GrimaTask {
 				if($item['location_code'] == 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
 					$holding = new Holding ();
 					$holding->getItemList();
-					if (count($holding->itemList->items) = 1 {
+					if (count($holding->itemList->items) = 1) {
 						$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 						$holding['location_code'] = 'gov';
 						$holding->updateAlma();
