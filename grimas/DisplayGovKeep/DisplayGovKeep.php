@@ -15,22 +15,12 @@ class DisplayGovKeep extends GrimaTask {
 		}
 		if ($item['item_policy'] !== 'book/ser') {
 			if ($item['statistics_note_3'] == 'HALE return') {
-				if($item['location_code'] == 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
-					$holding = new Holding ();
-					$holding->getItemList();
-					if (count($holding->itemList->items) = 1) {
-						$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-						$holding['location_code'] = 'gov';
-						$holding->updateAlma();
-					}
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+				if ($item['location_code'] == 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
+					$item['location_code'] = 'gov';
+					$item->updateAlma();
 				}
-			}
-		} else {
-			$item = new Item();
-			$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-			if ($item['location_code'] == 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
-				$item['location_code'] = 'gov';
-				$item->updateAlma();
 			}
 		}
 		
@@ -39,6 +29,5 @@ class DisplayGovKeep extends GrimaTask {
 		$this->splatVars['item'] = $this->item;
 	}
 }
-
 
 DisplayGovKeep::RunIt();
