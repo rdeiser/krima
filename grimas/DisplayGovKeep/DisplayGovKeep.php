@@ -11,8 +11,8 @@ class DisplayGovKeep extends GrimaTask {
 		if ($item['location_code'] = 'govcen'||'govelect'||'govover'||'govref'||'govposter') {
 			$item['location_code'] = 'gov';
 			$item['item_policy'] = 'book/ser';
-			$item->updateAlma();
 		}
+		$item->updateAlma();
 		/*if ($item['item_policy'] !== 'book/ser') {
 			if ($item['statistics_note_3'] == 'HALE return') {
 				$item = new Item();
