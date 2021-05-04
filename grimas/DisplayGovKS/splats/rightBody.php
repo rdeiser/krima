@@ -32,13 +32,13 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location_code'] != 'govks' || 'govksover' || 'govksref') {
+if ($item['location_code'] == 'govks' || 'govksover' || 'govksref') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
+		$replace = 'HALE return';
 		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
 			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
+			$replace = 'HALE return';
 			$style = 'style=";"';
 		}
 	}
