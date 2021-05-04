@@ -42,17 +42,19 @@ if ($item['location_code'] !== 'govks') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	}/*else if ($item['location'] !== 'govksover') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}else if ($item['location'] !== 'govksref') {
+	}
+if ($item['location'] !== 'govksover') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
+	} else if ($item['statistics_note_3'] == 'AHD HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
+	}
+}
+/*else if ($item['location'] !== 'govksref') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
