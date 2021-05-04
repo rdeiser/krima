@@ -42,7 +42,7 @@ if ($item['location_code'] !== 'govks') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	}else if ($item['location'] !== 'govksover') {
+	}/*else if ($item['location'] !== 'govksover') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
@@ -62,7 +62,7 @@ if ($item['location_code'] !== 'govks') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	}
+	}*/
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
