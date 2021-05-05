@@ -1,6 +1,6 @@
 <?php
 if ($item['statistics_note_3'] == 'HALE return') {
-	if ($item['location'] == 'govks||govrefks') {
+	if ($item['location'] == 'govrefks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
 	} else {
