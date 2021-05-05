@@ -1,7 +1,12 @@
 <?php
 if ($item['statistics_note_3'] == 'HALE return') {
-	$pattern = '/(HALE return)/';
-	$replace = 'HALE return';
+	if ($item['location'] !== 'govks') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+	} else {
+		$pattern = '/(HALE return)/';
+		$replace = 'HALE return';
+	}
 } 
 if ($item['statistics_note_3'] == 'ANNEX ingest') {
 	$pattern = '/(ANNEX ingest)/';
