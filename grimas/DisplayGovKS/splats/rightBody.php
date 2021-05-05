@@ -32,8 +32,9 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location'] !== 'govks' xor 'govksover' xor 'govrefks') {
-	if ($item['statistics_note_3'] == 'HALE return') {
+
+if ($item['statistics_note_3'] == 'HALE return') {
+	if ($item['location'] !== 'govks' || 'govksover' || 'govrefks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
 		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
