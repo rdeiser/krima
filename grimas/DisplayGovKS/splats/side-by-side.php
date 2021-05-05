@@ -12,6 +12,7 @@ if ($item['statistics_note_3'] == 'HALE return') {
 	} else {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
 	}
 } 
 if ($item['statistics_note_3'] == 'ANNEX ingest') {
@@ -39,6 +40,7 @@ if ($item['statistics_note_3'] == 'AHD HALE return') {
 	} else {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
 	}
 }
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
