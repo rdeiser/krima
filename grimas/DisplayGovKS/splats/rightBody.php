@@ -1,9 +1,12 @@
 <?php
 if ($item['statistics_note_3'] == 'HALE return') {
-	if ($item['location'] == 'govrefks') {
+	if ($item['location'] == 'govks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
-	} else if ($item['location'] == 'govks') {
+	} else if ($item['location'] == 'govrefks') {
+		$pattern = '/(HALE return)/';
+		$replace = 'HALE return';
+	} else if ($item['location'] == 'govksover') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
 	} else {
@@ -21,8 +24,19 @@ if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
 	$replace = 'To be WITHDRAWN';
 }
 if ($item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(AHD HALE return)/';
-	$replace = 'HALE return';
+	if ($item['location'] == 'govks') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'HALE return';
+	} else if ($item['location'] == 'govrefks') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'HALE return';
+	} else if ($item['location'] == 'govksover') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'HALE return';
+	} else {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+	}
 } 
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 	$pattern = '/(AHD ANNEX ingest)/';
