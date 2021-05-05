@@ -6,6 +6,9 @@ if ($item['statistics_note_3'] == 'HALE return') {
 	} else if ($item['location'] == 'govks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
+	} else {
+		$pattern = '/(HALE return)/';
+		$replace = 'HALE return';
 	}
 }
 
