@@ -1,19 +1,13 @@
 <?php 
 if ($item['statistics_note_3'] == 'HALE return') {
-	if ($item['location'] == 'govks') {
+	if($item['location_code'] == 'govks'||'govrefks'||'govksover') {
 		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govrefks') {
-		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govksover') {
-		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-	} else {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
+		$replace = 'GOV HALE return';
 	}
-} 
+}else {
+		$pattern = '/(KU FDLP REQUEST)|(ANNEX ingest)|(HALE return)|(To be WITHDRAWN)|(AHD ANNEX ingest)|(AHD HALE return)|(AHD To be WITHDRAWN)|(GOV UNBOXING review)|(PHYSICAL CONDITION REVIEW)|(Needs pam binder)/';
+		$replace = 'Send to Problem Shelf';
+	} 
 if ($item['statistics_note_3'] == 'ANNEX ingest') {
 	$pattern = '/(ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
@@ -27,19 +21,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] == 'AHD HALE return') {
-	if ($item['location'] == 'govks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govrefks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govksover') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-	}
+	$pattern = '/(AHD HALE return)/';
+	$replace = 'HALE return';
 }
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 	$pattern = '/(AHD ANNEX ingest)/';
