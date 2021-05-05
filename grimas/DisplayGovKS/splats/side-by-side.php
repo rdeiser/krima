@@ -3,24 +3,36 @@ if ($item['statistics_note_3'] == 'HALE return') {
 	if ($item['location'] == 'govks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else if ($item['location'] == 'govrefks') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else if ($item['location'] == 'govksover') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
+		$text = '';
 	}
 } 
 if ($item['statistics_note_3'] == 'ANNEX ingest') {
 	$pattern = '/(ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
+	$style = 'style="background-color: #6495ed;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
+	$style = 'style="background-color: #cd5555;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
@@ -30,62 +42,41 @@ if ($item['statistics_note_3'] == 'AHD HALE return') {
 	if ($item['location'] == 'govks') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else if ($item['location'] == 'govrefks') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else if ($item['location'] == 'govksover') {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'HALE return';
+		$style = 'style="background-color: #ab82ff;"';
+		$text = ''
 	} else {
 		$pattern = '/(AHD HALE return)/';
 		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
+		$text = '';
 	}
 }
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 	$pattern = '/(AHD ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
+	$style = 'style="background-color: #6495ed;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
+	$style = 'style="background-color: #cd5555;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == '') {
 	$pattern = '/^/';
 	$replace = 'Send to Problem Shelf';
 }
-
-if ($item['statistics_note_3']=='To be WITHDRAWN') {
-			$style = 'style="background-color: #cd5555;"';
-			$text = '';
-}
-	else if ($item['statistics_note_3']=='ANNEX ingest') {
-			$style = 'style="background-color: #6495ed;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3']=='HALE return') {
-			$style = 'style="background-color: #ab82ff;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3']=='AHD HALE return') {
-			$style = 'style="background-color: #ab82ff;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3']=='AHD To be WITHDRAWN') {
-			$style = 'style="background-color: #cd5555;"';
-			$text = '';
-}
-	else if ($item['statistics_note_3']=='AHD ANNEX ingest') {
-			$style = 'style="background-color: #6495ed;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3']=='PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-			$style = 'style=";"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3']=='') {
-			$style = 'style=";"';
-			//$text = 'Send to Problem Shelf';
-	}
 
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
