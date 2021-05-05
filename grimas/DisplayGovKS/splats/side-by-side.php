@@ -86,17 +86,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			//$text = 'Send to Problem Shelf';
 	}
-	if ($item['location'] !== 'govks' or 'govksover' or 'govrefks') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
+
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 	if ($holding['suppress_from_publishing'] == 'true'){
