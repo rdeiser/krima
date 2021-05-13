@@ -14,12 +14,11 @@ class AnnexWork extends GrimaTask {
 		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 		$holding['library_code'] = 'ANNEX';
 		$holding['location_code'] = 'ANNEX';
-		
+		$holding->updateAlma();
+		}
+		/*
 		if ($leader[5] == '') {
 			$leader[5] = 'c';
-		}
-		$holding->updateAlma();
-		/*
 		appendField($tag,$ind1,$ind2,$subfields)
 		$holding->appendField("014","","",array('a' => content));
 		deleteField($tag)
