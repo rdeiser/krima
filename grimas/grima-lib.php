@@ -1838,6 +1838,20 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> setHldr5
+/**
+ * @brief modifies Holdings Marc Leader 05 - Record status
+ *
+ * @param string $chr 
+ */
+	function setHldr5($chr) {
+		$xpath = new DomXpath($this->xml);
+		$pattern = '/^[0-9]+[a|c|d|n|p]/';
+		$chr5s = $xpath->query("//record/leader").pattern;
+		$xpath->query("//record/leader")->item(0)->setAttribute($chr);
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> setFieldindicators
 /**
  * @brief modifies the first and second indicators of a marc field
