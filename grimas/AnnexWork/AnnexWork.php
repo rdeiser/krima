@@ -16,6 +16,8 @@ class AnnexWork extends GrimaTask {
 			$holding['library_code'] = 'ANNEX';
 			$holding['location_code'] = 'annex';
 		}
+		$holding->deleteField("001");
+		$holding->deleteField("004");
 		$holding->updateAlma();
 		/*
 		if ($leader[5] == '') {
