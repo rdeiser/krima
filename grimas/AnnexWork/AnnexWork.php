@@ -7,8 +7,8 @@ class AnnexWork extends GrimaTask {
 	function do_task() {
 		{$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		$this->item->addInventoryDate(date("Y-m-d"));
-		$this->item->updateAlma();
+		/*$this->item->addInventoryDate(date("Y-m-d"));
+		$this->item->updateAlma();*/
 		}
 		{$holding = new Holding();
 		$holding->loadFromAlma($this->item['mms_id'],$this->item['holding_id']);
@@ -27,11 +27,13 @@ class AnnexWork extends GrimaTask {
 		$leader[6]
 		leader? may need to develop this within grima-lib.php similar to inventory_date?*/
 		}
-{
+$this->addMessage('success',"Successfully  modified {$this['unboxed_barcode']} to {$holding['location_code']}");
+
+/*{
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}
+}*/
 }
 }
 
