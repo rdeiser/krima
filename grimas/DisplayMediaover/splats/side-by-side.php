@@ -64,7 +64,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			//$text = 'Send to Problem Shelf';
 	}
-	if ($item['location'] !== "microfilm") {
+	if ($item['location'] !== "mediaover") {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
@@ -75,108 +75,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 		}
 	}
-	/*if ($item['location'] !== "juv") {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	} else if ($item['location'] == 'cmc') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-			}
-		}
-	/*if ($item['location_code'] == 'main') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'over') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'overplus') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'dowref') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'ref') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'juv') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'cmc') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}*/
-	/*if ($item['location'] == 'main') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}*/
-	if ($item['location'] == 'over') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'overplus') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'dowref') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'ref') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	
+
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 	if ($holding['suppress_from_publishing'] == 'true'){

@@ -2,7 +2,7 @@
 
 require_once("../grima-lib.php");
 
-class DisplayMicFilm extends GrimaTask {
+class DisplayMediaover extends GrimaTask {
 
 	function do_task() {
 		{$item = new Item();
@@ -32,4 +32,4 @@ class DisplayMicFilm extends GrimaTask {
 }
 }
 
-DisplayMicFilm::RunIt();
+DisplayMediaover::RunIt();
