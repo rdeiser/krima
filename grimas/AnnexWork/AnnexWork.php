@@ -14,7 +14,7 @@ class AnnexWork extends GrimaTask {
 		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 		if ($holding['location_code'] == 'main') {
 			$holding['library_code'] = 'ANNEX';
-			$holding['location_code'] = 'ANNEX';
+			$holding['location_code'] = 'annex';
 		}
 		$holding->updateAlma();
 		/*
