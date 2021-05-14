@@ -31,7 +31,7 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
-if ($item['location'] !== 'microfilm') {
+if ($item['location'] !== 'mediacoll') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -172,7 +172,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <!--The following combines the two grimas ontop of each other-->
-			  <form method="post" action="../DisplayMicFilm/DisplayMicFilm.php">
+			  <form method="post" action="../DisplayMedia/DisplayMedia.php">
 				<div class="col">
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
