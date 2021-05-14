@@ -1915,6 +1915,21 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> deleteControlField
+/**
+ * @brief delete all $tag fields from the MARC record
+ *
+ * @param string $tag a three character MARC tag
+ */
+	function deleteControlField($tag) {
+		$xpath = new DomXpath($this->xml);
+		$fields = $xpath->query("//record/controlfield[@tag='$tag']");
+		foreach( $fields as $field ) {
+			$field->parentNode->removeChild( $field );
+		}
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> deleteSubfieldMatching
 /**
  * @brief delete subfields matching a regex
