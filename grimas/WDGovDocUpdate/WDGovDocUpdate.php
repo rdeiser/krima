@@ -6,7 +6,7 @@ class WDGovDocUpdate extends GrimaTask {
 
 	function do_task() {
 		$item = new Item();
-		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$item->loadFromAlmaBarcode($this['barcode']);
 
 		$holding = new Holding();
 		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
@@ -14,7 +14,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$holding['location_code'] = 'ANNEX';
 		$holding->updateAlma();
 
-$this->addMessage('success',"Successfully  modified {$this['unboxed_barcode']} to {$holding['location_code']}");
+$this->addMessage('success',"Successfully  modified {$this['barcode']} to {$holding['location_code']}");
 
 /*{
 		$this->item = new Item();
