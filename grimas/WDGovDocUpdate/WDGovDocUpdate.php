@@ -11,7 +11,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$holding = new Holding();
 		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 		$holding['library_code'] = 'ANNEX';
-		$holding['location_code'] = 'ANNEX';
+		$holding['location_code'] = 'annex';
 		$holding->updateAlma();
 
 $this->addMessage('success',"Successfully  modified {$this['barcode']} to {$holding['location_code']}");
