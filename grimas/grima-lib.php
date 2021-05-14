@@ -1838,19 +1838,18 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
-// {{{ AlmaObjectWithMARC -> appendFieldfirstind
+// {{{ AlmaObjectWithMARC -> setFieldindicators
 /**
- * @brief add a field to the MARC record
+ * @brief modifies the first and second indicators of a marc field
  *
  * @param string $tag a three character MARC tag
  * @param Int $ind1 one digit, first indicator
+ * @param Int $ind2 second digit, second indicator
  */
-	function appendFieldfirstind($tag,$ind1) {
-		$frag = "<datafield ind1=\"$ind1\" tag=\"$tag\">";
-		"</datafield>";
+	function setFieldindicators($tag,$ind1,$ind2) {
 		$xpath = new DomXpath($this->xml);
-		$record = $xpath->query("//record");
-		appendInnerXML($record[0],$frag);
+		$xpath->query("//record/datafield[starts-with(@tag,'$tag')]")->item(0)->setAttribute("ind1",$ind1);
+		$xpath->query("//record/datafield[starts-with(@tag,'$tag')]")->item(0)->setAttribute("ind2",$ind2);
 	}
 // }}}
 
