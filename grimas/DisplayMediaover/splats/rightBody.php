@@ -146,7 +146,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
-	$pattern4 = '/(^MICROFILM)/';
+	$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
 	$replace4 = '';
 	
 ?>
