@@ -185,7 +185,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <!--The following combines the two grimas ontop of each other-->
-			  <form method="post" action="../DisplayGovKS/DisplayGovKS.php">
+			  <form method="post" action="../AnnexWork/AnnexWork.php">
 				<div class="col">
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
