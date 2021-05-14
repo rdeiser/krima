@@ -5,13 +5,13 @@ require_once("../grima-lib.php");
 class AnnexWork extends GrimaTask {
 
 	function do_task() {
-		{$item = new Item();
-		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		$item->addInventoryDate(date("Y-m-d"));
-		$item->updateAlma();
+		{$this->item = new Item();
+		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$this->item->addInventoryDate(date("Y-m-d"));
+		$this->item->updateAlma();
 		}
 		{$holding = new Holding();
-		$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+		$holding->loadFromAlma($this->item['mms_id'],$this->item['holding_id']);
 		if ($holding['location_code'] == 'main') {
 			$holding['library_code'] = 'ANNEX';
 			$holding['location_code'] = 'ANNEX';
