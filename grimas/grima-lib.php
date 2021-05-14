@@ -1849,7 +1849,6 @@ class AlmaObjectWithMARC extends AlmaObject {
  */
 	function appendFieldfirstind($tag,$ind1) {
 		$frag = "<datafield ind1=\"$ind1\">";
-		$frag .= "</datafield>";
 		$xpath = new DomXpath($this->xml);
 		$record = $xpath->query("//record");
 		appendInnerXML($record[0],$frag);
@@ -1867,7 +1866,6 @@ class AlmaObjectWithMARC extends AlmaObject {
  */
 	function appendFieldsecondind($tag,$ind2) {
 		$frag = "<datafield ind2=\"$ind2\">";
-		$frag .= "</datafield>";
 		$xpath = new DomXpath($this->xml);
 		$record = $xpath->query("//record");
 		appendInnerXML($record[0],$frag);
