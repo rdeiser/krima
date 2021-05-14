@@ -1838,6 +1838,42 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> appendFieldfirstind
+/**
+ * @brief add a field to the MARC record
+ *
+ * @param string $tag a three character MARC tag
+ * @param Int $ind1 one digit, first indicator
+ * @param Int $ind2 second digit, second indicator
+ * @param Array $subfields each entry of the form $code => $value
+ */
+	function appendFieldfirstind($tag,$ind1) {
+		$frag = "<datafield ind1=\"$ind1\">";
+		$frag .= "</datafield>";
+		$xpath = new DomXpath($this->xml);
+		$record = $xpath->query("//record");
+		appendInnerXML($record[0],$frag);
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> appendFieldsecondind
+/**
+ * @brief add a field to the MARC record
+ *
+ * @param string $tag a three character MARC tag
+ * @param Int $ind1 one digit, first indicator
+ * @param Int $ind2 second digit, second indicator
+ * @param Array $subfields each entry of the form $code => $value
+ */
+	function appendFieldsecondind($tag,$ind2) {
+		$frag = "<datafield ind2=\"$ind2\">";
+		$frag .= "</datafield>";
+		$xpath = new DomXpath($this->xml);
+		$record = $xpath->query("//record");
+		appendInnerXML($record[0],$frag);
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> getFields # XXX IN PROGRESS
 /**
  * @brief get fields for the given MARC tag
