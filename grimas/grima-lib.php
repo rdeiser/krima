@@ -1852,7 +1852,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 			$arr[] = $chr5->nodeValue;
 			//$chr5->nodeValue = $value;
 			$replace = substr_replace($arr,$chr,5,1);
-			$xpath->query("//record/leader")->item(0)->setAttribute("leader",$replace);
+			$chr5s[0]->appendChild($replace);
+			//$xpath->query("//record/leader")->item(0)->setAttribute("leader",$replace);
 			//$chr5->setAttribute($chr5);
 		}
 		/*might just be able to use the regular expression \s without a global.  Do if \s then replace with $chr.  Double check deletefield if matches coding to double check this option.
