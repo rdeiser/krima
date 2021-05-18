@@ -1846,9 +1846,17 @@ class AlmaObjectWithMARC extends AlmaObject {
  */
 	function setHldr5($chr) {
 		$xpath = new DomXpath($this->xml);
-		$pattern = '/^[0-9]+[a|c|d|n|p]/';
+		$pattern = '/(\s)/';
+		$chr5s = $xpath->query("//record/leader");
+		foreach ($chr5s as $chr5) {
+			if (preg_match($pattern,$chr5->nodeValue)) {
+				$chr = preg_replace('/(\s)/',$chr,$chr5->nodeValue);
+				$chr5->item(0)->setAttribute($chr);
+			}
+		}
+		/*might just be able to use the regular expression \s without a global.  Do if \s then replace with $chr.  Double check deletefield if matches coding to double check this option.
 		$chr5s = $xpath->query("//record/leader").pattern;
-		$xpath->query("//record/leader")->item(0)->setAttribute($chr);
+		$xpath->query("//record/leader")->item(0)->setAttribute($chr);*/
 	}
 // }}}
 
