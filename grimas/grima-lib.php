@@ -1849,8 +1849,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 		//$pattern = '/(\s)/';
 		$chr5s = $xpath->query("//record/leader");
 		foreach ($chr5s as $chr5) {
-			if (preg_match('/(\s)/',$chr5->nodeValue)) {
-				$chr5 = preg_replace('/(\s)/',$chr,$chr5->nodeValue);
+			if (preg_match('/(n)/',$chr5->nodeValue)) {
+				$chr5 = preg_replace('/(n)/',$chr,$chr5->nodeValue);
 				$xpath->query("//record/leader")->item(0)->setAttribute("leader",$chr5);
 				//$chr5->setAttribute($chr5);
 			}
