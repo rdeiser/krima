@@ -1851,7 +1851,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		foreach ($chr5s as $chr5) {
 			$arr[] = $chr5->nodeValue;
 			//$chr5->nodeValue = $value;
-			$replace = substr_replace($arr,$chr,5,1)
+			$replace = substr_replace($arr,$chr,5,1);
 			$xpath->query("//record/leader")->item(0)->setAttribute("leader",$replace);
 			//$chr5->setAttribute($chr5);
 		}
