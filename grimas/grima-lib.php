@@ -1848,8 +1848,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$xpath = new DomXpath($this->xml);
 		$chr5s = $xpath->query("//record/leader");
 		foreach ($chr5s as $chr5) {
-			$chr5->nodeValue = $value;
-			$replace = substr_replace($value,$chr,5,1);
+			//$chr5->nodeValue = $value;
+			$replace = substr_replace($chr5,$chr,5,1);
 			$add = $this->xml->createElement("leader");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr5s[0]->appendchild($add);
