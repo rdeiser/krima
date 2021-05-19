@@ -1948,10 +1948,6 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
-
-
-
-
 // {{{ AlmaObjectWithMARC -> setFieldindicators
 /**
  * @brief modifies the first and second indicators of a marc field
