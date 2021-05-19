@@ -1842,28 +1842,100 @@ class AlmaObjectWithMARC extends AlmaObject {
 /**
  * @brief modifies Holdings Marc Leader 05 - Record status
  *
- * @param string $chr 
+ * @param Array $chr 
  */
 	function setHldr5($chr) {
 		$xpath = new DomXpath($this->xml);
 		$chr5s = $xpath->query("//record/leader");
 		foreach ($chr5s as $chr5) {
-			//$chr5->nodeValue = $value;
 			$replace = substr_replace($chr5->nodeValue,$chr,5,1);
 			$add = $this->xml->createElement("leader");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr5s[0]->appendchild($add);
-			//$xpath->query("//record/leader")->item(0)->setAttribute("leader",$replace);
-			//$chr5->setAttribute($chr5);
 		}
-		/*
-		look at function replaceOrAddSubfield( 18/05/2021)
 		
-		might just be able to use the regular expression \s without a global.  Do if \s then replace with $chr.  Double check deletefield if matches coding to double check this option.
-		$chr5s = $xpath->query("//record/leader").pattern;
-		$xpath->query("//record/leader")->item(0)->setAttribute($chr);*/
 	}
 // }}}
+
+// {{{ AlmaObjectWithMARC -> setHldr6
+/**
+ * @brief modifies Holdings Marc Leader 06 - Type of record
+ *
+ * @param Array $chr 
+ */
+	function setHldr6($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr6s = $xpath->query("//record/leader");
+		foreach ($chr6s as $chr6) {
+			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
+			$add = $this->xml->createElement("leader");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr6s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> setHldr17
+/**
+ * @brief modifies Holdings Marc Leader 17 - Encoding level
+ *
+ * @param Array $chr 
+ */
+	function setHldr17($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr6s = $xpath->query("//record/leader");
+		foreach ($chr17s as $chr17) {
+			$replace = substr_replace($chr17->nodeValue,$chr,17,1);
+			$add = $this->xml->createElement("leader");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr17s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> setHldr18
+/**
+ * @brief modifies Holdings Marc Leader 18 - Type of record
+ *
+ * @param Array $chr 
+ */
+	function setHldr18($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr18s = $xpath->query("//record/leader");
+		foreach ($chr18s as $chr18) {
+			$replace = substr_replace($chr18->nodeValue,$chr,18,1);
+			$add = $this->xml->createElement("leader");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr18s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008.6
+/**
+ * @brief modifies Holdings Marc 008 06 - Receipt or acquisition status
+ *
+ * @param Array $chr 
+ */
+	function set008.6($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr6s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr6s as $chr6) {
+			$add = $this->xml->createElement("controlfield");
+			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr5s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+
+
+
 
 // {{{ AlmaObjectWithMARC -> setFieldindicators
 /**
