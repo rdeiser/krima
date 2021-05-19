@@ -1838,6 +1838,21 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> appendControlfield
+/**
+ * @brief add a control (001,004,008 etc.) field to the MARC record
+ *
+ * @param string $tag a three character MARC tag
+ */
+	function appendControlfield($tag) {
+		$frag = "<controlfield tag=\"$tag\">";
+		$frag .= "</datafield>";
+		$xpath = new DomXpath($this->xml);
+		$record = $xpath->query("//record");
+		appendInnerXML($record[0],$frag);
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> setHldr5
 /**
  * @brief modifies Holdings Marc Leader 05 - Record status
@@ -1924,8 +1939,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$xpath = new DomXpath($this->xml);
 		$chr6s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr6s as $chr6) {
-			$add = $this->xml->createElement("controlfield");
 			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
+			$this->appendControlfield('008');
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr5s[0]->appendchild($add);
 		}
