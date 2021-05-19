@@ -1914,7 +1914,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
-// {{{ AlmaObjectWithMARC -> set008.6
+// {{{ AlmaObjectWithMARC -> set008p6
 /**
  * @brief modifies Holdings Marc 008 06 - Receipt or acquisition status
  *
