@@ -1847,16 +1847,19 @@ class AlmaObjectWithMARC extends AlmaObject {
 	function setHldr5($chr) {
 		$xpath = new DomXpath($this->xml);
 		$chr5s = $xpath->query("//record/leader");
-		$arr = array();
 		foreach ($chr5s as $chr5) {
-			$arr[] = $chr5->nodeValue;
-			//$chr5->nodeValue = $value;
-			$replace = substr_replace($arr,$chr,5,1);
-			$chr5s[0]->appendChild($replace);
+			$chr5->nodeValue = $value;
+			$replace = substr_replace($value,$chr,5,1);
+			$add = $this->xml->createElement("leader");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr5s[0]->appendchild($add);
 			//$xpath->query("//record/leader")->item(0)->setAttribute("leader",$replace);
 			//$chr5->setAttribute($chr5);
 		}
-		/*might just be able to use the regular expression \s without a global.  Do if \s then replace with $chr.  Double check deletefield if matches coding to double check this option.
+		/*
+		look at function replaceOrAddSubfield( 18/05/2021)
+		
+		might just be able to use the regular expression \s without a global.  Do if \s then replace with $chr.  Double check deletefield if matches coding to double check this option.
 		$chr5s = $xpath->query("//record/leader").pattern;
 		$xpath->query("//record/leader")->item(0)->setAttribute($chr);*/
 	}
