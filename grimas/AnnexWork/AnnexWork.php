@@ -23,7 +23,7 @@ class AnnexWork extends GrimaTask {
 			$holding->setHldr6("x");
 			$holding->setHldr17("2");
 			$holding->setHldr18("n");
-			$holding->set008.6("2");
+			$holding->set008p6("2");
 			$holding['library_code'] = 'ANNEX';
 			$holding['location_code'] = 'annex';
 		}
