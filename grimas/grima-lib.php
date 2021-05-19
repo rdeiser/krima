@@ -1942,7 +1942,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
 			$this->appendControlfield('008');
 			$add->appendChild($this->xml->createTextNode($replace));
-			$chr5s[0]->appendchild($add);
+			$chr6s[0]->appendchild($add);
 		}
 		
 	}
