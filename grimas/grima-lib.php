@@ -1940,7 +1940,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr6s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr6s as $chr6) {
 			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
-			$this->appendControlfield('008');
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr6s[0]->appendchild($add);
 		}
