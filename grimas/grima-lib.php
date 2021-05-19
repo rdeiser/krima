@@ -1949,6 +1949,166 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> set008p7
+/**
+ * @brief modifies Holdings Marc 008 07 - Method of acquisition
+ *
+ * @param Array $chr 
+ */
+	function set008p7($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr7s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr7s as $chr7) {
+			$replace = substr_replace($chr12->nodeValue,$chr,7,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr7s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p12
+/**
+ * @brief modifies Holdings Marc 008 12 - General retention policy
+ *
+ * @param Array $chr 
+ */
+	function set008p12($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr12s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr12s as $chr12) {
+			$replace = substr_replace($chr12->nodeValue,$chr,12,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr12s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p16
+/**
+ * @brief modifies Holdings Marc 008 16 - Completeness
+ *
+ * @param Array $chr 
+ */
+	function set008p16($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr16s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr16s as $chr16) {
+			$replace = substr_replace($chr16->nodeValue,$chr,16,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr16s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p17
+/**
+ * @brief modifies Holdings Marc 008 17-19 - Number of coppies report
+ *
+ * @param Array $chr 
+ */
+	function set008p17($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr17s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr17s as $chr17) {
+			$replace = substr_replace($chr17->nodeValue,$chr,17,3);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr17s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p20
+/**
+ * @brief modifies Holdings Marc 008 20 - Lending policy
+ *
+ * @param Array $chr 
+ */
+	function set008p20($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr20s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr20s as $chr20) {
+			$replace = substr_replace($chr20->nodeValue,$chr,20,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr20s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p21
+/**
+ * @brief modifies Holdings Marc 008 21 - Reproduction policy
+ *
+ * @param Array $chr 
+ */
+	function set008p21($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr21s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr21s as $chr21) {
+			$replace = substr_replace($chr21->nodeValue,$chr,21,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr21s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p22
+/**
+ * @brief modifies Holdings Marc 008 22-24 - Language
+ *
+ * @param Array $chr 
+ */
+	function set008p22($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr22s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr22s as $chr22) {
+			$replace = substr_replace($chr22->nodeValue,$chr,21,3);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr22s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
+// {{{ AlmaObjectWithMARC -> set008p25
+/**
+ * @brief modifies Holdings Marc 008 25 - Separate or composite copy report
+ *
+ * @param Array $chr 
+ */
+	function set008p25($chr) {
+		$xpath = new DomXpath($this->xml);
+		$chr25s = $xpath->query("//record/controlfield[@tag='008']");
+		foreach ($chr25s as $chr25) {
+			$replace = substr_replace($chr25->nodeValue,$chr,21,1);
+			$add = $this->xml->createElement("leader");
+			$add->setAttribute("tag","008");
+			$add->appendChild($this->xml->createTextNode($replace));
+			$chr25s[0]->appendchild($add);
+		}
+		
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> setFieldindicators
 /**
  * @brief modifies the first and second indicators of a marc field
