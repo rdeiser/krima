@@ -19,8 +19,8 @@ class AnnexWork extends GrimaTask {
 			$holding->setFieldindicators("852","0","0");
 			$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
 			$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
-			$holding->setHldr5("c");
-			$holding->setHldr6("x");
+			/*$holding->setHldr5("c");
+			$holding->setHldr6("x");*/
 			$holding->setHldr17("2");
 			$holding->setHldr18("n");
 			$holding->set008p6("2");
