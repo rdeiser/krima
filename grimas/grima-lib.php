@@ -1920,7 +1920,7 @@ class AlmaObjectWithMARC extends AlmaObject {
  *
  * @param Array $chr 
  */
-	function set008.6($chr) {
+	function set008p6($chr) {
 		$xpath = new DomXpath($this->xml);
 		$chr6s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr6s as $chr6) {
