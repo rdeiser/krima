@@ -1,27 +1,18 @@
 <?php 
 if ($item['statistics_note_3'] == 'HALE return') {
-	if ($item['location'] == 'govks') {
-		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else if ($item['location'] == 'govrefks') {
-		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else if ($item['location'] == 'govksover') {
-		$pattern = '/(HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		$style = 'style=";"';
-		$text = '';
-	}
-} 
+	$pattern = '/(HALE return)/';
+	$replace = 'HALE return';
+	$style = 'style="background-color: #ab82ff;"';
+	$text = '';
+}
+
+if ($item['statistics_note_3'] == 'AHD HALE return') {
+	$pattern = '/(AHD HALE return)/';
+	$replace = 'HALE return';
+	$style = 'style="background-color: #ab82ff;"';
+	$text = '';
+}
+
 if ($item['statistics_note_3'] == 'ANNEX ingest') {
 	$pattern = '/(ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
