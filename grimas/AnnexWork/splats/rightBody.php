@@ -1,49 +1,4 @@
 <?php
-if ($item['statistics_note_3'] == 'HALE return') {
-	$pattern = '/(HALE return)/';
-	$replace = 'HALE return';
-}
-
-if ($item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(AHD HALE return)/';
-	$replace = 'HALE return';
-}
-
-if ($item['statistics_note_3'] == 'ANNEX ingest') {
-	$pattern = '/(ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
-	$pattern = '/(To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'AHD HALE return') {
-	if ($item['location'] == 'govks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govrefks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else if ($item['location'] == 'govksover') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-	} else {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-	}
-} 
-if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/(AHD ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-	$pattern = '/(AHD To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = 'Send to Condition Review Shelf';
-}
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
@@ -162,18 +117,16 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<!--<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>-->
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
-				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
-				<tr <?=$style?>><th class="flip"><span>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
-				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
-				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
-				<tr><th>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
-				</td></tr>
-				<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>
-				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
-				</td></tr>
-				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
-				</td></tr>
+				<tr <?=$style?>>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
+				<tr <?=$style2?>>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr><th>Public Note:</th><td><?=$e($item['public_note'])?></td></tr>
+				<tr><th>Internal Note 1:</th><td><?=$e($item['internal_note_1'])?></td></tr>
+				<tr><th>Internal Note 2:</th><td><?=$e($item['internal_note_2'])?></td></tr>
+				<tr><th>Statistics Note 1:</th><td><?=$e($item['statistics_note_1'])?></td></tr>
+				<tr><th>Statistics Note 2:</th><td><?=$e($item['statistics_note_2'])?></td></tr>
+				<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>
+				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
