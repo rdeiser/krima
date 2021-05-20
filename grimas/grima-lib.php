@@ -1882,7 +1882,7 @@ class AlmaObjectWithMARC extends AlmaObject {
  */
 	function setH008($chr6,$chr12,$chr16,$chr17,$chr20,$chr21,$chr22,$chr25) {
 		$xpath = new DomXpath($this->xml);
-		$chrs = $xpath->query("//record/leader");
+		$chrs = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chrs as $chr) {
 		$replace=substr_replace($chr->nodeValue,$chr6,6,1);
 		$replace=substr_replace($chr->nodeValue,$chr12,12,1);
