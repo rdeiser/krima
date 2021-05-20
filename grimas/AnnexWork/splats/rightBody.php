@@ -118,8 +118,8 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<!--<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>-->
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
-				<tr <?=$style?>>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
-				<tr <?=$style2?>>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
+				<tr <?=$style2?>><th>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Public Note:</th><td><?=$e($item['public_note'])?></td></tr>
 				<tr><th>Internal Note 1:</th><td><?=$e($item['internal_note_1'])?></td></tr>
 				<tr><th>Internal Note 2:</th><td><?=$e($item['internal_note_2'])?></td></tr>
