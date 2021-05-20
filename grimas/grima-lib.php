@@ -1859,7 +1859,7 @@ class AlmaObjectWithMARC extends AlmaObject {
  *
  * @param Array $chr5,$chr6,$chr17,$chr18
  */
-	function setHldr5($chr5,$chr6,$chr17,$chr18) {
+	function setHldr($chr5,$chr6,$chr17,$chr18) {
 		$xpath = new DomXpath($this->xml);
 		$chrs = $xpath->query("//record/leader");
 		foreach ($chrs as $chr) {
