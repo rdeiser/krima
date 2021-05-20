@@ -158,23 +158,22 @@ if ($holding['suppress_from_publishing'] == 'true'){
 	$replace4 = '';
 ?>
               <table class="table">
-                <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
-				<!--<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>-->
-				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
-				<!--<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>-->
-				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
-				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Nota de Procesamiento:<!--Nota de servicios al usuario:--></span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
-				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
-				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
-				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
+                <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
+				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<!--<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>-->
+				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
+				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
+				<tr <?=$style?>><th class="flip"><span>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
+				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
+				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>
+				<tr><th>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
-				<!--<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>-->
-				<!--<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
+				<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>
+				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
 				</td></tr>
 				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
-				</td></tr>-->
+				</td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
