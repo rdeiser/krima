@@ -125,8 +125,8 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th>Internal Note 2:</th><td><?=$e($item['internal_note_2'])?></td></tr>
 				<tr><th>Statistics Note 1:</th><td><?=$e($item['statistics_note_1'])?></td></tr>
 				<tr><th>Statistics Note 2:</th><td><?=$e($item['statistics_note_2'])?></td></tr>
-				<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>
-				<!--<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>-->
+				<!--<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>-->
+				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
