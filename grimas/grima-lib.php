@@ -1874,6 +1874,31 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> setH008
+/**
+ * @brief modifies Holdings Marc 008 06,12,16,17-19,20,21,22-24,25
+ *
+ * @param Array $chr6,$chr12,$chr16,$chr17,$chr20,$chr21,$chr22,$chr25
+ */
+	function setH008($chr6,$chr12,$chr16,$chr17,$chr20,$chr21,$chr22,$chr25) {
+		$xpath = new DomXpath($this->xml);
+		$chrs = $xpath->query("//record/leader");
+		foreach ($chrs as $chr) {
+		$replace=substr_replace($chr->nodeValue,$chr6,6,1);
+		$replace=substr_replace($chr->nodeValue,$chr12,12,1);
+		$replace=substr_replace($chr->nodeValue,$chr16,16,1);
+		$replace=substr_replace($chr->nodeValue,$chr17,17,3);
+		$replace=substr_replace($chr->nodeValue,$chr20,20,1);
+		$replace=substr_replace($chr->nodeValue,$chr21,21,1);
+		$replace=substr_replace($chr->nodeValue,$chr22,22,3);
+		$replace=substr_replace($chr->nodeValue,$chr25,25,1);
+		$add = $this->xml->createElement("leader");
+		$add->appendChild($this->xml->createTextNode($replace));
+		$chrs[0]->appendchild($add);
+		}
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> setHldr5
 /**
  * @brief modifies Holdings Marc Leader 05 - Record status
