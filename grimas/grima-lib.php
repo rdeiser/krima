@@ -1853,6 +1853,29 @@ class AlmaObjectWithMARC extends AlmaObject {
 	}
 // }}}
 
+// {{{ AlmaObjectWithMARC -> setHldr
+/**
+ * @brief modifies Holdings Marc Leader 05,06,17,18
+ *
+ * @param Array $chr5,$chr6,$chr17,$chr18
+ */
+	function setHldr5($chr5,$chr6,$chr17,$chr18) {
+		$xpath = new DomXpath($this->xml);
+		$chrs = $xpath->query("//record/leader");
+		foreach ($chrs as $chr) {
+			foreach($replaces as $replace) {
+				substr_replace($chr->nodeValue,$chr,5,1);
+				substr_replace($chr->nodeValue,$chr,6,1);
+				substr_replace($chr->nodeValue,$chr,17,1);
+				substr_replace($chr->nodeValue,$chr,18,1);
+			}
+		$add = $this->xml->createElement("leader");
+		$add->appendChild($this->xml->createTextNode($replace));
+		$chrs[0]->appendchild($add);
+		}
+	}
+// }}}
+
 // {{{ AlmaObjectWithMARC -> setHldr5
 /**
  * @brief modifies Holdings Marc Leader 05 - Record status
