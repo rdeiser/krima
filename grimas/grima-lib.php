@@ -2662,6 +2662,8 @@ class HoldingsList extends AlmaObject {
 class HoldingsListEntry extends AlmaObject {
 	protected $el_address = array(
 		'holding_id' => '//holding_id',
+		'leader' => '//leader',
+		'008' => '//holding/008',
 		'call_number' => '//holding/call_number',
 		'library_code' => '//holding/library',
 		'library' => '//holding/library/@desc',
@@ -2772,6 +2774,7 @@ class Holding extends AlmaObjectWithMARC {
 	public $el_address = array(
 		'holding_id' => '//holding_id',
 		'copy_id' => '//copy_id',
+		'008' => "/holding/record/controlfield[@tag='008']",
 		'inst_code' => "/holding/record/datafield[@tag='852']/subfield[@code='a']",
 		'library_code' => "/holding/record/datafield[@tag='852']/subfield[@code='b']",
 		'location_code' => "/holding/record/datafield[@tag='852']/subfield[@code='c']",
