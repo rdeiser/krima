@@ -1894,8 +1894,8 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$replace8=substr_replace($replace7,$chr25,25,1);
 		//$add = $this->xml->createElement("controlfield");
 		//$add->setAttribute("tag","008");
-		/*$add->*/appendChild($this->xml->createTextNode($replace8));
-		//$chrs[0]->appendchild($add);
+		$add->appendChild($this->xml->createTextNode($replace8));
+		$chrs[0]->appendchild($add);
 		}
 	}
 // }}}
