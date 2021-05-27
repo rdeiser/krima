@@ -1987,7 +1987,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr6s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr6s as $chr6) {
 			$replace = substr_replace($chr6->nodeValue,$chr,6,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr6s[0]->appendchild($add);
@@ -2007,7 +2007,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr7s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr7s as $chr7) {
 			$replace = substr_replace($chr12->nodeValue,$chr,7,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr7s[0]->appendchild($add);
@@ -2027,7 +2027,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr12s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr12s as $chr12) {
 			$replace = substr_replace($chr12->nodeValue,$chr,12,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr12s[0]->appendchild($add);
@@ -2047,7 +2047,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr16s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr16s as $chr16) {
 			$replace = substr_replace($chr16->nodeValue,$chr,16,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr16s[0]->appendchild($add);
@@ -2067,7 +2067,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr17s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr17s as $chr17) {
 			$replace = substr_replace($chr17->nodeValue,$chr,17,3);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr17s[0]->appendchild($add);
@@ -2087,7 +2087,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr20s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr20s as $chr20) {
 			$replace = substr_replace($chr20->nodeValue,$chr,20,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr20s[0]->appendchild($add);
@@ -2107,7 +2107,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr21s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr21s as $chr21) {
 			$replace = substr_replace($chr21->nodeValue,$chr,21,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr21s[0]->appendchild($add);
@@ -2127,7 +2127,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr22s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr22s as $chr22) {
 			$replace = substr_replace($chr22->nodeValue,$chr,21,3);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr22s[0]->appendchild($add);
@@ -2147,7 +2147,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$chr25s = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chr25s as $chr25) {
 			$replace = substr_replace($chr25->nodeValue,$chr,21,1);
-			$add = $this->xml->createElement("leader");
+			$add = $this->xml->createElement("controlfield");
 			$add->setAttribute("tag","008");
 			$add->appendChild($this->xml->createTextNode($replace));
 			$chr25s[0]->appendchild($add);
