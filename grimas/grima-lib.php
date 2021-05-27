@@ -1884,17 +1884,17 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$xpath = new DomXpath($this->xml);
 		$chrs = $xpath->query("//record/controlfield[@tag='008']");
 		foreach ($chrs as $chr) {
-		$replace=substr_replace($chr->nodeValue,$chr6,6,1);
-		$replace=substr_replace($chr->nodeValue,$chr12,12,1);
-		$replace=substr_replace($chr->nodeValue,$chr16,16,1);
-		$replace=substr_replace($chr->nodeValue,$chr17,17,3);
-		$replace=substr_replace($chr->nodeValue,$chr20,20,1);
-		$replace=substr_replace($chr->nodeValue,$chr21,21,1);
-		$replace=substr_replace($chr->nodeValue,$chr22,22,3);
-		$replace=substr_replace($chr->nodeValue,$chr25,25,1);
+		$replace1=substr_replace($chr->nodeValue,$chr6,6,1);
+		$replace2=substr_replace($replace1,$chr12,12,1);
+		$replace3=substr_replace($replace2,$chr16,16,1);
+		$replace4=substr_replace($replace3,$chr17,17,3);
+		$replace5=substr_replace($replace4,$chr20,20,1);
+		$replace6=substr_replace($replace5,$chr21,21,1);
+		$replace7=substr_replace($replace6,$chr22,22,3);
+		$replace8=substr_replace($replace7,$chr25,25,1);
 		$add = $this->xml->createElement("controlfield");
 		$add->setAttribute("tag","008");
-		$add->appendChild($this->xml->createTextNode($replace));
+		$add->appendChild($this->xml->createTextNode($replace8));
 		$chrs[0]->appendchild($add);
 		}
 	}
