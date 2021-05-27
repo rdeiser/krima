@@ -24,7 +24,7 @@ class AnnexWork extends GrimaTask {
 				//$holding->setHldr5("c");
 				//$holding->setHldr6("x");
 				$holding->setHldr17("2");
-				//$holding->setHldr18("n");
+				$holding->setHldr18("n");
 				/*$holding->setH008("2","8","4","001","a","a","   ","0");
 				$holding->set008p6("2");
 				$holding->set008p7("u");
