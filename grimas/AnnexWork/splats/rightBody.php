@@ -79,6 +79,10 @@ if (preg_match("/^([2-9]|[1-9][0-9]|[1-9][0-9][0-9])$/", $item['copy_id'])) {
 }
 if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
+} else {
+	$style4 = 'style="opacity:1;"';
+	$pattern2 = '/^\s*$/';
+	$replace2 = '&nbsp;';
 }
 
 $holding = new Holding();
@@ -110,7 +114,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 ?>
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
-				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?=$e ($item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<!--<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>-->
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
