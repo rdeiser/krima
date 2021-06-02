@@ -1846,7 +1846,7 @@ class AlmaObjectWithMARC extends AlmaObject {
  */
 	function appendControlfield($tag) {
 		$frag = "<controlfield tag=\"$tag\">";
-		$frag .= "</datafield>";
+		$frag .= "</controlfield>";
 		$xpath = new DomXpath($this->xml);
 		$record = $xpath->query("//record");
 		appendInnerXML($record[0],$frag);
@@ -1892,12 +1892,14 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$replace6=substr_replace($replace5,$chr21,21,1);
 		$replace7=substr_replace($replace6,$chr22,22,3);
 		$replace8=substr_replace($replace7,$chr25,25,1);
+		$chr->appendChild($this->xml>createTextNode($replace8)
+		$chrs[0]->appendchild($chr);
 		//$chr->parentNode->removeChild($chr);
 		//appendInnerXML($chr,$replace8);
-		$add = $this->xml->createElement("controlfield");
+		/*$add = $this->xml->createElement("controlfield");
 		$add->setAttribute("tag","008");
 		$add->appendChild($this->xml->createTextNode($replace8));
-		$chrs[0]->appendchild($add);
+		$chrs[0]->appendchild($add);*/
 		}
 	}
 // }}}
