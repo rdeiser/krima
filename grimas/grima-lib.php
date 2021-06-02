@@ -1892,7 +1892,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$replace6=substr_replace($replace5,$chr21,21,1);
 		$replace7=substr_replace($replace6,$chr22,22,3);
 		$replace8=substr_replace($replace7,$chr25,25,1);
-		$chr->appendChild($chr,$replace8);
+		$chr->appendChild($replace8);
 		$chrs[0]->appendChild($chr);
 		//$chr->parentNode->removeChild($chr);
 		//appendInnerXML($chr,$replace8);
