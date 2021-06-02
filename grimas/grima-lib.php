@@ -1867,9 +1867,7 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$replace2=substr_replace($replace1,$chr6,6,1);
 		$replace3=substr_replace($replace2,$chr17,17,1);
 		$replace4=substr_replace($replace3,$chr18,18,1);
-		$add = $this->xml->createElement("leader");
-		$add->appendChild($this->xml->createTextNode($replace4));
-		$chrs[0]->appendchild($add);
+		$chr->nodeValue = $replace4;
 		}
 	}
 // }}}
@@ -1893,14 +1891,6 @@ class AlmaObjectWithMARC extends AlmaObject {
 		$replace7=substr_replace($replace6,$chr22,22,3);
 		$replace8=substr_replace($replace7,$chr25,25,1);
 		$chr->nodeValue = $replace8;
-		//$chrs[0]->appendChild($this->xml->importNode($replace8));
-		//$chrs[0]->appendChild($chr);
-		//$chr->parentNode->removeChild($chr);
-		//appendInnerXML($chr,$replace8);
-		/*$add = $this->xml->createElement("controlfield");
-		$add->setAttribute("tag","008");
-		$add->appendChild($this->xml->createTextNode($replace8));
-		$chrs[0]->appendchild($add);*/
 		}
 	}
 // }}}
