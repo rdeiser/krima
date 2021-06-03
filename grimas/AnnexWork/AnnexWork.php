@@ -10,9 +10,11 @@ class AnnexWork extends GrimaTask {
 		$item->addInventoryDate(date("Y-m-d"));
 		$item->updateAlma();
 		}
-		{if (($item['statistics_note_3'] == 'ANNEX ingest'||'AHD ANNEX ingest') && ($item['location_code'] == 'main')){
+		{if ($item['statistics_note_3'] == 'ANNEX ingest') {
 			$holding = new Holding();
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+
+			if ($holding['location_code'] == 'main') {
 				$holding->deleteControlField("001");
 				$holding->deleteControlField("004");
 				$holding->setFieldindicators("852","0","0");
@@ -35,6 +37,39 @@ class AnnexWork extends GrimaTask {
 				$holding->set008p25("0");*/
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annex';
+				}
+				$holding->updateAlma();
+		}
+		}
+		
+		{if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
+			$holding = new Holding();
+			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+
+			if ($holding['location_code'] == 'main') {
+				$holding->deleteControlField("001");
+				$holding->deleteControlField("004");
+				$holding->setFieldindicators("852","0","0");
+				$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
+				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
+				$holding->setHldr("c","x","2","n");
+				$holding->setH008("2","8","4","001","a","a","   ","0");
+				/*$holding->setHldr5("c");
+				$holding->setHldr6("x");
+				$holding->setHldr17("2");
+				$holding->setHldr18("n");
+				$holding->set008p6("2");
+				$holding->set008p7("u");
+				$holding->set008p12("8");
+				$holding->set008p16("4");
+				$holding->set008p17("001");
+				$holding->set008p20("a");
+				$holding->set008p21("a");
+				$holding->set008p22("###");
+				$holding->set008p25("0");*/
+				$holding['library_code'] = 'ANNEX';
+				$holding['location_code'] = 'annex';
+				}
 				$holding->updateAlma();
 		}
 		}
