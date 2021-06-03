@@ -10,11 +10,9 @@ class AnnexWork extends GrimaTask {
 		$item->addInventoryDate(date("Y-m-d"));
 		$item->updateAlma();
 		}
-		{if ($item['statistics_note_3'] == 'ANNEX ingest'||'AHD ANNEX ingest') {
+		{if ($item['statistics_note_3'] == 'ANNEX ingest'||'AHD ANNEX ingest') && ($item['location_code'] == 'main'{
 			$holding = new Holding();
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-
-			if ($holding['location_code'] == 'main') {
 				$holding->deleteControlField("001");
 				$holding->deleteControlField("004");
 				$holding->setFieldindicators("852","0","0");
@@ -37,7 +35,6 @@ class AnnexWork extends GrimaTask {
 				$holding->set008p25("0");*/
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annex';
-				}
 				$holding->updateAlma();
 		}
 		}
