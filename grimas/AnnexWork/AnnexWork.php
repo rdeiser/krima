@@ -22,19 +22,6 @@ class AnnexWork extends GrimaTask {
 				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
 				$holding->setHldr("c","x","2","n");
 				$holding->setH008("2","8","4","001","a","a","   ","0");
-				/*$holding->setHldr5("c");
-				$holding->setHldr6("x");
-				$holding->setHldr17("2");
-				$holding->setHldr18("n");
-				$holding->set008p6("2");
-				$holding->set008p7("u");
-				$holding->set008p12("8");
-				$holding->set008p16("4");
-				$holding->set008p17("001");
-				$holding->set008p20("a");
-				$holding->set008p21("a");
-				$holding->set008p22("###");
-				$holding->set008p25("0");*/
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annex';
 				}
@@ -54,19 +41,6 @@ class AnnexWork extends GrimaTask {
 				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
 				$holding->setHldr("c","x","2","n");
 				$holding->setH008("2","8","4","001","a","a","   ","0");
-				/*$holding->setHldr5("c");
-				$holding->setHldr6("x");
-				$holding->setHldr17("2");
-				$holding->setHldr18("n");
-				$holding->set008p6("2");
-				$holding->set008p7("u");
-				$holding->set008p12("8");
-				$holding->set008p16("4");
-				$holding->set008p17("001");
-				$holding->set008p20("a");
-				$holding->set008p21("a");
-				$holding->set008p22("###");
-				$holding->set008p25("0");*/
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annex';
 				}
