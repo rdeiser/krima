@@ -38,6 +38,34 @@ class WithdrawLibrary extends GrimaTask {
 				$holding['library_code'] = 'WITHDRAW';
 				$holding['location_code'] = 'wdref';
 			} else {}
+			if ($holding['location_code'] == 'gov') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgov';
+			} else {}
+			if ($holding['location_code'] == 'govcen') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgovcen';
+			} else {}
+			if ($holding['location_code'] == 'govelect') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgovelect';
+			} else {}
+			if ($holding['location_code'] == 'govmic') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgovmic';
+			} else {}
+			if ($holding['location_code'] == 'govover') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgovover';
+			} else {}
+			if ($holding['location_code'] == 'govref') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wdgovref';
+			} else {}
+			if ($holding['location_code'] == 'govposter') {
+				$holding['library_code'] = 'WITHDRAW';
+				$holding['location_code'] = 'wgovposter';
+			}
 			$holding->updateAlma();
 			
 			/*$item = new Item();
