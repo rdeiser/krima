@@ -2579,7 +2579,7 @@ class Bib extends AlmaObjectWithMARC {
 /** @brief title's $n
  @return string 245$n with ISBD punctuation removed
  */
-	function get_title_properly() {
+	function get_title_n() {
 		$xpath = new DomXpath($this->xml);
 		$title = $xpath->query("//record/datafield[@tag='245']/subfield[@code='n']");
 		return preg_replace("/[ \/=:,;\.]*$/","",$title[0]->nodeValue);
@@ -2590,7 +2590,7 @@ class Bib extends AlmaObjectWithMARC {
 /** @brief title's $p
  @return string 245$p with ISBD punctuation removed
  */
-	function get_title_properly() {
+	function get_title_p() {
 		$xpath = new DomXpath($this->xml);
 		$title = $xpath->query("//record/datafield[@tag='245']/subfield[@code='p']");
 		return preg_replace("/[ \/=:,;\.]*$/","",$title[0]->nodeValue);
