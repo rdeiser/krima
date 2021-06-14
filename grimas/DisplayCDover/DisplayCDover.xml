@@ -1,5 +1,5 @@
 <GrimaForm>
-    <Title>K-State Item Information Media</Title>
+    <Title>K-State Item Information CD OVERSIZE</Title>
     <Field
         label="Barcode of unboxed item"
         name="unboxed_barcode"
