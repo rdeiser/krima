@@ -152,8 +152,6 @@ if ($holding['suppress_from_publishing'] == 'true'){
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th>Bib Title:</th><td><?=$e($bib['title'])?></td></tr>
-				<tr><th>Holding Title:</th><td><?=$e($holding['title'])?></td></tr>
 				<tr><th>Title Proper</th><td><?= $bib->get_title_proper() ?> <?= $bib->get_title_n() ?> <?= $bib->get_title_p() ?></td></tr>
 				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<!--<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>-->
