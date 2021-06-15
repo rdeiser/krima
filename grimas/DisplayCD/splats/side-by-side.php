@@ -113,7 +113,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
               </div>
               <div class="card-body">
 <?= $t('rightBody', array('item' => $item)) ?>
-<?= $t('rightBody', array('245' => $245)) ?>
+<?= $t('rightBody', array('245' => 245)) ?>
               </div>
             </div>
           </div>
