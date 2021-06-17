@@ -2597,6 +2597,23 @@ class Bib extends AlmaObjectWithMARC {
 	}
 // }}}
 
+// {{{ Bib -> get_title
+/** @brief title display for music cds
+ @return string 245$p with ISBD punctuation removed, no $c?
+ */
+	function get_title() {
+		$xpath = new DomXpath($this->xml);
+		$fields = $xpath->query("//record/datafield[@tag='245']");
+		foreach ($fields as $field) {
+			foreach ($field->childNodes as $subfield) {
+				if ($subfield->nodeName == "subfield") {
+					$ret = array($subfield[0]->nodeValue);
+				}
+			}
+		return preg_replace("/[ \/=:,;\.]*$/","",$title[0]->nodeValue);
+	}
+// }}}
+
 	/*
 	function get_networkNumbers() {
 		$xpath = new DomXpath($this->xml);

@@ -28,7 +28,6 @@ class DisplayCD extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-		$this->splatVars['245'] = $this->bib;
 }
 }
 }
