@@ -2609,6 +2609,7 @@ class Bib extends AlmaObjectWithMARC {
 				if ($subfield->nodeName == "subfield") {
 					$ret = array($subfield[0]->nodeValue);
 				}
+				return $ret;
 			}
 		}
 	}
