@@ -2604,7 +2604,8 @@ class Bib extends AlmaObjectWithMARC {
 	function get_title() {
 		$xpath = new DomXpath($this->xml);
 		$fields = $xpath->query("//record/datafield[@tag='245']");
-		return ($fields[0]->nodeValue);
+		//return ($fields[0]->nodeValue);
+		return preg_replace("/(\[sound recording\])\W|(\[sound recording\])/","",$fields[0]->nodeValue);
 		//return preg_replace("/[ \/=:,;\.]*$/","",$fields[0]->nodeValue);
 		/*foreach ($fields as $field) {
 			foreach ($field->childNodes as $subfield) {
