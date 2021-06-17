@@ -2607,7 +2607,7 @@ class Bib extends AlmaObjectWithMARC {
 		foreach ($fields as $field) {
 			foreach ($field->childNodes as $subfield) {
 				if ($subfield->nodeName == "subfield") {
-					return ($subfield[0]->nodeValue);
+					return preg_replace("/[ \/=:,;\.]*$/","",$subfield[0]->nodeValue);
 				}
 			}
 		}
