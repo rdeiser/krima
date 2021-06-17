@@ -2609,7 +2609,9 @@ class Bib extends AlmaObjectWithMARC {
 		$space2 = preg_replace("/\./"," ",$space);
 		$space3 = preg_replace("/\,/",", ",$space2);
 		$space4 = preg_replace("/(\,  )/",", ",$space3);
-		return preg_replace("/\:/"," : ",$space4);
+		$space5 = preg_replace("/(\=)/"," = ",$space4);
+		$space6 = preg_replace("/( \= )/"," = ",$space5);
+		return preg_replace("/\:/"," : ",$space6);
 		//return preg_replace("/\.|\:/"," ",$space);
 		//return preg_replace("/[ \/=:,;\.]*$/","",$fields[0]->nodeValue);
 		/*foreach ($fields as $field) {
