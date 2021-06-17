@@ -2604,13 +2604,14 @@ class Bib extends AlmaObjectWithMARC {
 	function get_title() {
 		$xpath = new DomXpath($this->xml);
 		$fields = $xpath->query("//record/datafield[@tag='245']");
-		foreach ($fields as $field) {
+		return preg_replace("/[ \/=:,;\.]*$/","",$subfield[0]->nodeValue);
+		/*foreach ($fields as $field) {
 			foreach ($field->childNodes as $subfield) {
 				if ($subfield->nodeName == "subfield") {
 					return preg_replace("/[ \/=:,;\.]*$/","",$subfield[0]->nodeValue);
 				}
 			}
-		}
+		}*/
 	}
 	
 // }}}
