@@ -2606,7 +2606,7 @@ class Bib extends AlmaObjectWithMARC {
 		$fields = $xpath->query("//record/datafield[@tag='245']");
 		//return ($fields[0]->nodeValue);
 		$space = preg_replace("/(\[sound recording\])\W|(\[sound recording\])|\/[A-Za-z0-9].+$/","",$fields[0]->nodeValue);
-		return preg_replace("/\./|\:/"," ",$space);
+		return preg_replace("/\.|\:/"," ",$space);
 		//return preg_replace("/[ \/=:,;\.]*$/","",$fields[0]->nodeValue);
 		/*foreach ($fields as $field) {
 			foreach ($field->childNodes as $subfield) {
