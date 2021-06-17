@@ -2607,7 +2607,7 @@ class Bib extends AlmaObjectWithMARC {
 		foreach ($fields as $field) {
 			foreach ($field->childNodes as $subfield) {
 				if ($subfield->nodeName == "subfield") {
-					$ret = array($subfield[0]->nodeValue);
+					$ret = $subfield[0]->nodeValue;
 				}
 				return $ret;
 			}
