@@ -2607,7 +2607,9 @@ class Bib extends AlmaObjectWithMARC {
 		//return ($fields[0]->nodeValue);
 		$space = preg_replace("/(\[sound recording\])\W|(\[sound recording\])|\/[A-Za-z0-9].+$/","",$fields[0]->nodeValue);
 		$space2 = preg_replace("/\./"," ",$space);
-		return preg_replace("/\:/"," : ",$space2);
+		$space3 = preg_replace("/\,/",", ",$space2);
+		$space4 = preg_replace("/(\,  )/",", ",$space3);
+		return preg_replace("/\:/"," : ",$space4);
 		//return preg_replace("/\.|\:/"," ",$space);
 		//return preg_replace("/[ \/=:,;\.]*$/","",$fields[0]->nodeValue);
 		/*foreach ($fields as $field) {
