@@ -2610,8 +2610,9 @@ class Bib extends AlmaObjectWithMARC {
 					$ret = array($subfield[0]->nodeValue);
 				}
 			}
-		return preg_replace("/[ \/=:,;\.]*$/","",$title[0]->nodeValue);
+		}
 	}
+	
 // }}}
 
 	/*
