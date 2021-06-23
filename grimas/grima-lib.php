@@ -718,8 +718,8 @@ class Grima {
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
  
- function postJob($job_instance_id,$op,$bodyxml) {
-	$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
+ function postJob($job_id,$op,$bodyxml) {
+	$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
  }
@@ -1175,10 +1175,10 @@ class Grima {
 
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
-		$job_instance_id = 'M16545998330002401';
+		$job_id = 'M16545998330002401';
 		$op = 'run';
 
-		$ret = $this->postJob('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
+		$ret = $this->postJob('/almaws/v1/conf/jobs', array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
@@ -4276,12 +4276,13 @@ class ElectronicPortfolio extends AlmaObject {
 /** class Job IN PROGRESS */
 class Job extends AlmaObject {
 	public $xml;
-	public $parameter = array();
+	public $job_id = array();
 }
 
 // {{{ Job -> el_address
 	public $el_address = array(
-		'job_instance_id' => '//job//instance/id'
+		'job_id' => '//job/id',
+		'op' => '//job/op',
 		);
 // }}}
 
