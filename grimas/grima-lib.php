@@ -724,6 +724,8 @@ class Grima {
 		return $ret;
  }
 
+// }}}
+
 // {{{ postItem (Create Item)
 /**
  * @brief Create Item - add a new item to a holding in Alma
