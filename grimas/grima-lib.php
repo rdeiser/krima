@@ -1133,7 +1133,7 @@ class Grima {
 	function jobScheduled591() {
 		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
 		<job link="string">
-			<creator></creator>
+			<creator>rdeiser</creator>
 			<next_run>2024-05-30T09:30:10Z</next_run>
 			<parameters>
 				<parameter>
@@ -4246,6 +4246,15 @@ class ElectronicPortfolio extends AlmaObject {
 	}
 // }}}
 
+}
+
+// }}}
+
+// {{{ class Job
+/** class Set IN PROGRESS */
+class Job extends AlmaObject {
+	public $xml;
+	public $parameter = array();
 }
 
 // }}}
