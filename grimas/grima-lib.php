@@ -1152,7 +1152,6 @@ class Grima {
 */
 
 	function jobScheduled591() {
-		global $grima;
 		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
 		<job link="string">
 			<creator>rdeiser</creator>
@@ -2464,6 +2463,17 @@ class Bib extends AlmaObjectWithMARC {
 			$this->replaceOrAddSubfield('264','a',$value);
 		}
 	}
+	
+// {{{ Job -> runAlmaJob (post) - runs the Alma Job
+/**
+ * @brief runs the requested Alma Job
+ */
+	function runAlmaJob() {
+		global $grima;
+		$this->xml = $grima->postJob($this->xml);
+	}
+ 
+ // }}}
 
 // {{{ Bib -> loadFromAlma (get) - gets Bib from Alma
 /**
@@ -3441,7 +3451,19 @@ class Itemnbc extends AlmaObject {
 			$this->xml
 		);
 	}
-//updateAlma (put) set
+// }}}
+
+// {{{ updateAlma (put)
+/**
+ * @brief add an item record to an Alma Set
+ * @return DomDocument item object as it now appears in Alma
+ */
+
+// {{{ addToAlmaSet (put)
+/**
+ * @brief add an item record to an Alma Set
+ * @return DomDocument item object as it now appears in Alma
+ */
 	function addToAlmaSet($set_id,$barcode) {
 		global $grima;
 		$this->set_id = $set_id;
