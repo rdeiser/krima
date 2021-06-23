@@ -1186,8 +1186,52 @@ class Grima {
 		return $ret;
 	}*/
 
+// {{{ Job -> jobScheduled591 (Run a Job)
+/**
+ * @brief Run an Alma Job on an Alma Set
+ *
+ * Makes a call to the API:
+ * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/conf#Resources)
+ *
+ *		POST /almaws/v1/conf/jobs
+ *
+ * @param string $job_id ID
+ * @return Job submission details
+*/
 
+	function jobScheduled591() {
+		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
+		<job link="string">
+			<creator></creator>
+			<next_run>2024-05-30T09:30:10Z</next_run>
+			<parameters>
+				<parameter>
+					<name>task_189_droolesFileKey</name>
+					<value>Spec/LTD</value>
+				</parameter>
+				<parameter>
+					<name>set_id</name>
+					<value>16588548290002401</value>
+				</parameter>
+				<parameter>
+					<name>job_name</name>
+					<value>591 Special/LTD - via API - DO NOT DELETE***GRIMA SCHEDULED JOB***591 annexltd note</value>
+				</parameter>
+			</parameters>
+</job>';
 
+		$bodyxml = new DomDocument();
+		$bodyxml->loadXML($body);
+		$job_instance_id = 'M16545998330002401';
+		$op = 'run';
+
+		$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+
+	}
+
+// }}}
 
 // {{{ Set -> createSetFromImport (Create a Set)
 /**
