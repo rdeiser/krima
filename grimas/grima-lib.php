@@ -1131,9 +1131,9 @@ class Grima {
 */
 
 	function postJob($job_id,$op) {
-		$body = '<?xml version="1.0" encoding="UTF-8"?' . '>
+		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
 <job link="string">
-	<creator></creator>
+	<creator>rdeiser</creator>
 	<next_run>2024-05-30T09:30:10Z</next_run>
 		<parameters>
 			<parameter>
