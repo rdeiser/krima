@@ -4277,13 +4277,14 @@ class ElectronicPortfolio extends AlmaObject {
 class Job extends AlmaObject {
 	public $xml;
 	public $job_id = array();
-}
+
 
 // {{{ Job -> el_address
 	public $el_address = array(
 		'job_id' => '//job/id',
 		'op' => '//job/op',
 		);
+}
 // }}}
 
 // }}}
