@@ -2487,17 +2487,7 @@ class Bib extends AlmaObjectWithMARC {
 		}
 	}
 	
-// {{{ Job -> runAlmaJob (post) - runs the Alma Job
-/**
- * @brief runs the requested Alma Job
- */
-/*	function runAlmaJob() {
-		global $grima;
-		$this->xml = $grima->postJob($this->xml);
-	}
- 
- // }}}
-*/
+
 // {{{ Bib -> loadFromAlma (get) - gets Bib from Alma
 /**
  * @brief populates the bib with a record from Alma
