@@ -1131,6 +1131,7 @@ class Grima {
 */
 
 	function jobScheduled591() {
+		global $grima;
 		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
 		<job link="string">
 			<creator>rdeiser</creator>
