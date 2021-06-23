@@ -1156,7 +1156,7 @@ class Grima {
  * @return Job submission details
 */
 
-	function jobScheduled591() {
+	function jobScheduled591($job_id,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
 		<job link="string">
 			<creator>rdeiser</creator>
@@ -1177,14 +1177,18 @@ class Grima {
 			</parameters>
 </job>';
 
+		global $grima;
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
-		$job_id = 'M16545998330002401';
-		$op = 'run';
-
+		$this->job_id = $job_id;
+		$this->op = $op;
+		/*$job_id = 'M16545998330002401';
+		$op = 'run';*/
+		$this->xml = $grima->postJob($job_id,$op,$bodyxml);
+		return $this->xml;/*
 		$ret = $this->postJob('/almaws/v1/conf/jobs', array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
-		return $ret;
+		return $ret;*/
 
 	}
 
