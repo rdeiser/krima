@@ -718,11 +718,14 @@ class Grima {
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
  
- function postJob($job_id,$op,$bodyxml) {
-	$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
+	function postJob($job_id,$op) {
+		/*Should I create a postscanin?*/$ret = $this->post('/almaws/v1/conf/jobs/{job_id}',
+		array('job_id' => $job_id),
+		array('op' => $op),
+		);
 		$this->checkForErrorMessage($ret);
 		return $ret;
- }
+	}
 
 // }}}
 
