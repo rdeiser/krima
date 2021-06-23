@@ -703,32 +703,6 @@ class Grima {
 	}
 // }}}
 
-// {{{ postJob (Run an Alma Job)
-/**
- * @brief Run an Alma Job - run a manual job within Alma
- *
- * Makes a call to the API:
- * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
- *
- *		POST /almaws/v1/conf/jobs/{job_id}
- *
- * @param string $job_id		- Job ID of the job to run
- * @param string $op	- op=run
- * @param DomDocument $bodyxml		- Item object to add to Alma as new record
- * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
- */
- 
-	function postJob($job_id,$op) {
-		/*Should I create a postscanin?*/$ret = $this->post('/almaws/v1/conf/jobs/{job_id}',
-		array('job_id' => $job_id),
-		array('op' => $op),
-		);
-		$this->checkForErrorMessage($ret);
-		return $ret;
-	}
-
-// }}}
-
 // {{{ postItem (Create Item)
 /**
  * @brief Create Item - add a new item to a holding in Alma
@@ -1143,7 +1117,7 @@ class Grima {
 /**@name Job APIs */
 /**@{*/
 
-// {{{ Job -> jobScheduled591 (Run a Job)
+// {{{ Job -> postJob (Run a Job)
 /**
  * @brief Run an Alma Job on an Alma Set
  *
@@ -1156,7 +1130,7 @@ class Grima {
  * @return Job submission details
 */
 
-	function jobScheduled591($job_id,$op) {
+	function postJob($job_id,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8"?>' . '>
 		<job link="string">
 			<creator>rdeiser</creator>
@@ -1177,18 +1151,12 @@ class Grima {
 			</parameters>
 </job>';
 
-		global $grima;
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
-		$this->job_id = $job_id;
-		$this->op = $op;
-		/*$job_id = 'M16545998330002401';
-		$op = 'run';*/
-		$this->xml = $grima->postJob($job_id,$op,$bodyxml);
-		return $this->xml;/*
-		$ret = $this->postJob('/almaws/v1/conf/jobs', array(), array('job_id' => $job_id, 'op' => $op),$bodyxml);
+		
+		$ret = $this->post('/almaws/v1/conf/jobs', array('job_id' => $job_id), array('op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
-		return $ret;*/
+		return $ret;
 
 	}
 
