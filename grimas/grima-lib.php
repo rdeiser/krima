@@ -703,6 +703,27 @@ class Grima {
 	}
 // }}}
 
+// {{{ postJob (Run an Alma Job)
+/**
+ * @brief Run an Alma Job - run a manual job within Alma
+ *
+ * Makes a call to the API:
+ * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
+ *
+ *		POST /almaws/v1/conf/jobs/{job_id}
+ *
+ * @param string $job_id		- Job ID of the job to run
+ * @param string $op	- op=run
+ * @param DomDocument $bodyxml		- Item object to add to Alma as new record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+ 
+ function postJob($job_instance_id,$op,$bodyxml) {
+	$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+ }
+
 // {{{ postItem (Create Item)
 /**
  * @brief Create Item - add a new item to a holding in Alma
@@ -1157,7 +1178,7 @@ class Grima {
 		$job_instance_id = 'M16545998330002401';
 		$op = 'run';
 
-		$ret = $this->post('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
+		$ret = $this->postJob('/almaws/v1/conf/jobs', array(), array('job_instance_id' => $job_instance_id, 'op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
@@ -4252,11 +4273,17 @@ class ElectronicPortfolio extends AlmaObject {
 // }}}
 
 // {{{ class Job
-/** class Set IN PROGRESS */
+/** class Job IN PROGRESS */
 class Job extends AlmaObject {
 	public $xml;
 	public $parameter = array();
 }
+
+// {{{ Job -> el_address
+	public $el_address = array(
+		'job_instance_id' => '//job//instance/id'
+		);
+// }}}
 
 // }}}
 
