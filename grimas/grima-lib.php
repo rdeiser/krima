@@ -287,7 +287,7 @@ class Grima {
 		curl_close($ch);
 		$xml = new DOMDocument();
 		try {
-			$xml->loadXML($response);
+			$xml->load($response);
 		} catch (Exception $e) {
 			throw new Exception("Malformed XML from Alma: $e");
 		}
