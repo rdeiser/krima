@@ -2,12 +2,18 @@
 <job link="string">
 	<creator/>
 	<next_run>2024-05-30T09:30:10Z</next_run>
-	<parameters>
-		<parameter>
-			<name>
-				<xml_value/>
-			</name>
-			<value/>
-		</parameter>
-	</parameters>
+		<parameters>
+			<parameter>
+				<name/>
+				<value/>
+			</parameter>
+			<parameter>
+				<name>set_id</name>
+				<value/>
+			</parameter>
+			<parameter>
+				<name>job_name</name>
+				<value/>
+			</parameter>
+		</parameters>
 </job>
