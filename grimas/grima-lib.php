@@ -285,13 +285,13 @@ class Grima {
 			throw new Exception("Network error: " . curl_error($ch));
 		}
 		curl_close($ch);
+		return $response
 		$xml = new DOMDocument();
-		$xml->loadXML($response);
-		/*try {
+		try {
 			$xml->loadXML($response);
 		} catch (Exception $e) {
 			throw new Exception("Malformed XML from Alma: $e");
-		}*/
+		}
 		return $xml;
 	}
 // }}}
@@ -4328,8 +4328,10 @@ class Job extends AlmaObject {
 */
 	function runAlmaJob($job_id,$op) {
 		global $grima;
-		$ret = $grima->postJob($job_id, $op, $this->xml);
-		return $ret;
+		$this->job_id = $job_id;
+		$this->op = $op;
+		$this->xml = $grima->postJob($job_id,$op);
+		return $this->xml;
 	}
 
 // }}}
