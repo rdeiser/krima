@@ -249,6 +249,52 @@ class Grima {
 	}
 // }}}
 
+// {{{ postjobs - general function for POST Job (create) API calls
+/**
+ * @brief general function for POST Job (create) API calls
+ *
+ * @param string $url - URL pattern string with parameters in {}
+ * @param array $URLparams - URL parameters
+ * @param array $QSparams - query string parameters
+ * @param DomDocument $body - object to add to Alma
+ * @return DomDocument $body - object as it now appears in Alma
+ */
+	function postjobs($url,$URLparams,$QSparams,$body) {
+		foreach ($URLparams as $k => $v) {
+			$url = str_replace('{'.$k.'}',urlencode($v),$url);
+		}
+		$url = $this->server . $url . '?apikey=' . urlencode($this->apikey);
+		foreach ($QSparams as $k => $v) {
+			$url .= "&$k=$v";
+		}
+
+		$bodyxml = $body->saveXML();
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		curl_setopt($ch, CURLOPT_HTTPHEADER,
+			array ("Accept: application/xml"));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyxml);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+		$response = curl_exec($ch);
+		$code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+		if (curl_errno($ch)) {
+			throw new Exception("Network error: " . curl_error($ch));
+		}
+		curl_close($ch);
+		$xml = new DOMDocument();
+		try {
+			$xml->loadXML($response);
+		} catch (Exception $e) {
+			throw new Exception("Malformed XML from Alma: $e");
+		}
+		return $xml;
+	}
+// }}}
+
 // {{{ put - general function for PUT (update) API calls
 /**
  * @brief general function for PUT (update) API calls
@@ -1154,7 +1200,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 		
-		$ret = $this->postscanin('/almaws/v1/conf/jobs', array('job_id' => $job_id), array('op' => $op),$bodyxml);
+		$ret = $this->postjobs('/almaws/v1/conf/jobs', array('job_id' => $job_id), array('op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
