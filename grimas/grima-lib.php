@@ -4283,6 +4283,19 @@ class Job extends AlmaObject {
 		'job_id' => '//job/id',
 		'op' => '//job/op',
 		);
+// }}}
+
+// {{{ Job -> runAlmaJob
+/**
+* @brief Run an Alma Job on a defined Alma Set
+*/
+	function runAlmaJob($job_id,$op) {
+		global $grima;
+		$ret = $grima->postJob($job_id, $op, $this->xml);
+		return $ret;
+	}
+
+// }}}
 }
 // }}}
 
