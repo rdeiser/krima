@@ -8,6 +8,9 @@ class AnnexltdJob extends GrimaTask {
 		//global $grima;
 		$job = new Job();
 		$job->runAlmaJob('M16545998330002401','run');
+		function print_success() {
+			XMLtoWeb($this-job->xml);
+		}
 		//$job->addToAlma();
 		//$this->addMessage('success',"Alma Job is running");
 	}
