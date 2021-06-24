@@ -1170,7 +1170,7 @@ class Grima {
  * Makes a call to the API:
  * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/conf#Resources)
  *
- *		POST /almaws/v1/conf/jobs
+ *		POST /almaws/v1/conf/jobs{job_id}
  *
  * @param string $job_id ID
  * @return Job submission details
@@ -1200,7 +1200,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 		
-		$ret = $this->postjobs('/almaws/v1/conf/jobs/{job_id}/{op}', array('job_id' => $job_id,'op' => $op),array(),$bodyxml);
+		$ret = $this->postjobs('/almaws/v1/conf/jobs/{job_id}', array('job_id' => $job_id), array('op' => $op),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
