@@ -1200,7 +1200,7 @@ class Grima {
 		$bodyxml = new DomDocument();
 		$bodyxml->loadXML($body);
 		
-		$ret = $this->postjobs('/almaws/v1/conf/jobs',$job_id,$op,$bodyxml);
+		$ret = $this->postjobs('/almaws/v1/conf/jobs/{job_id}/{op}', array('job_id' => $job_id,'op' => $op),array(),$bodyxml);
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
