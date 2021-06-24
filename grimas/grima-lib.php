@@ -4318,6 +4318,7 @@ class Job extends AlmaObject {
 	public $el_address = array(
 		'job_id' => '//job/id',
 		'op' => '//job/op',
+		'additional_info' => '//job/additional_info',
 		);
 // }}}
 
