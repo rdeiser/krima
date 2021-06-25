@@ -45,7 +45,7 @@ class AnnexWork extends GrimaTask {
 					$item->updateAlma();
 				}
 			}
-			if ($this['location'] == 'annexltd') {
+			/*if ($this['location'] == 'annexltd') {
 				if ($holding['location_code'] == 'spec' || $holding['location_code'] == 'univ' || $holding['location_code'] == 'specover' || $holding['location_code'] == 'specoverplus') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
@@ -62,7 +62,7 @@ class AnnexWork extends GrimaTask {
 					$item['item_policy'] = 'no loan';
 					$item->updateAlma();
 				}
-			}
+			}*/
 			if ($this['location'] == 'govstorks') {
 				if ($holding['location_code'] == 'govks' || $holding['location_code'] == 'govksover' || $holding['location_code'] == 'govrefks') {
 					$holding->deleteControlField("001");
