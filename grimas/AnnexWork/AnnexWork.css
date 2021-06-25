@@ -14,7 +14,7 @@
 	text-align: center;
 }
 /*The following .flip section is for the cursor hover effect for the english/spanish text*/
-.flip>span {
+/*.flip>span {
 	color: transparent;
 	float: none;
 }
@@ -56,4 +56,4 @@ h1 {
 	border-radius: 0.1em;
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
-}
+}*/
