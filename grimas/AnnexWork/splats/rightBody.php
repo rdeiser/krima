@@ -136,6 +136,12 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
+					<label for="location">Annex Location Code</label>
+					<select name="location" id="location" style="width: 402px;" box-sizing: border-box>
+						<option value="annex">annex</option>
+						<option value="annexltd" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annexltd') ? 'selected' : ''; ?>>annexltd</option>
+						<option value="govstorks" <?php echo (isset($_POST['location']) && $_POST['location'] === 'govstorks') ? 'selected' : ''; ?>>govstorks</option>
+					</select>
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
 					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
 				</div>
