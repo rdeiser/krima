@@ -40,6 +40,7 @@ class AnnexWork extends GrimaTask {
 					$holding['location_code'] = 'annex';
 				}
 				$holding->updateAlma();
+				
 				$item = new Item();
 				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 				if ($item['item_policy'] !== 'book/ser') {
@@ -48,7 +49,6 @@ class AnnexWork extends GrimaTask {
 				}
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
-				}
 			}
 			/*if ($this['location'] == 'annexltd') {
 				if ($holding['location_code'] == 'spec' || $holding['location_code'] == 'univ' || $holding['location_code'] == 'specover' || $holding['location_code'] == 'specoverplus') {
