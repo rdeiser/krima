@@ -136,7 +136,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
-					<label for="location">Annex Location Code</label>
+					<label for="location">Annex Location Code:</label>
 					<select name="location" id="location" style="width: 402px;" box-sizing: border-box>
 						<option value="annex">annex</option>
 						<!--<option value="annexltd" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annexltd') ? 'selected' : ''; ?>>annexltd</option>-->
