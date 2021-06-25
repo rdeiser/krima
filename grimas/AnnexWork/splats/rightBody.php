@@ -142,8 +142,8 @@ if ($holding['suppress_from_publishing'] == 'true'){
 						<!--<option value="annexltd" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annexltd') ? 'selected' : ''; ?>>annexltd</option>-->
 						<option value="govstorks" <?php echo (isset($_POST['location']) && $_POST['location'] === 'govstorks') ? 'selected' : ''; ?>>govstorks</option>
 					</select>
-					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
-					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
+					<label class="col-3 form-check-label" for="barcode" style="top: 10px;">Barcode:</label>
+					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE" style="top: 8px;"/>
 				</div>
 				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
 				</div>
