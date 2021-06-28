@@ -1176,7 +1176,38 @@ class Grima {
  * @return Job submission details
 */
 
-	function postJob($job_id,$op) {
+function postJob($job_id,$op) {
+		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
+<job link="string">
+	<creator></creator>
+	<next_run>2024-05-30T09:30:10Z</next_run>
+		<parameters>
+			<parameter>
+				<name>task_189_droolesFileKey</name>
+				<value>591 Spec/Annexltd</value>
+			</parameter>
+			<parameter>
+				<name>set_id</name>
+				<value>17242302810002401</value>
+			</parameter>
+			<parameter>
+				<name>job_name</name>
+				<value>591 Spec/LTD - via API - DO NOT DELETE***GRIMA SCHEDULED JOB***591 annexltd note</value>
+			</parameter>
+		</parameters>
+</job>';
+
+		$bodyxml = new DomDocument();
+		$bodyxml->loadXML($body);
+		
+		$ret = $this->postjobs('/almaws/v1/conf/jobs/{job_id}', array('job_id' => $job_id), array('op' => $op),$bodyxml);
+		$this->checkForErrorMessage($ret);
+		return $ret;
+
+	}
+
+/**SANDBOX**
+	/*function postJob($job_id,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
 <job link="string">
 	<creator></creator>
@@ -1204,7 +1235,7 @@ class Grima {
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
-	}
+	}*/
 
 // }}}
 
