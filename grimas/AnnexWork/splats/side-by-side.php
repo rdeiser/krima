@@ -29,29 +29,6 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Send to Condition Review Shelf';
 }
-if ($item['statistics_note_3'] == 'AHD HALE return') {
-	if ($item['location'] == 'govks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else if ($item['location'] == 'govrefks') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else if ($item['location'] == 'govksover') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style="background-color: #ab82ff;"';
-		$text = '';
-	} else {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'HALE return';
-		$style = 'style=";"';
-		$text = '';
-	}
-}
 if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
 	$pattern = '/(AHD ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
