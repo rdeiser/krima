@@ -91,6 +91,10 @@ class AnnexWork extends GrimaTask {
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
 			}
+		} else {
+			$item->addInventoryDate(date("Y-m-d"));
+			$item->updateAlma();
+		}
 		}
 		}
 {

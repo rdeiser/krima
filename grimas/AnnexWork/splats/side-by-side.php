@@ -47,7 +47,7 @@ if ($item['statistics_note_3'] == 'AHD HALE return') {
 		$text = '';
 	} else {
 		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
+		$replace = 'HALE return';
 		$style = 'style=";"';
 		$text = '';
 	}
