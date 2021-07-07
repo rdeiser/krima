@@ -96,7 +96,6 @@ class AnnexWork extends GrimaTask {
 			$item->updateAlma();
 		}
 		}
-		}
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
