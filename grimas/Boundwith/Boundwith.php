@@ -32,9 +32,11 @@ class Boundwith extends GrimaTask {
 			$this->biblist[0]->appendfield("948"," "," ",array(
 				'a' => "m:red",
 				'd' => "07/2021"
+				)
 				);
 				$this->biblist[0]->appendfield("948"," "," ",array(
 				'z' => "send to rdamarz"
+				)
 				);
 			$bib->updateAlma();
 		}
