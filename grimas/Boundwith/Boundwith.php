@@ -12,6 +12,16 @@ class Boundwith extends GrimaTask {
 		foreach ($this->bibs as $mmsid) {
 			$bib = new Bib();
 			$bib->loadFromAlma($mmsid);
+			$bib->appendfield("948"," "," ",array(
+				'a' => "m:red",
+				'd' => "07/2021"
+				)
+				);
+			$bib->appendfield("948"," "," ",array(
+				'z' => "send to rdamarz"
+				)
+				);
+			$bib->updateAlma();
 			$this->biblist[] = $bib;
 		}
 
@@ -29,16 +39,6 @@ class Boundwith extends GrimaTask {
 			if (!in_array($title,$arrfor501)) {
 				$arrfor501[] = $title;
 			}
-			/*$this->biblist[0]->appendfield("948"," "," ",array(
-				'a' => "m:red",
-				'd' => "07/2021"
-				)
-				);
-			$this->biblist[0]->appendfield("948"," "," ",array(
-				'z' => "send to rdamarz"
-				)
-				);*/
-			$bib->updateAlma();
 		}
 
 		foreach ($this->biblist as $bib) {
@@ -52,28 +52,28 @@ class Boundwith extends GrimaTask {
 			$my501text = preg_replace("/; $/",".",$my501text);
 			$bib->appendField("501"," "," ",array('a' => $my501text));
 			$bib->deleteField("501");
-			$this->biblist[0]->appendfield("948"," "," ",array(
-				'a' => "m:red",
-				'd' => "07/2021"
-				)
-				);
-			$this->biblist[0]->appendfield("948"," "," ",array(
-				'z' => "send to rdamarz"
-				)
-				);
 			$bib->updateAlma();
 		}
 
 		## HOLDING
 		$this->biblist[0]->getHoldings();
+		if (count($bib->holdings) = 0) {
+			$holding = new Holding();
+			$holding->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
+			$holding['library_code'] = 'MAIN';
+			$holding['location_code'] = 'main';
+			$holding->setCallNumber($callno[0],$callno[1],0);
+			$holding->addToAlmaBib($bib['mms_id']);
+		} else {
 		$mfhd = $this->biblist[0]->holdings[0];
-
-		foreach ($this->biblist as $k => $bib) {
+		$mfhd->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
+		/*foreach ($this->biblist as $k => $bib) {
 			if ($k > 0) {
 				$mfhd->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
 			}
-		}
+		}*/
 		$mfhd->updateAlma();
+		}
 
 		$this->splatVars['width'] = 12;
 		$this->splatVars['biblist'] = $this->biblist;
