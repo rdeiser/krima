@@ -29,15 +29,15 @@ class Boundwith extends GrimaTask {
 			if (!in_array($title,$arrfor501)) {
 				$arrfor501[] = $title;
 			}
-			$this->biblist[0]->appendfield("948"," "," ",array(
+			/*$this->biblist[0]->appendfield("948"," "," ",array(
 				'a' => "m:red",
 				'd' => "07/2021"
 				)
 				);
-				$this->biblist[0]->appendfield("948"," "," ",array(
+			$this->biblist[0]->appendfield("948"," "," ",array(
 				'z' => "send to rdamarz"
 				)
-				);
+				);*/
 			$bib->updateAlma();
 		}
 
