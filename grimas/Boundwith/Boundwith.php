@@ -41,7 +41,7 @@ class Boundwith extends GrimaTask {
 			$bib->updateAlma();
 		}
 
-		/*foreach ($this->biblist as $bib) {
+		foreach ($this->biblist as $bib) {
 			$my501text = "Bound with: ";
 			$skip = $bib->get_title_proper();
 			foreach ($arrfor501 as $title) {
@@ -52,8 +52,17 @@ class Boundwith extends GrimaTask {
 			$my501text = preg_replace("/; $/",".",$my501text);
 			$bib->appendField("501"," "," ",array('a' => $my501text));
 			$bib->deleteField("501");
+			$this->biblist[0]->appendfield("948"," "," ",array(
+				'a' => "m:red",
+				'd' => "07/2021"
+				)
+				);
+			$this->biblist[0]->appendfield("948"," "," ",array(
+				'z' => "send to rdamarz"
+				)
+				);
 			$bib->updateAlma();
-		}*/
+		}
 
 		## HOLDING
 		$this->biblist[0]->getHoldings();
