@@ -58,6 +58,7 @@ class Boundwith extends GrimaTask {
 		## HOLDING
 		$this->biblist[0]->getHoldings();
 		if (count($bib->holdings) = 0) {
+			continue;
 			$holding = new Holding();
 			$holding->appendField("014","1"," ",array('x' => 'BOUNDWITH'));
 			$holding['library_code'] = 'MAIN';
