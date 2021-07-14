@@ -40,7 +40,7 @@
 td {
 	display: flex;
 	flex-wrap: wrap;
-}
+}*/
 
 label {
 	font-weight: bold;
@@ -56,4 +56,4 @@ h1 {
 	border-radius: 0.1em;
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
-}*/
+}

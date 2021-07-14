@@ -29,9 +29,10 @@ class Boundwith extends GrimaTask {
 			if (!in_array($title,$arrfor501)) {
 				$arrfor501[] = $title;
 			}
+			$bib->updateAlma();
 		}
 
-		foreach ($this->biblist as $bib) {
+		/*foreach ($this->biblist as $bib) {
 			$my501text = "Bound with: ";
 			$skip = $bib->get_title_proper();
 			foreach ($arrfor501 as $title) {
@@ -43,7 +44,7 @@ class Boundwith extends GrimaTask {
 			$bib->appendField("501"," "," ",array('a' => $my501text));
 			$bib->deleteField("501");
 			$bib->updateAlma();
-		}
+		}*/
 
 		## HOLDING
 		$this->biblist[0]->getHoldings();

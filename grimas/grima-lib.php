@@ -1175,8 +1175,8 @@ class Grima {
  * @param string $job_id ID
  * @return Job submission details
 */
-
-function postJob($job_id,$op) {
+/**PRODUCTION**/
+/*	function postJob($job_id,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
 <job link="string">
 	<creator></creator>
@@ -1204,10 +1204,10 @@ function postJob($job_id,$op) {
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
-	}
+	}*/
 
-/**SANDBOX**
-	/*function postJob($job_id,$op) {
+/**SANDBOX**/
+	function postJob($job_id,$op) {
 		$body = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?' .'>
 <job link="string">
 	<creator></creator>
@@ -1235,7 +1235,7 @@ function postJob($job_id,$op) {
 		$this->checkForErrorMessage($ret);
 		return $ret;
 
-	}*/
+	}
 
 // }}}
 
