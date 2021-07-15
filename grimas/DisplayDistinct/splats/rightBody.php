@@ -32,7 +32,7 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location'] !== 'overplus' || $item['location'] !== 'dowref' ) {
+if ($item['location_code'] !== 'overplus' || $item['location_code'] !== 'dowref' || $item['location_code'] !== 'micref' || $item['location_code'] !== 'ref') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
