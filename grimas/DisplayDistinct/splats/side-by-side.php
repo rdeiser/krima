@@ -64,7 +64,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			//$text = 'Send to Problem Shelf';
 	}
-	if ($item['location'] !== 'overplus') || ($item['location'] !== 'dowref') || ($item['location'] !== 'micref') || ($item['location'] !== 'ref') {
+	if ($item['location'] !== 'overplus' || $item['location'] !== 'dowref' || $item['location'] !== 'micref' || $item['location'] !== 'ref') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'Send to Problem Shelf';
