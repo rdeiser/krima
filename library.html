@@ -44,7 +44,7 @@
 
 <h3 id="hale-refill-workflow">Hale Refill Workflow</h3>
 <ul>
-  <li><a href="grimas/DisplayItem/DisplayItem.php">Unboxing Workflow Scan In Items</a>***Currently set for MAIN ONLY***– updates Inventory Date with date of scan and displays Item Information</li><!--
+  <!--<li><a href="grimas/DisplayItem/DisplayItem.php">Unboxing Workflow Scan In Items</a>***Currently set for MAIN ONLY***– updates Inventory Date with date of scan and displays Item Information</li>
   <li><a href="grimas/UnboxingWorkflow/UnboxingWorkflow.php">UnboxingWorkflow</a> – adds Date in Internal Note 3, Inventory Number and Inventory Date and displays Item Information</li>
   <li><a href="grimas/DisplayItem/DisplayItem.php">DisplayItem</a> – displays Item information for Unboxing work flow minus inventory date</li>-->
   <!--<li><a href="grimas/DisplayItempp/DisplayItempp.php">Unboxing Workflow Scan In Items with Popup</a> – updates Inventory Date with date of scan and displays Item Information</li>-->
@@ -52,12 +52,13 @@
   <li><a href="grimas/AnnexWork/AnnexWork.php">Annex Transfer--Update Holdings</a> - updates Item Record Inventory Date with date of scan and displays expanded Item Record Information.  This Grima will modify the Holdings Record in the same way as the Alma Normalization Process if the Stat 3 is AHD ANNEX/ANNEX ingest and the permanent physical location is main</li>
   <li><a href="grimas/DisplayCD/DisplayCD.php">Unboxing for for CD Collection Only</a>– updates Inventory Date with date of scan and displays Item Information.</li>
   <li><a href="grimas/DisplayCDover/DisplayCDover.php">Unboxing for for CD OVERSIZE Collection Only</a>– updates Inventory Date with date of scan and displays Item Information.</li>
-  <li><a href="grimas/BatchItems/BatchItems.php">Batch Item Record Creation</a> - Holdings ID Number Input - Adds inventory date 01/01/1976 and modifies Statstics Note 2 and Statstics Note 3</li>
+  <li><a href="grimas/DisplayMediaover/DisplayMediaover.php">Unboxing for for Media Oversize Collection Only</a>– updates Inventory Date with date of scan and displays Item Information.</li>
   <!--<li><a href="grimas/BatchItemsMMS/BatchItemsMMS.php">Single Item Record creation with mmsid and holdingsid</a> - For newly created Holdings Records</li>-->
   <h4 id="batch-item-record-creation">Simulates Alma Jobs for AS Decisions</h4>
 <ul>
   <li><a href="grimas/ASDecisions/ASDecisions.php">Change Physical Items Job</a> - Adds inventory date 01/01/1976 and modifies Statstics Note 2 and Statstics Note 3</li>
   <li><a href="grimas/WithdrawLibrary/WithdrawLibrary.php">Change Physical Holdings Job</a> - Simulates Unboxing Normalization Rule</li>
+  <li><a href="grimas/BatchItems/BatchItems.php">Batch Item Record Creation</a> - Holdings ID Number Input - Adds inventory date 01/01/1976 and modifies Statstics Note 2 and Statstics Note 3</li>
 </ul>
 </ul>
 <!--<h3 id="batch-item-record-creation">Batch Item Record Creation</h3>
@@ -141,6 +142,15 @@
   <li><a href="grimas/ViewXmlHolding/ViewXmlHolding.php">ViewXmlHolding</a> – view Holding record as Holding object XML</li>
   <li><a href="grimas/ViewXmlItem/ViewXmlItem.php">ViewXmlItem</a> – view Item record as Item object XML</li>
   <li><a href="grimas/ViewXmlPortfolio/ViewXmlPortfolio.php">ViewXmlPortfolio</a> – view Portfolio record as Electronic Portfolio object XML</li>
+</ul>
+
+<h3 id="view-xml-for-development-or-debugging">Previous Unboxing Grimas for distinct locations</h3>
+<ul>
+  <li><a href="grimas/DisplayMicFilm/DisplayMicFilm.php">Unboxing for Microfilm Only</a> – updates Inventory Date with date of scan and displays Item Information.</li>
+  <li><a href="grimas/DisplayMedia/DisplayMedia.php">Unboxing for for Media Collection Only</a>– updates Inventory Date with date of scan and displays Item Information.</li>
+  <li><a href="grimas/DisplayMediaover/DisplayMediaover.php">Unboxing for for Media Oversize Collection Only</a>– updates Inventory Date with date of scan and displays Item Information.</li>
+  <li><a href="grimas/DisplayKUGov/DisplayKUGov.php">Unboxing for KU Requested Government Documents</a> – updates Inventory Date with date of scan and displays item destination.</li>
+  <li><a href="grimas/DisplayGovKS/DisplayGovKS.php">Unboxing for Kansas Government Documents</a> – updates Inventory Date with date of scan and displays item destination.</li>
 </ul>
 
       </section>
