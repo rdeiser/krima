@@ -18,10 +18,10 @@ class ASDecisions extends GrimaTask {
 			//$item->loadFromAlmaBarcode($barcode);
 			$item->loadFromAlmaBCorX($barcode);
 			
-			//$item->addInventoryDate(date("Y-m-d"));
-			if ($item['inventory_date'] == '') {
+			$item->addInventoryDate(date("Y-m-d"));
+			/*if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
-			}
+			}*/
 			//unset($item['barcode']);
 			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
