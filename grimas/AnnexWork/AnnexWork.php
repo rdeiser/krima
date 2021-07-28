@@ -38,8 +38,8 @@ class AnnexWork extends GrimaTask {
 					$holding->set008p25("0");*/
 					$holding['library_code'] = 'ANNEX';
 					$holding['location_code'] = 'annex';
+					$holding->updateAlma();
 				}
-				$holding->updateAlma();
 				
 				$item = new Item();
 				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
@@ -79,8 +79,8 @@ class AnnexWork extends GrimaTask {
 					$holding->setH008("2","8","4","001","a","a","   ","0");
 					$holding['library_code'] = 'ANNEX';
 					$holding['location_code'] = 'govstorks';
+					$holding->updateAlma();
 				}
-				$holding->updateAlma();
 				
 				$item = new Item();
 				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
