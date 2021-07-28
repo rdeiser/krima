@@ -1,6 +1,16 @@
 <table class="marc">
 <?php
 	$xpath = new DomXPath($marc->xml);
+	$fields = $xpath->query("//record/leader");
+?>
+<?php	foreach ($fields as $field): ?>
+  <tr>
+    <td class="text-right tag control pr-2">ldr</td>
+    <td colspan="2" class="field control"><?= $e($field->nodeValue) ?></td>
+  </tr>
+<?php	endforeach ?>
+<?php
+	$xpath = new DomXPath($marc->xml);
 	$fields = $xpath->query("//record/controlfield");
 ?>
 <?php	foreach ($fields as $field): ?>
