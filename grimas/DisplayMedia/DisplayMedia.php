@@ -16,6 +16,7 @@ class DisplayMedia extends GrimaTask {
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
 		unset($item['temp_policy']);
+		unset($item['process_type']);
 		//unset($item['alt_number_source']);
 		//$item['due_back_date'] = '';
 		if (!empty($item['due_back_date'])) {
