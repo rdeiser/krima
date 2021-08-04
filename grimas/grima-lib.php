@@ -3584,7 +3584,7 @@ class Item extends AlmaObject {
 		'alternative_call_number_type' => '//alternative_call_number_type',
 		'storage_location_id' => '//storage_location_id',
 		'receiving_operator' => '//receiving_operator',
-		'process_type' => '//process_type',
+		'process_type' => '//process_type/@desc',
 		'in_temp_location' => '//in_temp_location',
  		'mms_id' => '//mms_id',
 		'holding_id' => '//holding_id',
