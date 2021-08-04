@@ -3800,7 +3800,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			$imissings[0]->appendChild($imissing);
 		}
 	}
-	
+	/*
 	function deleteBarcode($barcode) {
 		$xpath = new DomXpath($this->xml);
 		$barcodex = $xpath->query("//item_data[@barcode='$barcode']");//"//item_data/barcode"
