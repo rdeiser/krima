@@ -3790,17 +3790,17 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  * @brief Removes MISSING type
  * @param Process type
  */
-	function toggleMissing($missing) {
+	function toggleMissing($process_code, $missing) {
 		$xpath = new DomXpath($this->xml);
 		$imissings = $xpath->query("//item_data/process_type[@desc='$missing']");
 	
 		foreach ($imissings as $imissing){
 			//$imissing->parentNonde->removeChild($missing);
-			$imissing->appendField($missing);
+			$imissing->appendField($process_code, $missing);
 			$imissings[0]->appendChild($imissing);
 		}
 	}
-	/*
+	
 	function deleteBarcode($barcode) {
 		$xpath = new DomXpath($this->xml);
 		$barcodex = $xpath->query("//item_data[@barcode='$barcode']");//"//item_data/barcode"
