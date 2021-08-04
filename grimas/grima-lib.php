@@ -3785,54 +3785,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}*/
 // }}}
 
-// {{{Item -> Toggle MISSING Process Type
-/**
- * @brief Removes MISSING type
- * @param Process type
- */
-	function toggleMissing($process_code, $missing) {
-		$xpath = new DomXpath($this->xml);
-		$imissings = $xpath->query("//item_data/process_type[@desc='$missing']");
-	
-		foreach ($imissings as $imissing){
-			//$imissing->parentNonde->removeChild($missing);
-			$imissing->appendField($process_code, $missing);
-			$imissings[0]->appendChild($imissing);
-		}
-	}
-	/*
-	function deleteBarcode($barcode) {
-		$xpath = new DomXpath($this->xml);
-		$barcodex = $xpath->query("//item_data[@barcode='$barcode']");//"//item_data/barcode"
-		foreach( $barcodex as $barcode) {
-			$barcode->parentNode->removeChild($barcode);
-		}
-	}
-	
-	function changeItemLibrary($library_code, $library) {
-		$xpath = new DomXpath ($this-xml);
-		$ilibraries = $xpath->query("//item_data/library[@desc='$library']");
-		
-		foreach ($ilibraries as $ilibrary) {
-			$ilibrary->appendField($library_code, $library);
-			$ilibraries[0]->appendChild($ilibrary);
-		}
-	
-	
-	function setHldr($chr5,$chr6,$chr17,$chr18) {
-		$xpath = new DomXpath($this->xml);
-		$chrs = $xpath->query("//record/leader");
-		foreach ($chrs as $chr) {
-		$replace1=substr_replace($chr->nodeValue,$chr5,5,1);
-		$replace2=substr_replace($replace1,$chr6,6,1);
-		$replace3=substr_replace($replace2,$chr17,17,1);
-		$replace4=substr_replace($replace3,$chr18,18,1);
-		$chr->nodeValue = $replace4;
-		}
-	}*/
-	
-// }}}
-
 // {{{Item -> changeItemLibrary($library_code, $library)--red 07/2020
 /**
  * @brie changes the Physical Item's location from the Item Record
