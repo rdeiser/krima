@@ -16,8 +16,6 @@ class DisplayMedia extends GrimaTask {
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
 		unset($item['temp_policy']);
-		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
-		$item['process_type'] = '';
 		//unset($item['alt_number_source']);
 		//$item['due_back_date'] = '';
 		if (!empty($item['due_back_date'])) {
@@ -26,6 +24,9 @@ class DisplayMedia extends GrimaTask {
 
 		$item->updateAlma();
 		}
+		$this->item = new Item();
+		$this->item->loadFromAlmaX($item['item_pid']);
+		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
