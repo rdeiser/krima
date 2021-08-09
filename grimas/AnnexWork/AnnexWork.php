@@ -15,7 +15,7 @@ class AnnexWork extends GrimaTask {
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 
 			if ($this['location'] == 'annex') {
-				if ($holding['location_code'] == 'main') {
+				if ($holding['location_code'] == 'main' || $holding['location_code'] == 'nich') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
 					$holding->setFieldindicators("852","0","0");
