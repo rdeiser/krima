@@ -9,7 +9,7 @@ class WDGovDocUpdate extends GrimaTask {
 		$item = new Item();
 		$item->loadFromAlmaBCorX($this['barcode']);
 		$item['inventory_date'] = date("Y-m-d");
-		if($item['location_code'] == 'main') {
+		if($item['library_code'] == 'ANNEX') {
 			$item['library_code'] = 'WITHDRAW';
 			$item['location_code'] = 'wdgov';
 		}
