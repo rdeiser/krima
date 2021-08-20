@@ -3131,6 +3131,19 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			appendInnerXML($field852,"<subfield code=\"i\">$i</subfield>");
 		}
 	}
+	
+	function setMapCallNumber($h,$ind1) {
+		$xpath = new DomXpath($this->xml);
+		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind1",$ind1);
+
+		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
+		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
+		foreach ($subfieldHs as $subfieldH) {
+			$subfieldH->parentNode->removeChild($subfieldH);
+		}
+
+		appendInnerXML($field852,"<subfield code=\"h\">$h</subfield>");
+	}
 
 // {{{ moveToBib - moves a holding from one bib to another
 /**
