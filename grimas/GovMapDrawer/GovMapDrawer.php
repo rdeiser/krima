@@ -21,7 +21,7 @@ class GovMapDrawer extends GrimaTask {
 						}
 					}
 				}
-				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} to: {$holding->HoldingsListEntry['call_number']}");
 				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
 				/*function print_success() {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
