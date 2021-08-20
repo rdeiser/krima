@@ -15,8 +15,36 @@ class GovMapDrawer extends GrimaTask {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
 				if ($this['whichnote'] == 'govmap'){
 					if ($holding['location_code'] == $this['whichnote']) {
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 166') {
-							$holding->setCallNumber('Drawer 357','','8');
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 103') {
+							$holding->setCallNumber('Drawer 345','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 104') {
+							$holding->setCallNumber('Drawer 346','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 105') {
+							$holding->setCallNumber('Drawer 347','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 106') {
+							$holding->setCallNumber('Drawer 348','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 107') {
+							$holding->setCallNumber('Drawer 349','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 108') {
+							$holding->setCallNumber('Drawer 350','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 109') {
+							$holding->setCallNumber('Drawer 351','','8');
+							$holding->updateAlma();
+						}
+						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 110') {
+							$holding->setCallNumber('Drawer 352','','8');
 							$holding->updateAlma();
 						}
 					}
