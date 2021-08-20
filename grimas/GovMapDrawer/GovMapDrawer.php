@@ -27,7 +27,8 @@ class GovMapDrawer extends GrimaTask {
     do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
 }*/
 			} else {
-				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
+				$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
+				continue;
 			}
 			$this->holdinglist[] = $holding;
 		}
