@@ -19,7 +19,7 @@ class GovMapDrawer extends GrimaTask {
 					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} to: {$holding->HoldingsListEntry['call_number']}");
 				} else {
 					$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
-					continue;
+					
 				}
 			}
 		}
