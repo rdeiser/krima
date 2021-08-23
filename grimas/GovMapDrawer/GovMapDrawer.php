@@ -22,6 +22,7 @@ class GovMapDrawer extends GrimaTask {
 					
 				}
 			}
+			$this->holdinglist[] = $holding;
 		}
 	}
 }
