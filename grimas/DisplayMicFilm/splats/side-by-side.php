@@ -79,7 +79,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 		if ($item['statistics_note_3'] == 'HALE return') {
 			$pattern = '/(HALE return)/';
 			$replace = 'HALE BASEMENT return';
-			$style = 'style="background-color: #008000;"';
+			$style = 'style="background-color: #FF10F0;"';
 			}
 	}
 
