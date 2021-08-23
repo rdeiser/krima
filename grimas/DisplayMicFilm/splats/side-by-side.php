@@ -74,6 +74,12 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
+	} else if ($item['location'] == 'mic' && $item['call_number'] = 'MICROFILM NEWSPAPER') {
+		if ($item['statistics_note_3'] == 'HALE return') {
+			$pattern = '/(HALE return)/';
+			$replace = 'HALE BASEMENT return';
+			$style = 'style="background-color: #008000;"';
+			}
 	}
 
 	$holding = new Holding();
