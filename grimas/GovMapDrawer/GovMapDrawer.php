@@ -13,40 +13,22 @@ class GovMapDrawer extends GrimaTask {
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				if ($this['whichnote'] == 'govmap' || $holding->HoldingsListEntry['call_number'] = 'Drawer 103'){
-					if ($holding['location_code'] == $this['whichnote']) {
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 103') {
-							$holding->setCallNumber('Drawer 345','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 104') {
-							$holding->setCallNumber('Drawer 346','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 105') {
-							$holding->setCallNumber('Drawer 347','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 106') {
-							$holding->setCallNumber('Drawer 348','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 107') {
-							$holding->setCallNumber('Drawer 349','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 108') {
-							$holding->setCallNumber('Drawer 350','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 109') {
-							$holding->setCallNumber('Drawer 351','','8');
-							$holding->updateAlma();
-						}
-						if ($holding->HoldingsListEntry['call_number'] = 'Drawer 110') {
-							$holding->setCallNumber('Drawer 352','','8');
-							$holding->updateAlma();
-						}
+				if ($holding['location_code'] == $this['whichnote'] && $holding->HoldingsListEntry['call_number'] = 'Drawer 103'){
+					$holding->setCallNumber('Drawer 345','','8');
+					$holding->updateAlma();
+					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} to: {$holding->HoldingsListEntry['call_number']}");
+				} else {
+					$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
+					continue;
+				}
+				if ($holding['location_code'] == $this['whichnote'] && $holding->HoldingsListEntry['call_number'] = 'Drawer 104'){
+					$holding->setCallNumber('Drawer 346','','8');
+					$holding->updateAlma();
+				}
+				if ($holding['location_code'] == $this['whichnote'] && $holding->HoldingsListEntry['call_number'] = 'Drawer 105'){
+					$holding->setCallNumber('Drawer 347','','8');
+					$holding->updateAlma();
+				}
 					}
 				}
 				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} to: STOP");
