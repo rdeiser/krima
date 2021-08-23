@@ -31,7 +31,7 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
-if ($item['location'] !== 'microfilm') {
+if ($item['location'] !== 'microfilm' && $item['call_number'] = 'MICROFILM NEWSPAPER') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
