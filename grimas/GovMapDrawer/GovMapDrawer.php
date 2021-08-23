@@ -18,11 +18,11 @@ class GovMapDrawer extends GrimaTask {
 						$holding->setCallNumber('Drawer 345','','8');
 						$holding->updateAlma();
 					}
-					if ($holding->HoldingsListEntry['call_number'] == 'Drawer 104') {
+					if ($holding->HoldingsListEntry['call_number'] == '104') {
 						$holding->setCallNumber('Drawer 346','','8');
 						$holding->updateAlma();
 					}
-					if ($holding->HoldingsListEntry['call_number'] == 'Drawer 105') {
+					if ($holding->HoldingsListEntry['call_number'] == '105') {
 						$holding->setCallNumber('Drawer 347','','8');
 						$holding->updateAlma();
 					}
