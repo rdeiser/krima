@@ -13,13 +13,12 @@ class GovMapDrawer extends GrimaTask {
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				if ($this['whichnote'] == 'govmap'){
-					$xpath = new DomXpath ($this->xml);
-					$callnumber = $xpath->query("//record/datafield[@tag='852']/subfield[@code='h']");
-					if ($holding['location_code'] = $this['whichnote'] && $callnumber = $this['olddrawer']) {
-						$holding->setCallNumber('$this['newdrawer']','','8');
-						$holding->updateAlma();
-					}
+				$xpath = new DomXpath ($this->xml);
+				$callnumber = $xpath->query("//record/datafield[@tag='852']/subfield[@code='h']");
+				if ($holding['location_code'] = $this['whichnote'] && $callnumber = $this['olddrawer']) {
+					$holding->setCallNumber($this['newdrawer'],'','8');
+					$holding->updateAlma();
+				}
 				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid}");
 			} else {
 				$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
