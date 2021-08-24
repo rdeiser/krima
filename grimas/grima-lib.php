@@ -3060,7 +3060,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 		//$mms_id = Holding::getMmsFromHoldingID($holding_id);
 		$this->xml = $grima->getHolding($holding_id,$holding_id);
-		$this['mms_id'] = $holding_id;
+		$this['mms_id'] = $mms_id;
 	}
 // }}}
 
@@ -3132,26 +3132,18 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 	
-	function setMapCallNumber($c,$ho,$hn,$ind1,$ind2) {
+	function setMapCallNumber($h,$ind1) {
 		$xpath = new DomXpath($this->xml);
 		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind1",$ind1);
-		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind2",$ind2);
 
 		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
-		$subfieldCs = $xpath->query("subfield[@code='c']",$field852);
-		foreach ($subfieldCs as $subfieldC) {
-			if ($subfieldC->nodeValue = $c) {
-			continue;
-			} else {
-				addMessage('error',"Holdings record location is not in {$c}");
-			}
 		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 		foreach ($subfieldHs as $subfieldH) {
 			$subfieldH->parentNode->removeChild($subfieldH);
-			}
-			appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
-			}
 		}
+
+		appendInnerXML($field852,"<subfield code=\"h\">$h</subfield>");
+	}
 
 // {{{ moveToBib - moves a holding from one bib to another
 /**
@@ -3221,6 +3213,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 */
 // }}}
 
+}
 
 // }}}
 // {{{ class Itemnbc -- red 07/2020 current  does not add <barcode></barcode> to the payload
