@@ -10,6 +10,18 @@
 	<option value="govmap">govmap</option>
 	<option value="govoffmap">govoffmap</option>
 	</Field>
+	<Field
+		name="olddrawer"
+		label="Old Drawer Number"
+		required="yes"
+		placeholder="Old Drawer Number"
+		/>
+	<Field
+		name="newdrawer"
+		label="New Drawer Number"
+		required="yes"
+		placeholder="New Drawer Number"
+	/>
     <Field
         name="holding_id"
         label="Bibs with holdings without items"
