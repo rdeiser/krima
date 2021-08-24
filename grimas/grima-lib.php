@@ -3142,8 +3142,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		foreach ($subfieldCs as $subfieldC) {
 			if ($subfieldC->nodeValue = $c) {
 			continue;
-			} else {
-				addMessage('error',"Holdings record location is not in {$c}");
 			}
 		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 		foreach ($subfieldHs as $subfieldH) {
