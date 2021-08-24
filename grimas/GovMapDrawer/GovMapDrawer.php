@@ -20,7 +20,8 @@ class GovMapDrawer extends GrimaTask {
 				$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 				if ($subfieldC->nodeValue = $this['whichnote'] && $subfieldHs->nodeValue = $this['olddrawer']) {
 					$subfieldHs->parentNode->removeChild($subfieldHs);
-					$holding->appendInnerXML($field852,"<subfield code=\"h\">$this['newdrawer']</subfield>");
+					
+					appendInnerXML($field852,"<subfield code=\"h\">$h</subfield>");
 				}
 				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid}");
 			} else {
