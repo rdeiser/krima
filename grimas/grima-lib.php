@@ -3138,9 +3138,19 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind2",$ind2);
 
 		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
+		$subfieldCs = $xpath->query("subfield[@code='c']",$field852);
+		foreach ($subfieldCs as $subfieldC) {
+			if ($subfieldC->nodeValue != $c) {
+			break;
+			} else {
+				continue;
+			}
 		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 		foreach ($subfieldHs as $subfieldH) {
-			$subfieldH->parentNode->removeChild($subfieldH);
+			if ($subfieldH->nodeValue != $ho) {
+				break;
+			} else {
+				$subfieldH->parentNode->removeChild($subfieldH);
 			}
 			appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
 			}
