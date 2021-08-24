@@ -12,7 +12,8 @@ class GovMapDrawer extends GrimaTask {
 			$holding = new Holding();
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
-				$holding->loadFromAlma($this['mms_id'],$holdingid);
+				//$holding->loadFromAlma($this['mms_id'],$holdingid);
+				$holding->loadFromAlmaX($holdingid);
 				$xpath = new DomXpath ($this->xml);
 				$callnumber = $xpath->query("//record/datafield[@tag='852']/subfield[@code='h']");
 				if ($holding['location_code'] = $this['whichnote'] && $callnumber = $this['olddrawer']) {
