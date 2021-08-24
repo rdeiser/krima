@@ -3152,7 +3152,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 				break;
 			} else {
 				//$subfieldH->parentNode->removeChild($subfieldH);
-				$subfieldH->nodeValue = $hn
+				$subfieldH->nodeValue = $hn;
 			}
 			//appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
 		}
