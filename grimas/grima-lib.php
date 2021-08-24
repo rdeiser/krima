@@ -3138,13 +3138,18 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind2",$ind2);
 
 		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
-		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 		$subfieldCs = $xpath->query("subfield[@code='c']",$field852);
-		foreach ($subfieldCs as $subfieldC && $subfieldHs as $subfieldH) {
-			if ($subfieldC = $c && $subfieldH = $ho) {
-				$subfieldH->parentNode->removeChild($subfieldH);
-				}
-				appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
+		foreach ($subfieldCs as $subfieldC) {
+			if ($subfieldC = $c) {
+			continue;
+			} else {
+				addMessage('error',"Holdings record location is not in {$c}");
+			}
+		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
+		foreach ($subfieldHs as $subfieldH) {
+			$subfieldH->parentNode->removeChild($subfieldH);
+			}
+			appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
 			}
 		}
 	}
