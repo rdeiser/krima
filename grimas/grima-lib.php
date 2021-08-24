@@ -3145,6 +3145,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			} else {
 				continue;
 			}
+		}
 		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
 		foreach ($subfieldHs as $subfieldH) {
 			if ($subfieldH->nodeValue != $ho) {
@@ -3153,7 +3154,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 				$subfieldH->parentNode->removeChild($subfieldH);
 			}
 			appendInnerXML($field852,"<subfield code=\"h\">$hn</subfield>");
-			}
+		}
 	}
 
 // {{{ moveToBib - moves a holding from one bib to another
