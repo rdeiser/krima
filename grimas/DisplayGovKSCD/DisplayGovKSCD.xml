@@ -1,0 +1,16 @@
+<GrimaForm>
+    <Title>K-State Item Information KS Documents CDs</Title>
+    <Field
+        label="Barcode of unboxed item"
+        name="unboxed_barcode"
+        required="yes"
+        placeholder="Scan barcode..."
+    />
+	<Field
+		name="inventorydate"
+		date-type="all"
+		type="date"
+		required="no"
+		visible="no"
+		/>
+</GrimaForm>
