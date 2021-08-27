@@ -26,9 +26,9 @@ class GovMapDrawer extends GrimaTask {
 				} else {
 				$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
 				continue;
-			}
-			}
+				}
 		}
 	}
+}
 
 GovMapDrawer::RunIt();
