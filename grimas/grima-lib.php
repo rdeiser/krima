@@ -3140,9 +3140,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
 		$subfieldCs = $xpath->query("subfield[@code='c']",$field852);
 		foreach ($subfieldCs as $subfieldC) {
-			if ($subfieldC->nodeValue != $c) {
-			$subfieldC->nodeValue = $c;
-			break;
+			if ($c = 'govoffmap') {
+			$subfieldC->nodeValue = 'govmap';
 			} else {
 				continue;
 			}
