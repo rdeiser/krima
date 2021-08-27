@@ -17,9 +17,8 @@ class GovMapDrawer extends GrimaTask {
 					$holding['call_number'] = 'Drawer 371';
 				}
 				if ($holding['location_code'] = 'govoffmap') {
-					$holding['location_code'] = 'govmap');
+					$holding['location_code'] = 'annex';
 				}
-					
 				//$holding->setMapCallNumber($this['whichnote'],$this['olddrawer'],$this['newdrawer'],'8');
 				$holding->updateAlma();
 				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} with {$holding['call_number']}");
