@@ -3132,10 +3132,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		}
 	}
 	
-	function setMapCallNumber($c,$ho,$hn,$ind1,$ind2) {
+	function setMapCallNumber($c,$ho,$hn,$ind1) {
 		$xpath = new DomXpath($this->xml);
 		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind1",$ind1);
-		$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind2",$ind2);
+		//$xpath->query("//record/datafield[@tag='852']")->item(0)->setAttribute("ind2",$ind2);
 
 		$field852 = $xpath->query("//record/datafield[@tag='852']")->item(0);
 		$subfieldCs = $xpath->query("subfield[@code='c']",$field852);
