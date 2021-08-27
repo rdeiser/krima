@@ -23,5 +23,5 @@ class GovMapDrawer extends GrimaTask {
 			}
 		}
 	}
-}
+
 GovMapDrawer::RunIt();
