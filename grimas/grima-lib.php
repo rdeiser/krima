@@ -2951,6 +2951,7 @@ class Holding extends AlmaObjectWithMARC {
 		'inst_code' => "/holding/record/datafield[@tag='852']/subfield[@code='a']",
 		'library_code' => "/holding/record/datafield[@tag='852']/subfield[@code='b']",
 		'location_code' => "/holding/record/datafield[@tag='852']/subfield[@code='c']",
+		'call_number' => "/holding/record/datafield[@tag='852']/subfield[@code='h']",
 		'suppress_from_publishing' => '//holding/suppress_from_publishing',
 	);
 // }}}
