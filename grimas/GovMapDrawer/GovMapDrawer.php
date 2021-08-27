@@ -13,8 +13,10 @@ class GovMapDrawer extends GrimaTask {
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				$holding->setMapCallNumber($this['whichnote'],$this['olddrawer'],$this['newdrawer'],'8');
-				$holding->updateAlma();
+				if ($this['whichnote'] == $holding['location_code']) {
+					$holding->setMapCallNumber($this['olddrawer'],$this['newdrawer'],'8');
+					$holding->updateAlma();
+				}
 				
 				$this->holding = new Holding();
 				$this->holding->loadFromAlma($this['mms_id'],$holdingid);
