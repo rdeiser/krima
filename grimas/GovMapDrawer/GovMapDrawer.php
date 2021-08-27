@@ -13,10 +13,9 @@ class GovMapDrawer extends GrimaTask {
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				if ($this['whichnote'] = $holding['location']) {
-					$holding->setMapCallNumber($this['olddrawer'],$this['newdrawer'],'8');
-					$holding->updateAlma();
-					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid}");
+				$holding->setMapCallNumber($this['olddrawer'],$this['newdrawer'],'8');
+				$holding->updateAlma();
+				$this->addMessage('success',"Successfully updated map drawer number for {$holdingid}");
 				} else {
 				$this->addMessage('error',"Did not update map drawer number for {$holdingid}");
 				continue;
