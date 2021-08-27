@@ -3142,8 +3142,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		foreach ($subfieldCs as $subfieldC) {
 			if ($c = 'govoffmap') {
 			$subfieldC->nodeValue = 'govmap';
-			} else {
-				continue;
 			}
 		}
 		$subfieldHs = $xpath->query("subfield[@code='h']",$field852);
