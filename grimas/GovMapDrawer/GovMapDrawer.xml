@@ -1,6 +1,6 @@
 <GrimaForm>
     <Title>Gov Map Drawer Change</Title>
-	<!--<Field
+	<Field
 	name="whichnote"
 	label="Alma Map Location"
 	type="select"
@@ -21,7 +21,7 @@
 		label="New Drawer Number"
 		required="yes"
 		placeholder="New Drawer Number"
-	/>-->
+	/>
     <Field
         name="holding_id"
         label="Bibs with holdings without items"
