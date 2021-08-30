@@ -40,7 +40,9 @@ if ($item['location'] !== 'microfilm') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	} elseif ($item['location'] == 'mic') {
+	}
+
+if ($item['location'] == 'mic') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE BASEMENT return';
