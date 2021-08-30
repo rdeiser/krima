@@ -13,19 +13,19 @@ class GovMapDrawer extends GrimaTask {
 			$this['mms_id'] = $holdingid;
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
-				if ($holding['call_number'] == ' Drawer 236 ') {
+				if ($holding['call_number'] == ' Drawer 236') {
 					$holding->setMapCallNumber($this['whichnote'],' Drawer 236 ','Drawer 393','8');
 				
 				//$holding->setMapCallNumber($this['whichnote'],$this['olddrawer'],$this['newdrawer'],'8');
 					$holding->updateAlma();
 					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} with {$holding['call_number']}");
-				} elseif ($holding['call_number'] == ' Drawer 237 ') {
+				} elseif ($holding['call_number'] == ' Drawer 237') {
 					$holding->setMapCallNumber($this['whichnote'],' Drawer 237 ','Drawer 394','8');
 				
 				//$holding->setMapCallNumber($this['whichnote'],$this['olddrawer'],$this['newdrawer'],'8');
 					$holding->updateAlma();
 					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} with {$holding['call_number']}");
-				}elseif ($holding['call_number'] == ' Drawer 238 ') {
+				}elseif ($holding['call_number'] == ' Drawer 238') {
 					$holding->setMapCallNumber($this['whichnote'],' Drawer 238 ','Drawer 395','8');
 				
 				//$holding->setMapCallNumber($this['whichnote'],$this['olddrawer'],$this['newdrawer'],'8');
