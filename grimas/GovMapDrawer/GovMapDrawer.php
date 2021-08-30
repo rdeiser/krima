@@ -27,8 +27,8 @@ class GovMapDrawer extends GrimaTask {
 					$holding->setMapCallNumber($this['whichnote'],' Drawer 238 ','Drawer 395','8');
 					$holding->updateAlma();
 					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} with {$holding['call_number']}");
-				} elseif ($holding['call_number'] == 'Drawer B-46') {
-					$holding->setMapCallNumber($this['whichnote'],'Drawer B-46','Drawer 401','8');
+				} elseif ($holding['call_number'] == ' Drawer B-46') {
+					$holding->setMapCallNumber($this['whichnote'],'  Drawer B-46  ','Drawer 401','8');
 					$holding->updateAlma();
 					$this->addMessage('success',"Successfully updated map drawer number for {$holdingid} with {$holding['call_number']}");
 				} elseif ($holding['call_number'] == 'Drawer B-220') {
