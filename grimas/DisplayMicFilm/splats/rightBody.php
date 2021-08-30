@@ -41,7 +41,7 @@ if ($item['location'] !== 'microfilm' and $item['call_number'] != 'corn') {
 			$style = 'style=";"';
 		}
 	}
-if ($item['location'] == 'mic' and $item['call_number'] = 'ice cream') {
+if ($item['location'] == 'mic' && $item['call_number'] = 'ice cream') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE BASEMENT return';
