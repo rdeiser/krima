@@ -31,7 +31,7 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
-if ($item['location'] !== 'microfilm' and $item['call_number'] != 'corn') {
+if ($item['location'] !== 'microfilm' && $item['call_number'] != 'NEWSPAPER') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'Send to Problem Shelf';
@@ -40,8 +40,7 @@ if ($item['location'] !== 'microfilm' and $item['call_number'] != 'corn') {
 			$replace = 'Send to Problem Shelf';
 			$style = 'style=";"';
 		}
-	}
-if ($item['location'] == 'mic' && $item['call_number'] = 'ice cream') {
+	} elseif ($item['location'] == 'mic' && $item['call_number'] = 'NEWSPAPER2') {
 	if ($item['statistics_note_3'] == 'HALE return') {
 		$pattern = '/(HALE return)/';
 		$replace = 'HALE BASEMENT return';
