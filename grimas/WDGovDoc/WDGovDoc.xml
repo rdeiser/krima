@@ -7,9 +7,9 @@
 	required="yes"
 	placeholder="Stat 3 Note"
 	>
-	<option value="NOT KU FDLP REQUEST">NOT KU FDLP REQUEST</option>
-	<option value="KU FDLP REQUEST">KU FDLP REQUEST</option>
 	<option value="GOV UNBOXING review">GOV UNBOXING review</option>
+	<option value="KU FDLP REQUEST">KU FDLP REQUEST</option>
+	<option value="NOT KU FDLP REQUEST">NOT KU FDLP REQUEST</option>
 	</Field>
 	<Field
 		name="holding_id"
