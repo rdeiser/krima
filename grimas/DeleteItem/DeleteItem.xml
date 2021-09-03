@@ -6,5 +6,6 @@
 		autocomplete="off"
 		required="yes"
 		placeholder="Item identifier or barcode..."
+		row="5"
 	/>
 </GrimaForm>
