@@ -18,10 +18,10 @@ class ASDecisions extends GrimaTask {
 			//$item->loadFromAlmaBarcode($barcode);
 			$item->loadFromAlmaBCorX($barcode);
 			
-			$item->addInventoryDate(date("Y-m-d"));
-			/*if ($item['inventory_date'] == '') {
+			//$item->addInventoryDate(date("Y-m-d"));
+			if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
-			}*/
+			}
 			//unset($item['barcode']);
 			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
@@ -32,6 +32,13 @@ class ASDecisions extends GrimaTask {
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}*/
+			if ($this['whicnote']=='WDGOV Locations'){
+				$item['statistics_note_1'] = 'WITHDRAWN';
+				if($item['location_code'] == 'govmindex') {
+					$item['library_code'] = 'WITHDRAW';
+					$item['location_code'] = 'wgovmindex';
+				}
+			}
 			if ($this['whichnote']=='PHYSICAL CONDITION REVIEW For Possible Withdraw'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}
