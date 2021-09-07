@@ -47,8 +47,8 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
 			
-			/*$item['statistics_note_3'] = $this['whichnote'];
-			if ($item['statistics_note_3'] == '') {
+			$item['statistics_note_3'] = $this['whichnote'];
+			/*if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}*/
 			if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
