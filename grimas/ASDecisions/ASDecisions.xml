@@ -29,6 +29,7 @@
 	required="yes"
 	placeholder="Unboxing Note"
 	>
+	<option>WDGOV Locations</option>
 	<option value="PHYSICAL CONDITION REVIEW For Possible Withdraw">PHYSICAL CONDITION REVIEW</option>
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
