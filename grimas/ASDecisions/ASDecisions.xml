@@ -47,5 +47,6 @@
         autocomplete="off"
         required="yes"
         placeholder="Barcodes, one per line."
+		rows="5"
 	/>
 </GrimaForm>
