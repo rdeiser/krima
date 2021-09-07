@@ -32,7 +32,7 @@ class ASDecisions extends GrimaTask {
 			if ($this['whichnote']=='AHD To be WITHDRAWN'){
 				$item['statistics_note_3'] = $this['whichnote'];
 			}*/
-			if ($this['whicnote']=='WDGOV Locations'){
+			if ($this['whichnote']=='WDGOV Locations'){
 				$item['statistics_note_1'] = 'WITHDRAWN';
 				if($item['location_code'] == 'govmindex') {
 					$item['library_code'] = 'WITHDRAW';
