@@ -2,51 +2,31 @@
 if ($item['statistics_note_3'] == 'Condition review--REPAIR') {
 	$pattern = '/(Condition review--REPAIR)/';
 	$replace = 'REPAIR';
+	$style = 'style="background-color: #6495ed;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == 'Condition review--CRITICAL') {
 	$pattern = '/(Condition review--CRITICAL)/';
 	$replace = 'CRITICAL';
-}
-if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(HALE return)|(AHD HALE return)/';
-	$replace = 'HALE return';
-} 
-if ($item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/(ANNEX ingest)|(AHD ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
+	$style = 'style="background-color: #ab82ff;"';
+	$text = '';
 }
 if ($item['statistics_note_3'] == 'To be WITHDRAWN' || $item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)|(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
+	$style = 'style="background-color: #cd5555;"';
+	$text = '';
 }
-if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-	$pattern = '/()|(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Physical Condition Rebox';
+}
+if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return' || $item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
+	$pattern = '/()|(HALE return)|(AHD HALE return)|(ANNEX ingest)|(AHD ANNEX ingest)/';
 	$replace = 'Send to Problem Shelf';
+	$style = 'style=";"';
 }
-
-if ($item['statistics_note_3'] == 'To be WITHDRAWN' || $item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-			$style = 'style="background-color: #cd5555;"';
-			$text = '';
-}
-	else if ($item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
-			$style = 'style="background-color: #6495ed;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
-			$style = 'style="background-color: #ab82ff;"';
-			$text = '';
-	}
-	else if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-			$style = 'style=";"';
-			//$text = 'Send to Problem Shelf';
-	}
-	if ($item['location'] !== 'preslab') {
-		if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(HALE return)|(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}
-	}
-					?>
+?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
           <div class="col">

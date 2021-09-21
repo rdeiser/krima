@@ -7,29 +7,18 @@ if ($item['statistics_note_3'] == 'Condition review--CRITICAL') {
 	$pattern = '/(Condition review--CRITICAL)/';
 	$replace = 'CRITICAL';
 }
-if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(HALE return)|(AHD HALE return)/';
-	$replace = 'HALE return';
-} 
-if ($item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/(ANNEX ingest)|(AHD ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
 if ($item['statistics_note_3'] == 'To be WITHDRAWN' || $item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)|(AHD To be WITHDRAWN)/';
 	$replace = 'To be WITHDRAWN';
 }
-if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-	$pattern = '/()|(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Physical Condition Rebox';
+}
+if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return' || $item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
+	$pattern = '/()|(HALE return)|(AHD HALE return)|(ANNEX ingest)|(AHD ANNEX ingest)/';
 	$replace = 'Send to Problem Shelf';
 }
-
-if ($item['location'] !== 'preslab') {
-	if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(HALE return)|(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
 
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
