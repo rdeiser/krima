@@ -1,12 +1,6 @@
 <?php
-if ($item['statistics_note_3'] == 'Condition review--REPAIR') {
-	$pattern = '/(Condition review--REPAIR)/';
-	$replace = 'REPAIR';
-	$style = 'style="background-color: #6495ed;"';
-	$text = '';
-}
-if ($item['statistics_note_3'] == 'Condition review--CRITICAL') {
-	$pattern = '/(Condition review--CRITICAL)/';
+if ($item['statistics_note_3'] == 'Condition review--CRITICAL' || $item['statistics_note_3'] == 'Condition review--REPAIR') {
+	$pattern = '/(Condition review--CRITICAL)|(Condition review--REPAIR)/';
 	$replace = 'CRITICAL';
 	$style = 'style="background-color: #ab82ff;"';
 	$text = '';
