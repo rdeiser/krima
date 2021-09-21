@@ -1,11 +1,7 @@
 <?php
-if ($item['statistics_note_3'] == 'Condition review--REPAIR') {
-	$pattern = '/(Condition review--REPAIR)/';
+if ($item['statistics_note_3'] == 'Condition review--REPAIR' || $item['statistics_note_3'] == 'Condition review--CRITICAL') {
+	$pattern = '/(Condition review--REPAIR)|(Condition review--CRITICAL)/';
 	$replace = 'REPAIR';
-}
-if ($item['statistics_note_3'] == 'Condition review--CRITICAL') {
-	$pattern = '/(Condition review--CRITICAL)/';
-	$replace = 'CRITICAL';
 }
 if ($item['statistics_note_3'] == 'To be WITHDRAWN' || $item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$pattern = '/(To be WITHDRAWN)|(AHD To be WITHDRAWN)/';
