@@ -1,7 +1,7 @@
 <?php
 if ($item['statistics_note_3'] == 'Condition review--CRITICAL' || $item['statistics_note_3'] == 'Condition review--REPAIR') {
 	$pattern = '/(Condition review--CRITICAL)|(Condition review--REPAIR)/';
-	$replace = 'CRITICAL';
+	$replace = 'REPAIR';
 	$style = 'style="background-color: #ab82ff;"';
 	$text = '';
 }
