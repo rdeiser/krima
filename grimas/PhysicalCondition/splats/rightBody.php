@@ -15,8 +15,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Physical Condition Rebox';
 }
-if ($item['statistics_note_3'] == '' && $item['statistics_note_3'] == 'HALE return' && $item['statistics_note_3'] == 'AHD HALE return' && $item['statistics_note_3'] == 'ANNEX ingest' && $item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/()|(HALE return)|(AHD HALE return)|(ANNEX ingest)|(AHD ANNEX ingest)/';
+if ($item['statistics_note_3'] == '' || $item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return' || $item['statistics_note_3'] == 'ANNEX ingest' || $item['statistics_note_3'] == 'AHD ANNEX ingest') {
+	$pattern = '/(HALE return)|(AHD HALE return)|(ANNEX ingest)|(AHD ANNEX ingest)/';
 	$replace = 'Send to Problem Shelf';
 }
 
