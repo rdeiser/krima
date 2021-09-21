@@ -1,4 +1,12 @@
 <?php
+if ($item['statistics_note_3'] == 'Condition review--REPAIR') {
+	$pattern = '/(Condition review--REPAIR)/';
+	$replace = 'REPAIR';
+}
+if ($item['statistics_note_3'] == 'Condition review--CRITICAL') {
+	$pattern = '/(Condition review--CRITICAL)/';
+	$replace = 'CRITICAL';
+}
 if ($item['statistics_note_3'] == 'HALE return' || $item['statistics_note_3'] == 'AHD HALE return') {
 	$pattern = '/(HALE return)|(AHD HALE return)/';
 	$replace = 'HALE return';
