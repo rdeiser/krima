@@ -28,94 +28,10 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] == '') {
-	$pattern = '//';
+	$pattern = '/(^?)/';
 	$replace = 'Send to Problem Shelf';
 }
 
-/*if ($item['location'] == 'juv') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'cmc') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location_code'] == 'main') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'over') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'overplus') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'dowref') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'ref') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'juv') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'cmc') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'main') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'over') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'overplus') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'dowref') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'ref') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}*/
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
@@ -224,10 +140,9 @@ if ($holding['suppress_from_publishing'] == 'true'){
 ?>
               <table class="table">
                 <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
+				<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>
 				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e ($item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
-				<!--<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>-->
 				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
-				<!--<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>-->
 				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Nota de Procesamiento:<!--Nota de servicios al usuario:--></span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
