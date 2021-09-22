@@ -64,6 +64,7 @@ class WDGovDocUpdate extends GrimaTask {
 			$item['library_code'] = 'WITHDRAW';
 			$item['location_code'] = 'wgovposter';
 		}
+		$item['statistics_note_1'] = 'WITHDRAWN';
 		$item['statistics_note_3'] = 'GOV UNBOXING review';
 		//$item->InternalNote1();
 		//$item['internal_note_1'] = 'Gov unboxing review';
