@@ -16,7 +16,7 @@ class DeleteItem extends GrimaTask {
 				$item->updateAlma();
 			}
 		}*/
-		if ($item['statistics_note_1'] = 'WITHDRAWN' && $item['statistics_note_3'] = '') {
+		if ($item['statistics_note_1'] = 'WITHDRAWN') {
 			$item->deleteFromAlma();
 			$this->addMessage('success',"Deleted item {$this['item']} with Statistics Note 1 of {$item['statistics_note_1']} and Statistics Note 3 of {$item['statistics_note_3']}");
 			} else {
