@@ -42,11 +42,11 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$text = '';
 }
 if ($item['statistics_note_3'] == '') {
-	$pattern = '/^/';
+	$pattern = '/^$/';
 	$replace = 'Send to Problem Shelf';
 }
 if ($item['location_code'] = 'annexltd') {
-	$pattern = '/(AHD ANNEX ingest)/';
+	$pattern = '/^$/';
 	$replace = 'ANNEX ingest';
 	$style = 'style="background-color: #6495ed;"';
 }
