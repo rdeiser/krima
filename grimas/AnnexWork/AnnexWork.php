@@ -115,7 +115,7 @@ class AnnexWork extends GrimaTask {
 				$item['item_policy'] = 'no loan';
 			}
 			if ($item['statistics_note_2'] == '') {
-				$item['statistics_note_2'] == 'FIRE 2018 SPECIAL COLLECTIONS';
+				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
 			}
 			$item->addInventoryDate(date("Y-m-d"));
 			$item->updateAlma();
