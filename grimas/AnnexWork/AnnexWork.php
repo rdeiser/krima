@@ -51,7 +51,7 @@ class AnnexWork extends GrimaTask {
 				}
 			}
 			if ($this['location'] == 'annexltd') {
-				if ($holding['location_code'] == 'spec' || $holding['location_code'] == 'univ' || $holding['location_code'] == 'specover' || $holding['location_code'] == 'specoverplus') {
+				if ($holding['location_code'] == 'spec') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
 					$holding->setFieldindicators("852","0","0");
