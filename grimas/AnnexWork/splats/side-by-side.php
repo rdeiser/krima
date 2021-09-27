@@ -49,6 +49,7 @@ if ($item['statistics_note_3'] == '' && $item['location_code'] = 'annexltd') {
 	if ($item['statistics_note_3'] == '') {
 		$pattern = '/^/';
 		$replace = 'Send to Problem Shelf';
+		$style = 'style=";"';
 	}
 }
 
