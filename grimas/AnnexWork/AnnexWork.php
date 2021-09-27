@@ -95,38 +95,34 @@ class AnnexWork extends GrimaTask {
 				$item->updateAlma();
 				}
 			}
-		} else {
+		} else if ($this['location'] == 'annexltd') {
+			if ($holding['library_code'] == 'SPEC ') {
+				$holding->deleteControlField("001");
+				$holding->deleteControlField("004");
+				$holding->setFieldindicators("852","0","0");
+				$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
+				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
+				$holding->setHldr("c","x","2","n");
+				$holding->setH008("2","8","4","001","b","a","   ","0");
+				$holding['library_code'] = 'ANNEX';
+				$holding['location_code'] = 'annexltd';
+				$holding->updateAlma();
+			}
+			
+			$item = new Item();
+			$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+			if ($item['item_policy'] !== 'no loan') {
+				$item['item_policy'] = 'no loan';
+			}
+			if ($item['statistics_note_2'] == '') {
+				$item['statistics_note_2'] == 'FIRE 2018 SPECIAL COLLECTIONS';
+			}
 			$item->addInventoryDate(date("Y-m-d"));
 			$item->updateAlma();
-		}
-		}
-		{if ($this['location'] == 'annexltd') {
-			$holding = new Holding();
-			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-				if ($holding['library_code'] == 'SPEC ') {
-					$holding->deleteControlField("001");
-					$holding->deleteControlField("004");
-					$holding->setFieldindicators("852","0","0");
-					$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
-					$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
-					$holding->setHldr("c","x","2","n");
-					$holding->setH008("2","8","4","001","b","a","   ","0");
-					$holding['library_code'] = 'ANNEX';
-					$holding['location_code'] = 'annexltd';
-				}
-				$holding->updateAlma();
-				$item = new Item();
-				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-				if ($item['item_policy'] !== 'no loan') {
-					$item['item_policy'] = 'no loan';
-					//$item->updateAlma();
-				}
-				if ($item['statistics_note_2'] == '') {
-					$item['statistics_note_2'] == 'FIRE 2018 SPECIAL COLLECTIONS';
-				}
+			} else {
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
-			}
+				}
 		}
 {
 		$this->item = new Item();
