@@ -41,13 +41,14 @@ if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
 	$style = 'style="background-color: #cd5555;"';
 	$text = '';
 }
-if ($item['statistics_note_3'] == '') {
-	$pattern = '/^/';
-	$replace = 'Send to Problem Shelf';
-} elseif ($item['statistics_note_3'] == '' && $item['location_code'] = 'annexltd') {
+if ($item['statistics_note_3'] == '' && $item['location_code'] = 'annexltd') {
 	$pattern = '/^$/';
 	$replace = 'ANNEX ingest';
 	$style = 'style="background-color: #6495ed;"';
+}
+if ($item['statistics_note_3'] == '') {
+	$pattern = '/^/';
+	$replace = 'Send to Problem Shelf';
 }
 
 	$holding = new Holding();
