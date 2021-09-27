@@ -101,6 +101,8 @@ class AnnexWork extends GrimaTask {
 		}
 		}
 		{if ($this['location'] == 'annexltd') {
+			$holding = new Holding();
+			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 				if ($holding['library_code'] == 'SPEC ') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
