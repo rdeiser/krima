@@ -5,11 +5,9 @@ require_once("../grima-lib.php");
 class AnnexWork extends GrimaTask {
 
 	function do_task() {
-		{$item = new Item();
+		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		/*$item->addInventoryDate(date("Y-m-d"));
-		$item->updateAlma();*/
-		}
+		
 		{if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
 			$holding = new Holding();
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
@@ -95,10 +93,10 @@ class AnnexWork extends GrimaTask {
 				$item->updateAlma();
 				}
 			}
-		} else if ($this['location'] == 'annexltd') {
+		} elseif ($this['location'] == 'annexltd') {
 			$holding = new Holding();
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-			if ($holding['library_code'] == 'SPEC ') {
+			if ($holding['library_code'] == 'SPEC') {
 				$holding->deleteControlField("001");
 				$holding->deleteControlField("004");
 				$holding->setFieldindicators("852","0","0");
