@@ -63,10 +63,14 @@ class AnnexWork extends GrimaTask {
 					$holding['location_code'] = 'annexltd';
 				}
 				$holding->updateAlma();
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 				if ($item['item_policy'] !== 'no loan') {
 					$item['item_policy'] = 'no loan';
-					$item->updateAlma();
+					//$item->updateAlma();
 				}
+				$item->addInventoryDate(date("Y-m-d"));
+				$item->updateAlma();
 			}
 			if ($this['location'] == 'govstorks') {
 				if ($holding['location_code'] == 'govks' || $holding['location_code'] == 'govksover' || $holding['location_code'] == 'govrefks') {
