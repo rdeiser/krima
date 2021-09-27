@@ -45,10 +45,11 @@ if ($item['statistics_note_3'] == '' && $item['location_code'] = 'annexltd') {
 	$pattern = '/^$/';
 	$replace = 'ANNEX ingest';
 	$style = 'style="background-color: #6495ed;"';
-}
-if ($item['statistics_note_3'] == '') {
-	$pattern = '/^/';
-	$replace = 'Send to Problem Shelf';
+} else {
+	if ($item['statistics_note_3'] == '') {
+		$pattern = '/^/';
+		$replace = 'Send to Problem Shelf';
+	}
 }
 
 	$holding = new Holding();
