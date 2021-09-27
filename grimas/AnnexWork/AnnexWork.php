@@ -50,7 +50,7 @@ class AnnexWork extends GrimaTask {
 				$item->updateAlma();
 				}
 			}
-			if ($this['location'] == 'annexltd') {
+			/*if ($this['location'] == 'annexltd') {
 				if ($holding['location_code'] == 'spec') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
@@ -71,7 +71,7 @@ class AnnexWork extends GrimaTask {
 				}
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
-			}
+			}*/
 			if ($this['location'] == 'govstorks') {
 				if ($holding['location_code'] == 'govks' || $holding['location_code'] == 'govksover' || $holding['location_code'] == 'govrefks') {
 					$holding->deleteControlField("001");
@@ -99,6 +99,29 @@ class AnnexWork extends GrimaTask {
 			$item->addInventoryDate(date("Y-m-d"));
 			$item->updateAlma();
 		}
+		}
+		{if ($this['location'] == 'annexltd') {
+				if ($holding['library_code'] == 'SPEC ') {
+					$holding->deleteControlField("001");
+					$holding->deleteControlField("004");
+					$holding->setFieldindicators("852","0","0");
+					$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
+					$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
+					$holding->setHldr("c","x","2","n");
+					$holding->setH008("2","8","4","001","b","a","   ","0");
+					$holding['library_code'] = 'ANNEX';
+					$holding['location_code'] = 'annexltd';
+				}
+				$holding->updateAlma();
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+				if ($item['item_policy'] !== 'no loan') {
+					$item['item_policy'] = 'no loan';
+					//$item->updateAlma();
+				}
+				$item->addInventoryDate(date("Y-m-d"));
+				$item->updateAlma();
+			}
 		}
 {
 		$this->item = new Item();
