@@ -45,7 +45,7 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '/^/';
 	$replace = 'Send to Problem Shelf';
 }
-if ($this['location'] == 'annexltd') {
+if ($item['location_code'] = 'annexltd') {
 	$pattern = '/(AHD ANNEX ingest)/';
 	$replace = 'ANNEX ingest';
 	$style = 'style="background-color: #6495ed;"';
