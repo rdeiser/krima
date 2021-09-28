@@ -45,11 +45,14 @@ if ($item['statistics_note_3'] == '') {
 	$pattern = '/^$/';
 	$replace = 'Send to Problem Shelf';
 }
-/*if ($item['location_code'] = 'annexltd') {
-	$pattern = '/^$/';
-	$replace = 'ANNEX ingest';
-	$style = 'style="background-color: #6495ed;"';
-}*/
+
+	$item = new Item();
+	$item->loadFromAlma($item['barcode']);
+	if ($item['location_code'] = 'annexltd') {
+		$pattern = '/^$/';
+		$replace = 'ANNEX ingest';
+		$style = 'style="background-color: #6495ed;"';
+	}
 
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
