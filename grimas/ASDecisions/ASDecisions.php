@@ -19,9 +19,9 @@ class ASDecisions extends GrimaTask {
 			$item->loadFromAlmaBCorX($barcode);
 			
 			//$item->addInventoryDate(date("Y-m-d"));
-			if ($item['inventory_date'] == '') {
+			/*if ($item['inventory_date'] == '') {
 				$item->addInventoryDate("1976-01-01");
-			}
+			}*/
 			//unset($item['barcode']);
 			/*if ($this['whichnote']=='AHD HALE return'){
 				$item['statistics_note_3'] = $this['whichnote'];
@@ -51,7 +51,7 @@ class ASDecisions extends GrimaTask {
 				$item['statistics_note_2'] = 'FIRE 2018 OZONE';
 			} else {}/*elseif ($item['statistics_note_2'] != '') {}*/
 			
-			$item['statistics_note_3'] = $this['whichnote'];
+			//$item['statistics_note_3'] = $this['whichnote'];
 			/*if ($item['statistics_note_3'] == '') {
 				$item['statistics_note_3'] = $this['whichnote'];
 			} else {}*/
