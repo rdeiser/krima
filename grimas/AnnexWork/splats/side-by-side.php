@@ -47,7 +47,7 @@ if ($item['statistics_note_3'] == '') {
 }
 
 	$item = new Item();
-	$item->loadFromAlmaBarcode($item['barcode']);
+	$item->loadFromAlmaBCorX($item['item_pid']);
 	if ($item['location_code'] = 'annexltd') {
 		$pattern = '/^$/';
 		$replace = 'ANNEX ingest';
