@@ -11,8 +11,6 @@ class CallnumberSearch extends GrimaTask {
 			$this->holding->loadFromAlma($this['holding_id'],$this['holding_id']);
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
-		} else {
-			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
 		}
 	}
 }
