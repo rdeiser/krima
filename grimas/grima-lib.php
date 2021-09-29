@@ -4608,14 +4608,14 @@ public $rows = array();
  */
 	function runReport($filter_params=array(), $limit = -1, $token = "") {
 		global $grima;
-		if (isset($this->filter)) {
+		/*if (isset($this->filter)) {
 			$passfilter = $this->filter;
 			foreach ($filter_params as $k => $v) {
 				$passfilter = str_replace('{'.$k.'}',urlencode($v),$passfilter);
 			}
 		} else {
 			$passfilter = null;
-		}
+		}*/
  
 		if ($limit == -1) { $limit = 1000; } # no limit
 		if ($limit < 25) { $limit = 25; } # must be in chunks of 25
