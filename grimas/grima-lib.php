@@ -3050,7 +3050,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	
 		$report->runReport(array('callnumber' => $callnumber), 1);
 		if (count($report->rows) == 1) {
-			return $report->rows[1];
+			return $report->rows[0][1];
 		} else {
 			return null;
 		}
