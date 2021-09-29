@@ -14,7 +14,6 @@ class ShowItemsFromHoldings extends GrimaTask {
 		} else {
 			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
 		}
-		}
 	}
 }
 
