@@ -3041,19 +3041,19 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  * @brief populates the Holding ID 
  *
 */
-	public static function getHoldingIDFromCallnumber($call_number) {
+	public static function getHoldingIDFromCallnumber($holding_id) {
 		global $grima;
 
 		$report = new AnalyticsReport();
 		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/GRIMA_CALLNUMBER_SEARCH";
 		$report->filter = '
-<sawx:expr xsi:type="sawx:list" op="beginsWith" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
+<sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
 xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr><sawx:expr xsi:type="xsd:string">{call_number}</sawx:expr>
+  <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Holding Id"</sawx:expr><sawx:expr xsi:type="xsd:string">{holding_id}</sawx:expr>
 </sawx:expr>';
 	
-		$report->runReport(array('call_number' => $call_number), 1);
+		$report->runReport(array('holding_id' => $holding_id), 1);
 		if (count($report->rows) == 1) {
 			return $report->rows[0][1];
 		} else {
