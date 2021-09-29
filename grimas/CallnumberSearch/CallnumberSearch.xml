@@ -1,7 +1,7 @@
 <GrimaForm>
     <Title>Callnumber Search: Show Items From Holdings</Title>
     <Field
-        name="holding_id"
+        name="callnumber"
         label="Call Number"
         autocomplete="off"
         required="yes"
