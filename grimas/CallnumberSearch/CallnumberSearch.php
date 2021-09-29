@@ -7,7 +7,7 @@ class CallnumberSearch extends GrimaTask {
 	function do_task() {
 		$this->holding = new Holding();
 		$holdingid = Holding::getHoldingIDFromMms($this['call_number']);
-		if ($holdingid]) {
+		if ($holdingid) {
 			$this->holding->loadFromAlma($holdingid,$holdingid);
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
