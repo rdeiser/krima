@@ -1,0 +1,10 @@
+<GrimaForm>
+    <Title>Callnumber Search: Show Items From Holdings</Title>
+    <Field
+        name="call_number"
+        label="Call Number"
+        autocomplete="off"
+        required="yes"
+        placeholder="Call Number Begins with..."
+    />
+</GrimaForm>
