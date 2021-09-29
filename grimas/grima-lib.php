@@ -3046,12 +3046,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 		$report = new AnalyticsReport();
 		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/GRIMA_CALLNUMBER_SEARCH";
-		$report->filter = '
-<sawx:expr xsi:type="sawx:comparison" op="beginsWith" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
-xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr><sawx:expr xsi:type="xsd:string">{call_number}</sawx:expr>
-</sawx:expr>';
+		$report->filter = '<sawx:expr xsi:type="sawx:list" op="beginsWith">
+            <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr>
+            <sawx:expr xsi:type="sawx:untypedLiteral">*</sawx:expr></sawx:expr>';
 	
 		$report->runReport(array('call_number' => $call_number), 1);
 		if (count($report->rows) == 1) {
