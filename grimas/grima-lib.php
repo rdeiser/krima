@@ -2966,7 +2966,7 @@ class Holding extends AlmaObjectWithMARC {
 	function loadFromAlma($mms_id,$holding_id) {
 		global $grima;
 		$this->xml = $grima->getHolding($mms_id,$holding_id);
-		//$this['mms_id'] = $mms_id;
+		$this['mms_id'] = $mms_id;
 	}
 // }}}
 
