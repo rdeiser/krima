@@ -13,6 +13,7 @@ class CallnumberSearch extends GrimaTask {
 			$this->splatVars['holding'] = $this->holding;
 		} else {
 			$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$this['holding_id']} or {$this['call_number']}");
+		}
 	}
 }
 
