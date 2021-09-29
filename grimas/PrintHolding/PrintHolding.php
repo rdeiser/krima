@@ -6,7 +6,7 @@ class PrintHolding extends GrimaTask {
 
 	function do_task() {
 		$this->holding = new Holding();
-		$this['holding_id'] = Holding::getMmsFromHoldingID($this['call_number']);
+		$this['holding_id'] = Holding::getHoldingIDFromCallnumber($this['call_number']);
 		if ($this['holding_id']) {
 		$this->holding->loadFromAlmaX($this['holding_id']);
 		$this->splatVars['width'] = 12;
