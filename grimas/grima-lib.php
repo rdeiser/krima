@@ -4608,6 +4608,7 @@ public $rows = array();
  */
 	function runReport($filter_params=array(), $limit = -1, $token = "") {
 		global $grima;
+		$passfilter = $this->filter;
 		/*if (isset($this->filter)) {
 			$passfilter = $this->filter;
 			foreach ($filter_params as $k => $v) {
