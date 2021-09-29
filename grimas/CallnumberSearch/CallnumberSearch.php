@@ -9,7 +9,8 @@ class CallnumberSearch extends GrimaTask {
 		$this['holding_id'] = Holding::getHoldingIDFromCallnumber($this['callnumber']);
 		//$this->holding->getHoldingIDFromCallnumber($this['callnumber']);
 		if ($this['callnumber']) {
-			$this->holding->loadFromAlma('994278620200240',$this['holding_id']);
+			$this['mms_id'] = Holding::getMmsFromHoldingID($this['holding_id']);
+			$this->holding->loadFromAlma($this['mms_id'],$this['holding_id']);
 			//$this->holding->loadFromAlma($this['holding_id'],$this['holding_id']);
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
