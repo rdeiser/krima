@@ -4615,7 +4615,7 @@ public $rows = array();
 			}
 		} else {
 			$passfilter = null;
-		}*/
+		}
  
 		if ($limit == -1) { $limit = 1000; } # no limit
 		if ($limit < 25) { $limit = 25; } # must be in chunks of 25
