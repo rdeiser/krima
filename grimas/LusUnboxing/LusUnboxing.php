@@ -13,7 +13,7 @@ class LusUnboxing extends GrimaTask {
 			$item['in_temp_location'] = 'false';
 			//$item['due_back_date'] = '';
 		}
-		$item['process_type'] = '';
+		
 		unset($item['temp_location']);
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
@@ -26,6 +26,10 @@ class LusUnboxing extends GrimaTask {
 
 		$item->updateAlma();
 		}
+		$this->item = new Item();
+		$this->item->loadFromAlmaX($item['item_pid']);
+		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
