@@ -6,8 +6,7 @@ class ViewXmlItem extends GrimaTask {
 
 	function do_task() {
 		$this->item = new Item();
-		$itemid = $this->item->getHoldingIDFromCallnumber($this['callnumber']);
-		$this->item->loadFromAlmaX($itemid);
+		$this->item->loadFromAlmaX($this['item_pid']);
 	}
 
 	function print_success() {
