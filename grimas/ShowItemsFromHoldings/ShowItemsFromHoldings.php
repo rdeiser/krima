@@ -12,7 +12,7 @@ class ShowItemsFromHoldings extends GrimaTask {
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
 		} else {
-			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['holding_id']));
+			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['mms_id']));
 		}
 	}
 }
