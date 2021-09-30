@@ -13,7 +13,7 @@ class LusUnboxing extends GrimaTask {
 			$item['in_temp_location'] = 'false';
 			//$item['due_back_date'] = '';
 		}
-		unset($item['process_type']);
+		$item['process_type'] = '';
 		unset($item['temp_location']);
 		unset($item['temp_call_number_type']);
 		unset($item['temp_call_number']);
