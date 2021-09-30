@@ -5,20 +5,15 @@ require_once("../grima-lib.php");
 class CallnumberSearch extends GrimaTask {
 
 	function do_task() {
-		$item = new Item();
-		//$this->holding = new Holding();
+		$this->holding = new Holding();
 		//$this['holding_id'] = Holding::getHoldingIDFromCallnumber($this['callnumber']);
-		//$this['mms_id'] = Holding::getMMSIDFromCallnumber($this['callnumber']);
-		$itemid = $item->getHoldingIDFromCallnumber($this['callnumber']);
-		$item->loadFromAlmaX($itemid);
+		//$this->holding->getHoldingIDFromCallnumber($this['callnumber']);
 		if ($this['callnumber']) {
-			$this->holding = new Holding();
-			$this->holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-			//$this->holding->loadFromAlma($this['mms_id'],$this['holding_id']);
+			$this->holding->loadFromAlma('9942786202002401',$this->holding->getHoldingIDFromCallnumber($this['callnumber']));
 			$this->holding->getItems();
 			$this->splatVars['holding'] = $this->holding;
 		} else {
-			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => ($item['holding_id'])));
+			GrimaTask::call('ShowItemsFromHoldingsB', array('holding_id' => $this['callnumber']));
 		}
 	}
 }
