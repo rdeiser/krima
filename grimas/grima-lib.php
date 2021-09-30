@@ -3019,12 +3019,12 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 		global $grima;
 
 		$report = new AnalyticsReport();
-		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/HoldingToMMS2";
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/HoldingToMMS";
 		$report->filter = '
 <sawx:expr xsi:type="sawx:comparison" op="equal" xmlns:saw="com.siebel.analytics.web/report/v1.1" 
 xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr><sawx:expr xsi:type="xsd:string">{holding_id}</sawx:expr>
+  <sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Holding Id"</sawx:expr><sawx:expr xsi:type="xsd:string">{holding_id}</sawx:expr>
 </sawx:expr>';
 	
 		$report->runReport(array('holding_id' => $holding_id), 1);
