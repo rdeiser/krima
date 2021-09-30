@@ -3760,6 +3760,21 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	}
 // }}}
 
+public static function getHoldingIDFromCallnumber($callnumber) {
+		global $grima;
+
+		$report = new AnalyticsReport();
+		$report->path = "/shared/Kansas State University/Reports/In progress - Raymond/GRIMA/GRIMA_CALLNUMBER_SEARCH_HOLDING";
+		$report->filter = '<sawx:expr xsi:type="sawx:list" op="beginsWith" xmlns:saw="com.siebel.analytics.web/report/v1.1"  xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"><sawx:expr xsi:type="sawx:sqlExpression">"Holding Details"."Permanent Call Number"</sawx:expr><sawx:expr xsi:type="xsd:string">{callnumber}</sawx:expr></sawx:expr>';
+	
+		$report->runReport(array('callnumber' => $callnumber), 1);
+		if (count($report->rows) == 1) {
+			return $report->rows[0][1];
+		} else {
+			return null;
+		}
+	}
+
 // {{{ loadFromAlma (get)
 /**
  * @brief populates item record from Alma
