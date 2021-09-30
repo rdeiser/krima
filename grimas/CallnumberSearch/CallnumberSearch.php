@@ -5,12 +5,12 @@ require_once("../grima-lib.php");
 class CallnumberSearch extends GrimaTask {
 
 	function do_task() {
-		$this->item = new Item();
+		$item = new Item();
 		//$this->holding = new Holding();
 		//$this['holding_id'] = Holding::getHoldingIDFromCallnumber($this['callnumber']);
 		//$this['mms_id'] = Holding::getMMSIDFromCallnumber($this['callnumber']);
 		$itemid = $item->getHoldingIDFromCallnumber($this['callnumber']);
-		$this->item->loadFromAlmaX($itemid);
+		$item->loadFromAlmaX($itemid);
 		if ($this['callnumber']) {
 			$this->holding = new Holding();
 			$this->holding->loadFromAlma($item['mms_id'],$item['holding_id']);
