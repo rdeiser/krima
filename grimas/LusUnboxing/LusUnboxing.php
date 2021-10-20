@@ -28,7 +28,7 @@ class LusUnboxing extends GrimaTask {
 		}
 		$this->item = new Item();
 		$this->item->loadFromAlmaX($item['item_pid']);
-		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+		$this->item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type,$status,$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
 
 {
 		$this->item = new Item();
