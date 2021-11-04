@@ -12,7 +12,7 @@ class BatchItem extends GrimaTask {
 			$holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
-				$holding->loadFromAlma($this['mms_id'],$holdingid);
+				$holding->loadFromAlma($holdingid,$holdingid);
 
 				$item = new Item();
 				$item['fulfillment_note'] = $this['fulnote'];
@@ -22,7 +22,7 @@ class BatchItem extends GrimaTask {
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_1'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
-				$item->addToAlmaHolding($this['mms_id'],$holdingid);
+				$item->addToAlmaHolding(($holdingid,$holdingid);
 				
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 			} else {
