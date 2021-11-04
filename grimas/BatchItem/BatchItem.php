@@ -27,7 +27,6 @@ class BatchItem extends GrimaTask {
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
-			}
 			//$this->holdinglist[] = $holding;
 		}
 	}
