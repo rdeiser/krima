@@ -23,11 +23,12 @@ class BatchItem extends GrimaTask {
 				$item['statistics_note_1'] = 'FIRE 2018 OZONE';
 				$item['statistics_note_3'] = $this['whichnote'];
 				$item->addToAlmaHolding($this['mms_id'],$holdingid);
-			}
+				
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
-			//$this->holdinglist[] = $holding;
+				//$this->holdinglist[] = $holding;
+			}
 		}
 	}
 }
