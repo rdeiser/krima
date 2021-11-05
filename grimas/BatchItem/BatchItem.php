@@ -10,6 +10,23 @@ class BatchItem extends GrimaTask {
 
 		foreach ($this->holdings as $holdingid) {
 			$holding = new Holding();
+			$holding->loadFromAlma($holdingid,$holdingid);
+
+			$item = new Item();
+			$item['fulfillment_note'] = $this['fulnote'];
+			$item['item_policy'] = 'book/ser';
+			$item['pieces'] = '1';
+			$item['inventory_date'] = date("Y-m-d");
+			$item['receiving_operator'] = 'Grima';
+			$item['statistics_note_1'] = 'MISSING 2021';
+			$item['statistics_note_3'] = $this['whichnote'];
+			$item->addToAlmaHolding($holdingid,$holdingid);
+			
+			$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+			}
+
+		/*foreach ($this->holdings as $holdingid) {
+			$holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
 				$holding->loadFromAlma($this['mms_id'],$holdingid);
@@ -27,9 +44,9 @@ class BatchItem extends GrimaTask {
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
-				continue;
+				//$this->holdinglist[] = $holding;
 			}
-		}
+		}*/
 	}
 }
 BatchItem::RunIt();
