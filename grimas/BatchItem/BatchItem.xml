@@ -8,10 +8,10 @@
 	/>
 	<Field
 	name="whichnote"
-	label="Unboxing Stat 3 Note:"
+	label="Statistics Note 3:"
 	type="select"
 	required="yes"
-	placeholder="Unboxing Note"
+	placeholder="Statistics Note 3 Phrase"
 	>
 	<option value="ANNEX ingest">ANNEX ingest</option>
 	<option value="HALE return">HALE return</option>
