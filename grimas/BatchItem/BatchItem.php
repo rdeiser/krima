@@ -16,7 +16,7 @@ class BatchItem extends GrimaTask {
 			$item['fulfillment_note'] = $this['fulnote'];
 			$item['item_policy'] = 'book/ser';
 			$item['pieces'] = '1';
-			$item['inventory_date'] = date("Y-m-d");
+			$item['inventory_date'] = "2021-11-15Z";
 			$item['receiving_operator'] = 'Grima';
 			$item['statistics_note_1'] = 'MISSING 2021';
 			$item['statistics_note_3'] = $this['whichnote'];
