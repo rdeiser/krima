@@ -12,13 +12,13 @@ class BatchItems extends GrimaTask {
 			if ($this['whichnote'] == 'SpecUniv'){
 				$holding = new Holding();
 				$holding->loadFromAlma($holdingid,$holdingid);
-				$holding->deleteControlField("001");
+				/*$holding->deleteControlField("001");
 				$holding->deleteControlField("004");
 				$holding->setFieldindicators("852","0","0");
 				$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
 				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
 				$holding->setHldr("c","x","2","n");
-				$holding->setH008("2","8","4","001","b","a","   ","0");
+				$holding->setH008("2","8","4","001","b","a","   ","0");*/
 				$holding->deleteSubfieldMatching("866","z","/(^Request at Special Collections$)/");
 				$holding->updateAlma();
 
