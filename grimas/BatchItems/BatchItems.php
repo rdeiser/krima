@@ -12,6 +12,10 @@ class BatchItems extends GrimaTask {
 			if ($this['whichnote'] == 'SpecUniv'){
 				$holding = new Holding();
 				$holding->loadFromAlma($holdingid,$holdingid);
+				
+				$holding = new Holding();
+				$holding->deleteSubfieldMatching(
+				$holding->deleteSubfieldMatching("866","z","/(^Request at Special Collections$)/");
 
 				$item = new Item();
 				$item['item_policy'] = 'no loan';
