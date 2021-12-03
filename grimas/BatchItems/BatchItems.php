@@ -14,8 +14,8 @@ class BatchItems extends GrimaTask {
 				$holding->loadFromAlma($holdingid,$holdingid);
 				
 				$holding = new Holding();
-				$holding->deleteSubfieldMatching(
 				$holding->deleteSubfieldMatching("866","z","/(^Request at Special Collections$)/");
+				$holding->updateAlma();
 
 				$item = new Item();
 				$item['item_policy'] = 'no loan';
