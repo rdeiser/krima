@@ -9,6 +9,21 @@ class BatchItems extends GrimaTask {
 		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
 
 		foreach ($this->holdings as $holdingid) {
+			if ($this['whichnote'] == 'SpecUniv'){
+				$holding = new Holding();
+				$holding->loadFromAlma($holdingid,$holdingid);
+
+				$item = new Item();
+				$item['item_policy'] = 'no loan';
+				$item['pieces'] = '1';
+				$item['inventory_date'] = date("Y-m-d");
+				$item['receiving_operator'] = 'Grima';
+				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
+				$item->addToAlmaHolding($holdingid,$holdingid);
+			
+				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
+			}
+				
 			$holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
 			if ($this['mms_id']) {
@@ -159,25 +174,13 @@ class BatchItems extends GrimaTask {
 				$this->item->updateAlma();
 			}
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
-				//$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with Barcode: {$item['barcode']}");
-				/*function print_success() {
-    do_redirect('../WithdrawLibrary/WithdrawLibrary.php?holding_id=' . $this['holding_id']);
-}*/
+				
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
 			}
 			$this->holdinglist[] = $holding;
 		}
-		/*foreach ($this->holdinglist as $holding) {
-			$count = count($holding->itemList->items, COUNT_RECURSIVE);
-		}
 		
-		$this->addMessage('success',"Total Number of Items Added {$count}");*/
-		//$this->holding->getItems();
-		//$this->splatVars['holding'] = $this->holding;
-		//$this->splatVars['width'] = 12;
-		//$this->splatVars['holdinglist'] = $this->holdinglist;
-		//$this->splatVars['body'] = array( 'holding', 'messages' );
 	}
 }
 BatchItems::RunIt();
