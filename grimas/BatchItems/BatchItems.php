@@ -22,7 +22,7 @@ class BatchItems extends GrimaTask {
 				$item->addToAlmaHolding($holdingid,$holdingid);
 			
 				$this->addMessage('success',"Successfully added an Item Record to {$holdingid} with item PID: {$item['item_pid']}");
-			}
+			} else {
 				
 			$holding = new Holding();
 			$this['mms_id'] = Holding::getMmsFromHoldingID($holdingid);
@@ -177,6 +177,7 @@ class BatchItems extends GrimaTask {
 				
 			} else {
 				$this->addMessage('error',"Holding Record Suppressed or no longer active in Alma {$holdingid}");
+			}
 			}
 			$this->holdinglist[] = $holding;
 		}
