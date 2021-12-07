@@ -12,20 +12,13 @@ class BatchItems extends GrimaTask {
 			if ($this['whichnote'] == 'SpecUniv'){
 				$holding = new Holding();
 				$holding->loadFromAlma($holdingid,$holdingid);
-				/*$holding->deleteControlField("001");
-				$holding->deleteControlField("004");
-				$holding->setFieldindicators("852","0","0");
-				$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
-				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
-				$holding->setHldr("c","x","2","n");
-				$holding->setH008("2","8","4","001","b","a","   ","0");*/
 				$holding->deleteSubfieldMatching("866","z","/(^Request at Special Collections$)/");
 				$holding->updateAlma();
 
 				$item = new Item();
 				$item['item_policy'] = 'no loan';
 				$item['pieces'] = '1';
-				$item['inventory_date'] = date("Y-m-d");
+				//$item['inventory_date'] = date("Y-m-d");
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
 				$item->addToAlmaHolding($holdingid,$holdingid);
