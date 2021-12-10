@@ -7,7 +7,7 @@ class AnnexWork extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		if ($this['location'] == 'annex') {
+		/*if ($this['location'] == 'annex') {
 			$holding = new Holding();
 			$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 			if ($holding['location_code'] == 'main' || $holding['location_code'] == 'nich') {
@@ -79,7 +79,7 @@ class AnnexWork extends GrimaTask {
 			if ($item['statistics_note_2'] == '') {
 				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
 			}
-		}
+		}*/
 		if ($this['location'] == 'KS-Extension') {
 			if ($item['process_type'] = 'MISSING') {
 				if ($item['library'] = 'ANNEX') {
