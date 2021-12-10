@@ -140,6 +140,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 					<select name="location" id="location" style="width: 125px; margin-left: 5px;" box-sizing: border-box>
 						<option value="annex">annex</option>
 						<option value="annexltd" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annexltd') ? 'selected' : ''; ?>>annexltd</option>
+						<option value="KS-Extension" <?php echo (isset($_POST['location']) && $_POST['location'] === 'KS-Extension') ? 'selected' : ''; ?>>KS-Extension</option>
 						<option value="govstorks" <?php echo (isset($_POST['location']) && $_POST['location'] === 'govstorks') ? 'selected' : ''; ?>>govstorks</option>
 					</select>
 					<label class="col-3 form-check-label" for="barcode" style="top: 10px;">Barcode:</label>
