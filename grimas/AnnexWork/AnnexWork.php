@@ -48,28 +48,6 @@ class AnnexWork extends GrimaTask {
 				$item->updateAlma();
 				}
 			}
-			/*if ($this['location'] == 'annexltd') {
-				if ($holding['location_code'] == 'spec') {
-					$holding->deleteControlField("001");
-					$holding->deleteControlField("004");
-					$holding->setFieldindicators("852","0","0");
-					$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
-					$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
-					$holding->setHldr("c","x","2","n");
-					$holding->setH008("2","8","4","001","b","a","   ","0");
-					$holding['library_code'] = 'ANNEX';
-					$holding['location_code'] = 'annexltd';
-				}
-				$holding->updateAlma();
-				$item = new Item();
-				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-				if ($item['item_policy'] !== 'no loan') {
-					$item['item_policy'] = 'no loan';
-					//$item->updateAlma();
-				}
-				$item->addInventoryDate(date("Y-m-d"));
-				$item->updateAlma();
-			}*/
 			if ($this['location'] == 'govstorks') {
 				if ($holding['location_code'] == 'govks' || $holding['location_code'] == 'govksover' || $holding['location_code'] == 'govrefks') {
 					$holding->deleteControlField("001");
@@ -119,6 +97,21 @@ class AnnexWork extends GrimaTask {
 			}
 			$item->addInventoryDate(date("Y-m-d"));
 			$item->updateAlma();
+			} elseif ($this['location'] == 'KS-Extension') {
+				if ($item['process_type'] = 'MISSING') {
+					if ($item['library'] = 'ANNEX') {
+						$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+					} elseif ($item['library'] = 'MAIN') {
+						$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+					}
+				}
+				
+				if ($item['item_policy'] !== 'book/ser') {
+					$item['item_policy'] = 'book/ser';
+				}
+				$item->addInventoryDate(date("Y-m-d"));
+				$item->updateAlma();
+				
 			} else {
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
