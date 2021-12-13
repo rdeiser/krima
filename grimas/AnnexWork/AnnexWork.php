@@ -112,6 +112,8 @@ class AnnexWork extends GrimaTask {
 					if ($item['item_policy'] !== 'book/ser') {
 						$item['item_policy'] = 'book/ser';
 					}
+					$item['library_code'] = 'MAIN';
+					$item['location_code'] = 'main';
 					$item['statistics_note_3'] = 'HALE return';
 					$item->addInventoryDate(date("Y-m-d"));
 					$item->updateAlma();
