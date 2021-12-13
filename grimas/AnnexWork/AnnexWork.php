@@ -86,18 +86,23 @@ class AnnexWork extends GrimaTask {
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annexltd';
 				$holding->updateAlma();
+				
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+				if ($item['item_policy'] !== 'no loan') {
+					$item['item_policy'] = 'no loan';
+				}
+				if ($item['statistics_note_2'] == '') {
+					$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
+				}
+				$item->addInventoryDate(date("Y-m-d"));
+				$item->updateAlma();
+			} else {
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+				$item->addInventoryDate(date("Y-m-d"));
+				$item->updateAlma();
 			}
-			
-			$item = new Item();
-			$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-			if ($item['item_policy'] !== 'no loan') {
-				$item['item_policy'] = 'no loan';
-			}
-			if ($item['statistics_note_2'] == '') {
-				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
-			}
-			$item->addInventoryDate(date("Y-m-d"));
-			$item->updateAlma();
 		}
 		
 		if ($this['location'] == 'KS-Extension') {
