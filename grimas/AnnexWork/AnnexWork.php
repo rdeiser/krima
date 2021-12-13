@@ -101,23 +101,35 @@ class AnnexWork extends GrimaTask {
 		}
 		
 		if ($this['location'] == 'KS-Extension') {
-			if ($item['process_type'] = 'MISSING') {
-				if ($item['library'] = 'ANNEX') {
-					$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
-				} elseif ($item['library'] = 'MAIN') {
-					$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+			if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
+				if ($item['process_type'] = 'MISSING') {
+					if ($item['library'] = 'ANNEX') {
+						$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+						if ($item['item_policy'] !== 'book/ser') {
+							$item['item_policy'] = 'book/ser';
+						}
+						$item['statistics_note_3'] = 'HALE return';
+						$item->addInventoryDate(date("Y-m-d"));
+						$item->updateAlma();
+					} elseif ($item['library'] = 'MAIN') {
+						$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
+						if ($item['item_policy'] !== 'book/ser') {
+							$item['item_policy'] = 'book/ser';
+						}
+						$item['statistics_note_3'] = 'HALE return';
+						$item->addInventoryDate(date("Y-m-d"));
+						$item->updateAlma();
+					}
+				} else {
+					if ($item['item_policy'] !== 'book/ser') {
+						$item['item_policy'] = 'book/ser';
+					}
+					$item['statistics_note_3'] = 'HALE return';
+					$item->addInventoryDate(date("Y-m-d"));
+					$item->updateAlma();
+					
 				}
 			}
-			if ($item['item_policy'] !== 'book/ser') {
-				$item['item_policy'] = 'book/ser';
-			}
-			$item->addInventoryDate(date("Y-m-d"));
-			$item->updateAlma();
-		} else {
-			$item = new Item();
-			$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-			$item->addInventoryDate(date("Y-m-d"));
-			$item->updateAlma();
 		}
 {
 		$this->item = new Item();
