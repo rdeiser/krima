@@ -27,6 +27,11 @@ class AnnexWork extends GrimaTask {
 					}
 					$item->addInventoryDate(date("Y-m-d"));
 					$item->updateAlma();
+				} else {
+					$item = new Item();
+					$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+					$item->addInventoryDate(date("Y-m-d"));
+					$item->updateAlma();
 				}
 			} else {
 				$item = new Item();
