@@ -125,7 +125,7 @@ class AnnexWork extends GrimaTask {
 						$item->addInventoryDate(date("Y-m-d"));
 						$item->updateAlma();
 					}
-				} else {
+				} elseif (empty($item['process_type'])){
 					if ($item['item_policy'] !== 'book/ser') {
 						$item['item_policy'] = 'book/ser';
 					}
