@@ -8,7 +8,7 @@ class AnnexWork extends GrimaTask {
 			if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
 				$holding = new Holding();
 				$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-				if ($holding['location_code'] == 'nich' || $holding['location_code'] == 'main' || $holding['over'] == 'overplus') {
+				if ($holding['location_code'] == 'nich' || $holding['location_code'] == 'main' || $holding['location_code'] == 'over' || $holding['location_code'] == 'overplus') {
 					$holding->deleteControlField("001");
 					$holding->deleteControlField("004");
 					$holding->setFieldindicators("852","0","0");
