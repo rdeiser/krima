@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const enumeration_b_elt = document.getElementById('enumeration_b');
     const chronology_i_elt = document.getElementById('chronology_i');
     const chronology_j_elt = document.getElementById('chronology_j');
+	const copy_id_elt = document.getElementById('copy_id');
     const description_elt = document.getElementById('description');
     const onUse = function(e) {
         barcode_elt.classList.remove("znew");
