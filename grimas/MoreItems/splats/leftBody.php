@@ -17,12 +17,12 @@
 					<input class="col-8 form-control" type="text" name="chronology_i" id="chronology_i" size="20" value="<?=$e($item['chronology_i'])?>">
 				  </div>
 				  <div class="form-row col-6 pb-4">
-					<label class="col-4 col-form-label" for="copy_id">Copy id:</label>
-					<input class="col-8 form-control" type="text" name="copy_id" id="copy_id" size="20" value="<?=$e($item['copy_id'])?>">
-				  </div>
-				  <div class="form-row col-6 pb-4">
 					<label class="col-4 col-form-label" for="chronology_j">Chron J:</label>
 					<input class="col-8 form-control" type="text" name="chronology_j" id="chronology_j" size="20" value="<?=$e($item['chronology_j'])?>">
+				  </div>
+				  <div class="form-row col-6 pb-4">
+					<label class="col-4 col-form-label" for="copy_id">Copy ID:</label>
+					<input class="col-8 form-control" type="text" name="copy_id" id="copy_id" size="20" value="<?=$e($item['copy_id'])?>">
 				  </div>
 				  <div class="form-row col-12 pb-4">
 					<label class="col-3 col-form-label" for="description">Description:</label>
