@@ -18,6 +18,7 @@ class MoreItems extends GrimaTask {
 				'enumeration_b',
 				'chronology_i',
 				'chronology_j',
+				'copy_id',
 				'description'
 			);
 			foreach ($itemdata_elements as $element) {
