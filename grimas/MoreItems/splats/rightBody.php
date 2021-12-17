@@ -1,5 +1,6 @@
               <table class="table">
                 <tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
+				<tr><th>Copy ID:</th><td><?=$e($item['copy_id'])?></td></tr>
                 <tr><th>Enumeration A:</th><td><?=$e($item['enumeration_a'])?></td></tr>
                 <tr><th>Enumeration B:</th><td><?=$e($item['enumeration_b'])?></td></tr>
                 <tr><th>Chronology I:</th><td><?=$e($item['chronology_i'])?></td></tr>
