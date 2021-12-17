@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     enumeration_b_elt.addEventListener('input',onUpdate);
     chronology_i_elt.addEventListener('input',onUpdate);
     chronology_j_elt.addEventListener('input',onUpdate);
+	copy_id_elt.addEventListener('input',onUpdate);
     barcode_elt.addEventListener('input',onUse);
     barcode_elt.addEventListener('click',onUse);
     barcode_elt.addEventListener('focus',onUse);
