@@ -115,8 +115,7 @@ class AnnexWork extends GrimaTask {
 					$item['statistics_note_3'] = 'HALE return';
 					$item->addInventoryDate(date("Y-m-d"));
 					$item->updateAlma();
-				}
-				/*if ($item['library'] = 'MAIN') {
+				} else {
 					$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
 					if ($item['item_policy'] !== 'book/ser') {
 						$item['item_policy'] = 'book/ser';
@@ -124,7 +123,7 @@ class AnnexWork extends GrimaTask {
 					$item['statistics_note_3'] = 'HALE return';
 					$item->addInventoryDate(date("Y-m-d"));
 					$item->updateAlma();
-				}*/
+				}
 			}
 		}
 {
