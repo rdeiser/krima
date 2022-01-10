@@ -110,7 +110,7 @@ class AnnexWork extends GrimaTask {
 		
 		if ($this['location'] == 'KS-Extension') {
 			if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
-				if ($item['library_code'] = 'ANNEX') {
+				if ($item['library_code'] == 'ANNEX') {
 					$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'ANNEX',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
 					if ($item['item_policy'] !== 'book/ser') {
 						$item['item_policy'] = 'book/ser';
@@ -119,7 +119,7 @@ class AnnexWork extends GrimaTask {
 					$item->addInventoryDate(date("Y-m-d"));
 					$item->updateAlma();
 				}
-				if ($item['library_code'] = 'MAIN') {
+				if ($item['library_code'] == 'MAIN') {
 					$item->fulfillmentscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$circ_desk = 'DEFAULT_CIRC_DESK',$work_order_type = '',$status = '',$done = 'false',$place_on_hold_shelf = 'false',$register_in_house_use = 'false');
 					if ($item['item_policy'] !== 'book/ser') {
 						$item['item_policy'] = 'book/ser';
