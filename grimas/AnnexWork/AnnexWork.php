@@ -95,9 +95,6 @@ class AnnexWork extends GrimaTask {
 				if ($item['statistics_note_2'] == '') {
 					$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
 				}
-				if ($item['statistics_note_3'] == '') {
-					$item['statistics_note_3'] = 'ANNEX ingest';
-				}
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
 			} else {
