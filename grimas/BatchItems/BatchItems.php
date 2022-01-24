@@ -18,6 +18,7 @@ class BatchItems extends GrimaTask {
 				$item = new Item();
 				$item['item_policy'] = 'no loan';
 				$item['pieces'] = '1';
+				$item['inventory_date'] = '1976-01-01';
 				//$item['inventory_date'] = date("Y-m-d");
 				$item['receiving_operator'] = 'Grima';
 				$item['statistics_note_2'] = 'FIRE 2018 SPECIAL COLLECTIONS';
