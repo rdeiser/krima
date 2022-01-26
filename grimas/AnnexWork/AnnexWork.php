@@ -86,7 +86,8 @@ class AnnexWork extends GrimaTask {
 				$holding['library_code'] = 'ANNEX';
 				$holding['location_code'] = 'annexltd';
 				$holding->updateAlma();
-				
+			}
+			if ($item['location_code'] == 'annexltd') {
 				$item = new Item();
 				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 				if ($item['item_policy'] !== 'no loan') {
