@@ -6,8 +6,8 @@
 	type="select"
 	required="yes"
 	>
-	<option value="annex">annex</option>
 	<option value="annexltd">annexltd</option>
+	<option value="annex">annex</option>
 	<option value="KS-Extension">KS-Extension</option>
 	<option value="govstorks">govstorks</option>
 	</Field>
