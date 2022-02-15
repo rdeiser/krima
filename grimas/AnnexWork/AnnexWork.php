@@ -81,6 +81,7 @@ class AnnexWork extends GrimaTask {
 				$holding->setFieldindicators("852","0","0");
 				$holding->deleteSubfieldMatching("014","9","/[0-9]?/");
 				$holding->deleteSubfieldMatching("014","a","/^[A-z]/");
+				$holding->deleteSubfieldMatching("852","k","/^[Oo][A-z]+\s[A-Z]+|^[Oo][A-z]+|[Ff][A-z]+|[Oo][A-z]+/");
 				$holding->setHldr("c","x","2","n");
 				$holding->setH008("2","8","4","001","b","a","   ","0");
 				$holding['library_code'] = 'ANNEX';
