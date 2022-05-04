@@ -35,8 +35,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Send to Condition Review Shelf';
 }
-if ($item['statistics_note_3'] = '') {
-		$pattern = '//';
+if ($item['statistics_note_3'] == '') {
+		$pattern = '/^/';
 		$replace = $item['library'];
 }
 
