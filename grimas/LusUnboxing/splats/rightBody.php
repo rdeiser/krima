@@ -1,4 +1,12 @@
 <?php
+if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
+        $pattern = "/^(Item's destination is: Hale Library. Request\/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1)/";
+        $replace = 'Hale Library';
+}
+if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
+        $pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
+        $replace = 'Hale Library';
+}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'HALE return';
@@ -27,9 +35,15 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Send to Condition Review Shelf';
 }
-if ($item['statistics_note_3'] == '') {
-	$pattern = '//';
-	$replace = 'Send to Problem Shelf';
+if ($item['statistics_note_3'] = '') {
+	if ($item['in_temp_location'] == 'false') {
+		$pattern = '//';
+		$replace = $item['library'];
+	} else {
+		$pattern = '//';
+		$replace = $item['temp_location'];
+		$style3 = 'style="background-color: #cd5555;"';
+	}
 }
 
 //Following php color codes the Process type if it is populated
