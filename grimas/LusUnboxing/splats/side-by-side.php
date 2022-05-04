@@ -56,8 +56,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			$text = '';
 	}
-
-if (empty($item['statistics_note_3'])) {
+if ($item['statistics_note_3'] == '') {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '/^/';
 		$replace = $item['library'];
