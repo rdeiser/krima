@@ -56,109 +56,40 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 			$style = 'style=";"';
 			$text = '';
 	}
-	else if ($item['statistics_note_3']=='') {
-			$style = 'style=";"';
-			//$text = 'Send to Problem Shelf';
-	}
-	/*if ($item['location'] == 'juv') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
+
+if (empty($item['statistics_note_3'])) {
+	if ($item['in_temp_location'] == 'false') {
+		$pattern = '//';
+		$replace = $item['library'];
+		if ($item['library_code'] =='ANNEX') {
+			$style = 'style="background-color: #6495ed;"';
+		} else if ($item['library_code'] =='MAIN') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library_code'] =='SALINA') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library_code'] =='ARCH') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['library_code'] =='MATHPHYS') {
+			$style = 'style="background-color: #ab82ff;"';
+		}
+	} else {
+		$pattern = '//';
+		$replace = $item['temp_location'];
+		if ($item['temp_library'] =='ANNEX') {
+			$style = 'style="background-color: #6495ed;"';
+		} else if ($item['temp_library'] =='MAIN') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='SALINA') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='ARCH') {
+			$style = 'style="background-color: #ab82ff;"';
+		} else if ($item['temp_library'] =='MATHPHYS') {
+			$style = 'style="background-color: #ab82ff;"';
 		}
 	}
-	if ($item['location'] == 'cmc') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	/*if ($item['location_code'] == 'main') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'over') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'overplus') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'dowref') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'ref') {
-		if ($item['statistics_note_3'] == 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'juv') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'cmc') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	/*if ($item['location'] == 'main') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'over') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'overplus') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'dowref') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-	if ($item['location'] == 'ref') {
-		if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}*/
-	
+
+}
+
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
 	if ($holding['suppress_from_publishing'] == 'true'){
