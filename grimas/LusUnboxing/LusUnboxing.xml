@@ -1,5 +1,5 @@
 <GrimaForm>
-    <Title>K-State Item Information</Title>
+    <Title>K-State LUS Fulfillment Scan In</Title>
     <Field
         label="Barcode of unboxed item"
         name="unboxed_barcode"
