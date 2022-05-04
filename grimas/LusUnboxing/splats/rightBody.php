@@ -149,7 +149,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 
 ?>
               <table class="table">
-                <tr><th>Title:pan></th><td><?=$e($item['title'])?></td></tr>
+                <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th>Call Number:</th><td><?=$e ($item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
