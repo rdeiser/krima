@@ -109,7 +109,7 @@ if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
 } else {
 	$style4 = 'style="opacity:1;"';
-	$pattern2 = '/^/';
+	$pattern2 = '//';
 	$replace2 = '&nbsp;';
 }
 
