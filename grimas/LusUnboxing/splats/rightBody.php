@@ -155,7 +155,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
-				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
+				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
 				<tr><th>Destination:</th><td class="statnote"><?=preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
