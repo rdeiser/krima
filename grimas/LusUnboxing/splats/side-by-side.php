@@ -59,7 +59,7 @@ if ($item['statistics_note_3']=='To be WITHDRAWN') {
 
 if (empty($item['statistics_note_3'])) {
 	if ($item['in_temp_location'] == 'false') {
-		$pattern = '//';
+		$pattern = '/^/';
 		$replace = $item['library'];
 		if ($item['library_code'] =='ANNEX') {
 			$style = 'style="background-color: #6495ed;"';
@@ -73,7 +73,7 @@ if (empty($item['statistics_note_3'])) {
 			$style = 'style="background-color: #ab82ff;"';
 		}
 	} else {
-		$pattern = '//';
+		$pattern = '/^/';
 		$replace = $item['temp_location'];
 		if ($item['temp_library'] =='ANNEX') {
 			$style = 'style="background-color: #6495ed;"';
