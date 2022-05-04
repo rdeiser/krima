@@ -39,10 +39,6 @@ if ($item['statistics_note_3'] = '') {
 	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
-	} else {
-		$pattern = '//';
-		$replace = $item['temp_location'];
-		$style5 = 'style="background-color: #cd5555;"';
 	}
 }
 
