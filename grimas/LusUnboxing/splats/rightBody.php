@@ -42,7 +42,7 @@ if ($item['statistics_note_3'] = '') {
 	} else {
 		$pattern = '//';
 		$replace = $item['temp_location'];
-		$style3 = 'style="background-color: #cd5555;"';
+		$style5 = 'style="background-color: #cd5555;"';
 	}
 }
 
@@ -164,7 +164,7 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
 				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
 				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
+				<tr <?=$style5?>><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
 				</td></tr>
 				<!--<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>
 				<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
