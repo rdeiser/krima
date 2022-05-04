@@ -1,51 +1,20 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>K-State Item Information - displays item information</title>
-</head>
-<div>
-<button class="lang">
-<a class="btn btn-lang btn-sm active" border="2" href="../DisplayItem/DisplayItem.html">
-<span>English</span>
-</a>
-</button>
-<button class="lang">
-<a class="btn btn-lang btn-sm" border="2" href="../DisplayItem/DisplayItem_esp.html">
-<span>Español</span>
-</a>
-</button>
-</div>
-<h1 id="k-state-item-information---displays-item-information">K-State Item Information - displays item information</h1>
-<p id=intro>This application facilitates the <strong>Unboxing Workflow</strong> by providing you with important information.  It provides you with the physical item's <strong>Title</strong>, <strong>Call Number</strong>, <strong>Description</strong>, <strong>Barcode</strong>, <strong>Process Type</strong>, <strong>Fulfillment Note</strong>, and its final <strong>Destination</strong>.  The application is color coded to provide a stimulated eye response, so please review the color code table below.  After scanning your first barcode, you will be able to scan your next barcode from the results page.  If you have any questions please do not hesitate to ask Library Staff.</p>
+﻿<h1 id="k-state-lus-fulfillment-scan-in">K-State LUS Fulfillment Scan In</h1>
+<p>This application facilitates the material returns by removing Item Record Temporary Location Information. The output provides you with the physical item's <strong>Title, Location (i.e. Permanent Location Code), Call Number, Barcode, Process Type, Fulfillment Note, Inventory Date,</strong> and its final <strong>Destination (i.e. Permanent Library Description)</strong>.  The application is color coded to provide a stimulated eye response, so please review the color code table below.  After scanning your first barcode, you will be able to scan your next barcode from the results page.  If you have any questions please do not hesitate to ask Library Staff.</p>
 <h2 id="input">Input</h2>
 <ul>
-<li>Barcode of <strong>Unboxed</strong> physical item found from the outside cover, inside cover, or within the first 5 pages.  The barcode can be scanned in using the barcode scanner or typed in.  The search is not case sensitive.</li>
+<li>Barcode of <strong>Returned Item</strong> physical item found from the outside cover, inside cover, or within the first 5 pages.  The barcode can be scanned in using the barcode scanner or typed in.  The search is not case sensitive.</li>
 </ul>
 <h2 id="procedure">Procedure</h2>
 <p>The first form asks for you to scan a barcode.  This barcode can be scanned with the barcode scanner or by being typed in.  When you have located the barcode on the physical piece, enter that barcode into the form:
-<br>
-<img src="images/DisplayItem-out0.PNG" alt="Screenshot of grima form" border="2"/></p>
-<p>If the barcode does not exist within the system you will get an error.  Check the physical piece for other barocdes and if they all return the following error, place the physical item on the <strong>Problem Shelf</strong>:
-<br>
-<img src="images/DisplayItem-out1.PNG" alt="Screenshot of grima form" border="2"/></p>
-<p>The next form will display the <strong>Unboxed</strong> physical item information.  The <strong>Destination</strong> will display at the top of the page followed by <strong>Title</strong>, <strong>Call Number</strong>, <strong>Description</strong>, <strong>Barcode</strong>, <strong>Process Type</strong>, <strong>Fulfillment Note</strong>, and the<strong>Destination</strong> again.  The background color of the form is related to the physical item's destination.  <strong>Please review the color code table below.</strong>  If the <strong>Process Type</strong> row has a background color of <span style="color:#cd3700">red</span> place the physical item on the <strong>Problem Shelf</strong>, ignoring the stated destination.  If the <strong>Fulfillment Note</strong> row has a background color of <span style="color:#cd3700">red</span> place the physical item on the <strong>Problem Shelf</strong>, ignoring the stated destination:
-<br>
-<img src="images/DisplayItem-out2.PNG" alt="Screenshot of grima form" border="2"/></p>
-<br>
+<img src="images/DisplayItem-out0.PNG" alt="Screenshot of grima form" /></p>
+<p>If the barcode does not exist within the system you will get an error.  Check the physical piece for other barocdes and if they all return the following error, send the physical item to <strong>Metadata, Preservation, and Acquistions Database Maintenance Shelf</strong>:
+<img src="images/DisplayItem-out1.PNG" alt="Screenshot of grima form" /></p>
+<p>The next form will display the physical item information.  The <strong>Destination</strong> will display at the top of the page followed by <strong>Title</strong>, <strong>Location (i.e. Permanent Location Code)</strong>, <strong>Process Type</strong>, <strong>Fulfillment Note</strong>, <strong>Inventory Date</strong>, and the <strong>Destination (i.e. Permanent Library Description)</strong> again.  The background color of the form is related to the physical item's destination.  <strong>Please review the color code table below.</strong>  If the <strong>Process Type</strong> row has a background color of <span style="color:#cd3700">red</span> place the physical item on the <strong>Problem Shelf</strong>, ignoring the stated destination.  If the <strong>Fulfillment Note</strong> row has a background color of <span style="color:#cd3700">red</span> place the physical item on the <strong>Problem Shelf</strong>, ignoring the stated destination:</p>
+<p><img src="images/DisplayItem-out2.PNG" alt="Screenshot of grima form" /></p>
 <p>When ready, you can scan the next barcode using the form at the bottom of the page:</p>
-<p><img src="images/DisplayItem-out3.PNG" alt="Screenshot of grima form" border="2"/></p>
-<br>
+<p><img src="images/DisplayItem-out3.PNG" alt="Screenshot of grima form" /></p>
 <h2 id="color-code-table">Color Code Table</h2>
-<table border="3" width="100" style="
-    padding-right: 1px;
-    padding-bottom: 1px;
-    padding-left: 1px;
-    padding-top: 1px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 1100px;
-">
+<table>
 <thead>
 <tr>
 <th>Destination</th>
@@ -54,30 +23,37 @@
 </thead>
 <tbody>
 <tr>
-<!--Added boarder to images-->
-<td><img src="images/DisplayItem-out4.PNG" alt="Screenshot of grima form"/></td>
-<td>Place physical item on <strong> HALE return</strong>shelves</td>
+<td><img src="images/DisplayItem-out4.PNG" alt="Screenshot of grima form" /></td>
+<td>Place physical item on <strong>HALE return</strong> shelves</td>
 </tr>
 <tr>
-<td><img src="images/DisplayItem-out6.PNG" alt="Screenshot of grima form"/></td>
+<td><img src="images/DisplayItem-out6.PNG" alt="Screenshot of grima form" /></td>
 <td>Place physical item on <strong>ANNEX ingest</strong> shelves</td>
 </tr>
 <tr>
-<td><img src="images/DisplayItem-out5.PNG" alt="Screenshot of grima form"/></td>
+<td><img src="images/DisplayItem-out5.PNG" alt="Screenshot of grima form" /></td>
 <td>Place physical item on <strong>To be WITHDRAWN</strong> shelves</td>
 </tr>
 <tr>
-<td><img src="images/DisplayItem-out9.PNG" alt="Screenshot of grima form"/></td>
+<td><img src="images/DisplayItem-out9.PNG" alt="Screenshot of grima form" /></td>
 <td>Place physical item on <strong>Problem Shelf</strong></td>
 </tr>
 <tr>
-<td><img src="images/DisplayItem-out7.PNG" alt="Screenshot of grima form"/></td>
+<td><img src="images/DisplayItem-out7.PNG" alt="Screenshot of grima form" /></td>
 <td>Place physical item on <strong>Problem Shelf</strong></td>
 </tr>
 <tr>
-<td><img src="images/DisplayItem-out8.PNG" alt="Screenshot of grima form"/></td>
+<td><img src="images/DisplayItem-out8.PNG" alt="Screenshot of grima form" /></td>
 <td>Place physical item on <strong>Problem Shelf</strong></td>
 </tr>
 </tbody>
 </table>
-</html>
+
+<div style="margin-top: 30px;margin-bottom: 10px;font-size: 0.8em;border-top: 1px solid #eee;padding-top: 8px;cursor: pointer;"
+     title="This message doesn't display in the registered version of Markdown Monster." onclick="window.open('https://markdownmonster.west-wind.com')">
+    <img src="https://markdownmonster.west-wind.com/favicon.png"
+         style="height: 20px;float: left; margin-right: 10px;"/>
+    created with the free version of
+    <a href="https://markdownmonster.west-wind.com"
+       target="top">Markdown Monster</a>
+</div>
