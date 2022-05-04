@@ -36,10 +36,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$replace = 'Send to Condition Review Shelf';
 }
 if ($item['statistics_note_3'] = '') {
-	if ($item['in_temp_location'] == 'false') {
 		$pattern = '//';
 		$replace = $item['library'];
-	}
 }
 
 //Following php color codes the Process type if it is populated
