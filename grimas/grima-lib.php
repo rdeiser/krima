@@ -817,7 +817,7 @@ class Grima {
 	function putItem($mms_id,$holding_id,$item_pid,$item,$generate_description='true') {
 		$ret = $this->put('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
-			array('generate_description' => $generate_escription),
+			array('generate_description' => $generate_description),
 			$item
 			);
 		return $ret;
