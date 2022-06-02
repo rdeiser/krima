@@ -50,6 +50,15 @@ if ($item['location_code'] == 'annexltd' AND $item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
+if ($item['location_code'] == 'annex' AND $item['statistics_note_2'] == 'LACKS ozone') {
+	$pattern = '/^$/';
+	$replace = 'ANNEX ingest';
+	$style = 'style="background-color: #6495ed;"';
+} else if ($item['statistics_note_3'] == '') {
+	$pattern = '/^$/';
+	$replace = 'Send to Problem Shelf';
+}
+
 
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
