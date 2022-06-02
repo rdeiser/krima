@@ -814,7 +814,7 @@ class Grima {
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
 	function putItem($mms_id,$holding_id,$item_pid,$item) {
-		$ret = $this->put('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
+		$ret = $this->put('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}?generate_description=true',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
 			array(),
 			$item
