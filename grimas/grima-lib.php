@@ -810,13 +810,14 @@ class Grima {
  * @param string $mms_id MMS ID of Bib record
  * @param string $holding_id Holding ID of Holding record
  * @param string $item_pid Item ID of Item record
+ * @param string generate_description = true
  * @param DomDocument $item Item object to update record with in Alma
  * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
  */
-	function putItem($mms_id,$holding_id,$item_pid,$item) {
-		$ret = $this->put('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}?generate_description=true',
+	function putItem($mms_id,$holding_id,$item_pid,$item,$generate_description='true') {
+		$ret = $this->put('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
 			array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
-			array(),
+			array('generate_description' => $generate_escription),
 			$item
 			);
 		return $ret;
