@@ -39,6 +39,21 @@ class AnnexWork extends GrimaTask {
 				$item->addInventoryDate(date("Y-m-d"));
 				$item->updateAlma();
 			}
+			if ($item['library_code'] == 'ARCH') {
+				$item = new Item();
+				$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+				$item['library_code'] = 'ANNEX';
+				$item['location_code'] = 'annex';
+				if ($item['item_policy'] !== 'book/ser') {
+					$item['item_policy'] = 'book/ser';
+				}
+				$item->addInventoryDate(date("Y-m-d"));
+				if ($item['statistics_note_2'] == '') {
+					$item['statistics_note_2'] = 'LACKS ozone';
+				}
+				$item->updateAlma();
+
+			}
 		}
 		if ($this['location'] == 'govstorks') {
 			if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
