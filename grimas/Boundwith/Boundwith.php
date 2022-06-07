@@ -75,9 +75,9 @@ class Boundwith extends GrimaTask {
 		$mfhd->updateAlma();
 		}
 
-		//$this->splatVars['width'] = 12;
+		/*$this->splatVars['width'] = 12;
 		$this->splatVars['biblist'] = $this->biblist;
-		$this->splatVars['body'] = array( 'list', 'messages' );
+		$this->splatVars['body'] = array( 'list', 'messages' );*/
 	}
 
 }
