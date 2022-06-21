@@ -45,7 +45,8 @@ if ($item['location_code'] == 'annexltd' AND $item['statistics_note_3'] == '') {
 	$pattern = '/^$/';
 	$replace = 'ANNEXLTD ingest';
 	$style = 'style="background-color: #6495ed;"';
-} else if ($item['statistics_note_3'] == '') {
+}
+if ($item['location_code'] !== 'annexltd' AND $item['statistics_note_3'] == '') {
 	$pattern = '/^$/';
 	$replace = 'Send to Problem Shelf';
 }
