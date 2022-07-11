@@ -22,6 +22,7 @@ if ($item['description']=='') {
 				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
+				<tr><th>Item Policy:</th><td><?=$e($item['item_policy'])?></td></tr>
 				<tr><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
 				<tr><th>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
 				<tr><th>Public Note:</th><td><?=$e($item['public_note'])?></td></tr>
