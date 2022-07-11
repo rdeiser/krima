@@ -13,30 +13,7 @@
 	font-weight: bold;
 	text-align: center;
 }
-/*The following .flip section is for the cursor hover effect for the english/spanish text*/
-.flip>span {
-	color: transparent;
-	float: none;
-}
 
-.flip:hover>span {
-	color: black;
-	float: left;
-}
-
-.flip>span:first-child {
-	color: black;
-	float: left;
-}
-
-.flip:hover>span:first-child {
-	color: transparent;
-	float: none;
-}
-
-.flip {
-	width: 333px;
-}
 td {
 	display: flex;
 	flex-wrap: wrap;
