@@ -12,30 +12,6 @@ if ($item['description']=='') {
 	$replace2 = '&nbsp;';
 }
 
-$holding = new Holding();
-$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-if ($holding['suppress_from_publishing'] == 'true'){
-	if ($item['statistics_note_3']== 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}else if ($item['statistics_note_3']== 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}
-} else {
-	$bib = new bib();
-	$bib->loadFromAlma($item['mms_id']);
-	if ($bib['suppress_from_publishing'] == 'true'){
-		if ($item['statistics_note_3']== 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}else if ($item['statistics_note_3']== 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}
-}
-}
-
 	$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
 	$replace4 = '';
 ?>
