@@ -4,7 +4,7 @@ if (preg_match("/^([2-9]|[1-9][0-9]|[1-9][0-9][0-9])$/", $item['copy_id'])) {
 } else {
 	$style3 = 'style="opacity:0;"';
 }
-if ($item['description']=='') {
+if ($item['description']==='') {
 	$style4 = 'style="opacity:0;"';
 } else {
 	$style4 = 'style="opacity:1;"';
