@@ -1,125 +1,9 @@
 <?php
-if ($item['statistics_note_3'] == 'HALE return') {
-	$pattern = '/(HALE return)/';
-	$replace = 'HALE return';
-} 
-if ($item['statistics_note_3'] == 'ANNEX ingest') {
-	$pattern = '/(ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
-	$pattern = '/(To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(AHD HALE return)/';
-	$replace = 'HALE return';
-} 
-if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/(AHD ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-	$pattern = '/(AHD To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = 'Send to Condition Review Shelf';
-}
 if ($item['statistics_note_3'] == '') {
 	$pattern = '//';
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['location'] !== 'main') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
-		}
-	}
-/*if ($item['location'] == 'cmc') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location_code'] == 'main') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'over') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'overplus') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'dowref') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'ref') {
-	if ($item['statistics_note_3'] == 'HALE return') {
-		$pattern = '/(HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'juv') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'cmc') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'main') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'over') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'overplus') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'dowref') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}
-if ($item['location'] == 'ref') {
-	if ($item['statistics_note_3'] == 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}
-	}*/
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
 		$style = 'style=";"';
@@ -224,25 +108,25 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
+
+	$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
+	$replace4 = '';
 ?>
               <table class="table">
-                <tr><th class="flip"><span>Title:</span><span>Título:</span></th><td><?=$e($item['title'])?></td></tr>
-				<tr><th class="flip"><span>Call Number:</span><span>Número de clasificación:</span></th><td><?=$e ($item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
-				<!--<tr><th class="flip"><span>Description:</span><span>Descripción:</span></th><td><?=$e($item['description'])?></td></tr>-->
-				<tr><th class="flip"><span>Barcode:</span><span>Código de barras:<!--Código de procedencia:--></span></th><td><?=$e($item['barcode'])?></td></tr>
-				<!--<tr><th class="flip"><span>Location:</span><span>Lugar:</span></th><td><?=$e($item['location'])?></td></tr>-->
-				<tr <?=$style?>><th class="flip"><span>Process Type:</span><span>Tipo de Proceso:</span></th><td><?=$e($item['process_type'])?></td></tr>
-				<tr <?=$style2?>><th class="flip"><span>Fulfillment Note:</span><span>Nota de Procesamiento:<!--Nota de servicios al usuario:--></span></th><td><?=$e($item['fulfillment_note'])?></td></tr>
-				<tr><th class="flip"><span>Inventory Date:</span><span>Fecha de inventario:</span></th><td><?=$e($item['inventory_date'])?></td></tr>
-				<!--<tr><th>Inventory Number:</th><td><?=$e($item['inventory_number'])?></td></tr>
-				<tr><th>Internal Note 3:</th><td><?=$e($item['internal_note_3'])?></td></tr>-->
-				<tr><th class="flip"><span>Destination:</span><span>Destino:</span></th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?>
-				</td></tr>
-				<!--<tr><th>Bib Suppressed:</th><td><?=$e($bib['suppress_from_publishing'])?>-->
-				<!--<tr><th>Holding Suppressed:</th><td><?=$e($holding['suppress_from_publishing'])?>
-				</td></tr>
-				<tr><th>Holding ID:</th><td><?=$e($item['holding_id'])?>
-				</td></tr>-->
+                <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
+				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<!--<tr><th>Description:</th><td><?=$e($item['description'])?></td></tr>-->
+				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
+				<tr><th>Inventory Date:</th><td><?=$e($item['inventory_date'])?></td></tr>
+				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
+				<tr <?=$style2?>><th>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
+				<tr><th>Public Note:</th><td><?=$e($item['public_note'])?></td></tr>
+				<tr><th>Internal Note 1:</th><td><?=$e($item['internal_note_1'])?></td></tr>
+				<tr><th>Internal Note 2:</th><td><?=$e($item['internal_note_2'])?></td></tr>
+				<tr><th>Statistics Note 1:</th><td><?=$e($item['statistics_note_1'])?></td></tr>
+				<tr><th>Statistics Note 2:</th><td><?=$e($item['statistics_note_2'])?></td></tr>
+				<!--<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>-->
+				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
@@ -252,8 +136,15 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
-					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
-					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
+					<label for="location">Annex Location Code:</label>
+					<select name="location" id="location" style="width: 125px; margin-left: 5px;" box-sizing: border-box>
+						<option value="annexltd">annexltd</option>
+						<option value="annex" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annex') ? 'selected' : ''; ?>>annex</option>
+						<option value="KS-Extension" <?php echo (isset($_POST['location']) && $_POST['location'] === 'KS-Extension') ? 'selected' : ''; ?>>KS-Extension</option>
+						<option value="govstorks" <?php echo (isset($_POST['location']) && $_POST['location'] === 'govstorks') ? 'selected' : ''; ?>>govstorks</option>
+					</select>
+					<label class="col-3 form-check-label" for="barcode" style="top: 10px;">Barcode:</label>
+					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE" style="top: 8px;"/>
 				</div>
 				<input class="btn btn-primary btn-sm active" type="submit" value="Submit">
 				</div>
