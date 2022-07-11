@@ -6,6 +6,9 @@ if ($item['description']=='') {
 	$pattern2 = '/^/';
 	$replace2 = '&nbsp;';
 }
+
+$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
+$replace4 = '';
 ?>
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
