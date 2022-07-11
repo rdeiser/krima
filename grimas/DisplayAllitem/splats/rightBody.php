@@ -40,13 +40,6 @@ if ($item['description']=='') {
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
-					<label for="location">Annex Location Code:</label>
-					<select name="location" id="location" style="width: 125px; margin-left: 5px;" box-sizing: border-box>
-						<option value="annexltd">annexltd</option>
-						<option value="annex" <?php echo (isset($_POST['location']) && $_POST['location'] === 'annex') ? 'selected' : ''; ?>>annex</option>
-						<option value="KS-Extension" <?php echo (isset($_POST['location']) && $_POST['location'] === 'KS-Extension') ? 'selected' : ''; ?>>KS-Extension</option>
-						<option value="govstorks" <?php echo (isset($_POST['location']) && $_POST['location'] === 'govstorks') ? 'selected' : ''; ?>>govstorks</option>
-					</select>
 					<label class="col-3 form-check-label" for="barcode" style="top: 10px;">Barcode:</label>
 					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE" style="top: 8px;"/>
 				</div>
