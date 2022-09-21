@@ -1,18 +1,7 @@
 <GrimaForm>
-    <Title>Annex Transfer--Update Holdings</Title>
-	<Field
-	name="location"
-	label="Annex Location Code"
-	type="select"
-	required="yes"
-	>
-	<option value="annexltd">annexltd</option>
-	<option value="annex">annex</option>
-	<option value="KS-Extension">KS-Extension</option>
-	<option value="govstorks">govstorks</option>
-	</Field>
+    <Title>Physical Condition Review</Title>
     <Field
-        label="Barcode of unboxed item"
+        label="Barcode"
         name="unboxed_barcode"
         required="yes"
         placeholder="Scan barcode..."
