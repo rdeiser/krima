@@ -6,13 +6,11 @@ class DisplayCondition extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
 		$item->updateAlma();
-	}
-}
-
 {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
 }
-
+}
+}
 DisplayCondition::RunIt();
