@@ -79,7 +79,7 @@ if (preg_match("/^([2-9]|[1-9][0-9]|[1-9][0-9][0-9])$/", $item['copy_id'])) {
 }
 if ($item['description']=='') {
 	$style4 = 'style="opacity:0;"';
-	$pattern2 = '^';
+	$pattern2 = '/^/';
 	$replace2 = '';
 } else {
 	$style4 = 'style="opacity:1;"';
