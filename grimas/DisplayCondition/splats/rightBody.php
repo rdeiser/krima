@@ -85,29 +85,6 @@ if ($item['description']=='') {
 	$replace2 = '&nbsp;';
 }
 
-$holding = new Holding();
-$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-if ($holding['suppress_from_publishing'] == 'true'){
-	if ($item['statistics_note_3']== 'AHD HALE return') {
-		$pattern = '/(AHD HALE return)/';
-		$replace = 'Send to Problem Shelf';
-		}else if ($item['statistics_note_3']== 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}
-} else {
-	$bib = new bib();
-	$bib->loadFromAlma($item['mms_id']);
-	if ($bib['suppress_from_publishing'] == 'true'){
-		if ($item['statistics_note_3']== 'AHD HALE return') {
-			$pattern = '/(AHD HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}else if ($item['statistics_note_3']== 'HALE return') {
-			$pattern = '/(HALE return)/';
-			$replace = 'Send to Problem Shelf';
-		}
-}
-}
 
 	$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
 	$replace4 = '';
@@ -130,7 +107,6 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
-			  <!--<input class="btn btn-primary btn-sm active" onclick="history.go(-1);" autofocus="autofocus" type="submit" value="Back"/>-->
 			  <!--The following combines the two grimas ontop of each other-->
 			  <form method="post" action="../DisplayCondition/DisplayCondition.php">
 				<div class="col">
