@@ -20,7 +20,7 @@ if ($item['statistics_note_3'] == 'Condition review--REPAIR') {
 	$text = '';
 }
 
-					?>
+?>
 		<!--<h1 class="page-header text-center"><?=$e($title)?></h1>-->
         <div class="row">
           <div class="col">
