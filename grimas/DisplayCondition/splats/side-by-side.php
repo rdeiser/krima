@@ -14,7 +14,11 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	
 }
 
-if ($item['description']  !== ''||$item['copy_id'] >= '1')
+if ($item['description']  !== ''||$item['copy_id'] >= '1') {
+  $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shel';
+	$style = 'style="background-color: #cd5555;"';
+}
 
 if ($item['statistics_note_3'] == 'Condition review--REPAIR'||$item['statistics_note_3'] == 'Condition review--CRITICAL') {
 	$pattern = '/(Condition review--REPAIR|Condition review--CRITICAL)/';
