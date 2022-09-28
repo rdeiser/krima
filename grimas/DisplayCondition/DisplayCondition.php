@@ -6,7 +6,7 @@ class DisplayCondition extends GrimaTask {
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
 		if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-			$item['statistics_note_1'] == 'WITHDRAWN';
+			$item['statistics_note_1'] = 'WITHDRAWN';
 			if ($item['library'] !== 'WITHDRAW') {
 				if($item['location_code'] == 'cmc') {
 					$item['library_code'] = 'WITHDRAW';
