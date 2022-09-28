@@ -33,6 +33,7 @@ class DisplayCondition extends GrimaTask {
 					$item['location_code'] = 'wdref';
 				}
 			}
+			$item->updateAlma();
 		}			
 		$item->updateAlma();
 {
