@@ -128,8 +128,8 @@ if ($item['description']=='') {
 				<tr><th>Statistics Note 2:</th><td><?=$e($item['statistics_note_2'])?></td></tr>
 				<!--Remove Stat Note 3 for production move -->
 				<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>
-				<tr><th>Destination:</th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
+				<tr><th>Destination:</th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
 			  <!--The following combines the two grimas ontop of each other-->
