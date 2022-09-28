@@ -4,8 +4,7 @@ class DisplayCondition extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
-		$item->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
-		/**$item->addInventoryDate(date("Y-m-d"));
+		$item->addInventoryDate(date("Y-m-d"));
 		if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 			$item['statistics_note_1'] == 'WITHDRAWN';
 			if ($item['library'] !== 'WITHDRAW') {
@@ -40,7 +39,7 @@ class DisplayCondition extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}*/ /**else {
+} /**else {
 	$this->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
 }**/
 }
