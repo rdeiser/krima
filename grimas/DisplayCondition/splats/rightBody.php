@@ -26,7 +26,6 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
-  	//NEED TO ADD HOLDINGS LOAD TO LOOK AT 852 XML FOR SUBFIELDS 'T' AND 'X' **SER,PER,&ANAL
 }
 
 if ($item['statistics_note_3'] == 'Condition review--REPAIR'||$item['statistics_note_3'] == 'Condition review--CRITICAL') {
