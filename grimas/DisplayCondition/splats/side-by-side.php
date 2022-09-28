@@ -14,7 +14,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   if ($item['description']  !== ''||$item['copy_id'] >= '1') {
     $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
     $replace = 'Multiple Copy/Volume Withdraw Shelf';
-    $style = 'style="background-color: #cd5555;"';
+    $style = 'style="background-color: #ffd800;"';
   }
 	//NEED TO ADD HOLDINGS LOAD TO LOOK AT 852 XML FOR SUBFIELDS 'T' AND 'X' **SER,PER,&ANAL
 }
