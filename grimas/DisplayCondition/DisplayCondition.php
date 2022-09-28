@@ -2,7 +2,6 @@
 require_once("../grima-lib.php");
 class DisplayCondition extends GrimaTask {
 	function do_task() {
-		if ($this['unboxed_barcode'] != '') {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$item->addInventoryDate(date("Y-m-d"));
@@ -40,10 +39,9 @@ class DisplayCondition extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}
-} else {
+} /**else {
 	$this->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
-}
+}**/
 } 
 }
 DisplayCondition::RunIt();
