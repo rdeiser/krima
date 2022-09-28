@@ -39,9 +39,9 @@ class DisplayCondition extends GrimaTask {
 		$this->item = new Item();
 		$this->item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		$this->splatVars['item'] = $this->item;
-}else {
+} /**else {
 	$this->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
-} 
+}**/
 }
 }
 DisplayCondition::RunIt();
