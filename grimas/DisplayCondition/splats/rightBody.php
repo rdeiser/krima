@@ -20,7 +20,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   }
   $holding = new Holding();
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-  $subfieldx = $holding->getSubfieldValues("852","x");
+  $subfields = $holding->getSubfieldValues("852","x");
+  $subfieldx = implode(" ",$subfields);
    /*if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
