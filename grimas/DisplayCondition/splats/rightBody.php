@@ -4,9 +4,26 @@ if ($item['statistics_note_3'] == '') {
 	$replace = 'Send to Problem Shelf';
 }
 
-if ($item['description']  !== ''||$item['copy_id'] >= '1') {
+if ($item['statistics_note_3'] == 'HALE return'||$item['statistics_note_3'] == 'AHD HALE return'||$item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest'||$item['statistics_note_3'] == 'To be WITHDRAWN'||$item['statistics_note_3'] == 'AHD To be WITHDRAWN'||$item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw'||$item['statistics_note_3'] == '') {
+	$pattern = '/(HALE return|AHD HALE return|ANNEX ingest|AHD ANNEX ingest|To be WITHDRAWN|AHDTo be WITHDRAWN)|(^)/';
+	$replace = 'Place on Reveiw Cart';
+	
+}
+
+if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'WITHDRAW';
+
+  if ($item['description']  !== ''||$item['copy_id'] >= '1') {
     $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
     $replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
+	//NEED TO ADD HOLDINGS LOAD TO LOOK AT 852 XML FOR SUBFIELDS 'T' AND 'X' **SER,PER,&ANAL
+}
+
+if ($item['statistics_note_3'] == 'Condition review--REPAIR'||$item['statistics_note_3'] == 'Condition review--CRITICAL') {
+	$pattern = '/(Condition review--REPAIR|Condition review--CRITICAL)/';
+	$replace = 'BINDING Cart';
 }
 
 //Following php color codes the Process type if it is populated
@@ -111,7 +128,7 @@ if ($item['description']=='') {
 				<tr><th>Statistics Note 2:</th><td><?=$e($item['statistics_note_2'])?></td></tr>
 				<!--Remove Stat Note 3 for production move -->
 				<tr><th>Statistics Note 3:</th><td><?=$e($item['statistics_note_3'])?></td></tr>
-				<tr><th>Destination:</th><td><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
+				<tr><th>Destination:</th><td class="statnote"><?= preg_replace($pattern, $replace, $item['statistics_note_3'])?></td></tr>
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
 				<tr><th></th><td></td></tr>
               </table>
