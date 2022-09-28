@@ -42,6 +42,12 @@ class DisplayCondition extends GrimaTask {
 } /**else {
 	$this->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
 }**/
+} else {
+	function do_task(){
+		$item = new Item();
+		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		$this->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
+	}
 }
 }
 DisplayCondition::RunIt();
