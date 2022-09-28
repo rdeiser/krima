@@ -4,6 +4,9 @@ class DisplayCondition extends GrimaTask {
 	function do_task() {
 		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
+		if (str_starts_with($ret, 'Alma says: No items found for barcode')) {
+			$item->addMessage('error',"Place book on No Barcode Shelf {$this['unboxed_barcode']}");
+		}
 		/**$item->addInventoryDate(date("Y-m-d"));
 		if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
 			$item['statistics_note_1'] == 'WITHDRAWN';
