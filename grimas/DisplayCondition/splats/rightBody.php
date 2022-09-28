@@ -18,15 +18,21 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
     $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
     $replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
-  $holding = new Holding();
-  $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
-  $subfieldx = $holding->getSubfieldValues("852","x")
+  	//NEED TO ADD HOLDINGS LOAD TO LOOK AT 852 XML FOR SUBFIELDS 'T' AND 'X' **SER,PER,&ANAL
 }
 
 if ($item['statistics_note_3'] == 'Condition review--REPAIR'||$item['statistics_note_3'] == 'Condition review--CRITICAL') {
 	$pattern = '/(Condition review--REPAIR|Condition review--CRITICAL)/';
 	$replace = 'BINDING Cart';
 }
+
+$holding = new Holding();
+$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+$subfieldx = $holding->getSubfieldValues("852","x")
+if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+    $replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
 
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {
