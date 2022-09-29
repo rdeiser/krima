@@ -28,7 +28,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 		if (strops($subfieldx, $needle) !== false) {
 			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 			$replace = 'Multiple Copy/Volume Withdraw Shelf';
-		} else {
+		}
+		if (strops($subfieldx, $needle) === false) {
 			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 			$replace = 'Raymond Test';
 		}
