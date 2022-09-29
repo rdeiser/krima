@@ -25,8 +25,10 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $needle = 'ser' || 'per' || 'anal';
   if (!function_exists('str_contains')) {
 	function str_contains(string $subfieldx, string $needle): bool {
-		$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-		$replace = 'Multiple Copy/Volume Withdraw Shelf';
+		if (strops($subfieldx, $needle) !== false) {
+			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+			$replace = 'Multiple Copy/Volume Withdraw Shelf';
+		}
 	}
 }
 }
