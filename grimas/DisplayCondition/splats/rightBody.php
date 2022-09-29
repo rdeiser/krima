@@ -26,12 +26,12 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   //$pos = strpos($subfieldx,'per');
   //if ($pos === true) {
   //if (strpos($subfieldx,'ser')||strpos($subfieldx,'per')||strpos($subfieldx,'anal')) { 
-  //if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
-	//$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	//$replace = 'Multiple Copy/Volume Withdraw Shelf';
-  //}
+  /*if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }*/
 
-  if (!defined('PHP_VERSION_ID') || (defined('PHP_VERSION_ID') && PHP_VERSION_ID < 80000)) {
+  //if (!defined('PHP_VERSION_ID') || (defined('PHP_VERSION_ID') && PHP_VERSION_ID < 80000)) {
 	if (!function_exists('str_contains')) {
 	  /**
 	   * Checks if a string contains another
@@ -47,7 +47,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 		}
 	  }
 	  }
-	}
+	//}
   }
   
 
