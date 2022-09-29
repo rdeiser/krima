@@ -23,10 +23,12 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldx = implode(" ",$subfields);
   $needle = 'per';
-  function str_contains(string $subfieldx, string $needle): bool {
-	if (strpos($subfieldx,'ser')||strpos($subfieldx,'per')||strpos($subfieldx,'anal')) {
-		$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-		$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  if (!function_exists('str_contains')) {
+	function str_contains(string $subfieldx, string $needle): bool {
+		if (strpos($subfieldx,'ser') !== false||strpos($subfieldx,'per') !== false||strpos($subfieldx,'anal') !== false) {
+			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+			$replace = 'Multiple Copy/Volume Withdraw Shelf';
+		}
 	}
 }
 }
