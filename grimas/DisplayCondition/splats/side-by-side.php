@@ -20,7 +20,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldx = implode(" ",$subfields);
-  $pos = strpos($subfieldx,'p');
+  $pos = strpos($subfieldx,'p' || 's' || 'a');
   if ($pos !== false) {
   //if (strpos($subfieldx,'ser')||strpos($subfieldx,'per')||strpos($subfieldx,'anal')) {
   //if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
