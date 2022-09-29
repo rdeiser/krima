@@ -25,7 +25,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   //$needle = 'ser' || 'per' || 'anal';
   $needle = 's' || 'p' || 'a';
   //$pos = strops($subfieldx, $needle);
-  if (strops($subfieldx, $needle) !== false) {
+    function strops($subfieldx, $needle) !== false {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
