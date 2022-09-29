@@ -28,6 +28,16 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
     $replace = 'Multiple Copy/Volume Withdraw Shelf';
     $style = 'style="background-color: #ffd800;"';
   }
+  //The following will only work with php8 or higher
+  /*$holding = new Holding();
+  $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
+  $subfields = $holding->getSubfieldValues("852","x");
+  $subfieldx = implode(" ",$subfields);
+  if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  $style = 'style="background-color: #ffd800;"';
+  }*/
 }
 
 if ($item['statistics_note_3'] == 'Condition review--REPAIR'||$item['statistics_note_3'] == 'Condition review--CRITICAL') {
