@@ -22,8 +22,15 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldx = implode(" ",$subfields);
-  $needle = 'ser' || 'per' || 'anal';
-  if (!function_exists('str_contains')) {
+  //$needle = 'ser' || 'per' || 'anal';
+  $needle = 's' || 'p' || 'a';
+  $pos = strops($subfieldx, $needle);
+  if ($pos !== false) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
+
+  /*if (!function_exists('str_contains')) {
 	function str_contains(string $subfieldx, string $needle): bool {
 		if (strops($subfieldx, $needle) !== false) {
 			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
@@ -34,7 +41,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 			$replace = 'Raymond Test';
 		}
 	}
-}
+}*/
 }
   
 
