@@ -21,7 +21,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldx = implode(" ",$subfields);
   $pos = strpos($subfieldx,'p');
-  if ($pos === true) {
+  if ($pos !== false) {
   //if (strpos($subfieldx,'ser')||strpos($subfieldx,'per')||strpos($subfieldx,'anal')) {
   //if (str_contains($subfieldx,'ser')||str_contains($subfieldx,'per')||str_contains($subfieldx,'anal')) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
