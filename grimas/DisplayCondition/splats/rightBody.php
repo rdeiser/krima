@@ -40,8 +40,8 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	   * @param string $needle The string to search
 	   * @return boolean Returns TRUE if the needle was found in haystack, FALSE otherwise.
 	   */
-	  function str_contains(string $subfieldx, string $needle): bool {
-		if (strpos($subfieldx, $needle) !== false) {
+	  function str_contains(string $subfields, string $needle): bool {
+		if (strpos($subfields, $needle) !== false) {
 			$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 			$replace = 'Multiple Copy/Volume Withdraw Shelf';
 		}
