@@ -23,9 +23,10 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldx = implode(" ",$subfields);
-  $needle = 's' || 'p' || 'a';
-  $pos = strpos($subfieldx, $needle);
-  if ($pos !== false) {
+  $poss = strpos($subfieldx,'s');
+  $posa = strpos($subfieldx,'a');
+  $posp = strpos($subfieldx,'p');
+  if ($poss !== false||$posa !== false||$posp !== false) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
