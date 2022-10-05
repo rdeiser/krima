@@ -33,7 +33,7 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
 
-  if (isset($subfieldy)) {
+  if (isset($subfieldt)) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
