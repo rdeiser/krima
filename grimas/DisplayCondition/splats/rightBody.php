@@ -33,9 +33,9 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
 
-  if (isset($subfieldt)) {
+  if (empty($subfieldt)) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = var_dump(isset($subfieldt));
+	$replace = 'Raymond is empty';
   }
   //The following will only work with php8 or higher
   /*$holding = new Holding();
