@@ -23,7 +23,9 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
   $subfields = $holding->getSubfieldValues("852","x");
   $subfieldt = $holding->getSubfieldValues("852","t");
-  $subfieldy = implode(" ",$subfieldt);
+  $subfield6 = $holding->getFields("866");
+  $subfield7 = $holding->getFields("867");
+  $subfield8 = $holding->getFields("868");
   $subfieldx = implode(" ",$subfields);
   $poss = strpos($subfieldx,'s');
   $posa = strpos($subfieldx,'a');
@@ -35,8 +37,24 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
 
   if (!empty($subfieldt)) {
 	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = 'Raymond is empty';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
   }
+  
+  if (!empty($subfield6)) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
+
+  if (!empty($subfield7)) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
+  
+  if (!empty($subfield8)) {
+	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+	$replace = 'Multiple Copy/Volume Withdraw Shelf';
+  }
+
   //The following will only work with php8 or higher
   /*$holding = new Holding();
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);

@@ -19,11 +19,38 @@ if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdr
   $holding = new Holding();
   $holding->loadFromAlma($item['mms_id'],$item['holding_id']);
   $subfields = $holding->getSubfieldValues("852","x");
+  $subfieldt = $holding->getSubfieldValues("852","t");
+  $subfield6 = $holding->getFields("866");
+  $subfield7 = $holding->getFields("867");
+  $subfield8 = $holding->getFields("868");
   $subfieldx = implode(" ",$subfields);
   $poss = strpos($subfieldx,'s');
   $posa = strpos($subfieldx,'a');
   $posp = strpos($subfieldx,'p');
   if ($poss !== false||$posa !== false||$posp !== false) {
+    $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+    $replace = 'Multiple Copy/Volume Withdraw Shelf';
+    $style = 'style="background-color: #ffd800;"';
+  }
+  if (!empty($subfieldt)) {
+    $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+    $replace = 'Multiple Copy/Volume Withdraw Shelf';
+    $style = 'style="background-color: #ffd800;"';
+  }
+    
+    if (!empty($subfield6)) {
+    $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+    $replace = 'Multiple Copy/Volume Withdraw Shelf';
+    $style = 'style="background-color: #ffd800;"';
+  }
+  
+    if (!empty($subfield7)) {
+    $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
+    $replace = 'Multiple Copy/Volume Withdraw Shelf';
+    $style = 'style="background-color: #ffd800;"';
+  }
+    
+    if (!empty($subfield8)) {
     $pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
     $replace = 'Multiple Copy/Volume Withdraw Shelf';
     $style = 'style="background-color: #ffd800;"';
