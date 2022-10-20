@@ -1,13 +1,22 @@
 <GrimaForm>
 	<Title>Grima: Delete Item</Title>
 	<Field
+	name="order"
+	label="Place in 72hr Quarantine "
+	type="select"
+	requiered="yes"
+	>
+	<option value="false">No</option>
+	<option value="true">Yes</option>
+	</Field>
+	<Field
 		name="item"
 		label="Item PID or Barcode"
 		autocomplete="off"
 		required="yes"
 		placeholder="Item identifier or barcode..."
 	/>
-	<Field
+	<!--<Field
 		name="holding"
 		label="Delete Holdings Record"
 		required="yes"
@@ -16,5 +25,5 @@
 	>
 		<option value="false">No</option>
 		<option value="true">Yes</option>
-	</Field>
+	</Field>-->
 </GrimaForm>
