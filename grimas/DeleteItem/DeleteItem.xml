@@ -14,4 +14,5 @@
 		placeholder="Holdings ID"
 		type="select"
 		required="yes"
+	/>
 </GrimaForm>
