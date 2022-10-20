@@ -1,24 +1,6 @@
 <GrimaForm>
 	<Title>Grima: Delete Item</Title>
 	<Field
-	name="holding"
-	label="Delete Holdings Record"
-	type="select"
-	requiered="yes"
-	>
-	<option value="false">No</option>
-	<option value="true">Yes</option>
-	</Field>
-	<Field
-	name="bib"
-	label="Delete Bibliographic Record"
-	type="select"
-	requiered="yes"
-	>
-	<option value="false">No</option>
-	<option value="true">Yes</option>
-	</Field>
-	<Field
 		name="item"
 		label="Item PID or Barcode"
 		autocomplete="off"
