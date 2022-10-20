@@ -7,4 +7,11 @@
 		required="yes"
 		placeholder="Item identifier or barcode..."
 	/>
+	<Field
+		name="holding"
+		label="Delete Holdings Record"
+		required="yes"
+		placeholder="Holdings ID"
+		type="select"
+		required="yes"
 </GrimaForm>
