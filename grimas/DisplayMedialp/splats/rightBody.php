@@ -8,6 +8,16 @@ if ($item['statistics_note_3'] !== 'HALE return') {
 	$pattern = '/(^)/';
 	$replace = 'Send to Problem Review Shelf';
 }
+if ($item['location'] !== 'medialp') {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		} else if ($item['statistics_note_3'] == 'AHD HALE return') {
+			$pattern = '/(AHD HALE return)/';
+			$replace = 'Send to Problem Shelf';
+			$style = 'style=";"';
+		}
+	}
 
 //Following php color codes the Process type if it is populated
 if ($item['process_type']=='') {

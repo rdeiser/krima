@@ -12,6 +12,17 @@ if ($item['statistics_note_3'] !== 'HALE return') {
 	$style = 'style="background-color: #cd5555;"';
 	$text = '';
 }
+if ($item['location'] !== "medialp") {
+	if ($item['statistics_note_3'] == 'HALE return') {
+		$pattern = '/(HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		$style = 'style="background-color: #cd5555;"';
+	} else if ($item['statistics_note_3'] == 'AHD HALE return') {
+		$pattern = '/(AHD HALE return)/';
+		$replace = 'Send to Problem Shelf';
+		$style = 'style="background-color: #cd5555;"';
+	}
+}
 
 	$holding = new Holding();
 	$holding->loadFromAlma($item['mms_id'],$item['holding_id']);
