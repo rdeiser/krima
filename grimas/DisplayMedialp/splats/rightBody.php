@@ -1,43 +1,12 @@
 <?php
-if ($item['additional_info'] =="Item's destination is: Hale Library. Request/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1") {
-        $pattern = "/^(Item's destination is: Hale Library. Request\/Process Type: Transit for reshelving. Requester: . Requester ID: . Place in Queue: 1)/";
-        $replace = 'Hale Library';
-}
-if ($item['additional_info'] =="Item's destination is: Reshelve to main. Request/Process Type: . Requester: . Requester ID: . Place in Queue: 0") {
-        $pattern = "/^(Item's destination is: Reshelve to main. Request\/Process Type: . Requester: . Requester ID: . Place in Queue: 0)/";
-        $replace = 'Hale Library';
-}
 if ($item['statistics_note_3'] == 'HALE return') {
 	$pattern = '/(HALE return)/';
 	$replace = 'HALE return';
 } 
-if ($item['statistics_note_3'] == 'ANNEX ingest') {
-	$pattern = '/(ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'To be WITHDRAWN') {
-	$pattern = '/(To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'AHD HALE return') {
-	$pattern = '/(AHD HALE return)/';
-	$replace = 'HALE return';
-} 
-if ($item['statistics_note_3'] == 'AHD ANNEX ingest') {
-	$pattern = '/(AHD ANNEX ingest)/';
-	$replace = 'ANNEX ingest';
-}
-if ($item['statistics_note_3'] == 'AHD To be WITHDRAWN') {
-	$pattern = '/(AHD To be WITHDRAWN)/';
-	$replace = 'To be WITHDRAWN';
-}
-if ($item['statistics_note_3'] == 'PHYSICAL CONDITION REVIEW For Possible Withdraw') {
-	$pattern = '/(PHYSICAL CONDITION REVIEW For Possible Withdraw)/';
-	$replace = 'Send to Condition Review Shelf';
-}
-if ($item['statistics_note_3'] == '') {
-		$pattern = '/^/';
-		$replace = $item['library'];
+
+if ($item['statistics_note_3'] ! == 'HALE return') {
+	$pattern = '/(^.+)/';
+	$replace = 'Send to Problem Review Shelf';
 }
 
 //Following php color codes the Process type if it is populated
@@ -146,12 +115,14 @@ if ($holding['suppress_from_publishing'] == 'true'){
 		}
 }
 }
+$pattern4 = '/(^AUDIO TAPE|^BLU\-RAY\/DVD|BLU\-RAY|^CD\-ROM|^COMPACT DISC|^COMPUTER DISK|^DVD\-ROM|^DVD|^EQUIPMENT|^LASERDISC|^MAP|^MEDIA|^MICROCARD|^MICROFICHE|^MICROFILM|^MICROPRINT|^PHONODISC|^VIDEO TAPE)/';
+	$replace4 = '';
 
 ?>
               <table class="table">
                 <tr><th>Title:</th><td><?=$e($item['title'])?></td></tr>
 				<tr><th>Location:</th><td><?=$e($item['location'])?></td></tr>
-				<tr><th>Call Number:</th><td><?=$e ($item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
+				<tr><th>Call Number:</th><td><?= preg_replace($pattern4, $replace4, $item['call_number'])?><text <?=$style4?>><?= preg_replace($pattern2, $replace2, $item['description'])?></text><text <?=$style3?>>&nbsp;c.<?=$e($item['copy_id'])?></text></td></tr>
 				<tr><th>Barcode:</th><td><?=$e($item['barcode'])?></td></tr>
 				<tr <?=$style?>><th>Process Type:</th><td><?=$e($item['process_type'])?></td></tr>
 				<tr <?=$style2?>><th>Fulfillment Note:</th><td><?=$e($item['fulfillment_note'])?></td></tr>
