@@ -5,7 +5,7 @@ if ($item['statistics_note_3'] == 'HALE return') {
 } 
 
 if ($item['statistics_note_3'] !== 'HALE return') {
-	$pattern = '/(^.+)/';
+	$pattern = '/(^)/';
 	$replace = 'Send to Problem Review Shelf';
 }
 
