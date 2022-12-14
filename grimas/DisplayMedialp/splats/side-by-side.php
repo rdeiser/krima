@@ -19,11 +19,11 @@ if ($item['statistics_note_3'] !== 'HALE return') {
 		if ($item['statistics_note_3']== 'AHD HALE return') {
 			$pattern = '/(AHD HALE return)/';
 			$replace = 'Send to Problem Shelf';
-			$style = 'style=";"';
+			$style = 'style="background-color: #cd5555;"';
 			}else if ($item['statistics_note_3']== 'HALE return') {
 				$pattern = '/(HALE return)/';
 				$replace = 'Send to Problem Shelf';
-				$style = 'style=";"';
+				$style = 'style="background-color: #cd5555;"';
 				}
 	}else {
 		$bib = new bib();
@@ -32,11 +32,11 @@ if ($item['statistics_note_3'] !== 'HALE return') {
 			if ($item['statistics_note_3']== 'AHD HALE return') {
 				$pattern = '/(AHD HALE return)/';
 				$replace = 'Send to Problem Shelf';
-				$style = 'style=";"';
+				$style = 'style="background-color: #cd5555;"';
 				} else if ($item['statistics_note_3']== 'HALE return') {
 					$pattern = '/(HALE return)/';
 					$replace = 'Send to Problem Shelf';
-					$style = 'style=";"';
+					$style = 'style="background-color: #cd5555;"';
 				}
 		}
 	}
