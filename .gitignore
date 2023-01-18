@@ -7,3 +7,6 @@ node_modules
 grimas/AnnexltdJob/data.php
 grimas/DisplayDistinct.zip
 grimas/DisplayAllitem.zip
+standalone-config.sql
+standalone.sh
+standalone.sh
