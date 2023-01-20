@@ -1,0 +1,38 @@
+<GrimaForm>
+    <Title>Annex--Batch Scan In</Title>
+    <Field
+	name="library"
+	label="Library Circ Desk"
+	type="select"
+	required="yes"
+	placeholder="Circ Desk"
+	>
+	<option value="ANNEX">Annex Library</option>
+	</Field>
+    <Field
+	name="order"
+	label="Place Special Collections Work Order"
+	type="select"
+	requiered="yes"
+	>
+	<option value="true">Yes</option>
+    <option value="false">No</option>
+	</Field>
+    <Field
+	name="done"
+	label="Done"
+	type="select"
+	requiered="yes"
+	>
+	<option value="false">No</option>
+	<option value="true">Yes</option>
+	</Field>
+    <Field
+        name="barcode"
+        label="List of Barcodes"
+        autocomplete="off"
+        required="yes"
+        placeholder="Barcodes, one per line."
+		rows="5"
+    />
+</GrimaForm>
