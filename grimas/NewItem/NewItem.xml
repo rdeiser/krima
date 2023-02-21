@@ -24,7 +24,7 @@
 	required="no"
 	type="select"
 	>
-	<option value="Book">Book</option>
+	<option value="BOOK">Book</option>
 	<option value="LP">LP</option>
 	</Field>
 	<Field
