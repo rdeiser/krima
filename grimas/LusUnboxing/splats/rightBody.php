@@ -166,6 +166,14 @@ if ($holding['suppress_from_publishing'] == 'true'){
 				<div class="card" style="width: 500px;left: 225px;">
 				<div class="card-body" style="width: 500px">
 				<div class="form-row col-12 pb-4">
+					<label for="library">Library Circ Desk</label>
+					<select name="library" id="library" style="width: 402px;" box-sizing: border-box>
+						<option value="MAIN">Hale Library</option>
+						<!--<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>-->
+						<option value="ARCH" <?php echo (isset($_POST['library']) && $_POST['library'] === 'ARCH') ? 'selected' : ''; ?>>Paul Weigel Library of Architecture, Planning, Design</option>
+						<!--<option value="MATHPHYS">Math/Physics Library</option>-->
+						<option value="MATHPHYS" <?php echo (isset($_POST['library']) && $_POST['library'] === 'MATHPHYS') ? 'selected' : ''; ?>>Math/Physics Library</option>
+					</select>
 					<label class="col-3 form-check-label" for="barcode">Barcode:</label>
 					<input class="col-9 form-control znew" type="text" name="unboxed_barcode" id="barcode" size="20" autofocus="autofocus" placeholder="SCAN NEXT BARCODE"/>
 				</div>

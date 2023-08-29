@@ -1,6 +1,17 @@
 <GrimaForm>
     <Title>K-State LUS Fulfillment Scan In</Title>
     <Field
+	name="library"
+	label="Library Circ Desk"
+	type="select"
+	required="yes"
+	placeholder="Circ Desk"
+	>
+	<option value="MAIN">Hale Library</option>
+	<option value="ARCH">Paul Weigel Library of Architecture, Planning, Design</option>
+	<option value="MATHPHYS">Math/Physics Library</option>
+	</Field>
+    <Field
         label="Barcode of unboxed item"
         name="unboxed_barcode"
         required="yes"
