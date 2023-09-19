@@ -774,9 +774,9 @@ class Grima {
 	}
 // }}}
 
-// {{{ postScan (Create Item)
+// {{{ postScan (Send Scan-in)
 /**
- * @brief Create Item - add a new item to a holding in Alma
+ * @brief Send the Item Record for Scan-In
  *
  * Makes a call to the API:
  * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
@@ -797,6 +797,31 @@ class Grima {
 		return $ret;
 	}
 // }}}
+
+// {{{ postScanacq (Send Scan-in for acquisitions workorder)
+/**
+ * @brief Send the Item Record for Scan-In for acquisitions workorder
+ *
+ * Makes a call to the API:
+ * [(API docs)](https://developers.exlibrisgroup.com/alma/apis/bibs#Resources)
+ *
+ *		POST /almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items
+ *
+ * @param string $mms_id		- MMS ID of Bib record
+ * @param string $holding_id	- Holding ID of Holding record
+ * @param string $item_pid	- Item PID of Item record
+ * @return DomDocument Bib object as it now appears in Alma https://developers.exlibrisgroup.com/alma/apis/xsd/rest_bib.xsd?tags=GET
+ */
+function postScanacq($mms_id,$holding_id,$item_pid,$op,$library,$department,$work_order_type,$status,$done) {
+	$ret = $this->postscanin('/almaws/v1/bibs/{mms_id}/holdings/{holding_id}/items/{item_pid}',
+		array('mms_id' => $mms_id, 'holding_id' => $holding_id, 'item_pid' => $item_pid),
+		array('op' => $op, 'library' => $library, 'department' => $department, 'work_order_type' => $work_order_type, 'status' => $status, 'done' => $done)
+		);
+	$this->checkForErrorMessage($ret);
+	return $ret;
+}
+// }}}
+
 
 // {{{ putItem (Update Item information)
 /**
@@ -3913,6 +3938,32 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	}
 
 // }}}
+
+// {{{ Item -> acqworkscan (postScan)
+/**
+ * @brief Scan an Item into Fulfillment Scan In Alma
+ * @param string $mms_id MMS ID of bib record
+ * @param string $holding_id Holding ID of holding record
+ * @param string $item_pid Item PID of item record
+ * @return Curl Response
+ */
+function acqworkscan($mms_id,$holding_id,$item_pid,$op,$library,$department,$work_order_type,$status,$done) {
+	global $grima;
+	$this->mms_id = $mms_id;
+	$this->holding_id = $holding_id;
+	$this->item_pid = $item_pid;
+	$this->op = $op;
+	$this->library = $library;
+	$this->department = $department;
+	$this->work_order_type = $work_order_type;
+	$this->status = $status;
+	$this->done = $done;
+	$this->xml = $grima->postScanacq($mms_id,$holding_id,$item_pid,$op,$library,$department,$work_order_type,$status,$done);
+	return $this->xml;
+}
+
+// }}}
+
 // {{{ Item -> addToAlmaHoldingNBC (post)--red 07/2020 DO NOT USE uneditable item record
 /**
  * @brief add new item record to holding in Alma without barcode data
