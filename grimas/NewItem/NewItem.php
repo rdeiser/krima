@@ -29,7 +29,8 @@ class NewItem extends GrimaTask {
 		$item['statistics_note_3'] = $this['statnote3'];
 		$item['barcode'] = $this['barcode'];
 		$item->addToAlmaHolding($this['holding_id'],$this['holding_id']);
-		$this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$item['barcode']}");
+		// $this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$item['barcode']}");
+		$this->splatVars['item'] = $this->item;
 	}
 }
 NewItem::RunIt();
