@@ -16,7 +16,7 @@
 	name="copyid"
 	label="Copy ID"
 	required="no"
-	placeholder="0"
+	placeholder="If left blank, Copy ID will be 0"
 	/>
 	<Field
 	name="materialtype"
@@ -112,7 +112,7 @@
 	name="pieces"
 	label="Pieces"
 	required="no"
-	placeholder="1"
+	placeholder="If left blank, Piece Count will be 1"
 	/>
 	<Field
 	name="pubnote"

@@ -6,13 +6,13 @@
 			<form method="post" action="../NewItem/NewItem.php" class="">
                 <div class="form-group">
                     <label for="holding_id">Holdings Record Id</label>
-                    <input class="form-control" name="holding_id" id="holding_id" size="20" placeholder="Holding Id Number" autocomplete="off" type="input" value="" autofocus="autofocus" value="<?php echo $_POST['holding_id'] ?>">
+                    <input class="form-control" name="holding_id" id="holding_id" size="20" placeholder="Holding Id Number" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo $_POST['holding_id'] ?>">
                     <small class="invalid-feedback">Field is required
                         </small>
                 </div>
                 <div class="form-group">
                     <label for="copyid">Copy ID</label>
-                    <input class="form-control" name="copyid" id="copyid" size="20" placeholder="0" autocomplete="off" type="input" value="" autofocus="autofocus" value="<?php echo isset($_POST['copyid']) ? $_POST['copyid'] : '' ?>">
+                    <input class="form-control" name="copyid" id="copyid" size="20" placeholder="If left blank, Copy ID will be 0" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo isset($_POST['copyid']) ? $_POST['copyid'] : '' ?>">
                     <small class="invalid-feedback"></small>
                 </div>
                 <div class="form-group">
@@ -102,17 +102,17 @@
                 </div>
                 <div class="form-group">
                     <label for="pieces">Pieces</label>
-                    <input class="form-control" name="pieces" id="pieces" size="20" placeholder="1" autocomplete="off" type="input" value="" autofocus="autofocus" value="<?php echo isset($_POST['pieces']) ? $_POST['pieces'] : '' ?>">
+                    <input class="form-control" name="pieces" id="pieces" size="20" placeholder="If left blank, Piece Count will be 1" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo isset($_POST['pieces']) ? $_POST['pieces'] : '' ?>">
                     <small class="invalid-feedback"></small>
                 </div>
                 <div class="form-group">
                     <label for="pubnote">Public Note</label>
-                    <input class="form-control" name="pubnote" id="pubnote" size="20" placeholder="" autocomplete="off" type="input" value="" autofocus="autofocus" value="<?php echo isset($_POST['pubnote']) ? $_POST['pubnote'] : '' ?>">
+                    <input class="form-control" name="pubnote" id="pubnote" size="20" placeholder="" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo isset($_POST['pubnote']) ? $_POST['pubnote'] : '' ?>">
                     <small class="invalid-feedback"></small>
                 </div>
                 <div class="form-group">
                     <label for="fulnote">Fulfillment Note</label>
-                    <input class="form-control" name="fulnote" id="fulnote" size="20" placeholder="" autocomplete="off" type="input" value="" autofocus="autofocus" value="<?php echo isset($_POST['fulnote']) ? $_POST['fulnote'] : '' ?>">
+                    <input class="form-control" name="fulnote" id="fulnote" size="20" placeholder="" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo isset($_POST['fulnote']) ? $_POST['fulnote'] : '' ?>">
                     <small class="invalid-feedback"></small>
                 </div>
                 <div class="form-group">
@@ -137,12 +137,12 @@
                     <label for="statnote2">Statistics Note 2</label>
                     <select name="statnote2" id="statnote2" class="form-control">
                         <option></option>
-                        <option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
-						<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>
-						<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
-						<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
-						<option value="LACKS ozone">LACKS ozone</option>
-						<option value="FIRE 2018 LACKS ozone">FIRE 2018 LACKS ozone</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'FIRE 2018 OZONE') ? 'selected' : ''; ?>>FIRE 2018 OZONE</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'FIRE 2018 OZONE GAMMA') ? 'selected' : ''; ?>>FIRE 2018 OZONE GAMMA</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'FIRE 2018 OZONE GAMMA REBIND') ? 'selected' : ''; ?>>FIRE 2018 OZONE GAMMA REBIND</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'FIRE 2018 SPECIAL COLLECTIONS') ? 'selected' : ''; ?>>FIRE 2018 SPECIAL COLLECTIONS</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'LACKS ozone') ? 'selected' : ''; ?>>LACKS ozone</option>
+						<option value="no loan" <?php echo (isset($_POST['statnote2']) && $_POST['statnote2'] === 'FIRE 2018 LACKS ozone') ? 'selected' : ''; ?>>FIRE 2018 LACKS ozone</option>
                     </select>
                     <small class="invalid-feedback"></small>
                 </div>
