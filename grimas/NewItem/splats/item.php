@@ -6,7 +6,7 @@
 			<form method="post" action="../NewItem/NewItem.php" class="">
                 <div class="form-group">
                     <label for="holding_id">Holdings Record Id</label>
-                    <input class="form-control" name="holding_id" id="holding_id" size="20" placeholder="Holding Id Number" autocomplete="off" type="input" autofocus="autofocus" value="<?php echo $_POST['holding_id'] ?>">
+					<input class="form-control" name="holding_id" id="holding_id" size="20" placeholder="Holding Id Number" autocomplete="off" type="input" value="" autofocus="autofocus">
                     <small class="invalid-feedback">Field is required
                         </small>
                 </div>
@@ -119,10 +119,12 @@
                     <label for="statnote1">Statistics Note 1</label>
                     <select name="statnote1" id="statnote1" class="form-control">
                         <option></option>
-                        <option value="MISSING 2023">MISSING 2023</option>
+                        <option value="MISSING 2024">MISSING 2024</option>
+						<option value="MISSING 2023">MISSING 2023</option>
 						<option value="MISSING 2022">MISSING 2022</option>
 						<option value="MISSING 2021">MISSING 2021</option>
 						<option value="MISSING Pre-2020">MISSING Pre-2020</option>
+						<option value="LOST 2024">LOST 2024</option>
 						<option value="LOST 2023">LOST 2023</option>
 						<option value="LOST 2022">LOST 2022</option>
 						<option value="WITHDRAWN">WITHDRAWN</option>
