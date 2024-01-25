@@ -2,7 +2,7 @@
 require_once("../grima-lib.php");
 class AnnexWork extends GrimaTask {
 	function do_task() {
-		// $item = new Item();
+		$item = new Item();
 		$item->loadFromAlmaBarcode($this['unboxed_barcode']);
 		if ($this['location'] === 'annex') {
 			if ($item['statistics_note_3'] == 'ANNEX ingest'||$item['statistics_note_3'] == 'AHD ANNEX ingest') {
