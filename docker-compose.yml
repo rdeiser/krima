@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  krima:
+    image: kstatelibraries/grima
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    tty: true
+    stdin_open: true
