@@ -13,7 +13,8 @@ class AcqWorkorder extends GrimaTask {
 			$holding->loadFromAlma($holdingid,$holdingid);
 
 			$item = new Item();
-			$item['item_policy'] = 'book/ser';
+			$item['barcode'] = '1';
+			$item['item_policy'] = 'no loan';
 			$item['pieces'] = '1';
 			$item['inventory_date'] = '1976-01-01';
 			$item['receiving_operator'] = 'Grima';
@@ -29,6 +30,12 @@ class AcqWorkorder extends GrimaTask {
 				$replace = "Placed on Acquisitions Work Order";
 				$scanreturn = preg_replace($pattern, $replace, $this->item['additional_info']);
 			}
+
+			// delete barcode
+			$this->item = new Item();
+			$this->item->loadFromAlmaX($item['item_pid']);
+			$this->item['barcode'] = '';
+			$this->item->updateAlma();
 
 			// $this->addMessage('success',"{$this->item['additional_info']}, Item Record: {$this->item['barcode']}");
 			$this->addMessage('success',"Item Record Created and {$scanreturn}, Item Record: {$this->item['barcode']}");
