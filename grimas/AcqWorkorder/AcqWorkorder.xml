@@ -1,6 +1,6 @@
 <GrimaForm>
-    <Title>Acquisitions Batch Item Record Creation with Workorder</Title>
-    <Field
+    <Title>Acquisitions Work Order Item Record Creation </Title>
+    <!-- <Field
 	name="department"
 	label="Library Circ Desk"
 	type="select"
@@ -8,7 +8,7 @@
 	placeholder="Circ Desk"
 	>
 	<option value="AcqDeptMAIN">MAIN Acquisitions Department</option>
-	</Field>
+	</Field> -->
     <Field
 	name="status"
 	label="Set Status To"
@@ -33,12 +33,18 @@
 	<option value="false">No</option>
 	<option value="true">Yes</option>
 	</Field> -->
+	<Field
+		name="barcode"
+		type="input"
+		label="Barcode"
+		required="yes"
+		placeholder="Enter barcode..."
+	/>
     <Field
         name="holding_id"
-        label="Bibs with holdings without items"
+        label="Holdings Id"
         autocomplete="off"
         required="yes"
-        placeholder="Holding Id without items, one per line."
-		rows="5"
+        placeholder="Holding Id Number"
     />
 </GrimaForm>
