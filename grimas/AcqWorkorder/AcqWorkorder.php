@@ -4,7 +4,7 @@ require_once("../grima-lib.php");
 
 class AcqWorkorder extends GrimaTask {
 	public $itemlist = array();
-	
+
 	function do_task() {
 		$this->holdings = preg_split('/\r\n|\r|\n/',$this['holding_id']);
 
@@ -32,7 +32,7 @@ class AcqWorkorder extends GrimaTask {
 			} else {
 				$scanreturn = $this->item['additional_info'];
 			}
-			
+
 			$this->addMessage('success',"Successfully added an Item Record to {$this['holding_id']} with Barcode: {$this->item['barcode']} and {$scanreturn}");
 
 		}
