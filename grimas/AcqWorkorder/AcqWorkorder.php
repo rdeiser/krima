@@ -14,16 +14,18 @@ class AcqWorkorder extends GrimaTask {
 
 			$item = new Item();
 			$item['barcode'] = $this['barcode'];
-			$item['item_policy'] = 'no loan';
+			$item['item_policy'] = $this['itempolicy'];
 			$item['pieces'] = '1';
+			// $item['inventory_date'] = date("Y-m-d");
 			$item['inventory_date'] = '1976-01-01';
+			$item['statistics_note_2'] = $this['statnote2'];
 			$item['receiving_operator'] = 'Grima';
 			$item->addToAlmaHolding($holdingid,$holdingid);
 
 			// Scan-in will only work with a barcode
 			$this->item = new Item();
 			$this->item->loadFromAlmaX($item['item_pid']);
-			$this->item->acqworkscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN','AcqDeptMAIN',$work_order_type = 'AcqWorkOrder',$this['status'],$done = 'false');
+			$this->item->acqworkscan($item['mms_id'],$item['holding_id'],$item['item_pid'],$op = 'scan',$library = 'MAIN',$department = 'AcqDeptMAIN',$work_order_type = 'AcqWorkOrder',$this['status'],$done = 'false');
 
 			if ($this->item['additional_info'] == "Item's destination is: Manage Locally (Acquisitions/Technical Services). Request/Process Type: Acquisition technical services. Requester: . Requester ID: . Place in Queue: 1") {
 				$pattern = "/^(Item\'s destination is\: Manage Locally \(Acquisitions\/Technical Services\)\. Request\/Process Type: Acquisition technical services\. Requester: \. Requester ID: \. Place in Queue: 1)/";

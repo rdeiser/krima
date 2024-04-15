@@ -15,9 +15,9 @@
 	type="select"
 	requiered="yes"
 	>
+	<option value="OriginalCat">Original Cataloging</option>
 	<option value="CopyCat">Copy Cataloging</option>
 	<option value="DBM">Database Maintenance</option>
-	<option value="OriginalCat">Original Cataloging</option>
 	<option value="PermStor">Permanent Storage</option>
 	<option value="PhysicalProcess">Physical Processing</option>
 	<option value="Replace">Replacement Copy</option>
@@ -33,6 +33,52 @@
 	<option value="false">No</option>
 	<option value="true">Yes</option>
 	</Field> -->
+	<Field
+	name="itempolicy"
+	label="Item Policy"
+	required="no"
+	type="select"
+	>
+	<option value="book/ser">book/ser</option>
+	<option value="no loan">no loan</option>
+	<option value="score">score</option>
+	<option value="video">video</option>
+	<option value="dvd">dvd</option>
+	<option value="sound rec">sound rec</option>
+	<option value="7 day">7 day</option>
+	<option value="30 day">30 day</option>
+	<option value="media">media</option>
+	<option value="res30day">res30day</option>
+	<option value="res4hrcl">res4hrcl</option>
+	<option value="videobox">videobox</option>
+	<option value="per3">per3</option>
+	<option value="res1day">res1day</option>
+	<option value="res2week">res2week</option>
+	<option value="res3day">res3day</option>
+	<option value="res7day">res7day</option>
+	<option value="cdrom">cdrom</option>
+	<option value="accom">accom</option>
+	<option value="per4">per4</option>
+	<option value="per5">per5</option>
+	<option value="res2hr">res2hr</option>
+	<option value="res5hr">res5hr</option>
+	<option value="res2hrcl">res2hrcl</option>
+	</Field>
+	<Field
+	name="statnote2"
+	label="Statistics Note 2"
+	type="select"
+	required="no"
+	>
+	<!--<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>-->
+	<option></option>
+	<option value="FIRE 2018 OZONE">FIRE 2018 OZONE</option>
+<option value="FIRE 2018 OZONE GAMMA">FIRE 2018 OZONE GAMMA</option>
+<option value="FIRE 2018 OZONE GAMMA REBIND">FIRE 2018 OZONE GAMMA REBIND</option>
+<option value="FIRE 2018 SPECIAL COLLECTIONS">FIRE 2018 SPECIAL COLLECTIONS</option>
+<option value="LACKS ozone">LACKS ozone</option>
+<option value="FIRE 2018 LACKS ozone">FIRE 2018 LACKS ozone</option>
+	</Field>
 	<Field
 		name="barcode"
 		type="input"
