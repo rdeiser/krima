@@ -95,14 +95,14 @@ function checkForWellKnownPassword( elt ) {
       .then( text => {
         for (const line of text.split(/\r\n/g)) {
           const [ rest, wellKnown ] = line.split(/:/g);
-          if (sha1.substring(5) === rest.toLowerCase()) {
+/*           if (sha1.substring(5) === rest.toLowerCase()) {
             const err = `That password has been used by ${wellKnown} compromised accounts.`;
             const btn = "Don't send such a well-known password to server";
             markPasswordBad( elt, err, btn );
             checked.set( elt.value, wellKnown );
             return Promise.reject(err);
           }
-        }
+        } */
         markPasswordGood( elt );
         checked.set( elt.value, 0 );
         return Promise.resolve();
