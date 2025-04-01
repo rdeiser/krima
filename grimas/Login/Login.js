@@ -18,15 +18,6 @@ function setup() {
   }
 }
 
-function onInput( event ) {
-  const elt = event.target;
-  if ( elt.timer ) {
-    clearTimeout( elt.timer );
-  }
-  markPasswordGood( elt );
-  elt.timer = setTimeout( () => checkForWellKnownPassword(elt).catch(()=>{}), 300 );
-}
-
 function onSubmit( event ) {
   const form = event.target;
   if (form instanceof HTMLFormElement) {
@@ -40,7 +31,7 @@ function onSubmit( event ) {
       const username = usernameElt ? usernameElt.value : "user";
       const institution = institutionElt ? institutionElt.value : "institution";
       const password = passwordElt.value;
-      const checkPromise = checkForWellKnownPassword( passwordElt )
+      const checkPromise = Promise.resolve(passwordElt);
       const hashPromise = hash( password, `grima-clientside-login-v1:${institution}:${username}` )
       Promise.all( [ checkPromise, hashPromise ] )
       .then( ([_,hash]) => {
@@ -53,63 +44,11 @@ function onSubmit( event ) {
   }
 }
 
-function markPasswordBad( elt, validityMessage, buttonText ) {
-  elt.setCustomValidity( validityMessage.toString() );
-  for (const btnelt of elt.form.querySelectorAll('input[type="submit"]') ) {
-    btnelt.classList.add( "btn-danger" );
-    btnelt.value = buttonText;
-  }
-}
-
 function markPasswordGood( elt ) {
   elt.setCustomValidity( "" );
   for (const btnelt of elt.form.querySelectorAll('input[type="submit"]') ) {
     btnelt.classList.remove( "btn-danger" );
     btnelt.value = "Submit";
-  }
-}
-
-const checked = new Map();
-function checkForWellKnownPassword( elt ) {
-  if ( (elt instanceof HTMLInputElement)
-    && (window.crypto)
-    && (window.crypto.subtle)
-  ) {
-    if (checked.has(elt.value)) {
-      const wellKnown = checked.get(elt.value);
-      if (wellKnown) {
-        const err = `That password has been used by ${wellKnown} compromised accounts.`;
-        const btn = "Don't send such a well-known password to server";
-        markPasswordBad( elt, err, btn );
-        return Promise.reject( err );
-      } else {
-        markPasswordGood( elt );
-        return Promise.resolve();
-      }
-    }
-    return window.crypto.subtle
-    .digest("SHA-1", bin(elt.value) )
-    .then( sha1 => hex(sha1) )
-    .then( sha1 => fetch( `https://api.pwnedpasswords.com/range/${sha1.substring(0,5)}`)
-      .then( response => response.text() )
-      .then( text => {
-        for (const line of text.split(/\r\n/g)) {
-          const [ rest, wellKnown ] = line.split(/:/g);
-/*           if (sha1.substring(5) === rest.toLowerCase()) {
-            const err = `That password has been used by ${wellKnown} compromised accounts.`;
-            const btn = "Don't send such a well-known password to server";
-            markPasswordBad( elt, err, btn );
-            checked.set( elt.value, wellKnown );
-            return Promise.reject(err);
-          }
-        } */
-        markPasswordGood( elt );
-        checked.set( elt.value, 0 );
-        return Promise.resolve();
-      })
-    );
-  } else {
-    return Promise.resolve();
   }
 }
 
