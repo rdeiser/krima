@@ -6,25 +6,29 @@
 		autocomplete="on"
 		required="yes"
 		placeholder="Your GRIMA ID..."
+		value="Production"
+		type="hidden"
 	/>
 	<Field
 		name="password"
 		label="Password:"
-		type="password"
 		autocomplete="off"
 		required="yes"
 		placeholder="Your GRIMA password..."
+		value="Production"
+		type="hidden"
 	/>
 	<Field
 		name="institution"
 		label="Institution:"
-        required="yes"
+		required="yes"
 		type="select"
-		>
-		<!--<option value="Kansas State University">Kansas State Univeristy</option>-->
+	>
+		<option
+		value="">Choose API Key</option>
 		<option value="Production">Production</option>
 		<option value="Sandbox">Sandbox</option>
-		</Field>
+	</Field>
 	<Field
 		name="redirect_url"
 		type="hidden"
