@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body dir="ltr"><!----><!----><prm-static ng-if="$ctrl.items" section="email" [parent-ctrl]="$ctrl" (template-included-event)="$ctrl.handleEmailTemplate()" style="max-width: 100%; min-width: 100%"><!----><div ng-include="$ctrl.getTemplateUrl()" onload="$ctrl.templateIncludedEventCall()" class="" style=""><table style="width: 600px; display: block !important; max-width: 600px !important; margin: 0 auto !important; clear: both !important; border-spacing: 0 !important; padding: 0 !important; border-top-left-radius: 15px !important; border-top-right-radius: 15px !important; cellspacing=0; cellpadding=0; border=0; bgcolor=#512888; align=center;"><tbody><tr><td style="cursor: default; padding: 1em 0.5em;"><img src="https://assets.lib.k-state.edu/library/imgs/logo_purple_315x46.jpg" alt="decorative" style="height: 66px;"></td></tr></tbody></table>
+<table style="width: 600px;
+    display: block !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    clear: both !important;
+    border-spacing: 0 !important;
+    padding: 0 !important;" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td>
+            <div translate="nui.email.institutionNote"></div>
+        </td>
+    </tr>
+    <tr>
+        <!--<td></td>-->
+        <td style="display: block !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    clear: both !important;
+    padding: 0 !important;" bgcolor="#f3f3f3">
+
+            <div style=" padding: 0 !important;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;">
+                <table style="width: 600px;
+    display: block !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    clear: both !important;
+    border-spacing: 0 !important;
+    padding: 0 !important;">
+                    <tbody><!---->
+                </tbody></table>
+                <table id="email-template-items" style="background-color: #f3f3f3; width: 100%;">
+                    <tbody><!----><!----><tr ng-if="$ctrl.parentCtrl.fullViewLoaded" ng-repeat="item in $ctrl.parentCtrl.delayedItems" class="" style="">
+                        <td style="padding: 10px 15px; margin: 2px; cursor: default; width: 100%;" bgcolor="white">
+                            <prm-brief-result-container style="width: 100%;" [item]="item" display-mode="email" (load-email-template-event)="$ctrl.parentCtrl.popItem()"><div prm-digest-when-in-view="" tabindex="0" role="none" in-view="$ctrl.onInView(undefined, $inview, $inviewInfo)" in-view-options="{throttle: 50}" ng-click="$ctrl.handleDetailsThrottled($ctrl.item,$event, true);$ctrl.sendAnalytics()" class="list-item-primary-content result-item-primary-content has-checkbox layout-row" ng-class="{'new-result-item' : ($ctrl.index &amp;&amp; $ctrl.newMetalibItem())}" data-recordid="alma9914185973402401" id="SEARCH_RESULT_RECORDID_alma9914185973402401" layout="row" [digest-when-in-view-disabled]="$ctrl.disableDigest"><!----><!----><!----><!----><div class="text-selector-spacer"></div><!----><!----><div ng-if="!$ctrl.isItemDeleted()" class="result-item-text layout-fill layout-column flex" layout="column" layout-fill="" flex="" style=""><div class="media-content-type align-self-start"><!----><!----><span ng-if="::$ctrl.showItemType &amp;&amp; (!$ctrl.isDBSearch() || $ctrl.isFullView)" translate="mediatype.score">Score</span><!----><!----></div><!----><prm-brief-result class="result-item-details layout-column" [item]="$ctrl.item" [resource-type-for-display]="::$ctrl.getResourceTypeForDisplay()" [deep-link]="::$ctrl.getDeepLinkPath()" [is-full-view]="::$ctrl.isFullView" [is-collection-discovery-collection]="::$ctrl.isCollectionDiscoveryCollection" [display-mode]="::$ctrl.displayMode" layout="column"><!----> <!----><span ng-if="(!$ctrl.isFullViewOverlayOpen || $ctrl.isFullView)" class="urlToXmlPnx" id="" title="# Search Engine&amp;inst=01KSU_INST&amp;showPnx=true&amp;jwtAsParam=" eyJraWQiOiJwcmltYVByaXZhdGVLZXktMDFLU1VfSU5TVCIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJQcmltYSIsImp0aSI6IkRBRUMyNzlEMzJBNTZCQzA0MDFFRjg0NUY3MUMyOTNCLmFwZDAxLm5hMDIucHJvZC5hbG1hLmRjMDQuaG9zdGVkLmV4bGlicmlzZ3JvdXAuY29tOjE4MDEiLCJleHAiOjE3NTQ2NjEzNTEsImlhdCI6MTc1NDU3NDk1MSwidXNlck5hbWUiOiJyZGVpc2VyIiwiZGlzcGxheU5hbWUiOiJEZWlzZXIgSUksIFJheW1vbmQiLCJ1c2VyIjoiODA4NDQ0NjgwMDAyNDAxIiwidXNlckdyb3VwIjoiZmFjIiwiaW5zdGl0dXRpb24iOiIwMUtTVV9JTlNUIiwidXNlcklwIjoiMTI5LjEzMC4xOS4xNjkiLCJhdXRoZW50aWNhdGlvblByb2ZpbGUiOiJLU1VfU0hJQiIsImF1dGhlbnRpY2F0aW9uU3lzdGVtIjoiU0FNTCIsImxhbmd1YWdlIjoiZW4iLCJzYW1sU2Vzc2lvbkluZGV4IjoiX2EzMDJhZGQ3ODYyMTc5ZjAyOTlkOWFjZDgyZDQ2MDU3Iiwic2FtbE5hbWVJZCI6IkFBZHpaV055WlhReDlxcjQ2WkZsNXdPVUpRQlN5VHpudDlCclI1VUhrbW5aMDllQjJjVjFac2VnWVdDalYva3pvQVh4dWtCMzhRTUQ5MlpwK2dFTE9sWUwzNUEzQjhPTko3UnI0SjlpZys5RUFxTFdncGMzNnFWT0tiM1o5VjE3UmFlVlFUZWxpanU0aE80ZTNvUUQ0enB1VCsxeTVBczNRWENMLzNaWEN2Yz0iLCJvbkNhbXB1cyI6ImZhbHNlIiwic2lnbmVkSW4iOiJ0cnVlIiwidmlld0lkIjoiMDFLU1VfSU5TVDpOZXdVSSJ9.Zi4v3uWQ0ZajrQXqSGbP4NTsk83wgn1lVc0TruMUJK2aj6S08yCMoXGitMGMdCgW4m1Zk7TaoyR--y5JwXSxzQ??="" aria-hidden="true" data-url="# Search Engine&amp;inst=01KSU_INST&amp;showPnx=true&amp;jwtAsParam=" eyJraWQiOiJwcmltYVByaXZhdGVLZXktMDFLU1VfSU5TVCIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJQcmltYSIsImp0aSI6IkRBRUMyNzlEMzJBNTZCQzA0MDFFRjg0NUY3MUMyOTNCLmFwZDAxLm5hMDIucHJvZC5hbG1hLmRjMDQuaG9zdGVkLmV4bGlicmlzZ3JvdXAuY29tOjE4MDEiLCJleHAiOjE3NTQ2NjEzNTEsImlhdCI6MTc1NDU3NDk1MSwidXNlck5hbWUiOiJyZGVpc2VyIiwiZGlzcGxheU5hbWUiOiJEZWlzZXIgSUksIFJheW1vbmQiLCJ1c2VyIjoiODA4NDQ0NjgwMDAyNDAxIiwidXNlckdyb3VwIjoiZmFjIiwiaW5zdGl0dXRpb24iOiIwMUtTVV9JTlNUIiwidXNlcklwIjoiMTI5LjEzMC4xOS4xNjkiLCJhdXRoZW50aWNhdGlvblByb2ZpbGUiOiJLU1VfU0hJQiIsImF1dGhlbnRpY2F0aW9uU3lzdGVtIjoiU0FNTCIsImxhbmd1YWdlIjoiZW4iLCJzYW1sU2Vzc2lvbkluZGV4IjoiX2EzMDJhZGQ3ODYyMTc5ZjAyOTlkOWFjZDgyZDQ2MDU3Iiwic2FtbE5hbWVJZCI6IkFBZHpaV055WlhReDlxcjQ2WkZsNXdPVUpRQlN5VHpudDlCclI1VUhrbW5aMDllQjJjVjFac2VnWVdDalYva3pvQVh4dWtCMzhRTUQ5MlpwK2dFTE9sWUwzNUEzQjhPTko3UnI0SjlpZys5RUFxTFdncGMzNnFWT0tiM1o5VjE3UmFlVlFUZWxpanU0aE80ZTNvUUQ0enB1VCsxeTVBczNRWENMLzNaWEN2Yz0iLCJvbkNhbXB1cyI6ImZhbHNlIiwic2lnbmVkSW4iOiJ0cnVlIiwidmlld0lkIjoiMDFLU1VfSU5TVDpOZXdVSSJ9.Zi4v3uWQ0ZajrQXqSGbP4NTsk83wgn1lVc0TruMUJK2aj6S08yCMoXGitMGMdCgW4m1Zk7TaoyR--y5JwXSxzQ??=""></span><!----><h3 class="item-title" ng-style="::($ctrl.isEmailMode() &amp;&amp; {'margin':'0'})" ng-class="::{'string-to-rtl': $ctrl.changeStringDirectionToRtl($ctrl.firstLine.values), 'is-chapter-state': $ctrl.isChaptersAndReviewsState()}" style="margin: 0px;"><a ng-class="::{'full-view-mouse-pointer':$ctrl.isFullView}" ng-click="$ctrl.sendBeacon(); $event.preventDefault();" href="https://k-state.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma9914185973402401&amp;context=L&amp;vid=01KSU_INST:NewUI" (keydown)="$ctrl.keydownSupport($event)" tabindex="0" prm-context-menu="$ctrl.addRecordOnContextMenu($event)" ng-mousedown="$ctrl.addRecordOnScrollMouseClick($event)" class="md-primoExplore-theme"><!----><!----><span ng-if="!$ctrl.isAuthoritySearch" data-field-selector="::title" ng-repeat="item in ::$ctrl.firstLine.values" class="" style=""><!----><span ng-if="::$ctrl.firstLine.delimiter" class="media-delimiter ng-hide" ng-show="::(!$first)" ng-bind-html="::$ctrl.firstLine.delimiter" ng-style="::($first &amp;&amp; $ctrl.isEmailMode() &amp;&amp; {'display':'none'})" aria-hidden="true" style="display: none;">; </span><!----><!----><!----><prm-highlight ng-class="::item.codes[$index]" terms="::$ctrl.hl(item.key)" ng-repeat="val in ::$ctrl.filterAndNormalize(item.values)" display-mode="::$ctrl.displayMode" text="::$ctrl.getDisplayValFromVal(val, $ctrl.firstLine.delimiter, $ctrl.getFirstLineKeyByIndex($parent.$index))"><!----><span ng-if="::$ctrl.isEmailMode()" ng-bind-html="$ctrl.text" dir="auto">The Frank Zappa guitar book.</span><!----> <!----></prm-highlight><!----></span><!----><!----><!----></a></h3><!----><div ng-repeat="displayLine in ::$ctrl.otherLines" class="item-detail reduce-lines-display" ng-class="::{'identifier-in-brief-classic' : displayLine.values[0].key === 'identifier', 'reduce-lines-display': !$ctrl.isIe, 'reduce-line-display-ie': $ctrl.isIe}" style=""><!----><span ng-repeat="item in ::displayLine.values"><span class="media-delimiter ng-hide" ng-show="::(!$first)" ng-bind-html="::displayLine.delimiter" ng-style="::($first &amp;&amp; $ctrl.isEmailMode() &amp;&amp; {'display':'none'})" aria-hidden="true" style="display: none;">; </span> <!----><span data-field-selector="creator" ng-repeat="val in ::$ctrl.filterAndNormalize(item.text) track by $index"><prm-highlight ng-class="::item.codes[$index]" terms="::$ctrl.hl(item.key)" text="::$ctrl.getDisplayValFromVal(val, displayLine.delimiter, item.key)" display-mode="::$ctrl.displayMode"><!----><span ng-if="::$ctrl.isEmailMode()" ng-bind-html="$ctrl.text" dir="auto">Zappa, Frank.</span><!----> <!----></prm-highlight><span class="media-delimiter ng-hide" ng-show="::(!$last)" ng-bind-html="::displayLine.delimiter" ng-style="::($ctrl.isEmailMode() &amp;&amp; {'display':'none'})" aria-hidden="true" style="display: none;">; </span></span><!----></span><!----><span ng-repeat="item in ::displayLine.values"><span class="media-delimiter" ng-show="::(!$first)" ng-bind-html="::displayLine.delimiter" ng-style="::($first &amp;&amp; $ctrl.isEmailMode() &amp;&amp; {'display':'none'})" aria-hidden="false">; </span> <!----><span data-field-selector="creationdate" ng-repeat="val in ::$ctrl.filterAndNormalize(item.text) track by $index"><prm-highlight ng-class="::item.codes[$index]" terms="::$ctrl.hl(item.key)" text="::$ctrl.getDisplayValFromVal(val, displayLine.delimiter, item.key)" display-mode="::$ctrl.displayMode"><!----><span ng-if="::$ctrl.isEmailMode()" ng-bind-html="$ctrl.text" dir="auto">©1982</span><!----> <!----></prm-highlight><span class="media-delimiter ng-hide" ng-show="::(!$last)" ng-bind-html="::displayLine.delimiter" ng-style="::($ctrl.isEmailMode() &amp;&amp; {'display':'none'})" aria-hidden="true" style="display: none;">; </span></span><!----></span><!----></div><!----><prm-brief-result-after parent-ctrl="$ctrl"></prm-brief-result-after></prm-brief-result><!----><prm-snippet [record]="::$ctrl.item" [display-mode]="::$ctrl.displayMode"><!----><prm-snippet-after parent-ctrl="$ctrl"></prm-snippet-after></prm-snippet><!----><!----><prm-search-result-journal-indication-line ng-if="::$ctrl.isSuprima" [item]="::$ctrl.item" [display-mode]="::$ctrl.displayMode"><!----><prm-search-result-journal-indication-line-after parent-ctrl="$ctrl"></prm-search-result-journal-indication-line-after></prm-search-result-journal-indication-line><!----><!----><!----><!----><div class="search-result-availability-line-wrapper" ng-style="::($ctrl.isEmailMode() &amp;&amp; {'margin-top':'1em'})" style="margin-top: 1em;"><!----><!----><prm-search-result-availability-line ng-if="::($ctrl.delivery &amp;&amp;(!$ctrl.isGenericRecord() || $ctrl.isPc()))" tabindex="-1" [result]="::$ctrl.item" [is-full-view]="::$ctrl.isFullView" [is-overlay-full-view]="$ctrl.isOverlayFullView" [collection-discovery-data]="::$ctrl.collectionDiscoveryData" ng-click="$event.stopPropagation();" (open-full-display-with-getit1)="$ctrl.handleDetails($ctrl.item, $event, false);" (open-full-display-with-ngrs)="$ctrl.handleDetails($ctrl.item, $event, false);" [display-mode]="::$ctrl.displayMode"><!----><!----><div ng-repeat="availability in $ctrl.displayedAvailability track by $index" ng-if="$ctrl.ifShowAvailability(availability)" layout="row" layout-align="start start" class="layout-align-start-start layout-row"><!----><div layout="flex" ng-if="::!$ctrl.isCollectionDiscoveryCollection" class="layout-row"><!----><!----><prm-icon ng-if="::$ctrl.isPhysical($index,availability) &amp;&amp; !$ctrl.isGlobalRapidoRecord(availability)" availability-type="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="book-open" [display-mode]="::$ctrl.displayMode"><!----><!----><!----><prm-icon-after parent-ctrl="$ctrl"></prm-icon-after></prm-icon><!----><!----><!----><!----><span class="button-content" ng-if="::$ctrl.isEmailMode()"><span class="availability-status available_in_library" ng-style="::$ctrl.getNgrsStyle()" ng-class="::{'text-rtl': $ctrl.switchToLtrString()}" translate="delivery.code.available_in_library" translate-values="$ctrl.getPlaceHolders($ctrl.result)" translate-compile="">Located at <span class="best-location-library-code locations-link">Hale Library</span> <span class="best-location-sub-location locations-link">Music and Art--3rd Floor</span> <span class="best-location-delivery locations-link" dir="auto"><span class="availability-line-parenthesis">(</span>M127.Z37 F7 1982<span class="availability-line-parenthesis">)</span></span></span><!----> <!----> <!----></span><!----></div><!----></div><!----><!----><!----><prm-search-result-availability-line-after parent-ctrl="$ctrl">
+    <prm-search-result-availability-line-after-app-store-generated parent-ctrl="$ctrl.parentCtrl"></prm-search-result-availability-line-after-app-store-generated>
+</prm-search-result-availability-line-after></prm-search-result-availability-line><!----></div><!----><!----><!----><!----></div><!----></div><!----><!----><prm-brief-result-container-after parent-ctrl="$ctrl"></prm-brief-result-container-after></prm-brief-result-container>
+                        </td>
+                    </tr><!----><!---->
+                </tbody></table>
+            </div><!-- /content -->
+
+        </td>
+        <!--<td></td>-->
+    </tr>
+</tbody></table>
+<!-- /BODY -->
+
+<!-- FOOTER -->
+<table class="footer-wrap" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td></td>
+    </tr>
+</tbody></table>
+<!-- /FOOTER -->
+
+<!-- DISCLAIMER MESSAGE-->
+<table style="width: 600px;
+    display: block !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    clear: both !important;
+    border-spacing: 0 !important;
+    padding: 0 !important;
+    border: 2px solid red;" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+        <td align="center">
+            <p style="margin: 0.5em;" translate="nui.email.disclaimer">Please note we make the best effort to ensure that this message is error and virus free. If you do not trust the sender of this message do not click on any of the above links, respond to the email, or provide any sensitive information.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div></prm-static><!----></html></body>
